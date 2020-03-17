@@ -44,3 +44,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# cordova
+cordova/node_modules/
+cordova/platforms/
+cordova/www/
