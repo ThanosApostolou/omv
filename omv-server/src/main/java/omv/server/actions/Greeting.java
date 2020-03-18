@@ -1,4 +1,4 @@
-package omv.server;
+package omv.server.actions;
 
 public class Greeting {
 

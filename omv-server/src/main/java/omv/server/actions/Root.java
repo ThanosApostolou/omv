@@ -1,4 +1,4 @@
-package omv.server;
+package omv.server.actions;
 
 public class Root {
 	private final String start_datetime;
