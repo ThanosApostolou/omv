@@ -20,11 +20,8 @@ apply plugin: 'io.spring.dependency-management'
 
 group = "com.github.ThanosApostolou.omv"
 version = "0.0.1-SNAPSHOT"
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-}
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
 application {
     mainClassName = 'omv.server.App'
@@ -41,6 +38,7 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
