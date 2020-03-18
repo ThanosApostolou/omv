@@ -20,13 +20,19 @@ tasks.withType<Wrapper> {
 plugins {
     // Apply the java plugin to add support for Java
     java
+    application
     id("org.springframework.boot") version "2.2.5.RELEASE"
     id ("io.spring.dependency-management") version "1.0.9.RELEASE"
 }
 
+apply(plugin = "io.spring.dependency-management")
+
+application {
+    mainClassName = "omv.server.App"
+}
+
+
 repositories {
-    // Use jcenter for resolving dependencies.
-    // You can declare any Maven/Ivy/file repository here.
     jcenter()
 }
 
