@@ -6,10 +6,22 @@
  * User Manual available at https://docs.gradle.org/6.2.2/userguide/tutorial_java_projects.html
  */
 
+group = "com.github.ThanosApostolou.omv"
+version = "0.0.1-SNAPSHOT"
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+tasks.withType<Wrapper> {
+    distributionType = Wrapper.DistributionType.BIN
+    gradleVersion = "6.2.2"
+}
+
 plugins {
     // Apply the java plugin to add support for Java
     java
     id("org.springframework.boot") version "2.2.5.RELEASE"
+    id ("io.spring.dependency-management") version "1.0.9.RELEASE"
 }
 
 repositories {
@@ -19,14 +31,8 @@ repositories {
 }
 
 dependencies {
-    // This dependency is used by the application.
-    implementation("com.google.guava:guava:28.1-jre")
-
-    // Use JUnit test framework
-    testImplementation("junit:junit:4.12")
-}
-
-tasks.withType<Wrapper> {
-    distributionType = Wrapper.DistributionType.BIN
-    gradleVersion = "6.2.2"
+    implementation ("org.springframework.boot:spring-boot-starter-web")
+	testImplementation("org.springframework.boot:spring-boot-starter-test") {
+		exclude (group = "org.junit.vintage", module = "junit-vintage-engine")
+	}
 }
