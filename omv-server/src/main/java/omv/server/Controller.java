@@ -8,11 +8,18 @@ import io.vertx.ext.web.Router;
 import omv.server.actions.*;
 
 public class Controller extends AbstractVerticle {
-    Runtime runtime = new Runtime();
+    Runtime runtime;
+    Router router;
+
+    public Controller() {
+        super();
+        runtime = new Runtime();
+        router = null;
+    }
 
     @Override
-    public void start(Promise<Void> promise) {
-        Router router = Router.router(vertx);
+    public void start(Promise<Void> startPromise) {
+        router = Router.router(vertx);
 
         // Bind "/" to our hello message - so we are still compatible.
         router.route("/").handler(routingContext -> {
@@ -25,17 +32,16 @@ public class Controller extends AbstractVerticle {
 
         // Create the HTTP server and pass the "accept" method to the request handler.
         vertx.createHttpServer()
-            .requestHandler(router::accept)
+            .requestHandler(router)
             .listen(
                 // Retrieve the port from the configuration,
                 // default to 8080.
-                config().getInteger("http.port", 8080),
-                result -> {
-                if (result.succeeded()) {
-                    promise.complete();
-                } else {
-                    promise.fail(result.cause());
-                }
+                config().getInteger("http.port", 8080), result -> {
+                    if (result.succeeded()) {
+                        startPromise.complete();
+                    } else {
+                        startPromise.fail(result.cause());
+                    }
                 }
             );
     }
