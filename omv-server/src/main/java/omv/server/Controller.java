@@ -1,27 +1,43 @@
 package omv.server;
 
-import java.util.concurrent.atomic.AtomicLong;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import io.vertx.core.AbstractVerticle;
+import io.vertx.core.Promise;
+import io.vertx.core.http.HttpServerResponse;
+import io.vertx.ext.web.Router;
 
 import omv.server.actions.*;
 
-@RestController
-public class Controller {
-	Runtime runtime = new Runtime();
+public class Controller extends AbstractVerticle {
+    Runtime runtime = new Runtime();
 
-	private static final String template = "Hello, %s!";
-	private final AtomicLong counter = new AtomicLong();
+    @Override
+    public void start(Promise<Void> promise) {
+        Router router = Router.router(vertx);
 
-	@GetMapping("/")
-	public Root root() {
-		return new Root (runtime.start_datetime);
-	}
+        // Bind "/" to our hello message - so we are still compatible.
+        router.route("/").handler(routingContext -> {
+			HttpServerResponse response = routingContext.response();
+			Root root = new Root(runtime.start_datetime);
+			response
+				.putHeader("content-type", "text/html")
+				.end("<h1>Hello from my first Vert.x 3 application " + root.getStart_datetime() + " </h1>");
+        });
 
-	@GetMapping("/greeting")
-	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-		Greeting greeting = new Greeting(counter.incrementAndGet(), String.format(template, name));
-		return greeting;
-	}
+        // Create the HTTP server and pass the "accept" method to the request handler.
+        vertx.createHttpServer()
+            .requestHandler(router::accept)
+            .listen(
+                // Retrieve the port from the configuration,
+                // default to 8080.
+                config().getInteger("http.port", 8080),
+                result -> {
+                if (result.succeeded()) {
+                    promise.complete();
+                } else {
+                    promise.fail(result.cause());
+                }
+                }
+            );
+    }
+
 }
