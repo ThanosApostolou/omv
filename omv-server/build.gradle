@@ -9,12 +9,13 @@ version = "0.0.1-SNAPSHOT"
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
+def mainVerticle = 'omv.server.MainVerticle'
 def watchForChange = 'src/**/*'
 def doOnChange = './gradlew classes'
 ext {
     guavaVersion = '28.2'
     vertxVersion = '3.8.5'
-    junitJupiterVersion = '5.4.0'
+    junitJupiterVersion = '5.6.1'
 }
 
 repositories {
@@ -42,7 +43,7 @@ application {
 shadowJar {
   classifier = 'fat'
   manifest {
-      attributes 'Main-Verticle': mainClassName
+      attributes 'Main-Verticle': "$mainVerticle"
   }
   mergeServiceFiles {
       include 'META-INF/services/io.vertx.core.spi.VerticleFactory'
@@ -57,5 +58,6 @@ test {
 }
 
 run {
-    args = ["--redeploy=$watchForChange", "--on-redeploy=$doOnChange"]
+    environment "VERTXWEB_ENVIRONMENT", "dev"
+    args = ["run", "$mainVerticle", "--launcher-class=$mainClassName", "--redeploy=$watchForChange", "--on-redeploy=$doOnChange"]
 }
