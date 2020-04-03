@@ -25,9 +25,8 @@ public class Controller {
         router.route("/").handler(routingContext -> {
 			HttpServerResponse response = routingContext.response();
 			Root root = new Root(runtime.start_datetime);
-			response
-				.putHeader("content-type", "text/html")
-				.end("<h1>Hello from my first Vert.x 3 application " + root.getStart_datetime() + " </h1>");
+			response.putHeader("content-type", "application/json")
+                    .end(root.toString());
         });
 
         // Create the HTTP server and pass the "accept" method to the request handler.
