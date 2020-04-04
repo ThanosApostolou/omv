@@ -1,0 +1,1 @@
+web: cd omv-server && ./gradlew shadowJar && java $JAVA_OPTS -Dport=$PORT -jar build/libs/omv-server-*-fat.jar
