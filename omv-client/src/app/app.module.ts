@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatGridListModule } from '@angular/material/grid-list';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 import { Index } from '../views/index.component';
@@ -33,7 +34,8 @@ import { NotFound } from '../views/notfound.component';
         MatIconModule,
         MatButtonModule,
         MatButtonToggleModule,
-        MatGridListModule
+        MatGridListModule,
+        FlexLayoutModule
     ],
     providers: [],
     bootstrap: [AppComponent]
