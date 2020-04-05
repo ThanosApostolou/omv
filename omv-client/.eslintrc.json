@@ -23,7 +23,8 @@
     },
     "plugins": [
         "@typescript-eslint",
-        "html"
+        "html",
+        "import"
     ],
     "ignorePatterns": ["node_modules/", "dist/"],
     "rules": {

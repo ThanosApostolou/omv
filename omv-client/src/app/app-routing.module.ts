@@ -4,14 +4,14 @@ import { Index } from '../views/index.component';
 import { About } from '../views/about.component';
 
 const routes: Routes = [
-  { path: 'index', component: Index },
-  { path: 'about', component: About },
-  { path: '', redirectTo: 'index', pathMatch: 'full' }//,
-  //{ path: '**', component: PageNotFoundComponent }
+    { path: 'index', component: Index },
+    { path: 'about', component: About },
+    { path: '', redirectTo: 'index', pathMatch: 'full' }//,
+    //{ path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }

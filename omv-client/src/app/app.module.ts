@@ -12,23 +12,23 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatTabsModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
-    MatButtonToggleModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatTabsModule,
+        MatMenuModule,
+        MatIconModule,
+        MatButtonModule,
+        MatButtonToggleModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
-  title="test";
+    title="test";
 }
