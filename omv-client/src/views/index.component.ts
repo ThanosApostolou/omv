@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { AppComponent } from '../app/app.component';
 
 @Component({
   selector: 'index',
-  templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+  templateUrl: './index.component.html'
 })
 export class Index {
-  title = 'omv-client';
+    app: AppComponent;
+    constructor() {
+        this.app = AppComponent.app;
+    }
 }

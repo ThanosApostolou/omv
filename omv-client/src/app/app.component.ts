@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'omv-client';
+  static app: AppComponent;
+
+  title: string;
+  constructor() {
+    AppComponent.app = this;
+    this.title = 'omv-client';
+
+  }
+
 }

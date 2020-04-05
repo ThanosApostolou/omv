@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
+import { AppComponent } from '../app/app.component';
 
 @Component({
-  selector: 'about',
-  templateUrl: './about.component.html'
+    selector: 'about',
+    templateUrl: './about.component.html'
 })
 export class About {
-  title = 'omv-client';
+    app: AppComponent;
+    constructor() {
+        this.app = AppComponent.app;
+    }
+
 }
