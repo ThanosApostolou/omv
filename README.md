@@ -2,7 +2,7 @@
 Ontology Mapping Visualizer
 
 # omv-server
-Server is deployd on heroku at url:
+Server is deployed on heroku at url:
 https://omv-server.herokuapp.com/
 
 ### First build on heroku:
@@ -20,3 +20,6 @@ heroku config:set GRADLE_TASK="shadowJar"
 ```
 git push heroku master
 ```
+
+# omv-client
+Client is deployed on netlify:
