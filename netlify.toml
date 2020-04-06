@@ -1,0 +1,8 @@
+[build]
+  publish = "omv-client/dist/omv-client/"
+  command = "cd omv-client && npm run build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
