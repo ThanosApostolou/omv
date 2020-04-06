@@ -1,11 +1,10 @@
-# omv
-Ontology Mapping Visualizer
+# OMV
+Ontologies' Mappings Visualizer
 
-# omv-server
-Server is deployed on heroku at url:
-https://omv-server.herokuapp.com/
+# OMV server
+Server is deployed on heroku: https://omv-server.herokuapp.com/
 
-### First build on heroku:
+### First deploy on heroku:
 ```
 heroku login
 heroku create
@@ -16,10 +15,24 @@ heroku config:set PROJECT_PATH=omv-server/
 heroku config:set GRADLE_TASK="shadowJar"
 ```
 
-### Build every time:
+### Deploy changes on heroku:
 ```
 git push heroku master
 ```
 
-# omv-client
-Client is deployed on netlify:
+### Build and run server
+```
+cd omv-server
+./gradlew shadowJar
+java -jar build/libs/omv-server-*-fat.jar
+```
+
+# OMV client
+Client is deployed on netlify: https://omv-client.netlify.com
+
+### Build client
+```
+cd omv-client
+npm install
+npm run build
+```
