@@ -13,15 +13,21 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
-import { Index } from '../views/index.component';
+import { Home } from '../views/home.component';
+import { RunVisualizer } from '../views/runvisualizer.component';
 import { About } from '../views/about.component';
+import { Settings } from '../views/settings.component';
+import { User } from '../views/user.component';
 import { NotFound } from '../views/notfound.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        Index,
+        Home,
+        RunVisualizer,
         About,
+        Settings,
+        User,
         NotFound
     ],
     imports: [

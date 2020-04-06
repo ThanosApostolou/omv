@@ -1,13 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { Index } from '../views/index.component';
+import { Home } from '../views/home.component';
+import { RunVisualizer } from '../views/runvisualizer.component';
 import { About } from '../views/about.component';
+import { Settings } from '../views/settings.component';
+import { User } from '../views/user.component';
 import { NotFound } from '../views/notfound.component';
 
 const routes: Routes = [
-    { path: 'index', component: Index },
+    { path: 'home', component: Home },
+    { path: 'runvisualizer', component: RunVisualizer },
     { path: 'about', component: About },
-    { path: '', redirectTo: 'index', pathMatch: 'full' },
+    { path: 'settings', component: Settings },
+    { path: 'user', component: User },
+    { path: 'about', component: About },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: '**', component: NotFound }
 ];
 

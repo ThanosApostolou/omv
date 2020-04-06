@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { AppComponent } from '../app/app.component';
 
 @Component({
-    selector: 'index',
-    templateUrl: './index.component.html'
+    selector: 'settings',
+    templateUrl: './settings.component.html'
 })
-export class Index {
+export class Settings {
     app: AppComponent;
     constructor() {
         this.app = AppComponent.app;
