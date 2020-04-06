@@ -1,5 +1,4 @@
 [build]
-  base = "omv-client/"
   publish = "dist/omv-client/"
   command = "npm run build"
 
