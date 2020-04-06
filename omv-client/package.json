@@ -4,10 +4,10 @@
     "main": "main.js",
     "scripts": {
         "ng": "ng",
-        "serve": "ng serve --open",
-        "build": "npm run lint && ng build --prod",
+        "serve": "ng serve --open --base-href=/",
+        "build": "ng build --prod --base-href=/",
         "electron": "electron .",
-        "electron:build": "npm run build && electron-builder build",
+        "electron:build": "ng build --prod && electron-builder build",
         "android:build": "ng build --prod --output-path=cordova/www && cd cordova && cordova build android --release",
         "android": "cd cordova && cordova run android",
         "lint": "eslint --ext .html,.js,.jsx,.ts,.tsx src",
