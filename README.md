@@ -23,3 +23,4 @@ git push heroku master
 
 # omv-client
 Client is deployed on netlify:
+https://omv-client.netlify.com
