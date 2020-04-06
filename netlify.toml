@@ -1,6 +1,6 @@
 [build]
   base = "omv-client/"
-  publish = "omv-client/dist/"
+  publish = "dist/"
   command = "npm run build"
 
 [[redirects]]
