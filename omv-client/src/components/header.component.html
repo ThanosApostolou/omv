@@ -1,13 +1,17 @@
 <mat-toolbar>
     <mat-toolbar-row fxShow fxHide.xs fxHide.sm>
-        <button *ngFor="let navitem of navitems" mat-menu-item value="{{navitem.label}}" [routerLink]="navitem.route" routerLinkActive="mat-menu-item-highlighted active" routerLinkActiveOptions="{exact: true}">
+        <button *ngFor="let navitem of navitems" mat-menu-item value="{{navitem.label}}"
+                [routerLink]="navitem.route" routerLinkActive="mat-menu-item-highlighted active" routerLinkActiveOptions="{exact: true}"
+                [matTooltip]="navitem.label" [matTooltipPosition]="'below'">
             <mat-icon aria-hidden="false" [attr.aria-label]="navitem.icon +' icon'" routerLinkActive="active">{{navitem.icon}}</mat-icon>
             <span>{{navitem.label}}</span>
         </button>
         <mat-divider class="vertical-divider" [vertical]="true"></mat-divider>
-        <button mat-menu-item value="user" routerLink="user" routerLinkActive="mat-menu-item-highlighted active" routerLinkActiveOptions="{exact: true}">
+        <button mat-menu-item value="user"
+                routerLink="user" routerLinkActive="mat-menu-item-highlighted active" routerLinkActiveOptions="{exact: true}"
+                [matTooltip]="'User'" [matTooltipPosition]="'below'">
             <mat-icon aria-hidden="false" aria-label="user icon" routerLinkActive="active">account_circle</mat-icon>
-            User
+            <span>User</span>
         </button>
     </mat-toolbar-row>
 
@@ -17,14 +21,18 @@
             <span>Menu</span>
         </button>
         <mat-menu #menu="matMenu">
-            <button *ngFor="let navitem of navitems" mat-menu-item value="{{navitem.label}}" [routerLink]="navitem.route" routerLinkActive="mat-menu-item-highlighted active" routerLinkActiveOptions="{exact: true}">
+            <button *ngFor="let navitem of navitems" mat-menu-item value="{{navitem.label}}"
+                    [routerLink]="navitem.route" routerLinkActive="mat-menu-item-highlighted active" routerLinkActiveOptions="{exact: true}"
+                    [matTooltip]="navitem.label" [matTooltipPosition]="'right'">
                 <mat-icon aria-hidden="false" [attr.aria-label]="navitem.icon +' icon'" routerLinkActive="active">{{navitem.icon}}</mat-icon>
                 <span>{{navitem.label}}</span>
             </button>
             <mat-divider></mat-divider>
-            <button mat-menu-item value="user" routerLink="user" routerLinkActive="mat-menu-item-highlighted active" routerLinkActiveOptions="{exact: true}">
+            <button mat-menu-item value="user"
+                    routerLink="user" routerLinkActive="mat-menu-item-highlighted active" routerLinkActiveOptions="{exact: true}"
+                    [matTooltip]="'User'" [matTooltipPosition]="'right'">
                 <mat-icon aria-hidden="false" aria-label="user icon" routerLinkActive="active">account_circle</mat-icon>
-                User
+                <span>User</span>
             </button>
         </mat-menu>
     </mat-toolbar-row>

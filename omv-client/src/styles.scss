@@ -31,8 +31,8 @@ body {
 
 .active {
     color: blue;
+    -webkit-text-fill-color: blue;
     text-decoration-color: blue;
-    background-color: blue;
 }
 
 .vertical-divider {

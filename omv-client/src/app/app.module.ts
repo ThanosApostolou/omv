@@ -12,6 +12,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
@@ -47,7 +48,8 @@ import { NotFound } from '../views/notfound.component';
         MatGridListModule,
         MatDividerModule,
         MatListModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        MatTooltipModule
     ],
     providers: [],
     bootstrap: [AppComponent]
