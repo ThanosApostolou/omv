@@ -5,10 +5,11 @@ import { Component } from '@angular/core';
     templateUrl: './header.component.html'
 })
 export class Header {
-    navitems: object[];
+    firstNavitems: object[];
+    lastNavitems: object[];
 
     constructor() {
-        this.navitems = [
+        this.firstNavitems = [
             {
                 route: "home",
                 label: "Home",
@@ -28,6 +29,14 @@ export class Header {
                 route: "settings",
                 label: "Settings",
                 icon: "settings"
+            }
+        ];
+
+        this.lastNavitems=[
+            {
+                route: "user",
+                label: "User",
+                icon: "account_circle"
             }
         ];
     }

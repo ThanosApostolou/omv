@@ -1,38 +1,39 @@
 <mat-toolbar>
-    <mat-toolbar-row fxShow fxHide.xs fxHide.sm>
-        <button *ngFor="let navitem of navitems" mat-menu-item value="{{navitem.label}}"
+    <mat-toolbar-row fxShow fxHide.xs>
+        <button *ngFor="let navitem of firstNavitems" mat-menu-item value="{{navitem.label}}"
                 [routerLink]="navitem.route" routerLinkActive="mat-menu-item-highlighted active" routerLinkActiveOptions="{exact: true}"
                 [matTooltip]="navitem.label" [matTooltipPosition]="'below'">
             <mat-icon aria-hidden="false" [attr.aria-label]="navitem.icon +' icon'" routerLinkActive="active">{{navitem.icon}}</mat-icon>
             <span>{{navitem.label}}</span>
         </button>
+        <span fxHide.sm class="spacer"></span>
         <mat-divider class="vertical-divider" [vertical]="true"></mat-divider>
-        <button mat-menu-item value="user"
-                routerLink="user" routerLinkActive="mat-menu-item-highlighted active" routerLinkActiveOptions="{exact: true}"
-                [matTooltip]="'User'" [matTooltipPosition]="'below'">
-            <mat-icon aria-hidden="false" aria-label="user icon" routerLinkActive="active">account_circle</mat-icon>
-            <span>User</span>
+        <button *ngFor="let navitem of lastNavitems" mat-menu-item value="{{navitem.label}}"
+                [routerLink]="navitem.route" routerLinkActive="mat-menu-item-highlighted active" routerLinkActiveOptions="{exact: true}"
+                [matTooltip]="navitem.label" [matTooltipPosition]="'below'">
+            <mat-icon aria-hidden="false" [attr.aria-label]="navitem.icon +' icon'" routerLinkActive="active">{{navitem.icon}}</mat-icon>
+            <span>{{navitem.label}}</span>
         </button>
     </mat-toolbar-row>
 
-    <mat-toolbar-row fxHide fxShow.xs fxShow.sm>
+    <mat-toolbar-row fxHide fxShow.xs>
         <button mat-button [matMenuTriggerFor]="menu">
             <mat-icon aria-hidden="false" aria-label="menu">list</mat-icon>
             <span>Menu</span>
         </button>
         <mat-menu #menu="matMenu">
-            <button *ngFor="let navitem of navitems" mat-menu-item value="{{navitem.label}}"
+            <button *ngFor="let navitem of firstNavitems" mat-menu-item value="{{navitem.label}}"
                     [routerLink]="navitem.route" routerLinkActive="mat-menu-item-highlighted active" routerLinkActiveOptions="{exact: true}"
                     [matTooltip]="navitem.label" [matTooltipPosition]="'right'">
                 <mat-icon aria-hidden="false" [attr.aria-label]="navitem.icon +' icon'" routerLinkActive="active">{{navitem.icon}}</mat-icon>
                 <span>{{navitem.label}}</span>
             </button>
             <mat-divider></mat-divider>
-            <button mat-menu-item value="user"
-                    routerLink="user" routerLinkActive="mat-menu-item-highlighted active" routerLinkActiveOptions="{exact: true}"
-                    [matTooltip]="'User'" [matTooltipPosition]="'right'">
-                <mat-icon aria-hidden="false" aria-label="user icon" routerLinkActive="active">account_circle</mat-icon>
-                <span>User</span>
+            <button *ngFor="let navitem of lastNavitems" mat-menu-item value="{{navitem.label}}"
+                    [routerLink]="navitem.route" routerLinkActive="mat-menu-item-highlighted active" routerLinkActiveOptions="{exact: true}"
+                    [matTooltip]="navitem.label" [matTooltipPosition]="'right'">
+                <mat-icon aria-hidden="false" [attr.aria-label]="navitem.icon +' icon'" routerLinkActive="active">{{navitem.icon}}</mat-icon>
+                <span>{{navitem.label}}</span>
             </button>
         </mat-menu>
     </mat-toolbar-row>
