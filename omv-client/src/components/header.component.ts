@@ -1,18 +1,13 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html'
+    selector: 'header',
+    templateUrl: './header.component.html'
 })
-export class AppComponent {
-    static app: AppComponent;
-
-    title: string;
+export class Header {
     navitems: object[];
 
     constructor() {
-        AppComponent.app = this;
-        this.title = 'omv-client';
         this.navitems = [
             {
                 route: "home",
