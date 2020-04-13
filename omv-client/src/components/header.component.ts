@@ -1,44 +1,56 @@
 import { Component } from '@angular/core';
 
+class Navitem {
+    route: string;
+    label: string;
+    icon: string;
+    constructor(route: string, label: string, icon: string) {
+        this.route=route;
+        this.label=label;
+        this.icon=icon;
+    }
+}
+
 @Component({
     selector: 'header',
     templateUrl: './header.component.html'
 })
 export class Header {
-    firstNavitems: object[];
-    lastNavitems: object[];
+    firstNavitems: Navitem[];
+    lastNavitems: Navitem[];
+    navitemMaxwidth: string;
 
     constructor() {
         this.firstNavitems = [
-            {
-                route: "home",
-                label: "Home",
-                icon: "home"
-            },
-            {
-                route: "runvisualizer",
-                label: "Run Visualizer",
-                icon: "play_arrow"
-            },
-            {
-                route: "about",
-                label: "About",
-                icon: "info"
-            },
-            {
-                route: "settings",
-                label: "Settings",
-                icon: "settings"
-            }
+            new Navitem("home", "Home", "home"),
+            new Navitem("runvisualizer", "Run Visualizer", "play_arrow"),
+            new Navitem("about", "About", "info"),
+            new Navitem("settings", "Settings", "settings")
         ];
 
         this.lastNavitems=[
-            {
-                route: "user",
-                label: "User",
-                icon: "account_circle"
-            }
+            new Navitem("user", "User", "account_circle")
         ];
+
+        this.navitemMaxwidth = this.calcNavitemMaxwidth();
+        console.log("maxwidth " + this.navitemMaxwidth);
+    }
+
+    calcNavitemMaxwidth(): string {
+        let maxlength=0;
+        this.firstNavitems.forEach((item) => {
+            const itemlength = item.label.length;
+            if (itemlength > maxlength) {
+                maxlength = itemlength;
+            }
+        });
+        this.lastNavitems.forEach((item) => {
+            const itemlength = item.label.length;
+            if (itemlength > maxlength) {
+                maxlength = itemlength;
+            }
+        });
+        return "" + maxlength + "em";
     }
 
 }
