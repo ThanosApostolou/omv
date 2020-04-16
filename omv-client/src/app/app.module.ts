@@ -17,6 +17,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 import { Header } from '../components/header.component';
+import { Footer } from '../components/footer.component';
 import { Home } from '../views/home.component';
 import { RunVisualizer } from '../views/runvisualizer.component';
 import { About } from '../views/about.component';
@@ -28,6 +29,7 @@ import { NotFound } from '../views/notfound.component';
     declarations: [
         AppComponent,
         Header,
+        Footer,
         Home,
         RunVisualizer,
         About,

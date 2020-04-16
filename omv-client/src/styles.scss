@@ -38,3 +38,32 @@ body {
 .vertical-divider {
     height:100%;
 }
+
+footer {
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+mat-toolbar {
+    text-align: center;
+    width: 100%;
+    min-height: 10px;
+    max-height: 10px;
+    font-size: 5px;
+}
+
+mat-toolbar mat-toolbar-row {
+    text-align: center;
+}
+
+mat-toolbar-row {
+    text-align: center;
+    justify-content: center;
+}
+
+button {
+    text-align: center;
+    justify-content: center
+}
