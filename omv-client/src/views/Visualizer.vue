@@ -24,11 +24,23 @@
                 </v-row>
             </v-container>
         </v-form>
+        <v-row align='center' justify='center' class='text-center'>
+            {{ result }}
+        </v-row>
     </v-container>
 </template>
 
 <script>
 export default {
-    name: 'Visualizer'
+    name: 'Visualizer',
+    data: () => ({
+        valid: true,
+        result: ''
+    }),
+    methods: {
+        submit() {
+            this.result = 'submited';
+        }
+    }
 };
 </script>
