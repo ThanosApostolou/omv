@@ -3,7 +3,7 @@
         <div class='d-flex align-center'>
             <v-img
                 alt='Logo'
-                src='../assets/logo.svg'
+                src='@/assets/logo.svg'
                 class='shrink mr-2 my-2'
                 contain
                 height='50'
@@ -66,6 +66,12 @@ let navitems = [
 
 export default {
     name: 'MyHeader',
+    props: {
+        appdata: {
+            type: Object,
+            default: null
+        }
+    },
     data: () => ({
         navitems: navitems
     })
