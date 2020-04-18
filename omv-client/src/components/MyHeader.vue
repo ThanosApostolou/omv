@@ -37,7 +37,7 @@
                     <v-divider />
                     <v-list-item to='/account' text>
                         <v-icon>account_circle</v-icon>
-                        <span class='ml-2'>account</span>
+                        <span class='ml-2'>Account</span>
                     </v-list-item>
                 </v-list>
             </v-menu>
@@ -51,6 +51,11 @@ let navitems = [
         path: '/home',
         label: 'Home',
         icon: 'home'
+    },
+    {
+        path: '/visualizer',
+        label: 'Visualizer',
+        icon: 'play_arrow'
     },
     {
         path: '/about',

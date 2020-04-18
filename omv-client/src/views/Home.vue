@@ -14,7 +14,10 @@
         </v-row>
         <v-row align='center' justify='center' class='text-center'>
             <p>
-                You can Run the application here
+                You can Run the Visualizer
+                <router-link to='/visualizer'>
+                    Here
+                </router-link>
             </p>
         </v-row>
     </v-container>
