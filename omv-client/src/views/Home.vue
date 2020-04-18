@@ -13,6 +13,16 @@
             </p>
         </v-row>
         <v-row align='center' justify='center' class='text-center'>
+            <v-img
+                alt='Logo'
+                src='../assets/omv_logo.svg'
+                class='shrink mr-2 my-2'
+                contain
+                height='128'
+                width='128'
+            />
+        </v-row>
+        <v-row align='center' justify='center' class='text-center'>
             <p>
                 You can Run the Visualizer
                 <router-link to='/visualizer'>

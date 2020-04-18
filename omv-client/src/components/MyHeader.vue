@@ -3,7 +3,7 @@
         <div class='d-flex align-center'>
             <v-img
                 alt='Logo'
-                src='@/assets/logo.svg'
+                src='../assets/omv_logo_light.svg'
                 class='shrink mr-2 my-2'
                 contain
                 height='50'
