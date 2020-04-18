@@ -1,5 +1,5 @@
 [build]
-  publish = "omv-client/dist/omv-client/"
+  publish = "omv-client/dist/"
   command = "cd omv-client && npm ci && npm run build"
 
 [[redirects]]

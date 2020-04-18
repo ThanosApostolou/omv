@@ -8,6 +8,7 @@ export class AppComponent {
     static app: AppComponent;
 
     title: string;
+
     constructor() {
         AppComponent.app = this;
         this.title = 'omv-client';

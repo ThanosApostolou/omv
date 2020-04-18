@@ -1,0 +1,18 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "./template-vue.keystore",
+            "storePassword": "template-vue",
+            "alias": "template-vue-key",
+            "password" : "template-vue",
+            "keystoreType": ""
+        },
+        "release": {
+            "keystore": "./template-vue.keystore",
+            "storePassword": "template-vue",
+            "alias": "template-vue-key",
+            "password" : "template-vue",
+            "keystoreType": ""
+        }
+    }
+}

@@ -10,9 +10,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
+import { Header } from '../components/header.component';
+import { Footer } from '../components/footer.component';
 import { Home } from '../views/home.component';
 import { RunVisualizer } from '../views/runvisualizer.component';
 import { About } from '../views/about.component';
@@ -23,6 +28,8 @@ import { NotFound } from '../views/notfound.component';
 @NgModule({
     declarations: [
         AppComponent,
+        Header,
+        Footer,
         Home,
         RunVisualizer,
         About,
@@ -41,7 +48,10 @@ import { NotFound } from '../views/notfound.component';
         MatButtonModule,
         MatButtonToggleModule,
         MatGridListModule,
-        FlexLayoutModule
+        MatDividerModule,
+        MatListModule,
+        FlexLayoutModule,
+        MatTooltipModule
     ],
     providers: [],
     bootstrap: [AppComponent]
