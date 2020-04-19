@@ -17,6 +17,17 @@
 <script>
 import MyHeader from './components/MyHeader.vue';
 
+let buildPlatform='';
+if (process.env.VUE_APP_IS_CORDOVA) {
+    buildPlatform='cordova';
+} else {
+    if (process.env.IS_ELECTRON) {
+        buildPlatform='electron';
+    } else {
+        buildPlatform='web';
+    }
+}
+
 export default {
     name: 'App',
     components: {
@@ -26,7 +37,9 @@ export default {
         appdata: {
             appNodeName: process.env.VUE_APP_NAME,
             appVersion: process.env.VUE_APP_VERSION,
-            appName: 'Ontology Mapping Visualizer'
+            appName: 'Ontology Mapping Visualizer',
+            buildPlatform: buildPlatform,
+            buildMode: process.env.NODE_ENV
         }
     })
 };
