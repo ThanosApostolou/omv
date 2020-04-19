@@ -40,6 +40,22 @@
                             {{ appdata.appVersion }}
                         </v-col>
                     </v-row>
+                    <v-row align='center' justify='center' class='text-center'>
+                        <v-col>
+                            Build Platform:
+                        </v-col>
+                        <v-col>
+                            {{ appdata.buildPlatform }}
+                        </v-col>
+                    </v-row>
+                    <v-row align='center' justify='center' class='text-center'>
+                        <v-col>
+                            Build Mode:
+                        </v-col>
+                        <v-col>
+                            {{ appdata.buildMode }}
+                        </v-col>
+                    </v-row>
                 </v-card>
             </v-col>
         </v-row>

@@ -6,23 +6,23 @@
         </div>
         <v-tabs centered>
             <v-tabs-slider />
-            <v-tab key='1' href='#tab-1'>
+            <v-tab key='1' href='#register'>
                 Register
             </v-tab>
-            <v-tab key='2' href='#tab-2'>
+            <v-tab key='2' href='#login'>
                 Login
             </v-tab>
-            <v-tab-item key='1' value='tab-1'>
+            <v-tab-item key='1' value='register'>
                 <v-form v-model='valid' outlined>
                     <v-container>
                         <v-row>
-                            <v-col cols='12' xs='12' sm='3'>
+                            <v-col cols='12' xs='12' sm='6' md='3'>
                                 <v-text-field chips outlined label='Email' />
                             </v-col>
-                            <v-col cols='12' xs='12' sm='3'>
+                            <v-col cols='12' xs='12' sm='6' md='3'>
                                 <v-text-field chips outlined label='Username' />
                             </v-col>
-                            <v-col cols='12' xs='12' sm='3'>
+                            <v-col cols='12' xs='12' sm='6' md='3'>
                                 <v-text-field
                                     v-model='password'
                                     :append-icon='show1 ? "mdi-eye" : "mdi-eye-off"'
@@ -33,13 +33,13 @@
                                     @click:append='show1 = !show1'
                                 />
                             </v-col>
-                            <v-col cols='12' xs='12' sm='3'>
+                            <v-col cols='12' xs='12' sm='6' md='3'>
                                 <v-text-field
                                     v-model='password'
                                     :append-icon='show2 ? "mdi-eye" : "mdi-eye-off"'
                                     :type='show2 ? "text" : "password"'
                                     name='input-10-1'
-                                    label='Password'
+                                    label='Retype Password'
                                     hint='At least 8 characters'
                                     @click:append='show2 = !show2'
                                 />
@@ -53,7 +53,7 @@
                     </v-container>
                 </v-form>
             </v-tab-item>
-            <v-tab-item key='2' value='tab-2'>
+            <v-tab-item key='2' value='login'>
                 <v-form v-model='valid' outlined>
                     <v-container>
                         <v-row>
