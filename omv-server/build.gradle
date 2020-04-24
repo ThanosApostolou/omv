@@ -14,7 +14,7 @@ def watchForChange = 'src/**/*'
 def doOnChange = './gradlew classes'
 ext {
     guavaVersion = '28.2'
-    vertxVersion = '3.8.5'
+    vertxVersion = '3.9.0'
     junitJupiterVersion = '5.6.1'
     gsonVersion = '2.8.6'
 }
