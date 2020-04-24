@@ -26,6 +26,7 @@ dependencies {
     implementation "com.google.guava:guava:$guavaVersion-jre"
     implementation "io.vertx:vertx-core:$vertxVersion"
     implementation "io.vertx:vertx-web:$vertxVersion"
+    implementation "io.vertx:vertx-mysql-client:$vertxVersion"
     implementation "com.google.code.gson:gson:$gsonVersion"
 
 	testImplementation "io.vertx:vertx-junit5:$vertxVersion"
