@@ -2,6 +2,7 @@ package omv.server;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
+import io.vertx.core.eventbus.DeliveryOptions;
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.eventbus.MessageConsumer;
@@ -28,15 +29,30 @@ public class Database extends AbstractVerticle {
         this.client = MySQLPool.pool(vertx, connectOptions, poolOptions);
 
         this.eventbus = vertx.eventBus();
-        MessageConsumer<String> executeQueryConsumer = this.eventbus.consumer("executeQuery");
+        MessageConsumer<JsonObject> executeQueryConsumer = this.eventbus.consumer("executeQuery");
         executeQueryConsumer.handler((message) -> {
             this.executeQuery(message);
+        });
+        MessageConsumer<String> selectUserConsumer = this.eventbus.consumer("selectUser");
+        selectUserConsumer.handler((message) -> {
+            String myquery = message.body();
+            this.client.getConnection((ar1) -> {
+                JsonObject reply = new JsonObject();
+                if (ar1.succeeded()) {
+                    SqlConnection conn = ar1.result();
+                    reply.put("status", "ok");
+                    message.reply(reply);
+                } else {
+                    reply.put("status", ar1.cause().getMessage());
+                    message.reply(reply);
+                }
+            });
         });
         promise.complete();
     }
 
-    public void executeQuery(Message<String> message) {
-        String myquery = message.body();
+    public void executeQuery(Message<JsonObject> message) {
+        String myquery = message.body().getString("query");
         this.client.getConnection((ar1) -> {
             if (ar1.succeeded()) {
                 System.out.println("Connected");
@@ -49,9 +65,11 @@ public class Database extends AbstractVerticle {
                             result.forEach((row) -> {
                                 System.out.println(row.getString("email"));
                             });
-                            message.reply("ok");
+                            JsonObject test = new JsonObject();
+                            message.reply(test);
                         } else {
                             System.out.println("Myquery failed");
+                            message.reply("error");
                         }
                         conn.close();
                     });

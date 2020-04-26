@@ -10,11 +10,15 @@ public class User {
         this.username = name;
         this.password = password;
     }
-    public void validate() {
-        // TODO
+    public boolean isValid() {
+        return true;
     }
     public String insertQuery() {
         String myquery = "INSERT INTO USER (email, username, password) VALUES ('"+this.email+"', '"+this.username+"', '"+this.password+"')";
+        return myquery;
+    }
+    public static String select() {
+        String myquery = "SELECT * FROM USER";
         return myquery;
     }
 }
