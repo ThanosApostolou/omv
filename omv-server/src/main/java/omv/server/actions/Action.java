@@ -5,8 +5,10 @@ import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 
+import omv.server.Controller;
+
 public class Action {
-    public static EventBus eventbus;
+    public static Controller controller;
 
     public String contentType;
 	public int statusCode;

@@ -15,31 +15,33 @@ public class UserAction extends Action {
 		this.body = new JsonObject();
 	}
 
-	public void GET(Promise<Void> promise) {
+	public void GET() {
 		this.statusCode = 200;
-		UserAction.eventbus.request("selectUser", "", (ar1) -> {
+		UserAction.controller.eventbus.request("selectUser", "", (ar1) -> {
 			if (ar1.succeeded()) {
 				this.body = JsonObject.mapFrom(ar1.result().body());
+			} else {
+				// TODO
 			}
-			promise.complete();
+			this.end();
 		});
 	}
 
-	public void POST(Promise<Void> promise) {
+	public void POST() {
 		String email = this.request.getString("email");
 		String name = this.request.getString("name");
 		String password = this.request.getString("password");
 		User newuser = new User();
 		newuser.init(email, name, password);
 		if (newuser.isValid()) {
-			UserAction.eventbus.request("executeQuery", newuser.insertQuery(), (ar1) -> {
+			UserAction.controller.eventbus.request("executeQuery", newuser.insertQuery(), (ar1) -> {
                 if (ar1.succeeded()) {
 					System.out.println("Received reply: " + ar1.result().body());
 					this.body.put("dbresult", ar1.result().body());
                 } else {
 					this.body.put("dbresult", ar1.result().body());
 				}
-				promise.complete();
+				this.end();
             });
 		}
 	}

@@ -8,21 +8,21 @@ import omv.server.models.User;
 
 public class MainVerticle extends AbstractVerticle {
     Database database=null;
-    HttpServer httpserver=null;
+    Controller controller=null;
     EventBus eventbus=null;
 
     @Override
     public void start(Promise<Void> promise) {
         this.database = new Database();
-        this.httpserver = new HttpServer();
+        this.controller = new Controller();
         this.eventbus = vertx.eventBus();
 
         Promise<String> databasePromise = Promise.promise();
         vertx.deployVerticle(this.database, databasePromise);
         databasePromise.future().compose((id) -> {
-            Promise<String> httpserverPromise = Promise.promise();
-            vertx.deployVerticle(this.httpserver, httpserverPromise);
-            return httpserverPromise.future();
+            Promise<String> controllerPromise = Promise.promise();
+            vertx.deployVerticle(this.controller, controllerPromise);
+            return controllerPromise.future();
         }).onComplete((ar) -> {
             if (ar.succeeded()) {
                 System.out.println("Verticles succeded");

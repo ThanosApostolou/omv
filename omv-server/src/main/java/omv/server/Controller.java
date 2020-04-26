@@ -9,12 +9,12 @@ import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.BodyHandler;
 import omv.server.actions.*;
 
-public class HttpServer extends AbstractVerticle {
-	EventBus eventbus = null;
-    Runtime runtime;
-    Router router;
+public class Controller extends AbstractVerticle {
+	public EventBus eventbus = null;
+    public Runtime runtime;
+    public Router router;
 
-    public HttpServer() {
+    public Controller() {
         this.runtime = new Runtime();
         this.router = null;
     }
@@ -22,32 +22,22 @@ public class HttpServer extends AbstractVerticle {
     public void start(Promise<Void> promise) {
         this.eventbus = vertx.eventBus();
         this.router = Router.router(vertx);
-        UserAction.eventbus = this.eventbus;
+        UserAction.controller = this;
         this.router.route().handler(BodyHandler.create());
 
         // Bind "/" to our hello message - so we are still compatible.
         router.get("/api").handler((routingContext) -> {
-			HttpServerResponse response = routingContext.response();
-			Root root = new Root(runtime.start_datetime);
-			response.putHeader("content-type", "application/json")
-                    .end(root.toString());
+            RootAction root = new RootAction(routingContext);
+            root.GET();
         });
 
         router.get("/user").handler((routingContext) -> {
             UserAction useraction = new UserAction(routingContext);
-            Promise<Void> useractionPromise = Promise.promise();
-            useraction.GET(useractionPromise);
-            useractionPromise.future().onComplete((ar1) -> {
-                useraction.end();
-            });
+            useraction.GET();
         });
         router.post("/user").handler((routingContext) -> {
             UserAction useraction = new UserAction(routingContext);
-            Promise<Void> useractionPromise = Promise.promise();
-            useraction.POST(useractionPromise);
-            useractionPromise.future().onComplete((ar1) -> {
-                useraction.end();
-            });
+            useraction.POST();
         });
 
         router.errorHandler(500, rc -> {
