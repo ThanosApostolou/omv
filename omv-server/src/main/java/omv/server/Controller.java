@@ -23,29 +23,37 @@ public class Controller extends AbstractVerticle {
         this.eventbus = vertx.eventBus();
         this.router = Router.router(vertx);
         UserAction.controller = this;
+
         this.router.route().handler(BodyHandler.create());
 
         // Bind "/" to our hello message - so we are still compatible.
-        router.get("/api").handler((routingContext) -> {
+        router.get("/api")
+              .produces("application/json")
+              .handler((routingContext) -> {
             RootAction root = new RootAction(routingContext);
             root.GET();
         });
 
-        router.get("/user").handler((routingContext) -> {
+        router.get("/user")
+              .produces("application/json")
+              .handler((routingContext) -> {
             UserAction useraction = new UserAction(routingContext);
             useraction.GET();
         });
-        router.post("/user").handler((routingContext) -> {
+        router.post("/user")
+              .produces("application/json")
+              .handler((routingContext) -> {
             UserAction useraction = new UserAction(routingContext);
             useraction.POST();
         });
-
-        router.errorHandler(500, rc -> {
-            System.err.println("Handling failure");
-            Throwable failure = rc.failure();
-            if (failure != null) {
-              failure.printStackTrace();
-            }
+        router.errorHandler(500, (routingContext) -> {
+            Action500 action500 = new Action500(routingContext);
+        });
+        router.errorHandler(404, (routingContext) -> {
+            Action404 action404 = new Action404(routingContext);
+        });
+        router.errorHandler(403, (routingContext) -> {
+            Action403 action403 = new Action403(routingContext);
         });
 
         int port=8080;

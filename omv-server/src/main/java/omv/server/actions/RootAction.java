@@ -8,12 +8,11 @@ public class RootAction extends Action {
 
 	public RootAction(RoutingContext routingContext) {
 		super(routingContext);
-		this.start_datetime = "";
 	}
 
 	public void GET() {
 		this.statusCode = 200;
-		this.body.put("start_datetime", this.start_datetime);
+		this.body.put("start_datetime", Action.controller.runtime.start_datetime);
 		this.end();
 	}
 }

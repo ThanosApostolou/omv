@@ -1,6 +1,5 @@
 package omv.server.actions;
 
-import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
@@ -13,10 +12,15 @@ public class Action {
     public String contentType;
 	public int statusCode;
     public JsonObject body;
+    RoutingContext routingContext;
     JsonObject request;
 	HttpServerResponse response;
 
     Action(RoutingContext routingContext) {
+        this.routingContext = routingContext;
+        this.contentType = "application/json";
+        this.statusCode = 200;
+        this.body = new JsonObject();
         this.request = routingContext.getBodyAsJson();
 	    this.response = routingContext.response();
     }

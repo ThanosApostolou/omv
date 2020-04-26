@@ -17,7 +17,7 @@ public class UserAction extends Action {
 
 	public void GET() {
 		this.statusCode = 200;
-		UserAction.controller.eventbus.request("selectUser", "", (ar1) -> {
+		Action.controller.eventbus.request("selectUser", "", (ar1) -> {
 			if (ar1.succeeded()) {
 				this.body = JsonObject.mapFrom(ar1.result().body());
 			} else {
@@ -34,7 +34,7 @@ public class UserAction extends Action {
 		User newuser = new User();
 		newuser.init(email, name, password);
 		if (newuser.isValid()) {
-			UserAction.controller.eventbus.request("executeQuery", newuser.insertQuery(), (ar1) -> {
+			Action.controller.eventbus.request("executeQuery", newuser.insertQuery(), (ar1) -> {
                 if (ar1.succeeded()) {
 					System.out.println("Received reply: " + ar1.result().body());
 					this.body.put("dbresult", ar1.result().body());
