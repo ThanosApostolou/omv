@@ -3,8 +3,6 @@ package omv.server;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
 import io.vertx.core.eventbus.EventBus;
-import io.vertx.core.json.JsonObject;
-import omv.server.models.User;
 
 public class MainVerticle extends AbstractVerticle {
     Database database=null;
@@ -31,15 +29,6 @@ public class MainVerticle extends AbstractVerticle {
                 System.out.println("Verticles failed");
                 promise.fail(ar.cause());
             }
-            User myuser = new User();
-            myuser.init("aaa", "baa", "caa");
-            System.out.println(User.select());
-            this.eventbus.request("selectUser", "", (ar1) -> {
-                JsonObject result_body = JsonObject.mapFrom(ar1.result().body());
-                if (ar1.succeeded()) {
-                    System.out.println("Received reply: " + result_body.encode());
-                }
-            });
         });
     }
 }
