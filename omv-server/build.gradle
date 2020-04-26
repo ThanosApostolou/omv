@@ -16,7 +16,6 @@ ext {
     guavaVersion = '28.2'
     vertxVersion = '3.9.0'
     junitJupiterVersion = '5.6.1'
-    gsonVersion = '2.8.6'
 }
 
 repositories {
@@ -27,7 +26,6 @@ dependencies {
     implementation "io.vertx:vertx-core:$vertxVersion"
     implementation "io.vertx:vertx-web:$vertxVersion"
     implementation "io.vertx:vertx-mysql-client:$vertxVersion"
-    implementation "com.google.code.gson:gson:$gsonVersion"
 
 	testImplementation "io.vertx:vertx-junit5:$vertxVersion"
     testImplementation "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
