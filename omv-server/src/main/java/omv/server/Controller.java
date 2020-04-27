@@ -8,6 +8,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.BodyHandler;
 import omv.server.actions.*;
+import omv.server.models.Model;
 
 public class Controller extends AbstractVerticle {
 	public EventBus eventbus = null;
@@ -22,7 +23,8 @@ public class Controller extends AbstractVerticle {
     public void start(Promise<Void> promise) {
         this.eventbus = vertx.eventBus();
         this.router = Router.router(vertx);
-        UserAction.controller = this;
+        Action.controller = this;
+        Model.controller = this;
 
         this.router.route().handler(BodyHandler.create());
 

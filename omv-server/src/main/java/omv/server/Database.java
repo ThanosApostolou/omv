@@ -1,5 +1,7 @@
 package omv.server;
 
+import java.util.List;
+
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
 import io.vertx.core.eventbus.DeliveryOptions;
@@ -37,14 +39,38 @@ public class Database extends AbstractVerticle {
         selectUserConsumer.handler((message) -> {
             String myquery = message.body();
             this.client.getConnection((ar1) -> {
-                JsonObject reply = new JsonObject();
+                JsonObject reply_message = new JsonObject();
                 if (ar1.succeeded()) {
                     SqlConnection conn = ar1.result();
-                    reply.put("status", "ok");
-                    message.reply(reply);
+                    conn.query(myquery).execute((ar2) -> {
+                        if (ar2.succeeded()) {
+                            System.out.println("Myquery succeded");
+                            RowSet<Row> result = ar2.result();
+                            List<String> columns = result.columnsNames();
+                            JsonArray items = new JsonArray();
+                            result.forEach((row) -> {
+                                JsonObject item = new JsonObject();
+                                columns.forEach((column) -> {
+                                    item.put(column, row.getValue(column));
+                                });
+                                items.add(item);
+                            });
+                            reply_message.put("succeded", ar2.succeeded());
+                            reply_message.put("affected_rows", result.rowCount());
+                            reply_message.put("items", items);
+                            message.reply(reply_message);
+                        } else {
+                            reply_message.put("succeded", ar2.succeeded());
+                            reply_message.put("cause_message", ar2.cause().getMessage());
+                            System.out.println("Myquery failed");
+                            message.reply(reply_message);
+                        }
+                        conn.close();
+                    });
                 } else {
-                    reply.put("status", ar1.cause().getMessage());
-                    message.reply(reply);
+                    reply_message.put("succeded", ar1.succeeded());
+                    reply_message.put("cause_message", ar1.cause().getMessage());
+                    message.reply(reply_message);
                 }
             });
         });
