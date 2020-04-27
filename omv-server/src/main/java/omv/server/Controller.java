@@ -48,15 +48,10 @@ public class Controller extends AbstractVerticle {
             UserAction useraction = new UserAction(routingContext);
             useraction.POST();
         });
-        router.errorHandler(500, (routingContext) -> {
-            Action500 action500 = new Action500(routingContext);
-        });
-        router.errorHandler(404, (routingContext) -> {
-            Action404 action404 = new Action404(routingContext);
-        });
-        router.errorHandler(403, (routingContext) -> {
-            Action403 action403 = new Action403(routingContext);
-        });
+        router.errorHandler(550, (routingContext) -> { ErrorAction erroraction = new ErrorAction(routingContext); });
+        router.errorHandler(500, (routingContext) -> { ErrorAction erroraction = new ErrorAction(routingContext); });
+        router.errorHandler(404, (routingContext) -> { ErrorAction erroraction = new ErrorAction(routingContext); });
+        router.errorHandler(403, (routingContext) -> { ErrorAction erroraction = new ErrorAction(routingContext); });
 
         int port=8080;
         String portstring = System.getProperty("port");

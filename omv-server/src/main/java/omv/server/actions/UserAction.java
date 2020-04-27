@@ -27,22 +27,13 @@ public class UserAction extends Action {
 		Promise<ArrayList<User>> selectpromise = Promise.promise();
 		User.select(selectpromise);
 		selectpromise.future().onComplete(ar -> {
-			this.body.put("users", User.toJsonArray(ar.result()));
-			this.end();
-		});
-		/*
-		Action.controller.eventbus.request("selectUser", "SELECT * FROM USER", options, (ar1) -> {
-			if (ar1.succeeded()) {
-				this.body = JsonObject.mapFrom(ar1.result().body());
-				System.out.println(this.body.encode());
-
+			if (ar.succeeded()) {
+				this.body.put("users", User.toJsonArray(ar.result()));
 				this.end();
 			} else {
-				// TODO
-				//this.end();
+				this.routingContext.fail(550, ar.cause());
 			}
 		});
-		*/
 	}
 
 	public void POST() {

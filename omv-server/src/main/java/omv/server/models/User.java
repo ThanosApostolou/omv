@@ -2,6 +2,7 @@ package omv.server.models;
 
 import java.util.ArrayList;
 
+import io.netty.util.internal.ThrowableUtil;
 import io.vertx.core.Promise;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -65,16 +66,19 @@ public class User extends Model{
         return myquery;
     }
     public static void select(Promise<ArrayList<User>> promise) {
-        String myquery = "SELECT * FROM USER";
+        String myquery = "SELECT * FROM USERS";
         Model.controller.eventbus.request("selectUser", myquery, (ar1) -> {
 			if (ar1.succeeded()) {
-                JsonObject body;
-                body = JsonObject.mapFrom(ar1.result().body());
-                JsonArray users_jsonarray = body.getJsonArray("items");
-                ArrayList<User> users = User.fromJsonArray(users_jsonarray);
-                promise.complete(users);
+                JsonObject body = JsonObject.mapFrom(ar1.result().body());
+                if (body.getBoolean("succeded")) {
+                    JsonArray users_jsonarray = body.getJsonArray("items");
+                    ArrayList<User> users = User.fromJsonArray(users_jsonarray);
+                    promise.complete(users);
+                } else {
+                    promise.fail(new RuntimeException(body.getString("cause_message")));
+                }
 			} else {
-                throw new RuntimeException("Error connecting to database verticle");
+                throw new RuntimeException("Error connecting to Database Verticle");
 			}
         });
     }
