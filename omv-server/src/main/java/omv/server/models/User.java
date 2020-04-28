@@ -2,10 +2,11 @@ package omv.server.models;
 
 import java.util.ArrayList;
 
-import io.netty.util.internal.ThrowableUtil;
 import io.vertx.core.Promise;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+
+import omv.server.Controller;
 
 public class User extends Model{
     public int id;
@@ -61,13 +62,25 @@ public class User extends Model{
         return users;
     }
 
-    public String insertQuery() {
+    public void insert(Promise<JsonObject> promise) {
         String myquery = "INSERT INTO USER (email, username, password) VALUES ('"+this.email+"', '"+this.username+"', '"+this.password+"')";
-        return myquery;
+        Controller.controller.eventbus.request("DBManager", myquery, (ar1) -> {
+			if (ar1.succeeded()) {
+                JsonObject body = JsonObject.mapFrom(ar1.result().body());
+                if (body.getBoolean("succeded")) {
+                    promise.complete(body);
+                } else {
+                    promise.fail(new RuntimeException(body.getString("cause_message")));
+                }
+			} else {
+                throw new RuntimeException("Error connecting to Database Verticle");
+			}
+        });
     }
+
     public static void select(Promise<ArrayList<User>> promise) {
         String myquery = "SELECT * FROM USER";
-        Model.controller.eventbus.request("DBManager", myquery, (ar1) -> {
+        Controller.controller.eventbus.request("DBManager", myquery, (ar1) -> {
 			if (ar1.succeeded()) {
                 JsonObject body = JsonObject.mapFrom(ar1.result().body());
                 if (body.getBoolean("succeded")) {

@@ -1,10 +1,10 @@
 package omv.server.actions;
 
-import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 
+import omv.server.Controller;
+
 public class RootAction extends Action {
-	private String start_datetime;
 
 	public RootAction(RoutingContext routingContext) {
 		super(routingContext);
@@ -12,7 +12,7 @@ public class RootAction extends Action {
 
 	public void GET() {
 		this.statusCode = 200;
-		this.body.put("start_datetime", Action.controller.runtime.start_datetime);
+		this.body.put("start_datetime", Controller.controller.runtime.start_datetime);
 		this.end();
 	}
 }

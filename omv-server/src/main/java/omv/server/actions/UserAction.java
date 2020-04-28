@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import io.vertx.core.Promise;
 import io.vertx.core.eventbus.DeliveryOptions;
-import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import omv.server.models.User;
@@ -43,15 +42,16 @@ public class UserAction extends Action {
 		User newuser = new User();
 		newuser.init(email, name, password);
 		if (newuser.isValid()) {
-			Action.controller.eventbus.request("executeQuery", newuser.insertQuery(), (ar1) -> {
-                if (ar1.succeeded()) {
-					System.out.println("Received reply: " + ar1.result().body());
-					this.body.put("dbresult", ar1.result().body());
-                } else {
-					this.body.put("dbresult", ar1.result().body());
+			Promise<JsonObject> insertpromise = Promise.promise();
+			newuser.insert(insertpromise);
+			insertpromise.future().onComplete(ar -> {
+				if (ar.succeeded()) {
+					this.body = ar.result();
+					this.end();
+				} else {
+					this.routingContext.fail(550, ar.cause());
 				}
-				this.end();
-            });
+			});
 		}
 	}
 
