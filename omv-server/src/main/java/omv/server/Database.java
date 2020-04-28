@@ -26,17 +26,21 @@ public class Database extends AbstractVerticle {
                                                                     .setHost("localhost")
                                                                     .setDatabase("omvdb")
                                                                     .setUser("omv")
-                                                                    .setPassword("omv");
+                                                                    .setPassword("omv")
+                                                                    .setCharset("utf8mb4");
         PoolOptions poolOptions = new PoolOptions().setMaxSize(30);
         this.client = MySQLPool.pool(vertx, connectOptions, poolOptions);
 
         this.eventbus = vertx.eventBus();
-        MessageConsumer<JsonObject> executeQueryConsumer = this.eventbus.consumer("executeQuery");
-        executeQueryConsumer.handler((message) -> {
+        MessageConsumer<String> DBManagerConsumer = this.eventbus.consumer("DBManager");
+        DBManagerConsumer.handler((message) -> {
             this.executeQuery(message);
         });
-        MessageConsumer<String> selectUserConsumer = this.eventbus.consumer("selectUser");
-        selectUserConsumer.handler((message) -> {
+        promise.complete();
+    }
+
+    public void executeQuery(Message<String> message) {
+        System.out.println(message.headers().get("action"));
             String myquery = message.body();
             this.client.getConnection((ar1) -> {
                 JsonObject reply_message = new JsonObject();
@@ -47,17 +51,17 @@ public class Database extends AbstractVerticle {
                             System.out.println("Myquery succeded");
                             RowSet<Row> result = ar2.result();
                             List<String> columns = result.columnsNames();
-                            JsonArray items = new JsonArray();
+                            JsonArray data = new JsonArray();
                             result.forEach((row) -> {
                                 JsonObject item = new JsonObject();
                                 columns.forEach((column) -> {
                                     item.put(column, row.getValue(column));
                                 });
-                                items.add(item);
+                                data.add(item);
                             });
                             reply_message.put("succeded", ar2.succeeded());
                             reply_message.put("affected_rows", result.rowCount());
-                            reply_message.put("items", items);
+                            reply_message.put("data", data);
                             message.reply(reply_message);
                         } else {
                             reply_message.put("succeded", ar2.succeeded());
@@ -73,36 +77,6 @@ public class Database extends AbstractVerticle {
                     message.reply(reply_message);
                 }
             });
-        });
-        promise.complete();
-    }
-
-    public void executeQuery(Message<JsonObject> message) {
-        String myquery = message.body().getString("query");
-        this.client.getConnection((ar1) -> {
-            if (ar1.succeeded()) {
-                System.out.println("Connected");
-                SqlConnection conn = ar1.result();
-                conn.query(myquery)
-                    .execute((ar2) -> {
-                        if (ar2.succeeded()) {
-                            System.out.println("Myquery succeded");
-                            RowSet<Row> result = ar2.result();
-                            result.forEach((row) -> {
-                                System.out.println(row.getString("email"));
-                            });
-                            JsonObject test = new JsonObject();
-                            message.reply(test);
-                        } else {
-                            System.out.println("Myquery failed");
-                            message.reply("error");
-                        }
-                        conn.close();
-                    });
-            } else {
-              System.out.println("Could not connect: " + ar1.cause().getMessage());
-            }
-        });
     }
 
 }

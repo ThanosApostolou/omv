@@ -6,7 +6,7 @@ import io.vertx.ext.web.RoutingContext;
 
 import omv.server.Controller;
 
-public class Action {
+public abstract class Action {
     public static Controller controller;
 
     public String contentType;

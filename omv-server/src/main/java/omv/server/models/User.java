@@ -66,12 +66,12 @@ public class User extends Model{
         return myquery;
     }
     public static void select(Promise<ArrayList<User>> promise) {
-        String myquery = "SELECT * FROM USERS";
-        Model.controller.eventbus.request("selectUser", myquery, (ar1) -> {
+        String myquery = "SELECT * FROM USER";
+        Model.controller.eventbus.request("DBManager", myquery, (ar1) -> {
 			if (ar1.succeeded()) {
                 JsonObject body = JsonObject.mapFrom(ar1.result().body());
                 if (body.getBoolean("succeded")) {
-                    JsonArray users_jsonarray = body.getJsonArray("items");
+                    JsonArray users_jsonarray = body.getJsonArray("data");
                     ArrayList<User> users = User.fromJsonArray(users_jsonarray);
                     promise.complete(users);
                 } else {
