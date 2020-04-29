@@ -14,6 +14,8 @@ heroku buildpacks:add heroku/gradle
 heroku config:set PROJECT_PATH=omv-server/
 heroku config:set GRADLE_TASK="shadowJar"
 heroku addons:create heroku-postgresql:hobby-dev --app=omv-server
+heroku pg:psql --app=omv-server
+    \i omv-server/sql/omvdb/Scripts/create-tables.sql;
 ```
 
 ### Deploy changes on heroku:
