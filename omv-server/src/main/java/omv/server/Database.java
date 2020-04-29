@@ -9,26 +9,49 @@ import io.vertx.core.eventbus.Message;
 import io.vertx.core.eventbus.MessageConsumer;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.mysqlclient.MySQLConnectOptions;
-import io.vertx.mysqlclient.MySQLPool;
+import io.vertx.pgclient.PgConnectOptions;
+import io.vertx.pgclient.PgPool;
 import io.vertx.sqlclient.PoolOptions;
 import io.vertx.sqlclient.RowSet;
 import io.vertx.sqlclient.Row;
 import io.vertx.sqlclient.SqlConnection;
 
 public class Database extends AbstractVerticle {
-    MySQLPool client=null;
+    PgPool client=null;
     EventBus eventbus=null;
 
     public void start(Promise<Void> promise) {
-        MySQLConnectOptions connectOptions = new MySQLConnectOptions().setPort(3306)
-                                                                    .setHost("localhost")
-                                                                    .setDatabase("omvdb")
-                                                                    .setUser("omv")
-                                                                    .setPassword("omv")
-                                                                    .setCharset("utf8mb4");
-        PoolOptions poolOptions = new PoolOptions().setMaxSize(30);
-        this.client = MySQLPool.pool(vertx, connectOptions, poolOptions);
+        // default "postgres://omv:omv@localhost:5432/omvdb"
+        String database_url = System.getenv("DATABASE_URL");
+        String database;
+        String user;
+        int port;
+        String password;
+        String host;
+        if (database_url == null) {
+            throw new RuntimeException("Set environment variable DATABASE_URL");
+        } else {
+            System.out.println(database_url);
+            String[] parts = database_url.split("/");
+            for (String part : parts) {
+                System.out.println(part);
+            }
+            database = parts[3];
+            parts = parts[2].split(":");
+            user = parts[0];
+            port = Integer.parseInt(parts[2]);
+            parts = parts[1].split("@");
+            password = parts[0];
+            host = parts[1];
+        }
+
+        PgConnectOptions connectOptions = new PgConnectOptions().setPort(port)
+                                                                    .setHost(host)
+                                                                    .setDatabase(database)
+                                                                    .setUser(user)
+                                                                    .setPassword(password);
+        PoolOptions poolOptions = new PoolOptions().setMaxSize(20);
+        this.client = PgPool.pool(vertx, connectOptions, poolOptions);
 
         this.eventbus = vertx.eventBus();
         MessageConsumer<String> DBManagerConsumer = this.eventbus.consumer("DBManager");

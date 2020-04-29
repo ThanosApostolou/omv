@@ -13,6 +13,7 @@ heroku buildpacks:set https://github.com/timanovsky/subdir-heroku-buildpack
 heroku buildpacks:add heroku/gradle
 heroku config:set PROJECT_PATH=omv-server/
 heroku config:set GRADLE_TASK="shadowJar"
+heroku addons:create heroku-postgresql:hobby-dev --app=omv-server
 ```
 
 ### Deploy changes on heroku:

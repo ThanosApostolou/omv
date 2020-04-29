@@ -73,7 +73,7 @@ public class User extends Model{
     }
 
     public void insert(Promise<Boolean> promise) {
-        String myquery = "INSERT INTO USER (email, username, password) VALUES ('"+this.email+"', '"+this.username+"', '"+this.password+"')";
+        String myquery = "INSERT INTO USERS (email, username, password) VALUES ('"+this.email+"', '"+this.username+"', '"+this.password+"')";
         Controller.controller.eventbus.request("DBManager", myquery, (ar1) -> {
 			if (ar1.succeeded()) {
                 JsonObject body = JsonObject.mapFrom(ar1.result().body());
@@ -90,7 +90,7 @@ public class User extends Model{
 
     public static Future<ArrayList<User>> select(String where) {
         Promise<ArrayList<User>> promise = Promise.promise();
-        String myquery = "SELECT * FROM USER";
+        String myquery = "SELECT * FROM USERS";
         if (where != null && !where.isEmpty()) {
             myquery += " WHERE " + where;
         }
