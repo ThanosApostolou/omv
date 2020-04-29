@@ -23,10 +23,13 @@ public class ErrorAction extends Action {
 				this.body.put("message", failure.getMessage());
 				this.body.put("timestamp", System.currentTimeMillis());
 				break;
+			case 422: // Unaccceptable Input
+				this.body.put("message", "test");//failure.getMessage());
+				break;
 			case 404: // If no route matches the path
 				this.body.put("message", "Requested URL not found. All api URLs start with /api/");
 				break;
-			case 403:
+			case 403: // Permission Denied
 				this.body.put("message", "Permission Denied");
 				break;
 			/*
@@ -38,6 +41,7 @@ public class ErrorAction extends Action {
 		}
 
 		if (failure != null) {
+			System.out.println(failure.getMessage());
 			JsonArray stackTrace = new JsonArray();
 			for (StackTraceElement line : failure.getStackTrace()) {
 				stackTrace.add(line.toString());

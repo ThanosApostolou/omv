@@ -50,6 +50,7 @@ public class Controller extends AbstractVerticle {
         });
         router.errorHandler(550, (routingContext) -> { new ErrorAction(routingContext); });
         router.errorHandler(500, (routingContext) -> { new ErrorAction(routingContext); });
+        router.errorHandler(422, (routingContext) -> { new ErrorAction(routingContext); });
         router.errorHandler(404, (routingContext) -> { new ErrorAction(routingContext); });
         router.errorHandler(403, (routingContext) -> { new ErrorAction(routingContext); });
 

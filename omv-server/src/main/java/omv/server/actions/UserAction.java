@@ -6,6 +6,7 @@ import io.vertx.core.Promise;
 import io.vertx.core.eventbus.DeliveryOptions;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
+import omv.server.MyError;
 import omv.server.models.User;
 
 public class UserAction extends Action {
@@ -23,11 +24,10 @@ public class UserAction extends Action {
 		options.addHeader("action", "select");
 		JsonObject message = new JsonObject();
 		message.put("table", "USER");
-		Promise<ArrayList<User>> selectpromise = Promise.promise();
-		User.select(selectpromise);
-		selectpromise.future().onComplete(ar -> {
+		User.select(null).onComplete((ar) -> {
 			if (ar.succeeded()) {
-				this.body.put("users", User.toJsonArray(ar.result()));
+				ArrayList<User> users = ar.result();
+				this.body.put("users", User.toJsonArray(users));
 				this.end();
 			} else {
 				this.routingContext.fail(550, ar.cause());
@@ -39,19 +39,22 @@ public class UserAction extends Action {
 		String email = this.request.getString("email");
 		String name = this.request.getString("name");
 		String password = this.request.getString("password");
-		User newuser = new User();
-		newuser.init(email, name, password);
-		if (newuser.isValid()) {
-			Promise<JsonObject> insertpromise = Promise.promise();
-			newuser.insert(insertpromise);
-			insertpromise.future().onComplete(ar -> {
+		MyError error = User.inputError(email, name, password);
+		if (!error.hasError) {
+			User newuser = new User();
+			newuser.init(email, name, password);
+			Promise<Boolean> promise = Promise.promise();
+			newuser.insert(promise);
+			promise.future().onComplete(ar -> {
 				if (ar.succeeded()) {
-					this.body = ar.result();
 					this.end();
 				} else {
 					this.routingContext.fail(550, ar.cause());
 				}
 			});
+		} else {
+			Throwable test = new Throwable("test", new Throwable("test"));
+			this.routingContext.fail(422, test);
 		}
 	}
 

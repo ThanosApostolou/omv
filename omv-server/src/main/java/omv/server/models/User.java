@@ -2,11 +2,13 @@ package omv.server.models;
 
 import java.util.ArrayList;
 
+import io.vertx.core.Future;
 import io.vertx.core.Promise;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 
 import omv.server.Controller;
+import omv.server.MyError;
 
 public class User extends Model{
     public int id;
@@ -21,8 +23,16 @@ public class User extends Model{
         this.username = name;
         this.password = password;
     }
-    public boolean isValid() {
-        return true;
+    public static MyError inputError(String email, String name, String password) {
+        MyError error= new MyError();
+        if (email == null || email.length() < 3) {
+            error.hasError = true;
+            error.cause = "Email must be more than 3 characters";
+        }
+        if (error.hasError) {
+            error.status = 422;
+        }
+        return error;
     }
 
     public JsonObject toJsonObject() {
@@ -62,13 +72,13 @@ public class User extends Model{
         return users;
     }
 
-    public void insert(Promise<JsonObject> promise) {
+    public void insert(Promise<Boolean> promise) {
         String myquery = "INSERT INTO USER (email, username, password) VALUES ('"+this.email+"', '"+this.username+"', '"+this.password+"')";
         Controller.controller.eventbus.request("DBManager", myquery, (ar1) -> {
 			if (ar1.succeeded()) {
                 JsonObject body = JsonObject.mapFrom(ar1.result().body());
                 if (body.getBoolean("succeded")) {
-                    promise.complete(body);
+                    promise.complete(true);
                 } else {
                     promise.fail(new RuntimeException(body.getString("cause_message")));
                 }
@@ -78,8 +88,12 @@ public class User extends Model{
         });
     }
 
-    public static void select(Promise<ArrayList<User>> promise) {
+    public static Future<ArrayList<User>> select(String where) {
+        Promise<ArrayList<User>> promise = Promise.promise();
         String myquery = "SELECT * FROM USER";
+        if (where != null && !where.isEmpty()) {
+            myquery += " WHERE " + where;
+        }
         Controller.controller.eventbus.request("DBManager", myquery, (ar1) -> {
 			if (ar1.succeeded()) {
                 JsonObject body = JsonObject.mapFrom(ar1.result().body());
@@ -91,8 +105,9 @@ public class User extends Model{
                     promise.fail(new RuntimeException(body.getString("cause_message")));
                 }
 			} else {
-                throw new RuntimeException("Error connecting to Database Verticle");
-			}
+                promise.fail(new RuntimeException("Error connecting to Database Verticle"));
+            }
         });
+        return promise.future();
     }
 }
