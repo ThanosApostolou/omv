@@ -29,30 +29,26 @@ public class Database extends AbstractVerticle {
         String password;
         String host;
         if (database_url == null) {
-            throw new RuntimeException("Set environment variable DATABASE_URL");
-        } else {
-            System.out.println(database_url);
-            String[] parts = database_url.split("/");
-            for (String part : parts) {
-                System.out.println(part);
-            }
-            database = parts[3];
-            parts = parts[2].split(":");
-            user = parts[0];
-            port = Integer.parseInt(parts[2]);
-            parts = parts[1].split("@");
-            password = parts[0];
-            host = parts[1];
+            database_url = "postgres://omv:omv@localhost:5432/omvdb";
+            System.out.println("DATABASE_URL is not set. Using default value: " + database_url);
         }
+        String[] parts = database_url.split("/");
+        database = parts[3];
+        parts = parts[2].split(":");
+        user = parts[0];
+        port = Integer.parseInt(parts[2]);
+        parts = parts[1].split("@");
+        password = parts[0];
+        host = parts[1];
 
-        PgConnectOptions connectOptions = new PgConnectOptions().setPort(port)
-                                                                    .setHost(host)
-                                                                    .setDatabase(database)
-                                                                    .setUser(user)
-                                                                    .setPassword(password);
+        PgConnectOptions connectOptions = new PgConnectOptions()
+            .setPort(port)
+            .setHost(host)
+            .setDatabase(database)
+            .setUser(user)
+            .setPassword(password);
         PoolOptions poolOptions = new PoolOptions().setMaxSize(20);
         this.client = PgPool.pool(vertx, connectOptions, poolOptions);
-
         this.eventbus = vertx.eventBus();
         MessageConsumer<String> DBManagerConsumer = this.eventbus.consumer("DBManager");
         DBManagerConsumer.handler((message) -> {

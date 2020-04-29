@@ -18,12 +18,12 @@ public class User extends Model{
 
     public User() {}
 
-    public void init (String email, String name, String password) {
+    public void init (String email, String username, String password) {
         this.email = email;
-        this.username = name;
+        this.username = username;
         this.password = password;
     }
-    public static MyError inputError(String email, String name, String password) {
+    public static MyError inputError(String email, String username, String password) {
         MyError error= new MyError();
         if (email == null || email.length() < 3) {
             error.hasError = true;

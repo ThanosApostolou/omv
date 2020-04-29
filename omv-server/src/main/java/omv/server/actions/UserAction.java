@@ -37,12 +37,12 @@ public class UserAction extends Action {
 
 	public void POST() {
 		String email = this.request.getString("email");
-		String name = this.request.getString("name");
+		String username = this.request.getString("username");
 		String password = this.request.getString("password");
-		MyError error = User.inputError(email, name, password);
+		MyError error = User.inputError(email, username, password);
 		if (!error.hasError) {
 			User newuser = new User();
-			newuser.init(email, name, password);
+			newuser.init(email, username, password);
 			Promise<Boolean> promise = Promise.promise();
 			newuser.insert(promise);
 			promise.future().onComplete(ar -> {
