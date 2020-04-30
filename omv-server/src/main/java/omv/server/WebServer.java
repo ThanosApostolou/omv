@@ -19,7 +19,7 @@ public class WebServer {
     public void start(Promise<Void> promise) {
         WebServer.webserver = this;
 
-        this.router = Router.router(App.app.vertxInstance());
+        this.router = Router.router(App.app.getVertx());
 
         this.router.route().handler(BodyHandler.create());
 
@@ -51,7 +51,7 @@ public class WebServer {
             port = Integer.parseInt(portstring);
         }
         // Create the HTTP server and pass the "accept" method to the request handler.
-        App.app.vertxInstance().createHttpServer()
+        App.app.getVertx().createHttpServer()
             .requestHandler(this.router)
             .listen(port, (result) -> {
                 if (result.succeeded()) {

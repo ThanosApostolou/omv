@@ -20,15 +20,19 @@ public class UserController extends Controller {
 
 	public void GET() {
 		this.statusCode = 200;
-		new UserAction().get(null).onComplete((ar) -> {
-			if (ar.succeeded()) {
-				ArrayList<User> users = ar.result();
-				this.body.put("users", User.toJsonArray(users));
-				this.end();
-			} else {
-				this.routingContext.fail(550, ar.cause());
-			}
-		});
+		try {
+			new UserAction().get(null).onComplete((ar) -> {
+				if (ar.succeeded()) {
+					ArrayList<User> users = ar.result();
+					this.body.put("users", User.toJsonArray(users));
+					this.end();
+				} else {
+					this.routingContext.fail(550, ar.cause());
+				}
+			});
+		} catch (RuntimeException e) {
+			this.routingContext.fail(e);
+		}
 	}
 
 	public void POST() {

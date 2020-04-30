@@ -1,4 +1,4 @@
-package omv.server.db;
+package omv.server;
 
 import java.util.List;
 
@@ -14,8 +14,6 @@ import io.vertx.sqlclient.PoolOptions;
 import io.vertx.sqlclient.RowSet;
 import io.vertx.sqlclient.Row;
 import io.vertx.sqlclient.SqlConnection;
-
-import omv.server.App;
 
 public class DBManager {
     PgPool client=null;
@@ -48,7 +46,7 @@ public class DBManager {
             .setUser(user)
             .setPassword(password);
         PoolOptions poolOptions = new PoolOptions().setMaxSize(20);
-        this.client = PgPool.pool(App.app.vertxInstance(), connectOptions, poolOptions);
+        this.client = PgPool.pool(App.app.getVertx(), connectOptions, poolOptions);
         MessageConsumer<String> DBManagerConsumer = App.app.eventbus.consumer("DBManager");
         DBManagerConsumer.handler((message) -> {
             this.executeQuery(message);
@@ -62,6 +60,20 @@ public class DBManager {
             if (ar.succeeded()) {
                 SqlConnection conn = ar.result();
                 promise.complete(conn);
+            } else {
+                promise.fail(ar.cause());
+            }
+        });
+        return promise.future();
+    }
+
+    public Future<RowSet<Row>> query(SqlConnection conn, String myquery) {
+        Promise<RowSet<Row>> promise = Promise.promise();
+        conn.query(myquery).execute((ar) -> {
+            if (ar.succeeded()) {
+                System.out.println("Myquery succeded");
+                RowSet<Row> result = ar.result();
+                promise.complete(result);
             } else {
                 promise.fail(ar.cause());
             }
@@ -97,6 +109,7 @@ public class DBManager {
                             reply_message.put("succeded", ar2.succeeded());
                             reply_message.put("cause_message", ar2.cause().getMessage());
                             System.out.println("Myquery failed");
+                            //throw new Exception(ar2.cause());
                             message.reply(reply_message);
                         }
                         conn.close();
