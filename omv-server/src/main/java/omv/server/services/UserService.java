@@ -1,7 +1,6 @@
 package omv.server.services;
 
 import java.util.ArrayList;
-
 import io.vertx.core.Future;
 import io.vertx.core.Promise;
 import io.vertx.sqlclient.Row;
@@ -43,7 +42,8 @@ public class UserService {
 
     public Future<Void> insert(User user) {
         Promise<Void> promise = Promise.promise();
-        String myquery = "INSERT INTO USERS (email, username, password) VALUES ('"+user.email+"', '"+user.username+"', '"+user.password+"')";
+        String myquery = "INSERT INTO USERS (email, username, password) " +
+                         "VALUES ('"+user.email+"', '"+user.username+"', '"+user.password+"')";
         App.app.dbmanager.query(this.conn, myquery)
             .onSuccess((RowSet<Row> rows) -> {
                 promise.complete();

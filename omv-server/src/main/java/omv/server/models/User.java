@@ -1,13 +1,8 @@
 package omv.server.models;
 
 import java.util.ArrayList;
-
-import io.vertx.core.Future;
-import io.vertx.core.Promise;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-
-import omv.server.App;
 import omv.server.MyError;
 
 public class User extends Model{

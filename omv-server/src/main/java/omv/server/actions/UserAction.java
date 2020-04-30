@@ -1,7 +1,6 @@
 package omv.server.actions;
 
 import java.util.ArrayList;
-
 import io.vertx.core.Future;
 import io.vertx.core.Promise;
 import io.vertx.sqlclient.SqlConnection;
@@ -14,21 +13,21 @@ public class UserAction {
 
     public Future<ArrayList<User>> get(String search) {
 		Promise<ArrayList<User>> promise = Promise.promise();
-		App.app.dbmanager.connect()
-			.onSuccess((SqlConnection conn) -> {
-				new UserService(conn).select(null)
-					.onComplete((ar) -> {
-						if (ar.succeeded()) {
-							ArrayList<User> users = ar.result();
-							promise.complete(users);
-						} else {
-							promise.fail(ar.cause());
-						}
-						conn.close();
-					})
-			.onFailure((cause) -> {
-				promise.fail(cause);
-			});
+		App.app.dbmanager.connect().onComplete((ar1) -> {
+			if (ar1.succeeded()) {
+				SqlConnection conn = ar1.result();
+				new UserService(conn).select(null).onComplete((ar2) -> {
+					if (ar2.succeeded()) {
+						ArrayList<User> users = ar2.result();
+						promise.complete(users);
+					} else {
+						promise.fail(ar2.cause());
+					}
+					conn.close();
+				});
+			} else {
+				promise.fail(ar1.cause());
+			}
 		});
         return promise.future();
 	}
