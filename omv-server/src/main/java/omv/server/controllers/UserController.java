@@ -20,42 +20,37 @@ public class UserController extends Controller {
 
 	public void GET() {
 		this.statusCode = 200;
-		try {
-			new UserAction().get(null).onComplete((ar) -> {
-				if (ar.succeeded()) {
-					ArrayList<User> users = ar.result();
-					this.body.put("users", User.toJsonArray(users));
-					this.end();
-				} else {
-					this.routingContext.fail(550, ar.cause());
-				}
-			});
-		} catch (RuntimeException e) {
-			this.routingContext.fail(e);
-		}
+		new UserAction().get(null).onComplete((ar) -> {
+			if (ar.succeeded()) {
+				ArrayList<User> users = ar.result();
+				this.body.put("users", User.toJsonArray(users));
+				this.end();
+			} else {
+				this.routingContext.fail(550, ar.cause());
+			}
+		});
 	}
 
 	public void POST() {
+		if (this.request == null) {
+			this.routingContext.fail(400);
+			return;
+		}
 		String email = this.request.getString("email");
 		String username = this.request.getString("username");
 		String password = this.request.getString("password");
-		MyError error = User.inputError(email, username, password);
-		if (!error.hasError) {
-			User newuser = new User();
-			newuser.init(email, username, password);
-			Promise<Boolean> promise = Promise.promise();
-			newuser.insert(promise);
-			promise.future().onComplete(ar -> {
-				if (ar.succeeded()) {
-					this.end();
-				} else {
-					this.routingContext.fail(550, ar.cause());
-				}
-			});
-		} else {
-			Throwable test = new Throwable("test", new Throwable("test"));
-			this.routingContext.fail(422, test);
+		System.out.println(email);
+		if (email.isEmpty()) {
+			System.out.println("nulll email");
 		}
+		new UserAction().post(email, username, password).onComplete((ar) -> {
+			if (ar.succeeded()) {
+				this.body.put("success", true);
+				this.end();
+			} else {
+				this.routingContext.fail(550, ar.cause());
+			}
+		});
 	}
 
 }

@@ -21,7 +21,6 @@ public class App extends AbstractVerticle {
 
         Promise<Void> databasePromise = Promise.promise();
         this.dbmanager.start(databasePromise);
-        //vertx.deployVerticle(this.dbmanager, databasePromise);
         databasePromise.future().compose((id) -> {
             Promise<Void> controllerPromise = Promise.promise();
             this.webserver.start(controllerPromise);

@@ -39,11 +39,10 @@ public class WebServer {
               .handler((routingContext) -> {
             new UserController(routingContext).POST();
         });
-        router.errorHandler(550, (routingContext) -> { new ErrorController(routingContext); });
-        router.errorHandler(500, (routingContext) -> { new ErrorController(routingContext); });
-        router.errorHandler(422, (routingContext) -> { new ErrorController(routingContext); });
-        router.errorHandler(404, (routingContext) -> { new ErrorController(routingContext); });
-        router.errorHandler(403, (routingContext) -> { new ErrorController(routingContext); });
+        int[] errors = {550, 500, 422, 405, 404, 403, 400};
+        for (int error : errors) {
+            router.errorHandler(error, (routingContext) -> { new ErrorController(routingContext); });
+        }
 
         int port=8080;
         String portstring = System.getProperty("port");

@@ -71,20 +71,4 @@ public class User extends Model{
         });
         return users;
     }
-
-    public void insert(Promise<Boolean> promise) {
-        String myquery = "INSERT INTO USERS (email, username, password) VALUES ('"+this.email+"', '"+this.username+"', '"+this.password+"')";
-        App.app.eventbus.request("DBManager", myquery, (ar1) -> {
-			if (ar1.succeeded()) {
-                JsonObject body = JsonObject.mapFrom(ar1.result().body());
-                if (body.getBoolean("succeded")) {
-                    promise.complete(true);
-                } else {
-                    promise.fail(new RuntimeException(body.getString("cause_message")));
-                }
-			} else {
-                throw new RuntimeException("Error connecting to Database Verticle");
-			}
-        });
-    }
 }
