@@ -1,22 +1,17 @@
 package omv.server;
 
-import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
-import io.vertx.core.eventbus.EventBus;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.BodyHandler;
 import omv.server.controllers.*;
 
-public class WebServer extends AbstractVerticle {
+public class WebServer {
     public static WebServer webserver;
 
-	public EventBus eventbus;
     public Runtime runtime;
     public Router router;
 
     public WebServer() {
-        super();
-        this.eventbus = null;
         this.runtime = new Runtime();
         this.router = null;
     }
@@ -24,8 +19,7 @@ public class WebServer extends AbstractVerticle {
     public void start(Promise<Void> promise) {
         WebServer.webserver = this;
 
-        this.eventbus = vertx.eventBus();
-        this.router = Router.router(vertx);
+        this.router = Router.router(App.app.vertxInstance());
 
         this.router.route().handler(BodyHandler.create());
 
@@ -57,7 +51,7 @@ public class WebServer extends AbstractVerticle {
             port = Integer.parseInt(portstring);
         }
         // Create the HTTP server and pass the "accept" method to the request handler.
-        vertx.createHttpServer()
+        App.app.vertxInstance().createHttpServer()
             .requestHandler(this.router)
             .listen(port, (result) -> {
                 if (result.succeeded()) {

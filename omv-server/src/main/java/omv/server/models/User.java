@@ -7,7 +7,7 @@ import io.vertx.core.Promise;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 
-import omv.server.WebServer;
+import omv.server.App;
 import omv.server.MyError;
 
 public class User extends Model{
@@ -74,7 +74,7 @@ public class User extends Model{
 
     public void insert(Promise<Boolean> promise) {
         String myquery = "INSERT INTO USERS (email, username, password) VALUES ('"+this.email+"', '"+this.username+"', '"+this.password+"')";
-        WebServer.webserver.eventbus.request("DBManager", myquery, (ar1) -> {
+        App.app.eventbus.request("DBManager", myquery, (ar1) -> {
 			if (ar1.succeeded()) {
                 JsonObject body = JsonObject.mapFrom(ar1.result().body());
                 if (body.getBoolean("succeded")) {
@@ -94,7 +94,7 @@ public class User extends Model{
         if (where != null && !where.isEmpty()) {
             myquery += " WHERE " + where;
         }
-        WebServer.webserver.eventbus.request("DBManager", myquery, (ar1) -> {
+        App.app.eventbus.request("DBManager", myquery, (ar1) -> {
 			if (ar1.succeeded()) {
                 JsonObject body = JsonObject.mapFrom(ar1.result().body());
                 if (body.getBoolean("succeded")) {
