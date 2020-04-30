@@ -7,6 +7,7 @@ import io.vertx.core.eventbus.DeliveryOptions;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import omv.server.MyError;
+import omv.server.actions.UserAction;
 import omv.server.models.User;
 
 public class UserController extends Controller {
@@ -20,11 +21,7 @@ public class UserController extends Controller {
 
 	public void GET() {
 		this.statusCode = 200;
-		DeliveryOptions options = new DeliveryOptions();
-		options.addHeader("action", "select");
-		JsonObject message = new JsonObject();
-		message.put("table", "USER");
-		User.select(null).onComplete((ar) -> {
+		new UserAction().get(null).onComplete((ar) -> {
 			if (ar.succeeded()) {
 				ArrayList<User> users = ar.result();
 				this.body.put("users", User.toJsonArray(users));
