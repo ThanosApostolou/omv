@@ -3,7 +3,6 @@ package omv.server.controllers;
 import java.util.ArrayList;
 
 import io.vertx.core.Promise;
-import io.vertx.core.eventbus.DeliveryOptions;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import omv.server.MyError;

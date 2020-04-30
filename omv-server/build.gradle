@@ -9,7 +9,7 @@ version = "0.0.1-SNAPSHOT"
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
-def mainVerticle = 'omv.server.MainVerticle'
+def mainVerticle = 'omv.server.App'
 def watchForChange = 'src/**/*'
 def doOnChange = './gradlew classes'
 ext {

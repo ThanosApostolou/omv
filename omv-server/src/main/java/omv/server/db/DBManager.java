@@ -1,11 +1,9 @@
-package omv.server;
+package omv.server.db;
 
 import java.util.List;
 
-import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
 import io.vertx.core.Promise;
-import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.eventbus.MessageConsumer;
 import io.vertx.core.json.JsonArray;
@@ -17,9 +15,10 @@ import io.vertx.sqlclient.RowSet;
 import io.vertx.sqlclient.Row;
 import io.vertx.sqlclient.SqlConnection;
 
-public class Database extends AbstractVerticle {
+import omv.server.App;
+
+public class DBManager {
     PgPool client=null;
-    EventBus eventbus=null;
 
     public void start(Promise<Void> promise) {
         // default "postgres://omv:omv@localhost:5432/omvdb"
@@ -49,9 +48,8 @@ public class Database extends AbstractVerticle {
             .setUser(user)
             .setPassword(password);
         PoolOptions poolOptions = new PoolOptions().setMaxSize(20);
-        this.client = PgPool.pool(vertx, connectOptions, poolOptions);
-        this.eventbus = vertx.eventBus();
-        MessageConsumer<String> DBManagerConsumer = this.eventbus.consumer("DBManager");
+        this.client = PgPool.pool(App.app.vertxInstance(), connectOptions, poolOptions);
+        MessageConsumer<String> DBManagerConsumer = App.app.eventbus.consumer("DBManager");
         DBManagerConsumer.handler((message) -> {
             this.executeQuery(message);
         });

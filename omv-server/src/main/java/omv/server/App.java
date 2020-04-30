@@ -2,21 +2,27 @@ package omv.server;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
+import io.vertx.core.Vertx;
 import io.vertx.core.eventbus.EventBus;
+import omv.server.db.DBManager;
 
-public class MainVerticle extends AbstractVerticle {
-    Database database=null;
-    WebServer webServer=null;
-    EventBus eventbus=null;
+public class App extends AbstractVerticle {
+    public static App app;
+
+    public DBManager dbmanager=null;
+    public WebServer webServer=null;
+    public EventBus eventbus=null;
 
     @Override
     public void start(Promise<Void> promise) {
-        this.database = new Database();
+        App.app = this;
+        this.dbmanager = new DBManager();
         this.webServer = new WebServer();
         this.eventbus = vertx.eventBus();
 
-        Promise<String> databasePromise = Promise.promise();
-        vertx.deployVerticle(this.database, databasePromise);
+        Promise<Void> databasePromise = Promise.promise();
+        this.dbmanager.start(databasePromise);
+        //vertx.deployVerticle(this.dbmanager, databasePromise);
         databasePromise.future().compose((id) -> {
             Promise<String> controllerPromise = Promise.promise();
             vertx.deployVerticle(this.webServer, controllerPromise);
@@ -30,5 +36,9 @@ public class MainVerticle extends AbstractVerticle {
                 promise.fail(ar.cause());
             }
         });
+    }
+
+    public Vertx vertxInstance() {
+        return this.vertx;
     }
 }
