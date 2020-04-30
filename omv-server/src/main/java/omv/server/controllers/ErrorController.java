@@ -1,12 +1,12 @@
-package omv.server.actions;
+package omv.server.controllers;
 
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 
-public class ErrorAction extends Action {
+public class ErrorController extends Controller {
 
-	public ErrorAction(RoutingContext routingContext) {
+	public ErrorController(RoutingContext routingContext) {
 		super(routingContext);
 		Throwable failure = routingContext.failure();
 		this.contentType="application/json";

@@ -1,4 +1,4 @@
-package omv.server.actions;
+package omv.server.controllers;
 
 import java.util.ArrayList;
 
@@ -9,9 +9,9 @@ import io.vertx.ext.web.RoutingContext;
 import omv.server.MyError;
 import omv.server.models.User;
 
-public class UserAction extends Action {
+public class UserController extends Controller {
 
-	public UserAction(RoutingContext routingContext) {
+	public UserController(RoutingContext routingContext) {
 		super(routingContext);
 		this.contentType="application/json";
 		this.statusCode=200;

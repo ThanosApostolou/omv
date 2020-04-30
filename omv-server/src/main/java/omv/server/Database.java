@@ -3,6 +3,7 @@ package omv.server;
 import java.util.List;
 
 import io.vertx.core.AbstractVerticle;
+import io.vertx.core.Future;
 import io.vertx.core.Promise;
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.eventbus.Message;
@@ -57,10 +58,23 @@ public class Database extends AbstractVerticle {
         promise.complete();
     }
 
+    public Future<SqlConnection> connect() {
+        Promise<SqlConnection> promise = Promise.promise();
+        this.client.getConnection((ar) -> {
+            if (ar.succeeded()) {
+                SqlConnection conn = ar.result();
+                promise.complete(conn);
+            } else {
+                promise.fail(ar.cause());
+            }
+        });
+        return promise.future();
+    }
+
     public void executeQuery(Message<String> message) {
         System.out.println(message.headers().get("action"));
             String myquery = message.body();
-            this.client.getConnection((ar1) -> {
+            this.connect().onComplete((ar1) -> {
                 JsonObject reply_message = new JsonObject();
                 if (ar1.succeeded()) {
                     SqlConnection conn = ar1.result();

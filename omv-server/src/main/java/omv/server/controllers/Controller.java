@@ -1,10 +1,10 @@
-package omv.server.actions;
+package omv.server.controllers;
 
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 
-public abstract class Action {
+public abstract class Controller {
     public String contentType;
 	public int statusCode;
     public JsonObject body;
@@ -12,7 +12,7 @@ public abstract class Action {
     JsonObject request;
 	HttpServerResponse response;
 
-    Action(RoutingContext routingContext) {
+    Controller(RoutingContext routingContext) {
         this.routingContext = routingContext;
         this.contentType = "application/json";
         this.statusCode = 200;

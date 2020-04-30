@@ -5,16 +5,16 @@ import io.vertx.core.Promise;
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.BodyHandler;
-import omv.server.actions.*;
+import omv.server.controllers.*;
 
-public class Controller extends AbstractVerticle {
-    public static Controller controller;
+public class WebServer extends AbstractVerticle {
+    public static WebServer webserver;
 
 	public EventBus eventbus;
     public Runtime runtime;
     public Router router;
 
-    public Controller() {
+    public WebServer() {
         super();
         this.eventbus = null;
         this.runtime = new Runtime();
@@ -22,7 +22,7 @@ public class Controller extends AbstractVerticle {
     }
 
     public void start(Promise<Void> promise) {
-        Controller.controller = this;
+        WebServer.webserver = this;
 
         this.eventbus = vertx.eventBus();
         this.router = Router.router(vertx);
@@ -32,27 +32,24 @@ public class Controller extends AbstractVerticle {
         router.get("/api")
               .produces("application/json")
               .handler((routingContext) -> {
-            RootAction root = new RootAction(routingContext);
-            root.GET();
+            new RootController(routingContext).GET();
         });
 
         router.get("/api/user")
               .produces("application/json")
               .handler((routingContext) -> {
-            UserAction useraction = new UserAction(routingContext);
-            useraction.GET();
+            new UserController(routingContext).GET();
         });
         router.post("/api/user")
               .produces("application/json")
               .handler((routingContext) -> {
-            UserAction useraction = new UserAction(routingContext);
-            useraction.POST();
+            new UserController(routingContext).POST();
         });
-        router.errorHandler(550, (routingContext) -> { new ErrorAction(routingContext); });
-        router.errorHandler(500, (routingContext) -> { new ErrorAction(routingContext); });
-        router.errorHandler(422, (routingContext) -> { new ErrorAction(routingContext); });
-        router.errorHandler(404, (routingContext) -> { new ErrorAction(routingContext); });
-        router.errorHandler(403, (routingContext) -> { new ErrorAction(routingContext); });
+        router.errorHandler(550, (routingContext) -> { new ErrorController(routingContext); });
+        router.errorHandler(500, (routingContext) -> { new ErrorController(routingContext); });
+        router.errorHandler(422, (routingContext) -> { new ErrorController(routingContext); });
+        router.errorHandler(404, (routingContext) -> { new ErrorController(routingContext); });
+        router.errorHandler(403, (routingContext) -> { new ErrorController(routingContext); });
 
         int port=8080;
         String portstring = System.getProperty("port");

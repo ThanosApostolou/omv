@@ -6,20 +6,20 @@ import io.vertx.core.eventbus.EventBus;
 
 public class MainVerticle extends AbstractVerticle {
     Database database=null;
-    Controller controller=null;
+    WebServer webServer=null;
     EventBus eventbus=null;
 
     @Override
     public void start(Promise<Void> promise) {
         this.database = new Database();
-        this.controller = new Controller();
+        this.webServer = new WebServer();
         this.eventbus = vertx.eventBus();
 
         Promise<String> databasePromise = Promise.promise();
         vertx.deployVerticle(this.database, databasePromise);
         databasePromise.future().compose((id) -> {
             Promise<String> controllerPromise = Promise.promise();
-            vertx.deployVerticle(this.controller, controllerPromise);
+            vertx.deployVerticle(this.webServer, controllerPromise);
             return controllerPromise.future();
         }).onComplete((ar) -> {
             if (ar.succeeded()) {
