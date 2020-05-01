@@ -13,7 +13,7 @@ public class UserController {
 		rtxmanager = new RtxManager(rtx);
 	}
 
-	public void GET() {
+	public void get() {
 		this.rtxmanager.contentType="application/json";
 		new UserAction().get(null).onComplete((ar) -> {
 			if (ar.succeeded()) {
@@ -26,7 +26,7 @@ public class UserController {
 		});
 	}
 
-	public void POST() {
+	public void post() {
 		JsonObject requestbody;
 		String email;
 		String username;
@@ -50,6 +50,19 @@ public class UserController {
 				this.rtxmanager.fail(ar.cause());
 			}
 		});
+	}
+
+	public void delete() {
+		JsonObject requestbody;
+		int userid;
+		try {
+			requestbody = this.rtxmanager.rtx.getBodyAsJson();
+			userid = requestbody.getInteger("userid");
+		} catch (RuntimeException e) {
+			this.rtxmanager.fail(new Throwable("400::"));
+			return;
+		}
+
 	}
 
 }

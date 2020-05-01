@@ -20,6 +20,7 @@ heroku pg:psql --app=omv-server
 
 ### Deploy changes on heroku:
 ```
+heroku git:remote --app=omv-server
 git push heroku master
 ```
 

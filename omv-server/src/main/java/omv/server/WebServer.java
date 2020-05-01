@@ -26,12 +26,12 @@ public class WebServer {
         router.get("/api/user")
               .produces("application/json")
               .handler((routingContext) -> {
-            new UserController(routingContext).GET();
+            new UserController(routingContext).get();
         });
         router.post("/api/user")
               .produces("application/json")
               .handler((routingContext) -> {
-            new UserController(routingContext).POST();
+            new UserController(routingContext).post();
         });
         int[] errors = {550, 500, 422, 405, 404, 403, 400};
         for (int error : errors) {

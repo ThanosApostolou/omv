@@ -27,7 +27,7 @@ public class UserService {
                 ArrayList<User> users = new ArrayList<User>();
                 rows.forEach((row) -> {
                     User user = new User();
-                    user.id = row.getInteger("id");
+                    user.userid = row.getInteger("userid");
                     user.email = row.getString("email");
                     user.username = row.getString("username");
                     user.password = row.getString("password");

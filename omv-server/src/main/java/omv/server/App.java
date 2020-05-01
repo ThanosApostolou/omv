@@ -23,7 +23,7 @@ public class App extends AbstractVerticle {
 
         Promise<Void> databasePromise = Promise.promise();
         this.dbmanager.start(databasePromise);
-        databasePromise.future().compose((id) -> {
+        databasePromise.future().compose((ar) -> {
             Promise<Void> controllerPromise = Promise.promise();
             this.webserver.start(controllerPromise);
             return controllerPromise.future();

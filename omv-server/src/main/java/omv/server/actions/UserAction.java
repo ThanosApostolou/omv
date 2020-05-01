@@ -56,4 +56,8 @@ public class UserAction {
 		return promise.future();
 	}
 
+	public Future<Boolean> delete(int userid) {
+		Promise<Boolean> promise = Promise.promise();
+		return promise.future();
+	}
 }

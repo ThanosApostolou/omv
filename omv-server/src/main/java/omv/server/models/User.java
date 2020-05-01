@@ -5,7 +5,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 
 public class User {
-    public int id;
+    public int userid;
     public String email="";
     public String username="";
     public String password="";
@@ -17,21 +17,10 @@ public class User {
         this.username = username;
         this.password = password;
     }
-    public static String inputError(String email, String username, String password1, String password2) {
-        String error = "";
-        if (email == null || email.length() < 6 || !email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
-            error = "422::Email must be more than 5 characters with correct format";
-        } else if (username == null || username.length() < 6) {
-            error = "422::Username must be more than 5 characters";
-        } else if (password1 == null || password1.length() < 6 || !password1.equals(password2)) {
-            error = "422::Passwords must match and be more than 5 characters";
-        }
-        return error;
-    }
 
     public JsonObject toJsonObject() {
         JsonObject user_jsonobject = new JsonObject();
-        user_jsonobject.put("id", this.id);
+        user_jsonobject.put("userid", this.userid);
         user_jsonobject.put("email", this.email);
         user_jsonobject.put("username", this.username);
         user_jsonobject.put("password", this.password);
@@ -50,7 +39,7 @@ public class User {
     }
     public static User fromJsonObject(JsonObject user_jsonobject) {
         User user = new User();
-        user.id = user_jsonobject.getInteger("id");
+        user.userid = user_jsonobject.getInteger("userid");
         user.email = user_jsonobject.getString("email");
         user.username = user_jsonobject.getString("username");
         user.password = user_jsonobject.getString("password");
@@ -64,5 +53,17 @@ public class User {
             users.add(user);
         });
         return users;
+    }
+
+    public static String inputError(String email, String username, String password1, String password2) {
+        String error = "";
+        if (email == null || email.length() < 6 || !email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
+            error = "422::Email must be more than 5 characters with correct format";
+        } else if (username == null || username.length() < 6) {
+            error = "422::Username must be more than 5 characters";
+        } else if (password1 == null || password1.length() < 6 || !password1.equals(password2)) {
+            error = "422::Passwords must match and be more than 5 characters";
+        }
+        return error;
     }
 }
