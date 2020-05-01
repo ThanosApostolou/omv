@@ -10,6 +10,7 @@ public class App extends AbstractVerticle {
 
     public DBManager dbmanager=null;
     public WebServer webserver=null;
+    public Runtime runtime=null;
     public EventBus eventbus=null;
 
     @Override
@@ -17,6 +18,7 @@ public class App extends AbstractVerticle {
         App.app = this;
         this.dbmanager = new DBManager();
         this.webserver = new WebServer();
+        this.runtime = new Runtime();
         this.eventbus = vertx.eventBus();
 
         Promise<Void> databasePromise = Promise.promise();

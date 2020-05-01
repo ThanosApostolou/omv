@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.github.ThanosApostolou.omv"
-version = "0.0.1-SNAPSHOT"
+version = "0.2.0"
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
@@ -42,19 +42,19 @@ application {
 }
 
 shadowJar {
-  classifier = 'fat'
-  manifest {
-      attributes 'Main-Verticle': "$mainVerticle"
-  }
-  mergeServiceFiles {
-      include 'META-INF/services/io.vertx.core.spi.VerticleFactory'
-  }
+    classifier = 'fat'
+    manifest {
+        attributes 'Main-Verticle': "$mainVerticle"
+    }
+    mergeServiceFiles {
+        include 'META-INF/services/io.vertx.core.spi.VerticleFactory'
+    }
 }
 
 test {
     useJUnitPlatform()
     testLogging {
-      events 'PASSED', 'FAILED', 'SKIPPED'
+         events 'PASSED', 'FAILED', 'SKIPPED'
     }
 }
 

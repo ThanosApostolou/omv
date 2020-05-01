@@ -6,19 +6,13 @@ import io.vertx.ext.web.handler.BodyHandler;
 import omv.server.controllers.*;
 
 public class WebServer {
-    public static WebServer webserver;
-
-    public Runtime runtime;
     public Router router;
 
     public WebServer() {
-        this.runtime = new Runtime();
         this.router = null;
     }
 
     public void start(Promise<Void> promise) {
-        WebServer.webserver = this;
-
         this.router = Router.router(App.app.getVertx());
 
         this.router.route().handler(BodyHandler.create());

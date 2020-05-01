@@ -4,6 +4,8 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 
 public class Runtime {
+    public String name = "omv-server";
+    public String version = "0.2.0";
     public String start_datetime;
 
     public Runtime() {
