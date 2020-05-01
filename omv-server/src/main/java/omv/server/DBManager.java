@@ -13,7 +13,6 @@ public class DBManager {
     PgPool client=null;
 
     public void start(Promise<Void> promise) {
-        // default "postgres://omv:omv@localhost:5432/omvdb"
         String database_url = System.getenv("DATABASE_URL");
         String database;
         String user;

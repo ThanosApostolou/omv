@@ -5,7 +5,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import omv.server.MyError;
 
-public class User extends Model{
+public class User {
     public int id;
     public String email="";
     public String username="";
