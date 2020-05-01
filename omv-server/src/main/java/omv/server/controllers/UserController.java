@@ -1,51 +1,44 @@
 package omv.server.controllers;
 
 import java.util.ArrayList;
-import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import omv.server.actions.UserAction;
 import omv.server.models.User;
 
-public class UserController extends Controller {
+public class UserController {
+	RtxManager rtxmanager;
 
-	public UserController(RoutingContext routingContext) {
-		super(routingContext);
-		this.contentType="application/json";
-		this.statusCode=200;
-		this.body = new JsonObject();
+	public UserController(RoutingContext rtx) {
+		rtxmanager = new RtxManager(rtx);
 	}
 
 	public void GET() {
-		this.statusCode = 200;
+		this.rtxmanager.contentType="application/json";
 		new UserAction().get(null).onComplete((ar) -> {
 			if (ar.succeeded()) {
 				ArrayList<User> users = ar.result();
-				this.body.put("users", User.toJsonArray(users));
-				this.end();
+				this.rtxmanager.replybody.put("users", User.toJsonArray(users));
+				this.rtxmanager.sendResponse();
 			} else {
-				this.routingContext.fail(550, ar.cause());
+				this.rtxmanager.fail(ar.cause());
 			}
 		});
 	}
 
 	public void POST() {
-		if (this.request == null) {
-			this.routingContext.fail(400);
+		if (this.rtxmanager.requestbody == null) {
+			this.rtxmanager.fail(new Throwable("400::"));
 			return;
 		}
-		String email = this.request.getString("email");
-		String username = this.request.getString("username");
-		String password = this.request.getString("password");
-		System.out.println(email);
-		if (email.isEmpty()) {
-			System.out.println("nulll email");
-		}
+		String email = this.rtxmanager.requestbody.getString("email");
+		String username = this.rtxmanager.requestbody.getString("username");
+		String password = this.rtxmanager.requestbody.getString("password");
 		new UserAction().post(email, username, password).onComplete((ar) -> {
 			if (ar.succeeded()) {
-				this.body.put("success", true);
-				this.end();
+				this.rtxmanager.requestbody.put("success", true);
+				this.rtxmanager.sendResponse();
 			} else {
-				this.routingContext.fail(550, ar.cause());
+				this.rtxmanager.fail(ar.cause());
 			}
 		});
 	}

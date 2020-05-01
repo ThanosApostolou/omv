@@ -4,15 +4,15 @@ import io.vertx.ext.web.RoutingContext;
 
 import omv.server.WebServer;
 
-public class RootController extends Controller {
+public class RootController {
+	RtxManager rtxmanager;
 
-	public RootController(RoutingContext routingContext) {
-		super(routingContext);
+	public RootController(RoutingContext rtx) {
+		this.rtxmanager = new RtxManager(rtx);
 	}
 
 	public void GET() {
-		this.statusCode = 200;
-		this.body.put("start_datetime", WebServer.webserver.runtime.start_datetime);
-		this.end();
+		this.rtxmanager.replybody.put("start_datetime", WebServer.webserver.runtime.start_datetime);
+		this.rtxmanager.sendResponse();
 	}
 }
