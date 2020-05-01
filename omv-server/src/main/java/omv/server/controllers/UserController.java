@@ -1,6 +1,7 @@
 package omv.server.controllers;
 
 import java.util.ArrayList;
+import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import omv.server.actions.UserAction;
 import omv.server.models.User;
@@ -17,7 +18,7 @@ public class UserController {
 		new UserAction().get(null).onComplete((ar) -> {
 			if (ar.succeeded()) {
 				ArrayList<User> users = ar.result();
-				this.rtxmanager.replybody.put("users", User.toJsonArray(users));
+				this.rtxmanager.responsebody.put("users", User.toJsonArray(users));
 				this.rtxmanager.sendResponse();
 			} else {
 				this.rtxmanager.fail(ar.cause());
@@ -26,16 +27,24 @@ public class UserController {
 	}
 
 	public void POST() {
-		if (this.rtxmanager.requestbody == null) {
+		JsonObject requestbody;
+		String email;
+		String username;
+		String password1;
+		String password2;
+		try {
+			requestbody = this.rtxmanager.rtx.getBodyAsJson();
+			email = requestbody.getString("email");
+			username = requestbody.getString("username");
+			password1 = requestbody.getString("password1");
+			password2 = requestbody.getString("password2");
+		} catch (RuntimeException e) {
 			this.rtxmanager.fail(new Throwable("400::"));
 			return;
 		}
-		String email = this.rtxmanager.requestbody.getString("email");
-		String username = this.rtxmanager.requestbody.getString("username");
-		String password = this.rtxmanager.requestbody.getString("password");
-		new UserAction().post(email, username, password).onComplete((ar) -> {
+		new UserAction().post(email, username, password1, password2).onComplete((ar) -> {
 			if (ar.succeeded()) {
-				this.rtxmanager.requestbody.put("success", true);
+				this.rtxmanager.responsebody.put("success", true);
 				this.rtxmanager.sendResponse();
 			} else {
 				this.rtxmanager.fail(ar.cause());

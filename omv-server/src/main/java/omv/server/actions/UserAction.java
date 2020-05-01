@@ -3,7 +3,6 @@ package omv.server.actions;
 import java.util.ArrayList;
 import io.vertx.core.Future;
 import io.vertx.core.Promise;
-import omv.server.MyError;
 import omv.server.models.User;
 import omv.server.services.Service;
 
@@ -30,15 +29,14 @@ public class UserAction {
         return promise.future();
 	}
 
-	public Future<Boolean> post(String email, String username, String password) {
+	public Future<Boolean> post(String email, String username, String password1, String password2) {
 		Promise<Boolean> promise = Promise.promise();
-		MyError error = User.inputError(email, username, password);
-		if (error.hasError) {
-			Throwable test = new Throwable("test", new Throwable("test"));
-			promise.fail(test);
+		String error = User.inputError(email, username, password1, password2);
+		if (error != "") {
+			promise.fail(error);
 		} else {
 			User newuser = new User();
-			newuser.init(email, username, password);
+			newuser.init(email, username, password1);
 			Service service = new Service();
 			service.start().onComplete((ar1) -> {
 				if (ar1.succeeded()) {

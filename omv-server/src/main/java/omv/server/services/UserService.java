@@ -44,12 +44,13 @@ public class UserService {
         Promise<Void> promise = Promise.promise();
         String myquery = "INSERT INTO USERS (email, username, password) " +
                          "VALUES ('"+user.email+"', '"+user.username+"', '"+user.password+"')";
-        App.app.dbmanager.query(this.conn, myquery)
-            .onSuccess((RowSet<Row> rows) -> {
+        App.app.dbmanager.query(this.conn, myquery).onComplete((ar) -> {
+            if (ar.succeeded()) {
                 promise.complete();
-            }).onFailure((cause) -> {
-                promise.fail(cause);
-            });
+            } else {
+                promise.fail(ar.cause());
+            }
+        });
         return promise.future();
     }
 }

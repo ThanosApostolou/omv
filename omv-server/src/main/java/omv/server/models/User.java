@@ -3,7 +3,6 @@ package omv.server.models;
 import java.util.ArrayList;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import omv.server.MyError;
 
 public class User {
     public int id;
@@ -18,14 +17,14 @@ public class User {
         this.username = username;
         this.password = password;
     }
-    public static MyError inputError(String email, String username, String password) {
-        MyError error= new MyError();
-        if (email == null || email.length() < 3) {
-            error.hasError = true;
-            error.cause = "Email must be more than 3 characters";
-        }
-        if (error.hasError) {
-            error.status = 422;
+    public static String inputError(String email, String username, String password1, String password2) {
+        String error = "";
+        if (email == null || email.length() < 6 || !email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
+            error = "422::Email must be more than 5 characters with correct format";
+        } else if (username == null || username.length() < 6) {
+            error = "422::Username must be more than 5 characters";
+        } else if (password1 == null || password1.length() < 6 || !password1.equals(password2)) {
+            error = "422::Passwords must match and be more than 5 characters";
         }
         return error;
     }

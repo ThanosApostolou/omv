@@ -12,7 +12,7 @@ public class RootController {
 	}
 
 	public void GET() {
-		this.rtxmanager.replybody.put("start_datetime", WebServer.webserver.runtime.start_datetime);
+		this.rtxmanager.responsebody.put("start_datetime", WebServer.webserver.runtime.start_datetime);
 		this.rtxmanager.sendResponse();
 	}
 }
