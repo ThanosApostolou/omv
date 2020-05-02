@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import omv.server.actions.UserAction;
-import omv.server.models.User;
+import omv.server.entities.User;
 
 public class UserController {
 	RtxManager rtxmanager;
@@ -62,7 +62,14 @@ public class UserController {
 			this.rtxmanager.fail(new Throwable("400::"));
 			return;
 		}
-
+		new UserAction().delete(userid).onComplete((ar) -> {
+			if (ar.succeeded()) {
+				this.rtxmanager.responsebody.put("success", true);
+				this.rtxmanager.sendResponse();
+			} else {
+				this.rtxmanager.fail(ar.cause());
+			}
+		});
 	}
 
 }

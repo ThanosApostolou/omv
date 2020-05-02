@@ -1,4 +1,4 @@
-package omv.server.models;
+package omv.server.entities;
 
 public class Visualization {
 
