@@ -57,10 +57,10 @@ public class DBManager {
     }
 
     public Future<RowSet<Row>> query(SqlConnection conn, String myquery) {
+        App.debug("Executing query: " + myquery);
         Promise<RowSet<Row>> promise = Promise.promise();
         conn.query(myquery).execute((ar) -> {
             if (ar.succeeded()) {
-                System.out.println("Myquery succeded");
                 RowSet<Row> result = ar.result();
                 promise.complete(result);
             } else {

@@ -15,7 +15,9 @@ public class WebServer {
     public void start(Promise<Void> promise) {
         this.router = Router.router(App.app.getVertx());
 
-        this.router.route().handler(BodyHandler.create());
+        this.router.route().handler(BodyHandler.create()
+                                               .setMergeFormAttributes(true)
+                                               .setDeleteUploadedFilesOnEnd(true));
 
         router.get("/api")
               .produces("application/json")
@@ -32,6 +34,11 @@ public class WebServer {
               .produces("application/json")
               .handler((routingContext) -> {
             new UserController(routingContext).post();
+        });
+        router.post("/api/visualization")
+              .produces("application/json")
+              .handler((routingContext) -> {
+            new VisualizationController(routingContext).post();
         });
         int[] errors = {550, 500, 422, 405, 404, 403, 400};
         for (int error : errors) {

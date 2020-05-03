@@ -7,7 +7,7 @@ import io.vertx.core.eventbus.EventBus;
 
 public class App extends AbstractVerticle {
     public static App app;
-
+    public String VERTXWEB_ENVIRONMENT;
     public DBManager dbmanager=null;
     public WebServer webserver=null;
     public Runtime runtime=null;
@@ -16,6 +16,7 @@ public class App extends AbstractVerticle {
     @Override
     public void start(Promise<Void> promise) {
         App.app = this;
+        this.VERTXWEB_ENVIRONMENT = System.getenv("VERTXWEB_ENVIRONMENT");
         this.dbmanager = new DBManager();
         this.webserver = new WebServer();
         this.runtime = new Runtime();
@@ -40,5 +41,13 @@ public class App extends AbstractVerticle {
 
     public Vertx getVertx() {
         return this.vertx;
+    }
+
+    public static void debug(String message) {
+        if (App.app.VERTXWEB_ENVIRONMENT != null) {
+            if (App.app.VERTXWEB_ENVIRONMENT.equals("dev")) {
+                System.out.println(message);
+            }
+        }
     }
 }
