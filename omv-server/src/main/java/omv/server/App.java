@@ -3,15 +3,15 @@ package omv.server;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
 import io.vertx.core.Vertx;
-import io.vertx.core.eventbus.EventBus;
+import io.vertx.core.file.FileSystem;
 
 public class App extends AbstractVerticle {
     public static App app;
     public String VERTXWEB_ENVIRONMENT;
     public DBManager dbmanager=null;
     public WebServer webserver=null;
+    public FileSystem fs=null;
     public Runtime runtime=null;
-    public EventBus eventbus=null;
 
     @Override
     public void start(Promise<Void> promise) {
@@ -19,8 +19,8 @@ public class App extends AbstractVerticle {
         this.VERTXWEB_ENVIRONMENT = System.getenv("VERTXWEB_ENVIRONMENT");
         this.dbmanager = new DBManager();
         this.webserver = new WebServer();
+        this.fs = vertx.fileSystem();
         this.runtime = new Runtime();
-        this.eventbus = vertx.eventBus();
 
         Promise<Void> databasePromise = Promise.promise();
         this.dbmanager.start(databasePromise);

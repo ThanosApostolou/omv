@@ -8,13 +8,18 @@ import omv.server.App;
 public class Service {
     SqlConnection conn;
     public UserService userservice;
+    public VisualizationService visualizationservice;
+
+    public Service() {
+        this.userservice = new UserService(this);
+        this.visualizationservice = new VisualizationService(this);
+    }
 
     public Future<Void> start() {
         Promise<Void> promise = Promise.promise();
         App.app.dbmanager.connect().onComplete((ar) -> {
             if (ar.succeeded()) {
                 this.conn = ar.result();
-                userservice = new UserService(this);
                 promise.complete();
             } else {
                 promise.fail(ar.cause());
