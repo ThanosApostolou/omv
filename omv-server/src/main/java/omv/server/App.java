@@ -1,5 +1,7 @@
 package omv.server;
 
+import org.semanticweb.owlapi.apibinding.OWLManager;
+import org.semanticweb.owlapi.model.OWLOntologyManager;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
 import io.vertx.core.Vertx;
@@ -12,6 +14,7 @@ public class App extends AbstractVerticle {
     public WebServer webserver=null;
     public FileSystem fs=null;
     public Runtime runtime=null;
+    public OWLOntologyManager owlmanager=null;
 
     @Override
     public void start(Promise<Void> promise) {
@@ -21,6 +24,7 @@ public class App extends AbstractVerticle {
         this.webserver = new WebServer();
         this.fs = vertx.fileSystem();
         this.runtime = new Runtime();
+        this.owlmanager = OWLManager.createOWLOntologyManager();
 
         Promise<Void> databasePromise = Promise.promise();
         this.dbmanager.start(databasePromise);
