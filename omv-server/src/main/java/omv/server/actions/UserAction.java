@@ -34,23 +34,17 @@ public class UserAction {
 		Service service = new Service();
 		service.start().onComplete((ar1) -> {
 			if (ar1.succeeded()) {
-				service.userservice.validateInput(email, username, password1, password2).onComplete((ar2) -> {
+				service.userservice.createFromInput(email, username, password1, password2).onComplete((ar2) -> {
 					if (ar2.succeeded()) {
-						String error = ar2.result();
-						if (error != "") {
-							promise.fail(error);
-						} else {
-							User newuser = new User();
-							newuser.create(email, username, password1);
-							service.userservice.insert(newuser).onComplete((ar3) -> {
-								if (ar3.succeeded()) {
-									promise.complete();
-								} else {
-									promise.fail(ar3.cause());
-								}
-								service.close();
-							});
-						}
+						User newuser = ar2.result();
+						service.userservice.insert(newuser).onComplete((ar3) -> {
+							if (ar3.succeeded()) {
+								promise.complete();
+							} else {
+								promise.fail(ar3.cause());
+							}
+							service.close();
+						});
 					} else {
 						promise.fail(ar2.cause());
 					}

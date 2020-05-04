@@ -6,11 +6,27 @@ import io.vertx.core.json.JsonObject;
 
 public class User {
     public int userid;
-    public String email="";
-    public String username="";
-    public String password="";
+    public String email;
+    public String username;
+    public String password;
 
-    public User() {}
+    public User() {
+        this.userid = 0;
+        this.email = "";
+        this.username = "";
+        this.password = "";
+    }
+    public User (String email, String username, String password) {
+        this.email = email;
+        this.username = username;
+        this.password = password;
+    }
+    public User (int userid, String email, String username, String password) {
+        this.userid = userid;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+    }
 
     public void create (String email, String username, String password) {
         this.email = email;

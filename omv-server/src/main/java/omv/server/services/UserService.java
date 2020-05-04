@@ -15,22 +15,23 @@ public class UserService {
         this.service = service;
     }
 
-    public Future<String> validateInput(String email, String username, String password1, String password2) {
-        Promise<String> promise = Promise.promise();
+    public Future<User> createFromInput(String email, String username, String password1, String password2) {
+        Promise<User> promise = Promise.promise();
         if (email == null || email.length() < 6 || !email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
-            promise.complete("422::Email must be more than 5 characters with correct format");
+            promise.fail("422::Email must be more than 5 characters with correct format");
         } else if (username == null || username.length() < 6) {
-            promise.complete("422::Username must be more than 5 characters");
+            promise.fail("422::Username must be more than 5 characters");
         } else if (password1 == null || password1.length() < 6 || !password1.equals(password2)) {
-            promise.complete("422::Passwords must match and be more than 5 characters");
+            promise.fail("422::Passwords must match and be more than 5 characters");
         } else {
             this.select("email='"+email+"'").onComplete((ar) -> {
                 if (ar.succeeded()) {
                     ArrayList<User> users = ar.result();
                     if (users.size() > 0) {
-                        promise.complete("422::Email already exists");
+                        promise.fail("422::Email already exists");
                     } else {
-                        promise.complete("");
+                        User user = new User(email, username, password1);
+                        promise.complete(user);
                     }
                 } else {
                     promise.fail(ar.cause());
