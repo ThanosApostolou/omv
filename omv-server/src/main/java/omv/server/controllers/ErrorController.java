@@ -18,11 +18,6 @@ public class ErrorController {
 				this.rtxmanager.responsebody.put("timestamp", System.currentTimeMillis());
 				if (failure != null) {
 					System.out.println(failure.getMessage());
-					JsonArray stackTrace = new JsonArray();
-					for (StackTraceElement line : failure.getStackTrace()) {
-						stackTrace.add(line.toString());
-					}
-					this.rtxmanager.responsebody.put("stacktrace", stackTrace);
 					failure.printStackTrace();
 				}
 				break;
