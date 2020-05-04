@@ -15,7 +15,7 @@ public class Service {
         this.visualizationservice = new VisualizationService(this);
     }
 
-    public Future<Void> start() {
+    public Future<Void> startConnection() {
         Promise<Void> promise = Promise.promise();
         App.app.dbmanager.connect().onComplete((ar) -> {
             if (ar.succeeded()) {
@@ -28,7 +28,7 @@ public class Service {
         return promise.future();
     }
 
-    public void close() {
+    public void closeConnection() {
         this.conn.close();
     }
 }

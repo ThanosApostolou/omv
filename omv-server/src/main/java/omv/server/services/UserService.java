@@ -41,6 +41,13 @@ public class UserService {
         return promise.future();
     }
 
+    public Future<ArrayList<User>> selectByEmail(String email) {
+        return this.select("email='"+email+"'");
+    }
+    public Future<ArrayList<User>> selectById(int id) {
+        return this.select("id='"+id+"'");
+    }
+
     public Future<ArrayList<User>> select(String where) {
         Promise<ArrayList<User>> promise = Promise.promise();
         String myquery = "SELECT * FROM USERS";
@@ -51,11 +58,11 @@ public class UserService {
             .onSuccess((RowSet<Row> rows) -> {
                 ArrayList<User> users = new ArrayList<User>();
                 rows.forEach((row) -> {
-                    User user = new User();
-                    user.userid = row.getInteger("userid");
-                    user.email = row.getString("email");
-                    user.username = row.getString("username");
-                    user.password = row.getString("password");
+                    User user = new User(row.getInteger("userid"),
+                                         row.getString("email"),
+                                         row.getString("username"),
+                                         row.getString("password"),
+                                         row.getString("salt"));
                     users.add(user);
                 });
                 promise.complete(users);
@@ -67,8 +74,8 @@ public class UserService {
 
     public Future<Void> insert(User user) {
         Promise<Void> promise = Promise.promise();
-        String myquery = "INSERT INTO USERS (email, username, password) " +
-                         "VALUES ('"+user.email+"', '"+user.username+"', '"+user.password+"')";
+        String myquery = "INSERT INTO USERS (email, username, password, salt) " +
+                         "VALUES ('"+user.email+"', '"+user.username+"', '"+user.password+"', '"+user.salt+"')";
         App.app.dbmanager.query(this.service.conn, myquery).onComplete((ar) -> {
             if (ar.succeeded()) {
                 promise.complete();

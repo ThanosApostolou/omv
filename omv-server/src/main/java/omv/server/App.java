@@ -15,6 +15,7 @@ public class App extends AbstractVerticle {
     public FileSystem fs=null;
     public Runtime runtime=null;
     public OWLOntologyManager owlmanager=null;
+    public JWTManager jwtmanager=null;
 
     @Override
     public void start(Promise<Void> promise) {
@@ -25,6 +26,7 @@ public class App extends AbstractVerticle {
         this.fs = vertx.fileSystem();
         this.runtime = new Runtime();
         this.owlmanager = OWLManager.createOWLOntologyManager();
+        this.jwtmanager = new JWTManager();
 
         Promise<Void> databasePromise = Promise.promise();
         this.dbmanager.start(databasePromise);

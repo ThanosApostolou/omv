@@ -11,7 +11,7 @@ public class UserAction {
     public Future<ArrayList<User>> get(String search) {
 		Promise<ArrayList<User>> promise = Promise.promise();
 		Service service = new Service();
-		service.start().onComplete((ar1) -> {
+		service.startConnection().onComplete((ar1) -> {
 			if (ar1.succeeded()) {
 				service.userservice.select(null).onComplete((ar2) -> {
 					if (ar2.succeeded()) {
@@ -20,7 +20,7 @@ public class UserAction {
 					} else {
 						promise.fail(ar2.cause());
 					}
-					service.close();
+					service.closeConnection();
 				});
 			} else {
 				promise.fail(ar1.cause());
@@ -32,7 +32,7 @@ public class UserAction {
 	public Future<Boolean> post(String email, String username, String password1, String password2) {
 		Promise<Boolean> promise = Promise.promise();
 		Service service = new Service();
-		service.start().onComplete((ar1) -> {
+		service.startConnection().onComplete((ar1) -> {
 			if (ar1.succeeded()) {
 				service.userservice.createFromInput(email, username, password1, password2).onComplete((ar2) -> {
 					if (ar2.succeeded()) {
@@ -43,7 +43,7 @@ public class UserAction {
 							} else {
 								promise.fail(ar3.cause());
 							}
-							service.close();
+							service.closeConnection();
 						});
 					} else {
 						promise.fail(ar2.cause());
