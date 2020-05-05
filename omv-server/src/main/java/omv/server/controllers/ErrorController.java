@@ -1,6 +1,5 @@
 package omv.server.controllers;
 
-import io.vertx.core.json.JsonArray;
 import io.vertx.ext.web.RoutingContext;
 
 public class ErrorController {
@@ -22,7 +21,7 @@ public class ErrorController {
 				}
 				break;
 			case 422: // Unaccceptable Input
-				this.rtxmanager.responsebody.put("message", failure.getMessage());//failure.getMessage());
+				this.rtxmanager.responsebody.put("message", failure.getMessage());
 				break;
 			case 405: //If a route matches the path but don’t match the HTTP Method
 				this.rtxmanager.responsebody.put("message", "Requested URL exists, but method is not allowed");

@@ -1,6 +1,5 @@
 package omv.server.entities;
 
-import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.KeySpec;
 import java.util.ArrayList;

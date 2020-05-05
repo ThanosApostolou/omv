@@ -64,5 +64,6 @@ test {
 run {
     environment "VERTXWEB_ENVIRONMENT", "dev"
     environment "DATABASE_URL", "postgres://omv:omv@localhost:5432/omvdb"
+    environment "PUBLIC_KEY", "password"
     args = ["run", "$mainVerticle", "--launcher-class=$mainClassName", "--redeploy=$watchForChange", "--on-redeploy=$doOnChange"]
 }

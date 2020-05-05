@@ -58,13 +58,15 @@ public class UserService {
         return promise.future();
     }
 
+    public Future<ArrayList<User>> selectSearch(String search) {
+        return this.select("email LIKE '%"+search+"%' OR username LIKE '%"+search+"%'");
+    }
     public Future<ArrayList<User>> selectByEmail(String email) {
         return this.select("email='"+email+"'");
     }
     public Future<ArrayList<User>> selectById(int id) {
         return this.select("id='"+id+"'");
     }
-
     public Future<ArrayList<User>> select(String where) {
         Promise<ArrayList<User>> promise = Promise.promise();
         String myquery = "SELECT * FROM USERS";

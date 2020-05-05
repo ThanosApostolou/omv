@@ -1,10 +1,8 @@
 package omv.server.controllers;
 
-import java.util.ArrayList;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import omv.server.actions.LoginAction;
-import omv.server.entities.User;
 
 public class LoginController {
 	RtxManager rtxmanager;
