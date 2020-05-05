@@ -3,6 +3,7 @@ package omv.server.controllers;
 import java.util.ArrayList;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
+import omv.server.App;
 import omv.server.actions.UserAction;
 import omv.server.entities.User;
 
@@ -54,15 +55,18 @@ public class UserController {
 
 	public void delete() {
 		JsonObject requestbody;
-		int userid;
+		String email;
+		String token="";
 		try {
 			requestbody = this.rtxmanager.rtx.getBodyAsJson();
-			userid = requestbody.getInteger("userid");
+			email = requestbody.getString("email");
+			token = this.rtxmanager.rtx.request().getHeader("Authorization");
+			token = token.split("Bearer ")[1];
 		} catch (RuntimeException e) {
 			this.rtxmanager.fail(new Throwable("400::"));
 			return;
 		}
-		new UserAction().delete(userid).onComplete((ar) -> {
+		new UserAction().delete(email, token).onComplete((ar) -> {
 			if (ar.succeeded()) {
 				this.rtxmanager.responsebody.put("success", true);
 				this.rtxmanager.sendResponse();

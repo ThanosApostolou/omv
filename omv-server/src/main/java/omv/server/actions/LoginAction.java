@@ -24,17 +24,12 @@ public class LoginAction {
 							if (user.comparePassword(password)) {
 								JsonObject principal = new JsonObject().put("userid", user.userid);
 								String token = App.app.jwtmanager.provider.generateToken(principal);
-								JsonObject authinfo = new JsonObject().put("jwt", token);
-								App.app.jwtmanager.provider.authenticate(authinfo, (ar3) -> {
-									io.vertx.ext.auth.User authuser = ar3.result();
-									App.debug(authuser.principal().encode());
-								});
 								promise.complete(token);
 							} else {
-								promise.fail("403::");
+								promise.fail("422::Email or password are incorect");
 							}
 						} else {
-							promise.fail("403::");
+							promise.fail("422::Email or password are incorect");
 						}
 					} else {
 						promise.fail(ar2.cause());

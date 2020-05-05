@@ -3,6 +3,7 @@ package omv.server.services;
 import java.util.ArrayList;
 import io.vertx.core.Future;
 import io.vertx.core.Promise;
+import io.vertx.core.json.JsonObject;
 import io.vertx.sqlclient.Row;
 import io.vertx.sqlclient.RowSet;
 import omv.server.App;
@@ -24,7 +25,7 @@ public class UserService {
         } else if (password1 == null || password1.length() < 6 || !password1.equals(password2)) {
             promise.fail("422::Passwords must match and be more than 5 characters");
         } else {
-            this.select("email='"+email+"'").onComplete((ar) -> {
+            this.selectByEmail(email).onComplete((ar) -> {
                 if (ar.succeeded()) {
                     ArrayList<User> users = ar.result();
                     if (users.size() > 0) {
@@ -38,6 +39,22 @@ public class UserService {
                 }
             });
         }
+        return promise.future();
+    }
+
+    public Future<Integer> authenticate(String token) {
+        Promise<Integer> promise = Promise.promise();
+        JsonObject authinfo = new JsonObject().put("jwt", token);
+        App.app.jwtmanager.provider.authenticate(authinfo, (ar) -> {
+            if (ar.succeeded()) {
+                io.vertx.ext.auth.User authuser = ar.result();
+                Integer userid = authuser.principal().getInteger("userid");
+                App.debug("userid: " + userid);
+                promise.complete(userid);
+            } else {
+                promise.fail("422::Invalid authentication token");
+            }
+        });
         return promise.future();
     }
 
@@ -76,6 +93,25 @@ public class UserService {
         Promise<Void> promise = Promise.promise();
         String myquery = "INSERT INTO USERS (email, username, password, salt) " +
                          "VALUES ('"+user.email+"', '"+user.username+"', '"+user.password+"', '"+user.salt+"')";
+        App.app.dbmanager.query(this.service.conn, myquery).onComplete((ar) -> {
+            if (ar.succeeded()) {
+                promise.complete();
+            } else {
+                promise.fail(ar.cause());
+            }
+        });
+        return promise.future();
+    }
+
+    public Future<Void> deleteByEmail(String email) {
+        return this.delete("email='"+email+"'");
+    }
+    public Future<Void> deleteById(int userid) {
+        return this.delete("userid='"+userid+"'");
+    }
+    public Future<Void> delete(String where) {
+        Promise<Void> promise = Promise.promise();
+        String myquery = "DELETE FROM USERS WHERE " + where;
         App.app.dbmanager.query(this.service.conn, myquery).onComplete((ar) -> {
             if (ar.succeeded()) {
                 promise.complete();

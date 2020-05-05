@@ -10,6 +10,7 @@ import javax.crypto.spec.PBEKeySpec;
 
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import omv.server.App;
 
 public class User {
     public int userid = 0;
@@ -95,6 +96,7 @@ public class User {
         SecureRandom random = new SecureRandom();
         byte[] salt = new byte[16];
         random.nextBytes(salt);
+        App.debug(random.toString());
 
         KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 65536, 128);
         SecretKeyFactory factory;

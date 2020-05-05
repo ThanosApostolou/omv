@@ -35,6 +35,11 @@ public class WebServer {
               .handler((routingContext) -> {
             new UserController(routingContext).post();
         });
+        router.delete("/api/user")
+              .produces("application/json")
+              .handler((routingContext) -> {
+            new UserController(routingContext).delete();
+        });
         router.post("/api/login")
               .produces("application/json")
               .handler((routingContext) -> {
