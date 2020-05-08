@@ -28,8 +28,7 @@ public class LoginController {
 		}
 		new LoginAction().post(email, password).onComplete((ar) -> {
 			if (ar.succeeded()) {
-				String token = ar.result();
-				this.rtxmanager.responsebody.put("token", token);
+				this.rtxmanager.responsebody = ar.result();
 				this.rtxmanager.sendResponse();
 			} else {
 				this.rtxmanager.fail(ar.cause());

@@ -1,12 +1,9 @@
 package omv.server.entities;
 
 import java.security.SecureRandom;
-import java.security.spec.KeySpec;
 import java.util.ArrayList;
-
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.PBEKeySpec;
-
+import java.math.BigInteger;
+import java.security.MessageDigest;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import omv.server.App;
@@ -24,8 +21,8 @@ public class User {
     public User(String email, String username, String password) {
         this.email = email;
         this.username = username;
-        this.password = password;
-        this.salt = password;
+        this.salt = User.calcSalt();
+        this.password = User.calcPasswordHash(password, this.salt);
     }
 
     public User(int userid, String email, String username, String password, String salt) {
@@ -84,27 +81,35 @@ public class User {
         });
         return users;
     }
-    public Boolean comparePassword(String received_password) {
-        if (received_password != null && received_password.equals(this.password)) {
+    public Boolean comparePassword(String receivedPassword) {
+        if (receivedPassword != null && this.password.equals(User.calcPasswordHash(receivedPassword, this.salt))) {
             return true;
         } else {
             return false;
         }
     }
-    public String calcSalt() {
+
+    public static String calcSalt() {
         SecureRandom random = new SecureRandom();
         byte[] salt = new byte[16];
         random.nextBytes(salt);
-        App.debug(random.toString());
-
-        KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 65536, 128);
-        SecretKeyFactory factory;
+        return salt.toString();
+    }
+    public static String calcPasswordHash(String password, String salt) {
+        String hashedPassword = "";
         try {
-            factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
-            byte[] hash = factory.generateSecret(spec).getEncoded();
+            MessageDigest md = MessageDigest.getInstance("SHA-512");
+            hashedPassword = salt+password;
+            App.debug("ssss:   " + hashedPassword);
+            byte[] digestedMessage = md.digest(hashedPassword.getBytes());
+            BigInteger hashNumber = new BigInteger(1, digestedMessage);
+            hashedPassword = hashNumber.toString(16);
+            while (hashedPassword.length() < 32) {
+                hashedPassword = "0" + hashedPassword;
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return salt.toString();
+        return hashedPassword;
     }
 }

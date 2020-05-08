@@ -11,8 +11,8 @@ import omv.server.entities.User;
 
 public class LoginAction {
 
-	public Future<String> post(String email, String password) {
-		Promise<String> promise = Promise.promise();
+	public Future<JsonObject> post(String email, String password) {
+		Promise<JsonObject> promise = Promise.promise();
 		Service service = new Service();
 		service.startConnection().onComplete((ar1) -> {
 			if (ar1.succeeded()) {
@@ -24,7 +24,11 @@ public class LoginAction {
 							if (user.comparePassword(password)) {
 								JsonObject principal = new JsonObject().put("userid", user.userid);
 								String token = App.app.jwtmanager.provider.generateToken(principal);
-								promise.complete(token);
+								JsonObject logininfo = new JsonObject();
+								logininfo.put("email", user.email)
+										 .put("username", user.username)
+										 .put("token", token);
+								promise.complete(logininfo);
 							} else {
 								promise.fail("422::Email or password are incorect");
 							}
