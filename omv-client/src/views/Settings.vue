@@ -27,8 +27,10 @@
 <script>
 export default {
     name: 'Settings',
-    data: () => ({
-        theme_switch: true
-    })
+    data: function () {
+        return {
+            theme_switch: true
+        };
+    }
 };
 </script>

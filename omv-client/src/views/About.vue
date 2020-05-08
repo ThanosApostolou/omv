@@ -21,7 +21,7 @@
                             Application Name:
                         </v-col>
                         <v-col>
-                            {{ appdata.appNodeName }}
+                            {{ buildinfo.appNodeName }}
                         </v-col>
                     </v-row>
                     <v-row align='center' justify='center' class='text-center'>
@@ -29,7 +29,7 @@
                             Application Displayed Name:
                         </v-col>
                         <v-col>
-                            {{ appdata.appName }}
+                            {{ buildinfo.appName }}
                         </v-col>
                     </v-row>
                     <v-row align='center' justify='center' class='text-center'>
@@ -37,7 +37,7 @@
                             Application Version:
                         </v-col>
                         <v-col>
-                            {{ appdata.appVersion }}
+                            {{ buildinfo.appVersion }}
                         </v-col>
                     </v-row>
                     <v-row align='center' justify='center' class='text-center'>
@@ -45,7 +45,7 @@
                             Build Platform:
                         </v-col>
                         <v-col>
-                            {{ appdata.buildPlatform }}
+                            {{ buildinfo.buildPlatform }}
                         </v-col>
                     </v-row>
                     <v-row align='center' justify='center' class='text-center'>
@@ -53,7 +53,7 @@
                             Build Mode:
                         </v-col>
                         <v-col>
-                            {{ appdata.buildMode }}
+                            {{ buildinfo.buildMode }}
                         </v-col>
                     </v-row>
                 </v-card>
@@ -65,11 +65,10 @@
 <script>
 export default {
     name: 'About',
-    props: {
-        appdata: {
-            type: Object,
-            default: null
-        }
+    data: function () {
+        return {
+            buildinfo: this.$root.app.buildinfo
+        };
     }
 };
 </script>

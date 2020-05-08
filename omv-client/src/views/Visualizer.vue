@@ -33,10 +33,12 @@
 <script>
 export default {
     name: 'Visualizer',
-    data: () => ({
-        valid: true,
-        result: ''
-    }),
+    data: function () {
+        return {
+            valid: true,
+            result: ''
+        };
+    },
     methods: {
         submit() {
             this.result = 'submited';

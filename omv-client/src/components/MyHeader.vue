@@ -71,14 +71,10 @@ let navitems = [
 
 export default {
     name: 'MyHeader',
-    props: {
-        appdata: {
-            type: Object,
-            default: null
-        }
-    },
-    data: () => ({
-        navitems: navitems
-    })
+    data: function () {
+        return {
+            navitems: navitems
+        };
+    }
 };
 </script>

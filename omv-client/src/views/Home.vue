@@ -2,7 +2,7 @@
     <v-container>
         <v-row align='center' justify='center' class='text-center'>
             <h1>
-                Welcome to {{ appdata.appName }}
+                Welcome to {{ buildinfo.appName }}
             </h1>
         </v-row>
         <v-row align='center' justify='center' class='text-center'>
@@ -17,7 +17,7 @@
         </v-row>
         <v-row align='center' justify='center' class='text-center'>
             <p>
-                {{ appdata.appName }} is an application where you can choose 2 owl files
+                {{ buildinfo.appName }} is an application where you can choose 2 owl files
                 and a json file with their mappings.<br>
                 The application will visualize this information in a understandable way.
             </p>
@@ -36,11 +36,10 @@
 <script>
 export default {
     name: 'Home',
-    props: {
-        appdata: {
-            type: Object,
-            default: null
-        }
+    data: function () {
+        return {
+            buildinfo: this.$root.app.buildinfo
+        };
     }
 };
 </script>
