@@ -13,9 +13,9 @@ def mainVerticle = 'omv.server.App'
 def watchForChange = 'src/**/*'
 def doOnChange = './gradlew classes'
 ext {
-    guavaVersion = '28.2'
-    vertxVersion = '3.9.0'
-    junitJupiterVersion = '5.6.1'
+    guavaVersion = '29.0'
+    vertxVersion = '3.9.1'
+    junitJupiterVersion = '5.6.2'
     owlapiVersion = "5.1.14"
 }
 
@@ -37,7 +37,7 @@ dependencies {
 
 wrapper {
     distributionType = Wrapper.DistributionType.BIN
-    gradleVersion = "6.2.2"
+    gradleVersion = "6.5.1"
 }
 
 application {
@@ -55,6 +55,9 @@ shadowJar {
 }
 
 test {
+    environment "VERTXWEB_ENVIRONMENT", "dev"
+    environment "DATABASE_URL", "postgres://omv:omv@localhost:5432/omvdb"
+    environment "PUBLIC_KEY", "password"
     useJUnitPlatform()
     testLogging {
          events 'PASSED', 'FAILED', 'SKIPPED'
