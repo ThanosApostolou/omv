@@ -1,8 +1,13 @@
 package omv.server;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import io.vertx.core.Promise;
+import io.vertx.core.http.HttpMethod;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.BodyHandler;
+import io.vertx.ext.web.handler.CorsHandler;
 import omv.server.controllers.*;
 
 public class WebServer {
@@ -14,6 +19,24 @@ public class WebServer {
 
     public void start(Promise<Void> promise) {
         this.router = Router.router(App.app.getVertx());
+
+        Set<String> allowedHeaders = new HashSet<>();
+        allowedHeaders.add("x-requested-with");
+        allowedHeaders.add("Access-Control-Allow-Origin");
+        allowedHeaders.add("origin");
+        allowedHeaders.add("Content-Type");
+        allowedHeaders.add("accept");
+        allowedHeaders.add("X-PINGARUNER");
+
+        Set<HttpMethod> allowedMethods = new HashSet<>();
+        allowedMethods.add(HttpMethod.GET);
+        allowedMethods.add(HttpMethod.POST);
+        allowedMethods.add(HttpMethod.OPTIONS);
+        allowedMethods.add(HttpMethod.DELETE);
+        allowedMethods.add(HttpMethod.PATCH);
+        allowedMethods.add(HttpMethod.PUT);
+
+        this.router.route().handler(CorsHandler.create("*").allowedHeaders(allowedHeaders).allowedMethods(allowedMethods));
 
         this.router.route().handler(BodyHandler.create()
                                                .setMergeFormAttributes(true)

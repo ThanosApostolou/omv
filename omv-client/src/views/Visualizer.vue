@@ -24,24 +24,35 @@
                 </v-row>
             </v-container>
         </v-form>
-        <v-row align='center' justify='center' class='text-center'>
+        <v-row v-if="ready" align='center' justify='center' class='text-center'>
             {{ result }}
         </v-row>
     </v-container>
 </template>
 
 <script>
+const axios = require('axios').default;
+
 export default {
     name: 'Visualizer',
     data: function () {
         return {
             valid: true,
+            ready: false,
             result: ''
         };
     },
     methods: {
         submit() {
-            this.result = 'submited';
+            axios({
+                    method: "get",
+                    url: "http://localhost:8080/api"
+                }).then((response) => {
+                    this.result = response.data;
+                    this.ready = true;
+                }).catch((error) => {
+                    console.log(error);
+                });
         }
     }
 };
