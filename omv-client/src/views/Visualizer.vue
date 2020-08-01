@@ -8,24 +8,27 @@
             <v-container>
                 <v-row>
                     <v-col>
-                        <v-file-input chips counter show-size outlined label='OWL File 1' />
+                        <v-file-input v-model="owl1" chips counter show-size outlined label='OWL File 1' />
                     </v-col>
                     <v-col>
-                        <v-file-input chips counter show-size outlined label='OWL File 2' />
+                        <v-file-input v-model="owl2" chips counter show-size outlined label='OWL File 2' />
                     </v-col>
                     <v-col>
-                        <v-file-input chips counter show-size outlined label='JSON Mappings' />
+                        <v-file-input v-model="mappings" chips counter show-size outlined label='JSON Mappings' />
                     </v-col>
                 </v-row>
-                <v-row align='center' justify='center' class='text-center'>
-                    <v-btn color='primary' @click='submit'>
+                <v-row v-model="submitBtn" align='center' justify='center' class='text-center'>
+                    <v-btn :disabled="submitBtn.disabled" color='primary' @click='submit'>
                         Visualize
                     </v-btn>
                 </v-row>
             </v-container>
         </v-form>
-        <v-row v-if="ready" align='center' justify='center' class='text-center'>
-            {{ result }}
+        <v-row v-if="submited" align='center' justify='center' class='text-center'>
+            <v-progress-circular v-if="!ready" indeterminate rotate></v-progress-circular>
+            <div v-if="ready">
+                {{ result }}
+            </div>
         </v-row>
     </v-container>
 </template>
@@ -38,20 +41,43 @@ export default {
     data: function () {
         return {
             valid: true,
+            result: '',
+            owl1: null,
+            owl2: null,
+            mappings: null,
+            submitBtn: {
+                disabled: false
+            },
+            submited: false,
             ready: false,
-            result: ''
         };
     },
     methods: {
         submit() {
+            this.submited = true;
+            this.ready = false;
+            this.submitBtn.disabled = true;
+            const formData = new FormData();
+            formData.append("owl1", this.owl1);
+            formData.append("owl2", this.owl2);
+            formData.append("mappings", this.mappings);
             axios({
-                    method: "get",
-                    url: "http://localhost:8080/api"
+                    method: "post",
+                    url: "http://localhost:8080/api/visualization",
+                    headers: {
+                        "Content-Type": "multipart/form-data"
+                    },
+                    data: formData,
                 }).then((response) => {
                     this.result = response.data;
-                    this.ready = true;
+                    console.log(response.data);
                 }).catch((error) => {
+                    this.result = error;
                     console.log(error);
+                }).finally(() => {
+                    console.log(this.submitBtn);
+                    this.ready = true;
+                    this.submitBtn.disabled = false;
                 });
         }
     }
