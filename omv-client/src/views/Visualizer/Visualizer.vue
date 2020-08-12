@@ -36,7 +36,7 @@
 
 <script>
 const axios = require('axios').default;
-import VisualizationSVG from '../components/VisualizationSVG.vue';
+import VisualizationSVG from './VisualizationSVG.vue';
 
 export default {
     name: 'Visualizer',
