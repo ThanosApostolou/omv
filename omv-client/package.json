@@ -18,14 +18,14 @@
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
-    "vue-router": "^3.3.4",
-    "vuetify": "^2.3.7"
+    "vue-router": "^3.4.2",
+    "vuetify": "^2.3.8"
   },
   "devDependencies": {
     "@babel/polyfill": "^7.10.4",
-    "@vue/cli-plugin-babel": "^4.4.6",
-    "@vue/cli-plugin-eslint": "^4.4.6",
-    "@vue/cli-plugin-router": "^4.4.6",
+    "@vue/cli-plugin-babel": "^4.5.2",
+    "@vue/cli-plugin-eslint": "^4.5.2",
+    "@vue/cli-plugin-router": "^4.5.2",
     "@vue/cli-service": "~4.3.0",
     "babel-eslint": "^10.1.0",
     "electron": "^6.1.12",
