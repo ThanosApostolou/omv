@@ -8,29 +8,29 @@
             <v-container>
                 <v-row>
                     <v-col>
-                        <v-file-input v-model='owl1' chips counter show-size outlined label='OWL File 1' />
+                        <v-file-input v-model='owl1' chips counter show-size outlined dense label='OWL File 1' />
                     </v-col>
                     <v-col>
-                        <v-file-input v-model='owl2' chips counter show-size outlined label='OWL File 2' />
+                        <v-file-input v-model='owl2' chips counter show-size outlined dense label='OWL File 2' />
                     </v-col>
                     <v-col>
-                        <v-file-input v-model='mappings' chips counter show-size outlined label='JSON Mappings' />
+                        <v-file-input v-model='mappings' chips counter show-size outlined dense label='JSON Mappings' />
                     </v-col>
-                </v-row>
-                <v-row v-model='submitBtn' align='center' justify='center' class='text-center'>
-                    <v-btn :disabled='submitBtn.disabled' color='primary' @click='submit'>
-                        Visualize
-                    </v-btn>
+                    <v-col align='center' justify='center' class='text-center'>
+                        <v-btn v-bind='submitBtn' color='primary' @click='submit'>
+                            Visualize
+                        </v-btn>
+                    </v-col>
                 </v-row>
             </v-container>
         </v-form>
-        <v-row v-if='submited && !ready' align='center' justify='center' class='text-center'>
-            <v-progress-circular indeterminate rotate />
+        <v-row v-if='submited' align='center' justify='center' class='text-center'>
+            <v-progress-circular v-if='!ready' indeterminate rotate />
+            <div v-if='ready && !successful'>
+                {{ result }}
+            </div>
         </v-row>
-        <VisualizationSVG v-if='ready && submited && successful' :received-result='result' />
-        <div v-if='ready && submited && !successful'>
-            {{ result }}
-        </div>
+        <VisualizationSVG v-if='submited && ready && successful' :received-result='result' />
     </v-container>
 </template>
 
