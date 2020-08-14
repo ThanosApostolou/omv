@@ -1,5 +1,5 @@
 import { Buildinfo } from './Buildinfo.js';
-import { VueRoot } from './VueRoot.js';
+import { VueRoot } from './gui/VueRoot.js';
 
 export class App {
     static app;

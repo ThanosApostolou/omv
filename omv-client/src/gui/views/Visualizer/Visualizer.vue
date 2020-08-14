@@ -30,7 +30,7 @@
                 {{ result }}
             </div>
         </v-row>
-        <VisualizationSVG v-if='submited && ready && successful' :received-result='result' />
+        <VisualizationSVG v-if='submited && ready' :received-result='result' />
     </v-container>
 </template>
 
