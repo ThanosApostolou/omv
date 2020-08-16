@@ -1,30 +1,30 @@
 package omv.server.entities;
 
+import java.util.ArrayList;
+import java.util.stream.Stream;
+
 import org.semanticweb.owlapi.io.StringDocumentTarget;
+import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLOntology;
+import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 
 import io.vertx.core.json.JsonObject;
 import omv.server.App;
 
 public class Visualization {
-    String owl1;
-    String owl2;
+    OwlInfo owl1;
+    OwlInfo owl2;
     String mappings;
     String output;
 
     public void create (OWLOntology owl1Object, OWLOntology owl2Object, JsonObject mappingsObject) {
         try {
-            StringDocumentTarget owl1stringtarget = new StringDocumentTarget();
-            owl1Object.saveOntology(owl1stringtarget);
-            this.owl1 = owl1stringtarget.toString();
-            StringDocumentTarget owl2stringtarget = new StringDocumentTarget();
-            owl2Object.saveOntology(owl2stringtarget);
-            this.owl2 = owl2stringtarget.toString();
+            this.owl1 = new OwlInfo(owl1Object);
+            this.owl2 = new OwlInfo(owl2Object);
             this.mappings = mappingsObject.toString();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        this.output = owl2;
-        App.debug(this.output);
+        //App.debug(this.output);
     }
 }
