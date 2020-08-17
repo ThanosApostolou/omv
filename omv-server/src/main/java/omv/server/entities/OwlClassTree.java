@@ -22,7 +22,7 @@ public class OwlClassTree {
     public void init() {
         for (OWLClass cls : this.ontology.classesInSignature().toArray(OWLClass[]::new)) {
             OwlClassNode clsnode = new OwlClassNode();
-            clsnode.create(cls);
+            clsnode.create(cls, this.ontology);
             if (!clsnode.owlclass.isOWLThing()) {
                 Stream<OWLSubClassOfAxiom> superClassAxioms = this.ontology.subClassAxiomsForSubClass(cls);
                 AtomicBoolean istoplevel = new AtomicBoolean();
@@ -32,7 +32,7 @@ public class OwlClassTree {
                         Stream<OWLClass> superClasses = axiom.getSuperClass().classesInSignature();
                         for (OWLClass superclass : superClasses.toArray(OWLClass[]::new)) {
                             OwlClassNode superclassnode = new OwlClassNode();
-                            superclassnode.create(superclass);
+                            superclassnode.create(superclass, this.ontology);
 
                             if (!superclassnode.name.equals("Thing")) {
                                 istoplevel.set(false);
@@ -47,6 +47,10 @@ public class OwlClassTree {
                     }
                 }
             }
+        }
+
+        for (OwlClassNode toplevelnode : this.toplevelnodes) {
+            toplevelnode.addSubClasses();
         }
     }
 
