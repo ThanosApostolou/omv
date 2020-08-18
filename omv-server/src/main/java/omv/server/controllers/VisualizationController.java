@@ -1,13 +1,10 @@
 package omv.server.controllers;
 
-import java.util.ArrayList;
 import java.util.Set;
 
 import io.vertx.core.MultiMap;
-import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.FileUpload;
 import io.vertx.ext.web.RoutingContext;
-import omv.server.App;
 import omv.server.actions.VisualizationAction;
 
 public class VisualizationController {
@@ -37,6 +34,7 @@ public class VisualizationController {
                                                  mappings.uploadedFileName()).onComplete((ar) -> {
                     if (ar.succeeded()) {
                         this.rtxmanager.responsebody.put("success", true);
+                        this.rtxmanager.responsebody.put("visualizatoin", ar.result().toJsonObject());
                         this.rtxmanager.sendResponse();
                     } else {
                         this.rtxmanager.fail(ar.cause());
