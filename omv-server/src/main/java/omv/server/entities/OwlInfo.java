@@ -10,6 +10,8 @@ import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 
+import io.vertx.core.json.JsonObject;
+
 public class OwlInfo {
     public OWLOntology ontology;
     public OwlClassTree owlclasses;
@@ -18,8 +20,12 @@ public class OwlInfo {
         this.ontology = ontology;
         this.owlclasses = new OwlClassTree(this.ontology);
         this.owlclasses.init();
+    }
 
-        System.out.println(this.owlclasses);
+    public JsonObject toJsonObject() {
+        JsonObject result = new JsonObject();
+        result.put("owlclasses", this.owlclasses.toJsonObject());
+        return result;
     }
 
     public String toString() {

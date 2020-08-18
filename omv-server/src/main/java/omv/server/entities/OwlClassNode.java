@@ -10,10 +10,11 @@ import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 
+import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 
 public class OwlClassNode {
-    public OWLOntology ontology;
+    public OWLOntology owlontology;
     public OWLClass owlclass;
     public String id;
     public String name;
@@ -22,7 +23,7 @@ public class OwlClassNode {
     public JsonObject annotations;
 
     public OwlClassNode() {
-        this.ontology = null;
+        this.owlontology = null;
         this.owlclass = null;
         this.id = null;
         this.name = null;
@@ -31,11 +32,11 @@ public class OwlClassNode {
         this.annotations = new JsonObject();
     }
     public void create(OWLClass owlclass, OWLOntology ontology) {
-        this.ontology = ontology;
+        this.owlontology = ontology;
         this.owlclass = owlclass;
         this.id = owlclass.toStringID();
         this.name = this.id.split("#")[1];
-        Stream<OWLAnnotationAssertionAxiom> found_annotations = this.ontology.annotationAssertionAxioms(this.owlclass.getIRI());
+        Stream<OWLAnnotationAssertionAxiom> found_annotations = this.owlontology.annotationAssertionAxioms(this.owlclass.getIRI());
         for (OWLAnnotationAssertionAxiom found_annotation : found_annotations.toArray(OWLAnnotationAssertionAxiom[]::new)) {
             String annotation_property = found_annotation.getProperty().toString();
             String annotation_value = found_annotation.getValue().toString();
@@ -69,13 +70,13 @@ public class OwlClassNode {
     }
 
     public void addSubClasses() {
-        Stream<OWLSubClassOfAxiom> subClassAxioms = this.ontology.subClassAxiomsForSuperClass(this.owlclass);
+        Stream<OWLSubClassOfAxiom> subClassAxioms = this.owlontology.subClassAxiomsForSuperClass(this.owlclass);
         for (OWLSubClassOfAxiom axiom : subClassAxioms.toArray(OWLSubClassOfAxiom[]::new)) {
             if(axiom.getSubClass().getClassExpressionType().getName().equals("Class")) {
                 Stream<OWLClass> subClasses = axiom.getSubClass().classesInSignature();
                 for (OWLClass subclass : subClasses.toArray(OWLClass[]::new)) {
                     OwlClassNode subclassnode = new OwlClassNode();
-                    subclassnode.create(subclass, this.ontology);
+                    subclassnode.create(subclass, this.owlontology);
                     this.addChild(subclassnode);
                 }
             }
@@ -84,6 +85,22 @@ public class OwlClassNode {
         for (OwlClassNode child : this.children) {
             child.addSubClasses();
         }
+    }
+
+    public JsonObject toJsonObject() {
+        JsonObject result = new JsonObject();
+        JsonObject informationJsonObject = new JsonObject();
+        informationJsonObject.put("id", this.id);
+        informationJsonObject.put("name", this.name);
+        informationJsonObject.put("label", this.label);
+        informationJsonObject.put("annotations", this.annotations);
+        JsonArray childrenJsonArray = new JsonArray();
+        for (OwlClassNode child : this.children) {
+            childrenJsonArray.add(child.toJsonObject());
+        }
+        informationJsonObject.put("children", childrenJsonArray);
+        result.put(this.id, informationJsonObject);
+        return result;
     }
 
     public String toString(String dashes) {
