@@ -18,8 +18,8 @@ public class OwlClassNode {
     public String id;
     public String name;
     public String label;
-    public ArrayList<OwlClassNode> children;
     public JsonObject annotations;
+    public ArrayList<OwlClassNode> children;
 
     public OwlClassNode() {
         this.owlontology = null;
@@ -27,8 +27,8 @@ public class OwlClassNode {
         this.id = null;
         this.name = null;
         this.label = null;
-        this.children = new ArrayList<OwlClassNode>();
         this.annotations = new JsonObject();
+        this.children = new ArrayList<OwlClassNode>();
     }
     public void create(OWLClass owlclass, OWLOntology ontology) {
         this.owlontology = ontology;

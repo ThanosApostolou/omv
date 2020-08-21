@@ -34,7 +34,7 @@ public class VisualizationController {
                                                  mappings.uploadedFileName()).onComplete((ar) -> {
                     if (ar.succeeded()) {
                         this.rtxmanager.responsebody.put("success", true);
-                        this.rtxmanager.responsebody.put("visualizatoin", ar.result().toJsonObject());
+                        this.rtxmanager.responsebody.put("visualization", ar.result().toJsonObject());
                         this.rtxmanager.sendResponse();
                     } else {
                         this.rtxmanager.fail(ar.cause());
