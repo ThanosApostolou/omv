@@ -36,10 +36,10 @@
             <div v-if='ready && !successful'>
                 {{ result }}
             </div>
-            <div v-if='ready && successful'>
-                <Visualization v-if='submited && ready' :receivedResult='result' />
-            </div>
         </v-row>
+        <div v-if='ready && successful'>
+            <Visualization v-if='submited && ready' :receivedresult='result' />
+        </div>
     </v-container>
 </template>
 
