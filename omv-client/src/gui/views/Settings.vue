@@ -29,8 +29,14 @@ export default {
     name: 'Settings',
     data: function () {
         return {
-            theme_switch: true
+            theme_switch: true,
+            valid: true
         };
+    },
+    methods: {
+        submit() {
+
+        }
     }
 };
 </script>

@@ -3,7 +3,7 @@
         <svg width='100' height='100'>
             <circle cx='11' cy='11' r='10' stroke='black' stroke-width='1' fill='yellow' />
             <svg width='100' height='100'>
-                <circle cx='21' cy='21' r='10' stroke='black' stroke-width='1' fill='yellow' />
+                <circle cx='22' cy='21' r='10' stroke='black' stroke-width='1' fill='yellow' />
             </svg>
         </svg>
     </div>
@@ -12,7 +12,7 @@
 <script>
 
 export default {
-    name: 'VisualizationSVG',
+    name: 'Visualization',
     props: {
         receivedResult: {
             type: Object,
@@ -23,6 +23,9 @@ export default {
         return {
             result: this.receivedResult,
         };
+    },
+    created() {
+        console.log(this.result);
     }
 };
 </script>
