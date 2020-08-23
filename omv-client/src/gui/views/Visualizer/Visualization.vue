@@ -37,20 +37,16 @@
         <v-divider />
         <v-row>
             <v-col cols='5'>
-                <svg height='100%' width='100%'>
-                    <circle cx='11' cy='11' r='10' stroke='black' stroke-width='1' fill='yellow' />
-                    <svg width='100' height='100'>
-                        <circle cx='22' cy='21' r='10' stroke='black' stroke-width='1' fill='yellow' />
-                    </svg>
-                </svg>
+                <OwlClassNode :owlclass='this.result.visualization.owl1.owlclasses[Object.keys(this.result.visualization.owl1.owlclasses)[0]]' :startx='0' :starty='0' />
             </v-col>
             <v-col cols='2' class='col2'>
                 ad
             </v-col>
             <v-col cols='5' class='col3'>
-                <svg height='100%' width='100%'>
+                asdf
+                <svg class='text-right'>
                     <circle cx='11' cy='11' r='10' stroke='black' stroke-width='1' fill='yellow' />
-                    <svg width='100' height='100'>
+                    <svg>
                         <circle cx='22' cy='21' r='10' stroke='black' stroke-width='1' fill='yellow' />
                     </svg>
                 </svg>
@@ -61,10 +57,12 @@
 
 <script>
 import OwlInfo from './OwlInfo.vue';
+import OwlClassNode from './OwlClassNode.vue';
 export default {
     name: 'Visualization',
     components: {
-        OwlInfo
+        OwlInfo,
+        OwlClassNode
     },
     props: {
         receivedresult: {

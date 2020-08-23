@@ -2,6 +2,7 @@ package omv.server.entities;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Stream;
 
 import org.semanticweb.owlapi.model.OWLAnnotationAssertionAxiom;
@@ -15,44 +16,34 @@ import io.vertx.core.json.JsonObject;
 public class OwlClassNode {
     public OWLOntology owlontology;
     public OWLClass owlclass;
-    public String id;
+    public String iri;
     public String name;
     public String label;
-    public JsonObject annotations;
+    public ArrayList<Annotation> annotations;
     public ArrayList<OwlClassNode> children;
 
     public OwlClassNode() {
         this.owlontology = null;
         this.owlclass = null;
-        this.id = null;
+        this.iri = null;
         this.name = null;
         this.label = null;
-        this.annotations = new JsonObject();
+        this.annotations = new ArrayList<Annotation>();
         this.children = new ArrayList<OwlClassNode>();
     }
     public void create(OWLClass owlclass, OWLOntology ontology) {
         this.owlontology = ontology;
         this.owlclass = owlclass;
-        this.id = owlclass.toStringID();
-        this.name = this.id.split("#")[1];
+        this.iri = owlclass.toStringID();
+        this.name = this.iri.split("#")[1];
         Stream<OWLAnnotationAssertionAxiom> found_annotations = this.owlontology.annotationAssertionAxioms(this.owlclass.getIRI());
         for (OWLAnnotationAssertionAxiom found_annotation : found_annotations.toArray(OWLAnnotationAssertionAxiom[]::new)) {
-            String annotation_property = found_annotation.getProperty().toString();
-            String annotation_value = found_annotation.getValue().toString();
-            if (annotation_property != null && annotation_value != null ) {
-                this.annotations.put(annotation_property, annotation_value);
-            }
+            Annotation myannotation = Annotation.fromStrings(found_annotation.getProperty().toString(), found_annotation.getValue().toString());
+            this.annotations.add(myannotation);
         }
-        String rdfs_label = this.annotations.getString("rdfs:label");
-        if (rdfs_label != null) {
-            String[] rdfs_label_splited = rdfs_label.split("\"");
-            if (rdfs_label_splited.length > 1) {
-                this.label =  rdfs_label_splited[1];
-            } else {
-                this.label = name;
-            }
-        } else {
-            this.label = name;
+        this.label = Annotation.getLabel(this.annotations);
+        if (this.label.isEmpty()) {
+            this.label = this.iri;
         }
     }
 
@@ -87,19 +78,17 @@ public class OwlClassNode {
     }
 
     public JsonObject toJsonObject() {
-        JsonObject result = new JsonObject();
-        JsonObject informationJsonObject = new JsonObject();
-        informationJsonObject.put("id", this.id);
-        informationJsonObject.put("name", this.name);
-        informationJsonObject.put("label", this.label);
-        informationJsonObject.put("annotations", this.annotations);
+        JsonObject jsonobject = new JsonObject();
+        jsonobject.put("iri", this.iri);
+        jsonobject.put("name", this.name);
+        jsonobject.put("label", this.label);
+        jsonobject.put("annotations", Annotation.listToJsonArray(this.annotations));
         JsonArray childrenJsonArray = new JsonArray();
         for (OwlClassNode child : this.children) {
             childrenJsonArray.add(child.toJsonObject());
         }
-        informationJsonObject.put("children", childrenJsonArray);
-        result.put(this.id, informationJsonObject);
-        return result;
+        jsonobject.put("children", childrenJsonArray);
+        return jsonobject;
     }
 
     public String toString(String dashes) {
@@ -112,5 +101,43 @@ public class OwlClassNode {
 
     public String toString() {
         return this.toString("");
+    }
+
+    public void createRoot(OWLOntology owlontology) {
+        this.owlontology = owlontology;
+        this.name = "owl:Thing";
+        this.iri = "owl:Thing";
+        this.label = "owl:Thing";
+        for (OWLClass cls : this.owlontology.classesInSignature().toArray(OWLClass[]::new)) {
+            OwlClassNode clsnode = new OwlClassNode();
+            clsnode.create(cls, this.owlontology);
+            if (!clsnode.owlclass.isOWLThing()) {
+                Stream<OWLSubClassOfAxiom> superClassAxioms = this.owlontology.subClassAxiomsForSubClass(cls);
+                AtomicBoolean istoplevel = new AtomicBoolean();
+                istoplevel.set(true);
+                for (OWLSubClassOfAxiom axiom : superClassAxioms.toArray(OWLSubClassOfAxiom[]::new)) {
+                    if(axiom.getSuperClass().getClassExpressionType().getName().equals("Class")) {
+                        Stream<OWLClass> superClasses = axiom.getSuperClass().classesInSignature();
+                        for (OWLClass superclass : superClasses.toArray(OWLClass[]::new)) {
+                            OwlClassNode superclassnode = new OwlClassNode();
+                            superclassnode.create(superclass, this.owlontology);
+
+                            if (!superclassnode.name.equals("Thing")) {
+                                istoplevel.set(false);
+                                break;
+                            }
+                        };
+                    }
+                };
+                if (istoplevel.get()) {
+                    if (clsnode != null) {
+                        this.children.add(clsnode);
+                    }
+                }
+            }
+        }
+        for (OwlClassNode toplevelnode : this.children) {
+            toplevelnode.addSubClasses();
+        }
     }
 }

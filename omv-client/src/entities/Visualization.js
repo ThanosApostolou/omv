@@ -3,8 +3,9 @@ export class Visualization {
     owl2;
     mappings;
 
-    static fromJSON (params) {
-
-
+    static fromObject (received_object) {
+        this.owl1 = received_object.owl1;
+        this.owl2 = received_object.owl2;
+        this.mappings = received_object.mappings;
     }
 }

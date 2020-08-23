@@ -8,7 +8,7 @@
                 <v-tab key='owlinfo'>
                     INFO
                 </v-tab>
-                <v-tab key='owlinfo'>
+                <v-tab key='owlclasses'>
                     Classes
                 </v-tab>
             </v-tabs>
@@ -49,11 +49,17 @@
                                     {{ annotation[0] }}
                                 </v-col>
                                 <v-col>
-                                    {{ annotation[1].split('\"')[1] }} [Type: {{ annotation[1].split('^^')[1] }}]
+                                    {{ annotation[1].split('\"')[1] }}
+                                    <small>
+                                        {{ annotation[1].split('^^')[1] != null ? '[Type: ' + annotation[1].split('^^')[1] + ']' : '' }}
+                                    </small>
                                 </v-col>
                             </v-row>
                         </v-col>
                     </v-row>
+                </v-tab-item>
+                <v-tab-item key='owlclasses'>
+                    asdf
                 </v-tab-item>
             </v-tabs-items>
         </v-card-text>
