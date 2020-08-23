@@ -4,7 +4,7 @@
             <v-col cols='5'>
                 <p>
                     {{ result.visualization.owl1.label }}
-                    <v-btn icon @click='owl1info(1)'>
+                    <v-btn icon color='primary' @click='owl1info()'>
                         <v-icon>info</v-icon>
                     </v-btn>
                 </p>
@@ -17,7 +17,7 @@
             <v-col cols='5' class='col3'>
                 <p>
                     {{ result.visualization.owl2.label }}
-                    <v-btn icon @click='owl1info(2)'>
+                    <v-btn icon color='primary' @click='owl2info()'>
                         <v-icon>info</v-icon>
                     </v-btn>
                 </p>
@@ -27,11 +27,11 @@
             <v-card>
                 <v-card-actions>
                     <v-spacer />
-                    <v-btn icon @click='showdialog = null'>
+                    <v-btn icon @click='showdialog = false'>
                         <v-icon>close</v-icon>
                     </v-btn>
                 </v-card-actions>
-                adsfa
+                <OwlInfo :owl='current_owl' />
             </v-card>
         </v-dialog>
         <v-divider />
@@ -60,9 +60,12 @@
 </template>
 
 <script>
-
+import OwlInfo from './OwlInfo.vue';
 export default {
     name: 'Visualization',
+    components: {
+        OwlInfo
+    },
     props: {
         receivedresult: {
             type: Object,
@@ -72,7 +75,8 @@ export default {
     data: function () {
         return {
             result: this.receivedresult,
-            showdialog: null,
+            showdialog: false,
+            current_owl: {},
             mappingsSelect: {
                 label: 'Mappings Rules:',
                 items: [
@@ -83,9 +87,13 @@ export default {
         };
     },
     methods: {
-        owl1info(owlnumb) {
-            this.showdialog = owlnumb;
-            console.log('test', owlnumb);
+        owl1info() {
+            this.current_owl = this.result.visualization.owl1;
+            this.showdialog = true;
+        },
+        owl2info() {
+            this.current_owl = this.result.visualization.owl2;
+            this.showdialog = true;
         }
     },
     mounted() {
@@ -96,6 +104,12 @@ export default {
 </script>
 
 <style scoped>
+.vcard {
+    text-align: center;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+}
 .col2 p {
     text-align: center;
     align-content: center;
