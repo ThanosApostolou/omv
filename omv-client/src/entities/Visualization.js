@@ -1,11 +1,16 @@
+import OwlInfo from './OwlInfo.js';
+
 export class Visualization {
     owl1;
     owl2;
     mappings;
 
-    static fromObject (received_object) {
-        this.owl1 = received_object.owl1;
-        this.owl2 = received_object.owl2;
-        this.mappings = received_object.mappings;
+    static fromObject (Visualizationobject) {
+        console.log(Visualizationobject);
+        let visualization = new Visualization();
+        visualization.owl1 = OwlInfo.fromObject(Visualizationobject.owl1);
+        visualization.owl2 = OwlInfo.fromObject(Visualizationobject.owl2);
+        visualization.mappings = Visualizationobject.mappings;
+        return visualization;
     }
 }

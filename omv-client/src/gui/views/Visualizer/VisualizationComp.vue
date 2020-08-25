@@ -3,7 +3,7 @@
         <v-row>
             <v-col cols='5'>
                 <p>
-                    {{ result.visualization.owl1.label }}
+                    {{ visualization.owl1.label }}
                     <v-btn icon color='primary' @click='owl1info()'>
                         <v-icon>info</v-icon>
                     </v-btn>
@@ -16,7 +16,7 @@
             </v-col>
             <v-col cols='5' class='col3'>
                 <p>
-                    {{ result.visualization.owl2.label }}
+                    {{ visualization.owl2.label }}
                     <v-btn icon color='primary' @click='owl2info()'>
                         <v-icon>info</v-icon>
                     </v-btn>
@@ -31,13 +31,13 @@
                         <v-icon>close</v-icon>
                     </v-btn>
                 </v-card-actions>
-                <OwlInfo :owl='current_owl' />
+                <OwlInfoComp :owl='current_owl' />
             </v-card>
         </v-dialog>
         <v-divider />
         <v-row>
             <v-col cols='5'>
-                <OwlClassNode :owlclass='this.result.visualization.owl1.owlclasses[Object.keys(this.result.visualization.owl1.owlclasses)[0]]' :startx='0' :starty='0' />
+                <OwlClassNode :owlclass='visualization.owl1.owlclasses' :startx='0' :starty='0' />
             </v-col>
             <v-col cols='2' class='col2'>
                 ad
@@ -56,23 +56,23 @@
 </template>
 
 <script>
-import OwlInfo from './OwlInfo.vue';
+import OwlInfoComp from './OwlInfoComp.vue';
 import OwlClassNode from './OwlClassNode.vue';
 export default {
-    name: 'Visualization',
+    name: 'VisualizationComp',
     components: {
-        OwlInfo,
+        OwlInfoComp,
         OwlClassNode
     },
     props: {
-        receivedresult: {
+        receivedvisualization: {
             type: Object,
             default: null
         }
     },
     data: function () {
         return {
-            result: this.receivedresult,
+            visualization: this.receivedvisualization,
             showdialog: false,
             current_owl: {},
             mappingsSelect: {
@@ -86,16 +86,16 @@ export default {
     },
     methods: {
         owl1info() {
-            this.current_owl = this.result.visualization.owl1;
+            this.current_owl = this.visualization.owl1;
             this.showdialog = true;
         },
         owl2info() {
-            this.current_owl = this.result.visualization.owl2;
+            this.current_owl = this.visualization.owl2;
             this.showdialog = true;
         }
     },
     mounted() {
-        let r = this.result;
+        let r = this.visualization;
         console.log(r);
     }
 };

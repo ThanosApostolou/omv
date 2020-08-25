@@ -35,11 +35,11 @@ public class Annotation {
         if (sarray.length > 1) {
             annotation.value = sarray[1];
         }
-        sarray = s.split("^^");
+        sarray = s.split("\\^\\^");
         if (sarray.length > 1) {
-            annotation.type = sarray[1].split("@")[0];
+            annotation.type = sarray[1].split("\\@")[0];
         }
-        sarray = s.split("@");
+        sarray = s.split("\\@");
         if (sarray.length > 1) {
             annotation.lang = sarray[1];
         }

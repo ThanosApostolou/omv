@@ -38,20 +38,21 @@
                         <v-col>
                             <v-row justify='center' class='text-center'>
                                 <v-col>
-                                    NAME
+                                    PROPERTY
                                 </v-col>
                                 <v-col>
                                     VALUE
                                 </v-col>
                             </v-row>
-                            <v-row v-for='annotation in Object.entries(owl.annotations)' :key='annotation' justify='center' class='text-center'>
+                            <v-row v-for='annotation in owl.annotations' :key='annotation.property' justify='center' class='text-center'>
                                 <v-col>
-                                    {{ annotation[0] }}
+                                    {{ annotation.property }}
                                 </v-col>
                                 <v-col>
-                                    {{ annotation[1].split('\"')[1] }}
+                                    {{ annotation.value }}
                                     <small>
-                                        {{ annotation[1].split('^^')[1] != null ? '[Type: ' + annotation[1].split('^^')[1] + ']' : '' }}
+                                        {{ annotation.type != '' ? '[Type: ' + annotation.type + ']' : '' }}
+                                        {{ annotation.lang != '' ? '[Lang: ' + annotation.lang + ']' : '' }}
                                     </small>
                                 </v-col>
                             </v-row>
@@ -68,7 +69,7 @@
 
 <script>
 export default {
-    name: 'OwlInfo',
+    name: 'OwlInfoComp',
     props: {
         owl: {
             type: Object,

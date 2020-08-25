@@ -5,9 +5,8 @@
             <text :x='textx' :y='texty'>{{ owlclass.label }}</text>
         </svg>
         asdf
-        <OwlClassNode v-for='(child, index) in owlclass.children' :key='child.id' :owlclass='child[Object.keys(child)[0]]' :startx='startx+r' :starty='childrenstarty[index]' />
+        <OwlClassNode v-for='(child, index) in owlclass.children' :key='child.iri' :owlclass='child' :startx='startx+r' :starty='childrenstarty[index]' />
     </div>
-
 </template>
 
 <script>

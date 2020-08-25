@@ -1,21 +1,31 @@
-import Annotation from './Annotation.js'
+import Annotation from './Annotation.js';
+import OwlClass from './OwlClass.js';
+
 
 class OwlInfo {
-    /** @type {String} */
-    label;
     /** @type {String} */
     iri;
     /** @type {String} */
     versionIri;
-    /** @type {Annotation} */
+    /** @type {String} */
+    label;
+    /** @type {Annotation[]} */
     annotations;
+    /** @type {OwlClass[]} */
+    owlclasses;
 
-
-    static fromObject (theobject) {
-        this.label = theobject.label;
-        this.iri = theobject.iri;
-        this.versionIri = theobject.versionIri;
-        this.label = theobject.label;
+    /** @param {object} owlinfoobject
+     *  @returns {OwlInfo}
+     */
+    static fromObject (owlinfoobject) {
+        let owlinfo = new OwlInfo();
+        owlinfo.label = owlinfoobject.label;
+        owlinfo.iri = owlinfoobject.iri;
+        owlinfo.versionIri = owlinfoobject.versionIri;
+        owlinfo.label = owlinfoobject.label;
+        owlinfo.annotations = Annotation.listFromObject(owlinfoobject.annotations);
+        owlinfo.owlclasses = OwlClass.fromObject(owlinfoobject.owlclasses);
+        return owlinfo;
     }
 }
 

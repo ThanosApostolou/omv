@@ -38,20 +38,21 @@
             </div>
         </v-row>
         <div v-if='ready && successful'>
-            <Visualization v-if='submited && ready' :receivedresult='result' />
+            <VisualizationComp v-if='submited && ready' :receivedvisualization='result' />
         </div>
     </v-container>
 </template>
 
 <script>
-import Visualization from './Visualization.vue';
+import VisualizationComp from './VisualizationComp.vue';
 import { App } from '../../../App.js';
+import { Visualization } from '../../../entities/Visualization.js';
 
 
 export default {
     name: 'Visualizer',
     components: {
-        Visualization
+        VisualizationComp
     },
     data: function () {
         return {
@@ -87,7 +88,8 @@ export default {
             formData.append('owl2', this.owl2);
             formData.append('mappings', this.mappings);
             App.app.apiconsumer.postVisualization(formData).then((response) => {
-                this.result = response.data;
+                this.result = Visualization.fromObject(response.data.visualization);
+                console.log('response.data: ', this.result.owl1);
                 this.expansionPanel.value = [];
                 this.successful = true;
             }).catch((error) => {
