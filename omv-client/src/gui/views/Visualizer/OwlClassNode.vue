@@ -1,15 +1,19 @@
 <template>
     <div>
-        <svg width='42' height='42'>
-            <circle :cx='cx' :cy='cy' :r='r' stroke='black' :stroke-width='strokeWidth' fill='yellow' />
-            <text :x='textx' :y='texty'>{{ owlclass.label }}</text>
+        <svg :height='owlclass.height' :width='owlclass.width'>
+            <circle :cx='owlclass.cx' :cy='owlclass.cy' :r='owlclass.r' stroke='black' :stroke-width='strokeWidth' fill='yellow' />
+            <text :x='owlclass.textx' :y='texty'></text>
         </svg>
-        asdf
-        <OwlClassNode v-for='(child, index) in owlclass.children' :key='child.iri' :owlclass='child' :startx='startx+r' :starty='childrenstarty[index]' />
+        <small> {{ owlclass.label }}</small>
+        <OwlClassNode v-for='child in owlclass.children' :key='child.iri' :owlclass='child' />
     </div>
 </template>
 
 <script>
+class OwlClassSVG {
+
+}
+
 export default {
     name: 'OwlClassNode',
     props: {

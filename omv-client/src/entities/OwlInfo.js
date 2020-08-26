@@ -11,7 +11,7 @@ class OwlInfo {
     label;
     /** @type {Annotation[]} */
     annotations;
-    /** @type {OwlClass[]} */
+    /** @type {OwlClass} */
     owlclasses;
 
     /** @param {object} owlinfoobject
@@ -25,6 +25,7 @@ class OwlInfo {
         owlinfo.label = owlinfoobject.label;
         owlinfo.annotations = Annotation.listFromObject(owlinfoobject.annotations);
         owlinfo.owlclasses = OwlClass.fromObject(owlinfoobject.owlclasses);
+        owlinfo.owlclasses.calcPositions(0);
         return owlinfo;
     }
 }
