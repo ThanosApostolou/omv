@@ -36,6 +36,14 @@ export class OwlClassSVG {
     textx;
     /** @type {Number} */
     texty;
+    /** @type {Number} */
+    linex1;
+    /** @type {Number} */
+    liney1;
+    /** @type {Number} */
+    linex2;
+    /** @type {Number} */
+    liney2;
 
     /** @param {OwlClass} owlclass
      *  @returns {OwlClassSVG}
@@ -57,22 +65,27 @@ export class OwlClassSVG {
         this.r = 0.6;
         this.startx = x;
         this.starty = y;
-        this.cx = this.startx + this.r;
+        this.cx = this.startx + 2*this.r;
         this.cy = this.starty + this.r;
-        this.width = this.cx + this.r + this.owlclass.label.length;
-        this.textx = 0.5+this.cx + this.r;
+        this.textx = 0.2+this.cx + this.r;
         this.texty = this.cy + this.r/2;
+        this.linex1 = this.cx;
+        this.liney1 = this.starty + 2*this.r;
+        this.linex2 = this.cx;
+        this.liney2 = this.liney1;
+        this.width = this.cx + this.r + this.owlclass.label.length;
         let nextx = this.startx + 2*this.r;
         let nexty = this.starty + 2*this.r;
         for (let child of this.children) {
-            let newwidth=0;
-            [nexty, newwidth] = child.calcPositions(nextx, nexty);
+            let newwidth=0, childcy=0;
+            [nexty, newwidth, childcy] = child.calcPositions(nextx, nexty);
             if (newwidth > this.width) {
                 this.width = newwidth;
             }
+            this.liney2 = childcy;
         }
         this.height = nexty - this.starty;
-        return [nexty, this.width];
+        return [nexty, this.width, this.cy];
     }
 }
 
@@ -96,8 +109,8 @@ export default {
         this.owlclasssvg = OwlClassSVG.fromOwlClass(this.owlclass);
         this.owlclasssvg.calcPositions(0, 0);
 
-        console.log(this.owlclasssvg.children[2].height);
-        console.log(this.owlclasssvg.children[2].starty);
+        console.log(this.owlclasssvg.linex2);
+        console.log(this.owlclasssvg.liney2);
     }
 };
 
