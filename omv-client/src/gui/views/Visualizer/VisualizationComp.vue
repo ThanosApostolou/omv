@@ -37,7 +37,7 @@
         <v-divider />
         <v-row>
             <v-col cols='5'>
-                <OwlClassNode :owlclass='visualization.owl1.owlclasses' :startx='0' :starty='0' />
+                <OwlClassComp :owlclass='visualization.owl1.owlclasses' />
             </v-col>
             <v-col cols='2' class='col2'>
                 ad
@@ -57,12 +57,12 @@
 
 <script>
 import OwlInfoComp from './OwlInfoComp.vue';
-import OwlClassNode from './OwlClassNode.vue';
+import OwlClassComp from './OwlClassComp.vue';
 export default {
     name: 'VisualizationComp',
     components: {
         OwlInfoComp,
-        OwlClassNode
+        OwlClassComp
     },
     props: {
         receivedvisualization: {

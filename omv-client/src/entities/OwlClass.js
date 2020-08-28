@@ -46,7 +46,7 @@ class OwlClass {
         this.cx=this.startx + this.r;
         this.cy = this.r;
         this.height = this.cy + this.r;
-        this.width = this.cx + this.r;
+        this.width = this.cx + this.r + this.label.length +'em';
         this.textx = 2+this.cx + this.r;
         this.texty = this.cy + this.r/2;
         let nextx = this.startx + 2*this.r;
