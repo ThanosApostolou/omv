@@ -23,7 +23,7 @@
                 </p>
             </v-col>
         </v-row>
-        <v-dialog v-model='showdialog'>
+        <v-dialog v-if='showdialog' v-model='showdialog'>
             <v-card>
                 <v-card-actions>
                     <v-spacer />

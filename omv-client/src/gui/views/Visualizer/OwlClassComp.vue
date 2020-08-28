@@ -1,7 +1,14 @@
 <template>
-    <svg :x='owlclasssvg.startx+"em"' :y='owlclasssvg.starty+"em"' :height='owlclasssvg.height+"em"' :width='owlclasssvg.width+"em"'>
-        <OwlClassNode :owlclasssvg='owlclasssvg' />
-    </svg>
+    <div>
+        <svg :x='owlclasssvg.startx+"em"' :y='owlclasssvg.starty+"em"' :height='owlclasssvg.height+"em"' :width='owlclasssvg.width+"em"'>
+            <OwlClassNode :owlclasssvg='owlclasssvg' @show-class='showClass' />
+        </svg>
+        <v-dialog v-model='show'>
+            <v-card>
+                <span> {{ selectedOwlClass.label }}</span>
+            </v-card>
+        </v-dialog>
+    </div>
 </template>
 
 <script>
@@ -67,7 +74,7 @@ export class OwlClassSVG {
         this.starty = y;
         this.cx = this.startx + 2*this.r;
         this.cy = this.starty + this.r;
-        this.textx = 0.2+this.cx + this.r;
+        this.textx = this.cx + this.r;
         this.texty = this.cy + this.r/2;
         this.linex1 = this.cx;
         this.liney1 = this.starty + 2*this.r;
@@ -102,8 +109,16 @@ export default {
     },
     data() {
         return {
-            owlclasssvg: null
+            owlclasssvg: null,
+            show: false,
+            selectedOwlClass: {}
         };
+    },
+    methods: {
+        showClass(owlclass) {
+            this.selectedOwlClass = owlclass;
+            this.show = true;
+        },
     },
     created() {
         this.owlclasssvg = OwlClassSVG.fromOwlClass(this.owlclass);

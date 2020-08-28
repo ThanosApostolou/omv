@@ -60,7 +60,7 @@
                     </v-row>
                 </v-tab-item>
                 <v-tab-item key='owlclasses'>
-                    asdf
+                    <OwlClassComp v-if='owl != null' :owlclass='owl.owlclasses' />
                 </v-tab-item>
             </v-tabs-items>
         </v-card-text>
@@ -68,8 +68,13 @@
 </template>
 
 <script>
+import OwlClassComp from './OwlClassComp.vue';
+
 export default {
     name: 'OwlInfoComp',
+    components: {
+        OwlClassComp
+    },
     props: {
         owl: {
             type: Object,
@@ -78,7 +83,7 @@ export default {
     },
     data() {
         return {
-            tab: null,
+            tab: null
         };
     },
     mounted() {
