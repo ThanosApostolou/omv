@@ -1,11 +1,11 @@
 <template>
     <svg>
         <svg class='svg' @click='showObjprop(owlentitysvg.owlentity)'>
-            <circle v-if='owlentitysvg.type === "class"' :cx='owlentitysvg.cx+"em"' :cy='owlentitysvg.cy+"em"' :r='owlentitysvg.r+"em"' stroke='black' :stroke-width='owlentitysvg.stroke+"em"' :fill='owlentitysvg.color' />
-            <rect v-if='owlentitysvg.type !== "class"' :x='owlentitysvg.cx+"em"' :y='owlentitysvg.starty+"em"' :width='2*owlentitysvg.r+"em"' :height='2*owlentitysvg.r+"em"' :cx='owlentitysvg.cx+"em"' stroke='black' :stroke-width='owlentitysvg.stroke+"em"' :fill='owlentitysvg.color' />
-            <text :x='owlentitysvg.textx+"em"' :y='owlentitysvg.texty+"em"'> {{ owlentitysvg.owlentity.label }}</text>
-            <line :x1='owlentitysvg.startx+"em"' :y1='owlentitysvg.cy+"em"' :x2='owlentitysvg.startx+owlentitysvg.r+"em"' :y2='owlentitysvg.cy+"em"' stroke='black' :stroke-width='owlentitysvg.stroke+"em"' />
-            <line :x1='owlentitysvg.linex1+"em"' :y1='owlentitysvg.liney1+"em"' :x2='owlentitysvg.linex2+"em"' :y2='owlentitysvg.liney2+"em"' stroke='black' :stroke-width='owlentitysvg.stroke+"em"' />
+            <circle v-if='owlentitysvg.type === "class"' :cx='owlentitysvg.cx' :cy='owlentitysvg.cy' :r='owlentitysvg.r' stroke='black' :stroke-width='owlentitysvg.stroke' :fill='owlentitysvg.color' />
+            <rect v-if='owlentitysvg.type !== "class"' :x='owlentitysvg.cx' :y='owlentitysvg.starty' :width='2*owlentitysvg.r' :height='2*owlentitysvg.r' :cx='owlentitysvg.cx' stroke='black' :stroke-width='owlentitysvg.stroke' :fill='owlentitysvg.color' />
+            <text :x='owlentitysvg.textx' :y='owlentitysvg.texty' :font-size='owlentitysvg.fontSize'> {{ owlentitysvg.owlentity.label }}</text>
+            <line :x1='owlentitysvg.startx' :y1='owlentitysvg.cy' :x2='owlentitysvg.startx+owlentitysvg.r' :y2='owlentitysvg.cy' stroke='black' :stroke-width='owlentitysvg.stroke' />
+            <line :x1='owlentitysvg.linex1' :y1='owlentitysvg.liney1' :x2='owlentitysvg.linex2' :y2='owlentitysvg.liney2' stroke='black' :stroke-width='owlentitysvg.stroke' />
         </svg>
         <OwlObjectPropertyNode v-for='child in owlentitysvg.children' :key='child.owlentity.iri' :owlentitysvg='child' @show-entity='showEntity' />
     </svg>

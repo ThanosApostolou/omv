@@ -63,7 +63,7 @@
                     </v-row>
                 </v-tab-item>
                 <v-tab-item key='owlclasses'>
-                    <OwlEntityComp v-if='owl != null' :owlentity='owl.owlobjprops' type='class' />
+                    <OwlEntityComp v-if='owl != null' :owlentity='owl.owlclasses' type='class' />
                 </v-tab-item>
                 <v-tab-item key='owlobjprops'>
                     <OwlEntityComp v-if='owl != null' :owlentity='owl.owlobjprops' type='objprop' />

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <svg :x='owlentitysvg.startx+"em"' :y='owlentitysvg.starty+"em"' :height='owlentitysvg.height+"em"' :width='owlentitysvg.width+"em"'>
+        <svg :x='owlentitysvg.startx' :y='owlentitysvg.starty' :height='owlentitysvg.height' :width='owlentitysvg.width'>
             <OwlEntityNode :owlentitysvg='owlentitysvg' @show-entity='showEntity' />
         </svg>
         <v-dialog v-model='show'>
@@ -31,9 +31,11 @@ export class OwlEntitySVG {
     /** @type {Number} */
     width;
     /** @type {Number} */
-    r;
+    r = 10;
     /** @type {Number} */
-    stroke = 0.05;
+    stroke = 1;
+    /** @type {Number} */
+    fontSize = 18;
     /** @type {Number} */
     startx;
     /** @type {Number} */
@@ -80,7 +82,6 @@ export class OwlEntitySVG {
      *  @returns {Number}
      */
     calcPositions(x, y) {
-        this.r = 0.6;
         this.startx = x;
         this.starty = y;
         if (this.type === 'class') {
@@ -107,7 +108,7 @@ export class OwlEntitySVG {
             this.linex2 = this.cx + this.r;
         }
         this.liney2 = this.liney1;
-        this.width = this.cx + this.r + this.owlentity.label.length;
+        this.width = this.cx + this.r + this.fontSize + this.fontSize/2 * this.owlentity.label.length;
         let nextx = this.startx + 2*this.r;
         let nexty = this.starty + 2*this.r;
         for (let child of this.children) {
