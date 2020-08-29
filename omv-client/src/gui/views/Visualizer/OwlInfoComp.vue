@@ -11,6 +11,9 @@
                 <v-tab key='owlclasses'>
                     Classes
                 </v-tab>
+                <v-tab key='owlobjprops'>
+                    Object Properties
+                </v-tab>
             </v-tabs>
 
             <v-tabs-items v-model='tab'>
@@ -62,6 +65,9 @@
                 <v-tab-item key='owlclasses'>
                     <OwlClassComp v-if='owl != null' :owlclass='owl.owlclasses' />
                 </v-tab-item>
+                <v-tab-item key='owlobjprops'>
+                    <OwlObjectPropertyComp v-if='owl != null' :owlobjprop='owl.owlobjprops' />
+                </v-tab-item>
             </v-tabs-items>
         </v-card-text>
     </div>
@@ -69,11 +75,13 @@
 
 <script>
 import OwlClassComp from './OwlClassComp.vue';
+import OwlObjectPropertyComp from './OwlObjectPropertyComp.vue';
 
 export default {
     name: 'OwlInfoComp',
     components: {
-        OwlClassComp
+        OwlClassComp,
+        OwlObjectPropertyComp
     },
     props: {
         owl: {

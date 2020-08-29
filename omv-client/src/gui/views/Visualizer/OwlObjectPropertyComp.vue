@@ -1,24 +1,24 @@
 <template>
     <div>
-        <svg :x='owlclasssvg.startx+"em"' :y='owlclasssvg.starty+"em"' :height='owlclasssvg.height+"em"' :width='owlclasssvg.width+"em"'>
-            <OwlClassNode :owlclasssvg='owlclasssvg' @show-class='showClass' />
+        <svg :x='owlobjpropsvg.startx+"em"' :y='owlobjpropsvg.starty+"em"' :height='owlobjpropsvg.height+"em"' :width='owlobjpropsvg.width+"em"'>
+            <OwlObjectPropertyNode :owlobjpropsvg='owlobjpropsvg' @show-objprop='showObjprop' />
         </svg>
         <v-dialog v-model='show'>
             <v-card>
-                <span> {{ selectedOwlClass.label }}</span>
+                <span> {{ selectedObjectProperty.label }}</span>
             </v-card>
         </v-dialog>
     </div>
 </template>
 
 <script>
-import OwlClass from '../../../entities/OwlClass.js';
-import OwlClassNode from './OwlClassNode.vue';
+import OwlObjectProperty from '../../../entities/OwlObjectProperty.js';
+import OwlObjectPropertyNode from './OwlObjectPropertyNode.vue';
 
-export class OwlClassSVG {
-    /** @type {OwlClass} */
-    owlclass;
-    /** @type {OwlClassSVG[]} */
+export class OwlObjectPropertySVG {
+    /** @type {OwlObjectProperty} */
+    owlobjprop;
+    /** @type {OwlObjectPropertySVG[]} */
     children;
 
     /** @type {Boolean} */
@@ -52,17 +52,17 @@ export class OwlClassSVG {
     /** @type {Number} */
     liney2;
 
-    /** @param {OwlClass} owlclass
-     *  @returns {OwlClassSVG}
+    /** @param {OwlObjectProperty} owlobjprop
+     *  @returns {OwlObjectPropertySVG}
      */
-    static fromOwlClass(owlclass) {
-        let owlclasssvg = new OwlClassSVG();
-        owlclasssvg.owlclass = owlclass;
-        owlclasssvg.children = [];
-        for (let child of owlclass.children) {
-            owlclasssvg.children.push(OwlClassSVG.fromOwlClass(child));
+    static fromOwlObjectProperty(owlobjprop) {
+        let owlobjpropsvg = new OwlObjectPropertySVG();
+        owlobjpropsvg.owlobjprop = owlobjprop;
+        owlobjpropsvg.children = [];
+        for (let child of owlobjprop.children) {
+            owlobjpropsvg.children.push(OwlObjectPropertySVG.fromOwlObjectProperty(child));
         }
-        return owlclasssvg;
+        return owlobjpropsvg;
     }
 
     /** @param {Number} x
@@ -72,15 +72,15 @@ export class OwlClassSVG {
         this.r = 0.6;
         this.startx = x;
         this.starty = y;
-        this.cx = this.startx + 2*this.r;
+        this.cx = this.startx + this.r;
         this.cy = this.starty + this.r;
-        this.textx = this.cx + this.r + 0.5;
+        this.textx = this.cx + 2*this.r + 0.5;
         this.texty = this.cy + this.r/2;
-        this.linex1 = this.cx;
+        this.linex1 = this.cx + this.r;
         this.liney1 = this.starty + 2*this.r;
-        this.linex2 = this.cx;
+        this.linex2 = this.cx + this.r;
         this.liney2 = this.liney1;
-        this.width = this.cx + this.r + this.owlclass.label.length;
+        this.width = this.cx + this.r + this.owlobjprop.label.length;
         let nextx = this.startx + 2*this.r;
         let nexty = this.starty + 2*this.r;
         for (let child of this.children) {
@@ -97,35 +97,35 @@ export class OwlClassSVG {
 }
 
 export default {
-    name: 'OwlClassComp',
+    name: 'OwlObjectPropertyComp',
     components: {
-        OwlClassNode
+        OwlObjectPropertyNode
     },
     props: {
-        owlclass: {
-            type: OwlClass,
+        owlobjprop: {
+            type: OwlObjectProperty,
             default: null
         },
     },
     data() {
         return {
-            owlclasssvg: null,
+            owlobjpropsvg: null,
             show: false,
-            selectedOwlClass: {}
+            selectedObjectProperty: {}
         };
     },
     methods: {
-        showClass(owlclass) {
-            this.selectedOwlClass = owlclass;
+        showObjprop(objprop) {
+            this.selectedObjectProperty = objprop;
             this.show = true;
         },
     },
     created() {
-        this.owlclasssvg = OwlClassSVG.fromOwlClass(this.owlclass);
-        this.owlclasssvg.calcPositions(0, 0);
+        this.owlobjpropsvg = OwlObjectPropertySVG.fromOwlObjectProperty(this.owlobjprop);
+        this.owlobjpropsvg.calcPositions(0, 0);
 
-        console.log(this.owlclasssvg.linex2);
-        console.log(this.owlclasssvg.liney2);
+        console.log(this.owlobjpropsvg.linex2);
+        console.log(this.owlobjpropsvg.liney2);
     }
 };
 

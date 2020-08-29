@@ -16,6 +16,7 @@ public class OwlInfo {
     public String label;
     public ArrayList<Annotation> annotations;
     public OwlClassNode owlclasses;
+    public OwlObjectPropertyNode owlobjprops;
 
 
     public OwlInfo(OWLOntology ontology) {
@@ -37,6 +38,8 @@ public class OwlInfo {
 
         this.owlclasses = new OwlClassNode();
         this.owlclasses.createRoot(this.ontology);
+        this.owlobjprops = new OwlObjectPropertyNode();
+        this.owlobjprops.createRoot(this.ontology);
     }
 
     public JsonObject toJsonObject() {
@@ -46,6 +49,7 @@ public class OwlInfo {
         result.put("label", this.label);
         result.put("annotations", Annotation.listToJsonArray(this.annotations));
         result.put("owlclasses", this.owlclasses.toJsonObject());
+        result.put("owlobjprops", this.owlobjprops.toJsonObject());
         return result;
     }
 

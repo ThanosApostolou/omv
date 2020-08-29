@@ -2,7 +2,7 @@ package omv.server.controllers;
 
 import java.util.Set;
 
-import io.vertx.core.MultiMap;
+//import io.vertx.core.MultiMap;
 import io.vertx.ext.web.FileUpload;
 import io.vertx.ext.web.RoutingContext;
 import omv.server.actions.VisualizationAction;
@@ -15,7 +15,7 @@ public class VisualizationController {
     }
 
 	public void post() {
-        MultiMap attributes = this.rtxmanager.rtx.request().formAttributes();
+        //MultiMap attributes = this.rtxmanager.rtx.request().formAttributes();
         Set<FileUpload> uploads = this.rtxmanager.rtx.fileUploads();
         FileUpload owl1=null;
         FileUpload owl2=null;
