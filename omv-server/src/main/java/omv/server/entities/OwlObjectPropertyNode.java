@@ -60,8 +60,8 @@ public class OwlObjectPropertyNode {
     }
 
     public void addSubObjectProperties() {
-        Stream<OWLSubObjectPropertyOfAxiom> subClassAxioms = this.owlontology.objectSubPropertyAxiomsForSuperProperty(this.objprop);
-        for (OWLSubObjectPropertyOfAxiom axiom : subClassAxioms.toArray(OWLSubObjectPropertyOfAxiom[]::new)) {
+        Stream<OWLSubObjectPropertyOfAxiom> subObjectPropertyAxioms = this.owlontology.objectSubPropertyAxiomsForSuperProperty(this.objprop);
+        for (OWLSubObjectPropertyOfAxiom axiom : subObjectPropertyAxioms.toArray(OWLSubObjectPropertyOfAxiom[]::new)) {
             //if(axiom.getSubClass().getClassExpressionType().getName().equals("Class")) {
                 Stream<OWLObjectProperty> subObjectProperties = axiom.getSubProperty().objectPropertiesInSignature();
                 for (OWLObjectProperty subobjprop : subObjectProperties.toArray(OWLObjectProperty[]::new)) {
