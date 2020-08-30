@@ -51,6 +51,8 @@ export class OwlEntitySVG {
     /** @type {Number} */
     texty;
     /** @type {Number} */
+    textLength;
+    /** @type {Number} */
     line1_x2;
     /** @type {Number} */
     linex1;
@@ -69,6 +71,7 @@ export class OwlEntitySVG {
         owlentitysvg.owlentity = owlentity;
         owlentitysvg.type = type;
         owlentitysvg.reverse = reverse;
+        owlentitysvg.textLength = owlentitysvg.fontSize/1.9 * owlentitysvg.owlentity.label.length;
         if (type === 'class') {
             owlentitysvg.color = 'yellow';
         } else if (type === 'objprop') {
@@ -83,11 +86,11 @@ export class OwlEntitySVG {
         return owlentitysvg;
     }
 
-    calcWidth() {
-        this.width = 2*this.r + this.fontSize/2 * this.owlentity.label.length;
+    calcWidth(depth) {
+        this.width = depth*3*this.r + this.textLength;
         for (let child of this.children) {
             let newwidth=0;
-            newwidth = child.calcWidth();
+            newwidth = child.calcWidth(depth+1);
             if (newwidth > this.width) {
                 this.width = newwidth;
             }
@@ -218,7 +221,7 @@ export default {
     },
     created() {
         this.owlentitysvg = OwlEntitySVG.fromOwlEntity(this.owlentity, this.type, this.reverse);
-        this.owlentitysvg.calcWidth();
+        this.owlentitysvg.calcWidth(1);
         if (!this.reverse) {
             this.owlentitysvg.calcPositions(0, 0);
         } else {

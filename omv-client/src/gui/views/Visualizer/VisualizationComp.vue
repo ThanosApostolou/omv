@@ -36,21 +36,7 @@
         </v-dialog>
         <v-divider />
         <v-row>
-            <v-col cols='5'>
-                <OwlEntityComp :owlentity='visualization.owl1.owlclasses' type='class' :reverse='false' />
-            </v-col>
-            <v-col cols='2' class='col2'>
-                ad
-            </v-col>
-            <v-col cols='5' class='col3'>
-                asdf
-                <svg class='text-right'>
-                    <circle cx='11' cy='11' r='10' stroke='black' stroke-width='1' fill='yellow' />
-                    <svg>
-                        <circle cx='22' cy='21' r='10' stroke='black' stroke-width='1' fill='yellow' />
-                    </svg>
-                </svg>
-            </v-col>
+            <OwlEntityComp :owlentity='visualization.owl1.owlclasses' type='class' :reverse='false' />
         </v-row>
     </div>
 </template>
