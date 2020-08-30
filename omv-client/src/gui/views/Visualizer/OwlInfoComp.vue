@@ -14,6 +14,9 @@
                 <v-tab key='owlobjprops'>
                     Object Properties
                 </v-tab>
+                <v-tab key='owldataprops'>
+                    Data Properties
+                </v-tab>
             </v-tabs>
 
             <v-tabs-items v-model='tab'>
@@ -67,6 +70,9 @@
                 </v-tab-item>
                 <v-tab-item key='owlobjprops'>
                     <OwlEntityComp v-if='owl != null' :owlentity='owl.owlobjprops' type='objprop' />
+                </v-tab-item>
+                <v-tab-item key='owldataprops'>
+                    <OwlEntityComp v-if='owl != null' :owlentity='owl.owldataprops' type='dataprop' />
                 </v-tab-item>
             </v-tabs-items>
         </v-card-text>

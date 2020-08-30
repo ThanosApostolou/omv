@@ -69,7 +69,7 @@ export class OwlEntitySVG {
         } else if (type === 'objprop') {
             owlentitysvg.color = 'lightblue';
         } else if (type === 'dataprop') {
-            owlentitysvg.color = 'green';
+            owlentitysvg.color = 'lightgreen';
         }
         owlentitysvg.children = [];
         for (let child of owlentity.children) {
@@ -91,9 +91,9 @@ export class OwlEntitySVG {
         }
         this.cy = this.starty + this.r;
         if (this.type === 'class') {
-            this.textx = this.cx + this.r + 0.5;
+            this.textx = this.cx + this.r + 2;
         } else {
-            this.textx = this.cx + 2*this.r + 0.5;
+            this.textx = this.cx + 2*this.r + 2;
         }
         this.texty = this.cy + this.r/2;
         if (this.type === 'class') {
@@ -108,7 +108,7 @@ export class OwlEntitySVG {
             this.linex2 = this.cx + this.r;
         }
         this.liney2 = this.liney1;
-        this.width = this.cx + this.r + this.fontSize + this.fontSize/2 * this.owlentity.label.length;
+        this.width = this.cx + this.r + this.fontSize/2 * this.owlentity.label.length + 2;
         let nextx = this.startx + 2*this.r;
         let nexty = this.starty + 2*this.r;
         for (let child of this.children) {

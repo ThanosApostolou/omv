@@ -1,6 +1,7 @@
 import Annotation from './Annotation.js';
 import OwlClass from './OwlClass.js';
 import OwlObjectProperty from './OwlObjectProperty.js';
+import OwlDataProperty from './OwlDataProperty.js';
 
 
 class OwlInfo {
@@ -16,6 +17,8 @@ class OwlInfo {
     owlclasses;
     /** @type {OwlObjectProperty} */
     owlobjprops;
+    /** @type {OwlDataProperty} */
+    owldataprops;
 
     /** @param {object} owlinfoobject
      *  @returns {OwlInfo}
@@ -29,6 +32,7 @@ class OwlInfo {
         owlinfo.annotations = Annotation.listFromObject(owlinfoobject.annotations);
         owlinfo.owlclasses = OwlClass.fromObject(owlinfoobject.owlclasses);
         owlinfo.owlobjprops = OwlObjectProperty.fromObject(owlinfoobject.owlobjprops);
+        owlinfo.owldataprops = OwlDataProperty.fromObject(owlinfoobject.owldataprops);
         return owlinfo;
     }
 }
