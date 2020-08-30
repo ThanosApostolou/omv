@@ -37,7 +37,7 @@
         <v-divider />
         <v-row>
             <v-col cols='5'>
-                <OwlEntityComp :owlentity='visualization.owl1.owlclasses' type='class' />
+                <OwlEntityComp :owlentity='visualization.owl1.owlclasses' type='class' :reverse='false' />
             </v-col>
             <v-col cols='2' class='col2'>
                 ad

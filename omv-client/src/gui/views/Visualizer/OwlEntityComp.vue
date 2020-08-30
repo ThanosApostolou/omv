@@ -21,6 +21,8 @@ export class OwlEntitySVG {
     children;
     /** @type {String} */
     type;
+    /** @type {Boolean} */
+    reverse;
     /** @type {String} */
     color;
 
@@ -49,6 +51,8 @@ export class OwlEntitySVG {
     /** @type {Number} */
     texty;
     /** @type {Number} */
+    line1_x2;
+    /** @type {Number} */
     linex1;
     /** @type {Number} */
     liney1;
@@ -60,10 +64,11 @@ export class OwlEntitySVG {
     /** @param {Object} owlentity
      *  @returns {OwlEntitySVG}
      */
-    static fromOwlEntity(owlentity, type) {
+    static fromOwlEntity(owlentity, type, reverse) {
         let owlentitysvg = new OwlEntitySVG();
         owlentitysvg.owlentity = owlentity;
         owlentitysvg.type = type;
+        owlentitysvg.reverse = reverse;
         if (type === 'class') {
             owlentitysvg.color = 'yellow';
         } else if (type === 'objprop') {
@@ -78,10 +83,23 @@ export class OwlEntitySVG {
         return owlentitysvg;
     }
 
+    calcWidth() {
+        this.width = 2*this.r + this.fontSize/2 * this.owlentity.label.length;
+        for (let child of this.children) {
+            let newwidth=0;
+            newwidth = child.calcWidth();
+            if (newwidth > this.width) {
+                this.width = newwidth;
+            }
+        }
+        return this.width;
+    }
+
     /** @param {Number} x
      *  @returns {Number}
      */
     calcPositions(x, y) {
+        this.textAnchor = 'start';
         this.startx = x;
         this.starty = y;
         if (this.type === 'class') {
@@ -96,6 +114,7 @@ export class OwlEntitySVG {
             this.textx = this.cx + 2*this.r + 2;
         }
         this.texty = this.cy + this.r/2;
+        this.line1_x2 = this.startx + this.r ;
         if (this.type === 'class') {
             this.linex1 = this.cx;
         } else {
@@ -108,20 +127,61 @@ export class OwlEntitySVG {
             this.linex2 = this.cx + this.r;
         }
         this.liney2 = this.liney1;
-        this.width = this.cx + this.r + this.fontSize/2 * this.owlentity.label.length + 2;
         let nextx = this.startx + 2*this.r;
         let nexty = this.starty + 2*this.r;
         for (let child of this.children) {
-            let newwidth=0, childcy=0;
-            [nexty, newwidth, childcy] = child.calcPositions(nextx, nexty);
-            if (newwidth > this.width) {
-                this.width = newwidth;
-            }
+            let childcy=0;
+            [nexty, childcy] = child.calcPositions(nextx, nexty);
             this.liney2 = childcy;
         }
         this.height = nexty - this.starty;
-        return [nexty, this.width, this.cy];
+        return [nexty, this.cy];
     }
+
+    /** @param {Number} x
+     *  @param {Number} y
+     *  @returns {Number}
+     */
+    calcPositionsReverse(x, y) {
+        this.textAnchor = 'end';
+        this.startx = x;
+        this.starty = y;
+        if (this.type === 'class') {
+            this.cx = this.startx - 2*this.r;
+        } else {
+            this.cx = this.startx - this.r;
+        }
+        this.cy = this.starty + this.r;
+        if (this.type === 'class') {
+            this.textx = this.cx - this.r - 2;
+        } else {
+            this.textx = this.cx - 2*this.r - 2;
+        }
+        this.texty = this.cy + this.r/2;
+        this.line1_x2 = this.startx - this.r ;
+        if (this.type === 'class') {
+            this.linex1 = this.cx;
+        } else {
+            this.linex1 = this.cx - this.r;
+        }
+        this.liney1 = this.starty + 2*this.r;
+        if (this.type === 'class') {
+            this.linex2 = this.cx;
+        } else {
+            this.linex2 = this.cx - this.r;
+        }
+        this.liney2 = this.liney1;
+        let nextx = this.startx - 2*this.r;
+        let nexty = this.starty + 2*this.r;
+        for (let child of this.children) {
+            let childcy=0;
+            [nexty, childcy] = child.calcPositionsReverse(nextx, nexty);
+            this.liney2 = childcy;
+        }
+        this.height = nexty - this.starty;
+        return [nexty, this.cy];
+    }
+
 }
 
 export default {
@@ -138,6 +198,10 @@ export default {
             type: String,
             default: 'class'
         },
+        reverse: {
+            type: Boolean,
+            default: false
+        },
     },
     data() {
         return {
@@ -153,8 +217,13 @@ export default {
         },
     },
     created() {
-        this.owlentitysvg = OwlEntitySVG.fromOwlEntity(this.owlentity, this.type);
-        this.owlentitysvg.calcPositions(0, 0);
+        this.owlentitysvg = OwlEntitySVG.fromOwlEntity(this.owlentity, this.type, this.reverse);
+        this.owlentitysvg.calcWidth();
+        if (!this.reverse) {
+            this.owlentitysvg.calcPositions(0, 0);
+        } else {
+            this.owlentitysvg.calcPositionsReverse(this.owlentitysvg.width, 0);
+        }
 
         console.log(this.owlentitysvg.linex2);
         console.log(this.owlentitysvg.liney2);
