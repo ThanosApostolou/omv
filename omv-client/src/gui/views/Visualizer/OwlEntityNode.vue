@@ -1,6 +1,6 @@
 <template>
     <svg>
-        <svg class='svg' @click='showObjprop(owlentitysvg.owlentity)'>
+        <svg class='svg' @click='showEntity(owlentitysvg.owlentity)'>
             <circle v-if='owlentitysvg.type === "class"' :cx='owlentitysvg.cx' :cy='owlentitysvg.cy' :r='owlentitysvg.r' stroke='black' :stroke-width='owlentitysvg.stroke' :fill='owlentitysvg.color' />
             <rect v-if='owlentitysvg.type !== "class"' :x='owlentitysvg.cx' :y='owlentitysvg.starty' :width='2*owlentitysvg.r' :height='2*owlentitysvg.r' :cx='owlentitysvg.cx' stroke='black' :stroke-width='owlentitysvg.stroke' :fill='owlentitysvg.color' />
             <text :x='owlentitysvg.textx' :y='owlentitysvg.texty' :font-size='owlentitysvg.fontSize'> {{ owlentitysvg.owlentity.label }}</text>

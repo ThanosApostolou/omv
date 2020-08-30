@@ -148,7 +148,7 @@ export default {
     },
     methods: {
         showEntity(owlentity) {
-            this.selectedEntity = owlentity;
+            this.selectedOwlEntity = owlentity;
             this.show = true;
         },
     },
