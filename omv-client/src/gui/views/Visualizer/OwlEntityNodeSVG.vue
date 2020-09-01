@@ -7,14 +7,14 @@
             <line :x1='owlentitysvg.startx' :y1='owlentitysvg.cy' :x2='owlentitysvg.line1_x2' :y2='owlentitysvg.cy' stroke='black' :stroke-width='owlentitysvg.stroke' />
             <line :x1='owlentitysvg.linex1' :y1='owlentitysvg.liney1' :x2='owlentitysvg.linex2' :y2='owlentitysvg.liney2' stroke='black' :stroke-width='owlentitysvg.stroke' />
         </svg>
-        <OwlObjectPropertyNode v-for='child in owlentitysvg.children' :key='child.owlentity.iri' :owlentitysvg='child' @show-entity='showEntity' />
+        <OwlEntityNodeSVG v-for='child in owlentitysvg.children' :key='child.owlentity.iri' :owlentitysvg='child' @show-entity='showEntity' />
     </svg>
 </template>
 
 <script>
 
 export default {
-    name: 'OwlObjectPropertyNode',
+    name: 'OwlEntityNodeSVG',
     props: {
         owlentitysvg: {
             type: Object,
