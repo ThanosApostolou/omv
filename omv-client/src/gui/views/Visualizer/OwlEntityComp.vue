@@ -1,7 +1,7 @@
 <template>
     <div>
         <svg :x='0' :y='0' :height='this.height' :width='this.width'>
-            <OwlEntityTreeSVG :owlentity='owlentity'  :type='type' @show-entity='showEntity' ref='owlentitysvgref' />
+            <OwlEntityTreeSVG :owlentity='owlentity' :type='type' @show-entity='showEntity' ref='owlentitysvgref' />
         </svg>
         <v-dialog v-if='show' v-model='show'>
             <v-card>
