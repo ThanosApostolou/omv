@@ -9,14 +9,6 @@ public class Rule {
     public String relation;
     public RuleEntity entity1;
     public RuleEntity entity2;
-    public String owl1pid;
-    public JsonArray owl1classes;
-    public JsonArray owl1objectprops;
-    public JsonArray owl1dataprops;
-    public String owl2pid;
-    public JsonArray owl2classes;
-    public JsonArray owl2objectprops;
-    public JsonArray owl2dataprops;
     public JsonObject content;
 
     public Rule() {

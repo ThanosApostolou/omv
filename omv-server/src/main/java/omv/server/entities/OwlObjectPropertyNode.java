@@ -21,6 +21,9 @@ public class OwlObjectPropertyNode {
     public String label;
     public ArrayList<Annotation> annotations;
     public ArrayList<OwlObjectPropertyNode> children;
+    public Boolean hasEquivalentRule;
+    public Boolean hasLinkedWithRule;
+    public Boolean hasOtherRule;
 
     public OwlObjectPropertyNode() {
         this.owlontology = null;
@@ -30,6 +33,9 @@ public class OwlObjectPropertyNode {
         this.label = null;
         this.annotations = new ArrayList<Annotation>();
         this.children = new ArrayList<OwlObjectPropertyNode>();
+        this.hasEquivalentRule = false;
+        this.hasLinkedWithRule = false;
+        this.hasOtherRule = false;
     }
     public void create(OWLObjectProperty objprop, OWLOntology ontology) {
         this.owlontology = ontology;
@@ -82,6 +88,9 @@ public class OwlObjectPropertyNode {
         jsonobject.put("iri", this.iri);
         jsonobject.put("name", this.name);
         jsonobject.put("label", this.label);
+        jsonobject.put("hasEquivalentRule", this.hasEquivalentRule);
+        jsonobject.put("hasLinkedWithRule", this.hasLinkedWithRule);
+        jsonobject.put("hasOtherRule", this.hasOtherRule);
         jsonobject.put("annotations", Annotation.listToJsonArray(this.annotations));
         JsonArray childrenJsonArray = new JsonArray();
         for (OwlObjectPropertyNode child : this.children) {
@@ -101,6 +110,21 @@ public class OwlObjectPropertyNode {
 
     public String toString() {
         return this.toString("");
+    }
+
+    public OwlObjectPropertyNode findByIri(String giveniri) {
+        OwlObjectPropertyNode foundentity = null;
+        if (this.iri.equals(giveniri)) {
+            foundentity = this;
+            return foundentity;
+        }
+        for (OwlObjectPropertyNode child : this.children) {
+            foundentity = child.findByIri(giveniri);
+            if (foundentity != null) {
+                return foundentity;
+            }
+        }
+        return foundentity;
     }
 
     public void createRoot(OWLOntology owlontology) {

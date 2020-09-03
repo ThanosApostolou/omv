@@ -2,17 +2,16 @@ package omv.server.entities;
 
 import java.util.ArrayList;
 
-import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 
-public class Mappings {
+public class Mapping {
     public String owl1iri;
     public String owl2iri;
     public ArrayList<Rule> equivalent;
     public ArrayList<Rule> linkedwith;
     public ArrayList<Rule> other;
 
-    public Mappings() {
+    public Mapping() {
         this.owl1iri = "";
         this.owl2iri = "";
         this.equivalent = new ArrayList<Rule>();
@@ -20,10 +19,10 @@ public class Mappings {
         this.other = new ArrayList<Rule>();
     }
 
-    public void init(JsonObject mappings) {
-        this.owl1iri = mappings.getJsonObject("ontologies").getJsonObject("ontA").getString("uri");
-        this.owl2iri = mappings.getJsonObject("ontologies").getJsonObject("ontB").getString("uri");
-        mappings.getJsonObject("correspondences").getJsonArray("jsonarray").forEach((obj) -> {
+    public void init(JsonObject mappingobject) {
+        this.owl1iri = mappingobject.getJsonObject("ontologies").getJsonObject("ontA").getString("uri");
+        this.owl2iri = mappingobject.getJsonObject("ontologies").getJsonObject("ontB").getString("uri");
+        mappingobject.getJsonObject("correspondences").getJsonArray("jsonarray").forEach((obj) -> {
             JsonObject ruleobject = (JsonObject) obj;
             Rule rule = new Rule();
             rule.init(ruleobject);

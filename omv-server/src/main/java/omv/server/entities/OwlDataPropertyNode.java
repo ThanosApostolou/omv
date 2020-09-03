@@ -21,6 +21,9 @@ public class OwlDataPropertyNode {
     public String label;
     public ArrayList<Annotation> annotations;
     public ArrayList<OwlDataPropertyNode> children;
+    public Boolean hasEquivalentRule;
+    public Boolean hasLinkedWithRule;
+    public Boolean hasOtherRule;
 
     public OwlDataPropertyNode() {
         this.owlontology = null;
@@ -30,6 +33,9 @@ public class OwlDataPropertyNode {
         this.label = null;
         this.annotations = new ArrayList<Annotation>();
         this.children = new ArrayList<OwlDataPropertyNode>();
+        this.hasEquivalentRule = false;
+        this.hasLinkedWithRule = false;
+        this.hasOtherRule = false;
     }
     public void create(OWLDataProperty dataprop, OWLOntology ontology) {
         this.owlontology = ontology;
@@ -82,6 +88,9 @@ public class OwlDataPropertyNode {
         jsonobject.put("iri", this.iri);
         jsonobject.put("name", this.name);
         jsonobject.put("label", this.label);
+        jsonobject.put("hasEquivalentRule", this.hasEquivalentRule);
+        jsonobject.put("hasLinkedWithRule", this.hasLinkedWithRule);
+        jsonobject.put("hasOtherRule", this.hasOtherRule);
         jsonobject.put("annotations", Annotation.listToJsonArray(this.annotations));
         JsonArray childrenJsonArray = new JsonArray();
         for (OwlDataPropertyNode child : this.children) {
@@ -101,6 +110,21 @@ public class OwlDataPropertyNode {
 
     public String toString() {
         return this.toString("");
+    }
+
+    public OwlDataPropertyNode findByIri(String giveniri) {
+        OwlDataPropertyNode foundentity = null;
+        if (this.iri.equals(giveniri)) {
+            foundentity = this;
+            return foundentity;
+        }
+        for (OwlDataPropertyNode child : this.children) {
+            foundentity = child.findByIri(giveniri);
+            if (foundentity != null) {
+                return foundentity;
+            }
+        }
+        return foundentity;
     }
 
     public void createRoot(OWLOntology owlontology) {
