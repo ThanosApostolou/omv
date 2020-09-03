@@ -1,22 +1,27 @@
+import Rule from "./Rule.js";
+
 class Mapping {
     /** @type {String} */
     owl1iri;
     /** @type {String} */
     owl2iri;
-    /** @type {Object[]} */
+    /** @type {Rule[]} */
     equivalent;
-    /** @type {Object[]} */
+    /** @type {Rule[]} */
     linkedwith;
-    /** @type {Object[]} */
+    /** @type {Rule[]} */
     other;
 
+    /** @param {Object} mappingobject
+     * @returns {Mapping}
+    */
     static fromObject (mappingobject) {
         let mapping = new Mapping();
         mapping.owl1iri = mappingobject.owl1iri;
         mapping.owl2iri = mappingobject.owl2iri;
-        mapping.equivalent = mappingobject.equivalent;
-        mapping.linkedwith = mappingobject.linkedwith;
-        mapping.other = mappingobject.other;
+        mapping.equivalent = Rule.listFromObject(mappingobject.equivalent);
+        mapping.linkedwith = Rule.listFromObject(mappingobject.linkedwith);
+        mapping.other = Rule.listFromObject(mappingobject.other);
         return mapping;
     }
 }
