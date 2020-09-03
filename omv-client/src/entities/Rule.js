@@ -41,7 +41,7 @@ class Rule {
     static listFromObject(rulesobject) {
         let rules = [];
         for (let ruleobject of rulesobject) {
-            rules.add(Rule.fromObject(ruleobject));
+            rules.push(Rule.fromObject(ruleobject));
         }
         return rules;
     }

@@ -79,10 +79,6 @@ export default {
             this.current_owl = this.visualization.owl2;
             this.showdialog = true;
         }
-    },
-    mounted() {
-        //let r = this.visualization;
-        //console.log(r);
     }
 };
 </script>

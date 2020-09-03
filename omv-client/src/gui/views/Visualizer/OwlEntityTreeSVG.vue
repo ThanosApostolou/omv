@@ -219,9 +219,6 @@ export default {
         } else {
             this.owlentitysvg.calcPositionsReverse(this.owlentitysvg.width, 0);
         }
-
-        console.log(this.owlentitysvg.linex2);
-        console.log(this.owlentitysvg.liney2);
     }
 };
 

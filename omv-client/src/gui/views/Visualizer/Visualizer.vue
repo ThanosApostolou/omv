@@ -89,7 +89,6 @@ export default {
             formData.append("mapping", this.mapping);
             App.app.apiconsumer.postVisualization(formData).then((response) => {
                 this.result = Visualization.fromObject(response.data.visualization);
-                console.log("response.data: ", this.result.owl1);
                 this.expansionPanel.value = [];
                 this.successful = true;
             }).catch((error) => {
