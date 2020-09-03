@@ -4,7 +4,7 @@
             <v-expansion-panel>
                 <v-expansion-panel-header>
                     <div align='center' justify='center' class='text-center'>
-                        <p>Visualizer: Select 2 owl files and their json mappings.</p>
+                        <p>Visualizer: Select 2 owl files and their json mapping.</p>
                     </div>
                 </v-expansion-panel-header>
                 <v-expansion-panel-content>
@@ -18,7 +18,7 @@
                                     <v-file-input v-model='owl2' chips counter show-size outlined dense label='OWL File 2' />
                                 </v-col>
                                 <v-col>
-                                    <v-file-input v-model='mappings' chips counter show-size outlined dense label='JSON Mappings' />
+                                    <v-file-input v-model='mapping' chips counter show-size outlined dense label='JSON Mapping' />
                                 </v-col>
                                 <v-col align='center' justify='center' class='text-center'>
                                     <v-btn v-bind='submitBtn' color='primary' @click='submit'>
@@ -60,7 +60,7 @@ export default {
             result: {},
             owl1: null,
             owl2: null,
-            mappings: null,
+            mapping: null,
             submitBtn: {
                 disabled: false
             },
@@ -86,7 +86,7 @@ export default {
             const formData = new FormData();
             formData.append('owl1', this.owl1);
             formData.append('owl2', this.owl2);
-            formData.append('mappings', this.mappings);
+            formData.append('mapping', this.mapping);
             App.app.apiconsumer.postVisualization(formData).then((response) => {
                 this.result = Visualization.fromObject(response.data.visualization);
                 console.log('response.data: ', this.result.owl1);

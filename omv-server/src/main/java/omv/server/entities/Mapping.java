@@ -37,13 +37,13 @@ public class Mapping {
     }
 
     public JsonObject toJsonOjbect() {
-        JsonObject mappingsjsonobject = new JsonObject();
-        mappingsjsonobject.put("owl1iri", this.owl1iri);
-        mappingsjsonobject.put("owl2iri", this.owl2iri);
-        mappingsjsonobject.put("equivalent", Rule.listToJsonArray(this.equivalent));
-        mappingsjsonobject.put("linkedwith", Rule.listToJsonArray(this.linkedwith));
-        mappingsjsonobject.put("other", Rule.listToJsonArray(this.other));
-        return mappingsjsonobject;
+        JsonObject mappingjsonobject = new JsonObject();
+        mappingjsonobject.put("owl1iri", this.owl1iri);
+        mappingjsonobject.put("owl2iri", this.owl2iri);
+        mappingjsonobject.put("equivalent", Rule.listToJsonArray(this.equivalent));
+        mappingjsonobject.put("linkedwith", Rule.listToJsonArray(this.linkedwith));
+        mappingjsonobject.put("other", Rule.listToJsonArray(this.other));
+        return mappingjsonobject;
     }
 
 }

@@ -18,7 +18,7 @@
         <v-row align='center' justify='center' class='text-center'>
             <p>
                 {{ buildinfo.appName }} is an application where you can choose 2 owl files
-                and a json file with their mappings.<br>
+                and a json file with their mapping.<br>
                 The application will visualize this information in a understandable way.
             </p>
         </v-row>

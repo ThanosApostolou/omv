@@ -62,7 +62,7 @@ export default {
             showdialog: false,
             current_owl: {},
             mappingsSelect: {
-                label: 'Mappings Rules:',
+                label: 'Mapping Rules:',
                 items: [
                     'all',
                     'simple'

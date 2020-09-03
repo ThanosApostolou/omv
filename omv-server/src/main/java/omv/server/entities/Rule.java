@@ -6,33 +6,41 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 
 public class Rule {
-    public String relation;
-    public RuleEntity entity1;
-    public RuleEntity entity2;
-    public JsonObject content;
-
-    public Rule() {
-        this.relation = "";
-        this.entity1 = new RuleEntity();
-        this.entity2 = new RuleEntity();
-        this.content = new JsonObject();
-    }
+    public String relation = "";
+    public String direction = "";
+    public String comments = "";
+    public String similarity = "";
+    public String simcomments = "";
+    public JsonObject directTransformation = new JsonObject();
+    public JsonObject inverseTransformation = new JsonObject();
+    public RuleEntity entity1 = new RuleEntity();
+    public RuleEntity entity2 = new RuleEntity();
 
     public void init(JsonObject ruleobject) {
         this.relation = ruleobject.getString("relation");
+        this.direction = ruleobject.getString("direction");
+        this.comments = ruleobject.getString("comments");
+        this.similarity = ruleobject.getString("similarity");
+        this.simcomments = ruleobject.getString("simcomments");
+        this.directTransformation = ruleobject.getJsonObject("directTransformation");
+        this.inverseTransformation = ruleobject.getJsonObject("inverseTransformation");
         JsonObject entity1object = ruleobject.getJsonObject("entity1");
         this.entity1.init(entity1object);
         JsonObject entity2object = ruleobject.getJsonObject("entity2");
         this.entity2.init(entity2object);
-        this.content = ruleobject;
     }
 
     public JsonObject toJsonObject() {
         JsonObject rulejsonobject = new JsonObject();
         rulejsonobject.put("relation", this.relation);
+        rulejsonobject.put("direction", this.direction);
+        rulejsonobject.put("comments", this.comments);
+        rulejsonobject.put("similarity", this.similarity);
+        rulejsonobject.put("simcomments", this.simcomments);
+        rulejsonobject.put("directTransformation", this.directTransformation);
+        rulejsonobject.put("inverseTransformation", this.inverseTransformation);
         rulejsonobject.put("entity1", this.entity1.toJsonObject());
         rulejsonobject.put("entity2", this.entity2.toJsonObject());
-        rulejsonobject.put("content", this.content);
         return rulejsonobject;
     }
 
