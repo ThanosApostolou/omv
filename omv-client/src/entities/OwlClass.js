@@ -1,4 +1,4 @@
-import Annotation from './Annotation.js';
+import Annotation from "./Annotation.js";
 
 class OwlClass {
     /** @type {String} */

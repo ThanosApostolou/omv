@@ -1,6 +1,6 @@
-import '@babel/polyfill';
-import 'mutationobserver-shim';
+import "@babel/polyfill";
+import "mutationobserver-shim";
 
-import { App } from './App.js';
+import { App } from "./App.js";
 
 new App();

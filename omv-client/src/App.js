@@ -1,6 +1,6 @@
-import { Buildinfo } from './Buildinfo.js';
-import { VueRoot } from './gui/VueRoot.js';
-import { ApiConsumer } from './ApiConsumer.js';
+import { Buildinfo } from "./Buildinfo.js";
+import { VueRoot } from "./gui/VueRoot.js";
+import { ApiConsumer } from "./ApiConsumer.js";
 
 export class App {
     static app;

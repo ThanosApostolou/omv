@@ -1,11 +1,11 @@
 <template>
     <svg>
-        <OwlEntityNodeSVG :owlentitysvg='owlentitysvg' @show-entity='showEntity' />
+        <OwlEntityNodeSVG :owlentitysvg="owlentitysvg" @show-entity="showEntity" />
     </svg>
 </template>
 
 <script>
-import OwlEntityNodeSVG from './OwlEntityNodeSVG.vue';
+import OwlEntityNodeSVG from "./OwlEntityNodeSVG.vue";
 
 export class OwlEntitySVG {
     /** @type {Object} */
@@ -65,12 +65,12 @@ export class OwlEntitySVG {
         owlentitysvg.type = type;
         owlentitysvg.reverse = reverse;
         owlentitysvg.textLength = owlentitysvg.fontSize/1.9 * owlentitysvg.owlentity.label.length;
-        if (type === 'class') {
-            owlentitysvg.color = 'yellow';
-        } else if (type === 'objprop') {
-            owlentitysvg.color = 'lightblue';
-        } else if (type === 'dataprop') {
-            owlentitysvg.color = 'lightgreen';
+        if (type === "class") {
+            owlentitysvg.color = "yellow";
+        } else if (type === "objprop") {
+            owlentitysvg.color = "lightblue";
+        } else if (type === "dataprop") {
+            owlentitysvg.color = "lightgreen";
         }
         owlentitysvg.children = [];
         for (let child of owlentity.children) {
@@ -95,29 +95,29 @@ export class OwlEntitySVG {
      *  @returns {Number}
      */
     calcPositions(x, y) {
-        this.textAnchor = 'start';
+        this.textAnchor = "start";
         this.startx = x;
         this.starty = y;
-        if (this.type === 'class') {
+        if (this.type === "class") {
             this.cx = this.startx + 2*this.r;
         } else {
             this.cx = this.startx + this.r;
         }
         this.cy = this.starty + this.r;
-        if (this.type === 'class') {
+        if (this.type === "class") {
             this.textx = this.cx + this.r + 2;
         } else {
             this.textx = this.cx + 2*this.r + 2;
         }
         this.texty = this.cy + this.r/2;
         this.line1_x2 = this.startx + this.r ;
-        if (this.type === 'class') {
+        if (this.type === "class") {
             this.linex1 = this.cx;
         } else {
             this.linex1 = this.cx + this.r;
         }
         this.liney1 = this.starty + 2*this.r;
-        if (this.type === 'class') {
+        if (this.type === "class") {
             this.linex2 = this.cx;
         } else {
             this.linex2 = this.cx + this.r;
@@ -139,29 +139,29 @@ export class OwlEntitySVG {
      *  @returns {Number}
      */
     calcPositionsReverse(x, y) {
-        this.textAnchor = 'end';
+        this.textAnchor = "end";
         this.startx = x;
         this.starty = y;
-        if (this.type === 'class') {
+        if (this.type === "class") {
             this.cx = this.startx - 2*this.r;
         } else {
             this.cx = this.startx - this.r;
         }
         this.cy = this.starty + this.r;
-        if (this.type === 'class') {
+        if (this.type === "class") {
             this.textx = this.cx - this.r - 2;
         } else {
             this.textx = this.cx - 2*this.r - 2;
         }
         this.texty = this.cy + this.r/2;
         this.line1_x2 = this.startx - this.r ;
-        if (this.type === 'class') {
+        if (this.type === "class") {
             this.linex1 = this.cx;
         } else {
             this.linex1 = this.cx - this.r;
         }
         this.liney1 = this.starty + 2*this.r;
-        if (this.type === 'class') {
+        if (this.type === "class") {
             this.linex2 = this.cx;
         } else {
             this.linex2 = this.cx - this.r;
@@ -181,7 +181,7 @@ export class OwlEntitySVG {
 }
 
 export default {
-    name: 'OwlEntityTreeSVG',
+    name: "OwlEntityTreeSVG",
     components: {
         OwlEntityNodeSVG
     },
@@ -192,7 +192,7 @@ export default {
         },
         type: {
             type: String,
-            default: 'class'
+            default: "class"
         },
         reverse: {
             type: Boolean,
@@ -208,7 +208,7 @@ export default {
     },
     methods: {
         showEntity(owlentity) {
-            this.$emit('show-entity', owlentity);
+            this.$emit("show-entity", owlentity);
         },
     },
     created() {

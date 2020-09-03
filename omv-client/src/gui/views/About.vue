@@ -1,22 +1,22 @@
 <template>
     <v-container>
-        <v-row align='align' justify='center' class='text-center'>
-            <v-col cols='12' lg='6' xs='12'>
-                <v-card height='100%'>
-                    <v-row align='center' justify='center' class='text-center'>
+        <v-row align="align" justify="center" class="text-center">
+            <v-col cols="12" lg="6" xs="12">
+                <v-card height="100%">
+                    <v-row align="center" justify="center" class="text-center">
                         <v-card-title>About Me</v-card-title>
                     </v-row>
-                    <v-row align='center' justify='center' class='text-center'>
+                    <v-row align="center" justify="center" class="text-center">
                         <p>Thanos Apostolou</p>
                     </v-row>
                 </v-card>
             </v-col>
-            <v-col cols='12' lg='6' xs='12'>
-                <v-card height='100%'>
-                    <v-row align='center' justify='center' class='text-center'>
+            <v-col cols="12" lg="6" xs="12">
+                <v-card height="100%">
+                    <v-row align="center" justify="center" class="text-center">
                         <v-card-title>Application Information</v-card-title>
                     </v-row>
-                    <v-row align='center' justify='center' class='text-center'>
+                    <v-row align="center" justify="center" class="text-center">
                         <v-col>
                             Application Name:
                         </v-col>
@@ -24,7 +24,7 @@
                             {{ buildinfo.appNodeName }}
                         </v-col>
                     </v-row>
-                    <v-row align='center' justify='center' class='text-center'>
+                    <v-row align="center" justify="center" class="text-center">
                         <v-col>
                             Application Displayed Name:
                         </v-col>
@@ -32,7 +32,7 @@
                             {{ buildinfo.appName }}
                         </v-col>
                     </v-row>
-                    <v-row align='center' justify='center' class='text-center'>
+                    <v-row align="center" justify="center" class="text-center">
                         <v-col>
                             Application Version:
                         </v-col>
@@ -40,7 +40,7 @@
                             {{ buildinfo.appVersion }}
                         </v-col>
                     </v-row>
-                    <v-row align='center' justify='center' class='text-center'>
+                    <v-row align="center" justify="center" class="text-center">
                         <v-col>
                             Build Platform:
                         </v-col>
@@ -48,7 +48,7 @@
                             {{ buildinfo.buildPlatform }}
                         </v-col>
                     </v-row>
-                    <v-row align='center' justify='center' class='text-center'>
+                    <v-row align="center" justify="center" class="text-center">
                         <v-col>
                             Build Mode:
                         </v-col>
@@ -64,7 +64,7 @@
 
 <script>
 export default {
-    name: 'About',
+    name: "About",
     data: function () {
         return {
             buildinfo: this.$root.app.buildinfo

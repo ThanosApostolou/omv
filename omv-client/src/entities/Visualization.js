@@ -1,4 +1,4 @@
-import OwlInfo from './OwlInfo.js';
+import OwlInfo from "./OwlInfo.js";
 
 export class Visualization {
     owl1;

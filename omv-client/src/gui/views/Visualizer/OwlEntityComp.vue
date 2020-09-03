@@ -1,9 +1,9 @@
 <template>
     <div>
-        <svg :x='0' :y='0' :height='this.height' :width='this.width'>
-            <OwlEntityTreeSVG :owlentity='owlentity' :type='type' @show-entity='showEntity' ref='owlentitysvgref' />
+        <svg :x="0" :y="0" :height="this.height" :width="this.width">
+            <OwlEntityTreeSVG :owlentity="owlentity" :type="type" @show-entity="showEntity" ref="owlentitysvgref" />
         </svg>
-        <v-dialog v-if='show' v-model='show'>
+        <v-dialog v-if="show" v-model="show">
             <v-card>
                 <span> {{ selectedOwlEntity.label }}</span>
             </v-card>
@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import OwlEntityTreeSVG from './OwlEntityTreeSVG.vue';
+import OwlEntityTreeSVG from "./OwlEntityTreeSVG.vue";
 
 export default {
-    name: 'OwlEntityComp',
+    name: "OwlEntityComp",
     components: {
         OwlEntityTreeSVG
     },
@@ -26,7 +26,7 @@ export default {
         },
         type: {
             type: String,
-            default: 'class'
+            default: "class"
         },
         reverse: {
             type: Boolean,
@@ -48,7 +48,7 @@ export default {
         }
     },
     mounted() {
-        console.log('width ', this.$refs.owlentitysvgref.owlentitysvg.width);
+        console.log("width ", this.$refs.owlentitysvgref.owlentitysvg.width);
         this.width = this.$refs.owlentitysvgref.owlentitysvg.width;
         this.height = this.$refs.owlentitysvgref.owlentitysvg.height;
     }

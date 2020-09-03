@@ -1,7 +1,7 @@
-import Annotation from './Annotation.js';
-import OwlClass from './OwlClass.js';
-import OwlObjectProperty from './OwlObjectProperty.js';
-import OwlDataProperty from './OwlDataProperty.js';
+import Annotation from "./Annotation.js";
+import OwlClass from "./OwlClass.js";
+import OwlObjectProperty from "./OwlObjectProperty.js";
+import OwlDataProperty from "./OwlDataProperty.js";
 
 
 class OwlInfo {

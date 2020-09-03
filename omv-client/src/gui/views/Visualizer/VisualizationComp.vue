@@ -1,51 +1,51 @@
 <template>
     <div>
         <v-row>
-            <v-col cols='5'>
+            <v-col cols="5">
                 <p>
                     {{ visualization.owl1.label }}
-                    <v-btn icon color='primary' @click='owl1info()'>
+                    <v-btn icon color="primary" @click="owl1info()">
                         <v-icon>info</v-icon>
                     </v-btn>
                 </p>
             </v-col>
-            <v-col cols='2' class='col2'>
-                <v-select v-bind='mappingsSelect'>
+            <v-col cols="2" class="col2">
+                <v-select v-bind="mappingsSelect">
                     asd
                 </v-select>
             </v-col>
-            <v-col cols='5' class='col3'>
+            <v-col cols="5" class="col3">
                 <p>
                     {{ visualization.owl2.label }}
-                    <v-btn icon color='primary' @click='owl2info()'>
+                    <v-btn icon color="primary" @click="owl2info()">
                         <v-icon>info</v-icon>
                     </v-btn>
                 </p>
             </v-col>
         </v-row>
-        <v-dialog v-if='showdialog' v-model='showdialog'>
+        <v-dialog v-if="showdialog" v-model="showdialog">
             <v-card>
                 <v-card-actions>
                     <v-spacer />
-                    <v-btn icon @click='showdialog = false'>
+                    <v-btn icon @click="showdialog = false">
                         <v-icon>close</v-icon>
                     </v-btn>
                 </v-card-actions>
-                <OwlInfoComp :owl='current_owl' />
+                <OwlInfoComp :owl="current_owl" />
             </v-card>
         </v-dialog>
         <v-divider />
         <v-row>
-            <OwlEntityComp :owlentity='visualization.owl1.owlclasses' type='class' :reverse='false' />
+            <OwlEntityComp :owlentity="visualization.owl1.owlclasses" type="class" :reverse="false" />
         </v-row>
     </div>
 </template>
 
 <script>
-import OwlInfoComp from './OwlInfoComp.vue';
-import OwlEntityComp from './OwlEntityComp.vue';
+import OwlInfoComp from "./OwlInfoComp.vue";
+import OwlEntityComp from "./OwlEntityComp.vue";
 export default {
-    name: 'VisualizationComp',
+    name: "VisualizationComp",
     components: {
         OwlInfoComp,
         OwlEntityComp
@@ -62,10 +62,10 @@ export default {
             showdialog: false,
             current_owl: {},
             mappingsSelect: {
-                label: 'Mapping Rules:',
+                label: "Mapping Rules:",
                 items: [
-                    'all',
-                    'simple'
+                    "all",
+                    "simple"
                 ]
             }
         };
