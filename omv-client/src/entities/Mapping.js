@@ -1,16 +1,11 @@
 import Rule from "./Rule.js";
 
 class Mapping {
-    /** @type {String} */
-    owl1iri;
-    /** @type {String} */
-    owl2iri;
-    /** @type {Rule[]} */
-    equivalent;
-    /** @type {Rule[]} */
-    linkedwith;
-    /** @type {Rule[]} */
-    other;
+    /** @type {String} */ owl1iri;
+    /** @type {String} */ owl2iri;
+    /** @type {Rule[]} */ equivalent;
+    /** @type {Rule[]} */ linkedwith;
+    /** @type {Rule[]} */ other;
 
     /** @param {Object} mappingobject
      * @returns {Mapping}

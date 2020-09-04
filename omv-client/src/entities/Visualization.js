@@ -2,11 +2,14 @@ import OwlInfo from "./OwlInfo.js";
 import Mapping from "./Mapping.js";
 
 
-export class Visualization {
-    owl1;
-    owl2;
-    mapping;
+class Visualization {
+    /** @type {OwlInfo} */ owl1;
+    /** @type {OwlInfo} */ owl2;
+    /** @type {Mapping} */ mapping;
 
+    /** @param {Object} Visualizationobject
+     * @return {Visualization}
+    */
     static fromObject (Visualizationobject) {
         let visualization = new Visualization();
         visualization.owl1 = OwlInfo.fromObject(Visualizationobject.owl1);
@@ -15,3 +18,5 @@ export class Visualization {
         return visualization;
     }
 }
+
+export default Visualization;

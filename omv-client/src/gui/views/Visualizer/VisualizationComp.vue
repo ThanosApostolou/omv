@@ -10,7 +10,7 @@
                 </p>
             </v-col>
             <v-col cols="2" class="col2">
-                <v-select v-bind="mappingSelect" v-model="selectModel" @input="selectChanged">
+                <v-select v-bind="mappingSelect" v-model="selectModel" @change="selectChanged">
                     asd
                 </v-select>
             </v-col>
@@ -42,6 +42,8 @@
 </template>
 
 <script>
+import Visualization from "../../../entities/Visualization.js";
+
 import OwlInfoComp from "./OwlInfoComp.vue";
 import OwlMappingComp from "./OwlMappingComp.vue";
 export default {
@@ -52,7 +54,7 @@ export default {
     },
     props: {
         receivedvisualization: {
-            type: Object,
+            type: Visualization,
             default: null
         }
     },

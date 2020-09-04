@@ -4,8 +4,6 @@
             <OwlEntityNodeSVG v-bind="owl1classes" key="1" @show-entity="showEntity" />
             <OwlEntityNodeSVG v-bind="owl1objprops" key="2" @show-entity="showEntity" />
             <OwlEntityNodeSVG v-bind="owl1dataprops" key="3" @show-entity="showEntity" />
-            <!--<OwlEntityNodeSVG v-if="owl1objprops.ready" v-bind="owl1objprops" key="2" @show-entity="showEntity" />
-            <OwlEntityNodeSVG v-if="owl1dataprops.ready" v-bind="owl1dataprops" key="3" @show-entity="showEntity" />-->
         </svg>
         <v-dialog v-if="show" v-model="show">
             <v-card>
@@ -56,7 +54,8 @@ export default {
             },
             owl1dataprops: {
                 owlentitysvg: null
-            }
+            },
+            rules: null
         };
     },
     methods: {
@@ -66,6 +65,17 @@ export default {
         }
     },
     created() {
+        if (this.visibilityType == "AllRules") {
+            this.rules = [];
+            this.rules = this.mapping.equivalent.concat(this.mapping.linkedwith.concat(this.mapping.other));
+        } else if (this.visibilityType == "EquivalentRules") {
+            this.rules = this.mapping.equivalent;
+        } else if (this.visibilityType == "LinkedWithRules") {
+            this.rules = this.mapping.linkedwith;
+        } else {
+            this.rules = this.mapping.other;
+        }
+
         this.owl1classes.owlentitysvg = OwlEntitySVG.fromOwlEntity(this.owl1.owlclasses, "class", null);
         this.owl1classes.owlentitysvg.init(0, 0, this.visibilityType, false);
         this.width = this.owl1classes.owlentitysvg.width;
