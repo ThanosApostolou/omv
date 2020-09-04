@@ -1,8 +1,8 @@
 <template>
     <svg v-if="owlentitysvg.visible">
         <svg class="svg" @click="showEntity(owlentitysvg.owlentity)">
-            <circle v-if="owlentitysvg.type === &quot;class&quot;" :cx="owlentitysvg.cx" :cy="owlentitysvg.cy" :r="owlentitysvg.r" stroke="black" :stroke-width="owlentitysvg.stroke" :fill="owlentitysvg.color" />
-            <rect v-if="owlentitysvg.type !== &quot;class&quot;" :x="owlentitysvg.cx" :y="owlentitysvg.starty" :width="2*owlentitysvg.r" :height="2*owlentitysvg.r" :cx="owlentitysvg.cx" stroke="black" :stroke-width="owlentitysvg.stroke" :fill="owlentitysvg.color" />
+            <circle v-if="owlentitysvg.entityType === &quot;class&quot;" :cx="owlentitysvg.cx" :cy="owlentitysvg.cy" :r="owlentitysvg.r" stroke="black" :stroke-width="owlentitysvg.stroke" :fill="owlentitysvg.color" />
+            <rect v-if="owlentitysvg.entityType !== &quot;class&quot;" :x="owlentitysvg.cx" :y="owlentitysvg.starty" :width="2*owlentitysvg.r" :height="2*owlentitysvg.r" :cx="owlentitysvg.cx" stroke="black" :stroke-width="owlentitysvg.stroke" :fill="owlentitysvg.color" />
             <text :x="owlentitysvg.textx" :y="owlentitysvg.texty" :font-size="owlentitysvg.fontSize" :text-anchor="owlentitysvg.textAnchor" :textLength="owlentitysvg.textLength"> {{ owlentitysvg.owlentity.label }}</text>
             <line :x1="owlentitysvg.startx" :y1="owlentitysvg.cy" :x2="owlentitysvg.line1_x2" :y2="owlentitysvg.cy" stroke="black" :stroke-width="owlentitysvg.stroke" />
             <line :x1="owlentitysvg.linex1" :y1="owlentitysvg.liney1" :x2="owlentitysvg.linex2" :y2="owlentitysvg.liney2" stroke="black" :stroke-width="owlentitysvg.stroke" />

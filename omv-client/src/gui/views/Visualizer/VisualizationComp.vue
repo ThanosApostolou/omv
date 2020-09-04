@@ -36,7 +36,7 @@
         </v-dialog>
         <v-divider />
         <v-row>
-            <OwlMappingComp :owlentity="visualization.owl1.owlclasses" type="class" :reverse="false" :visibility-type.camel="selectModel" :key="selectModel" />
+            <OwlMappingComp :owl1="visualization.owl1" :owl2="visualization.owl2" type="class" :reverse="false" :visibility-type.camel="selectModel" :key="selectModel" />
         </v-row>
     </div>
 </template>
