@@ -1,8 +1,7 @@
-import OwlInfo from "./OwlInfo.js";
-import Mapping from "./Mapping.js";
+import { Mapping } from "./Mapping.js";
+import { OwlInfo } from "./OwlInfo.js";
 
-
-class Visualization {
+export class Visualization {
     /** @type {OwlInfo} */ owl1;
     /** @type {OwlInfo} */ owl2;
     /** @type {Mapping} */ mapping;
@@ -18,5 +17,3 @@ class Visualization {
         return visualization;
     }
 }
-
-export default Visualization;

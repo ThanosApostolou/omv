@@ -1,4 +1,4 @@
-class Rule {
+export class Rule {
     /** @type {String} */
     relation = "";
     /** @type {String} */
@@ -46,5 +46,3 @@ class Rule {
         return rules;
     }
 }
-
-export default Rule;

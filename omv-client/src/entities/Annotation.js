@@ -1,5 +1,5 @@
 /** @class Annotation */
-class Annotation {
+export class Annotation {
     /** @type {String} */
     property = null;
     /** @type {String} */
@@ -33,5 +33,3 @@ class Annotation {
         return annotations;
     }
 }
-
-export default Annotation;

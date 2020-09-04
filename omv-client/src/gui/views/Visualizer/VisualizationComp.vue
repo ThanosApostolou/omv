@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import Visualization from "../../../entities/Visualization.js";
+import { Visualization } from "../../../entities/Visualization.js";
 
 import OwlInfoComp from "./OwlInfoComp.vue";
 import OwlMappingComp from "./OwlMappingComp.vue";

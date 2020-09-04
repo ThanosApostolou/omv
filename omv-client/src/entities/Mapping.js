@@ -1,6 +1,6 @@
-import Rule from "./Rule.js";
+import { Rule } from "./Rule.js";
 
-class Mapping {
+export class Mapping {
     /** @type {String} */ owl1iri;
     /** @type {String} */ owl2iri;
     /** @type {Rule[]} */ equivalent;
@@ -20,5 +20,3 @@ class Mapping {
         return mapping;
     }
 }
-
-export default Mapping;

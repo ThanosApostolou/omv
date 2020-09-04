@@ -1,6 +1,6 @@
-import Annotation from "./Annotation.js";
+import { Annotation } from "./Annotation.js";
 
-class OwlEntity {
+export class OwlEntity {
     /** @type {String} */
     iri;
     /** @type {String} */
@@ -37,5 +37,3 @@ class OwlEntity {
         return owlentity;
     }
 }
-
-export default OwlEntity;
