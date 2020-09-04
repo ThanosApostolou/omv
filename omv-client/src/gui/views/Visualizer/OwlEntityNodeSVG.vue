@@ -19,10 +19,6 @@ export default {
         owlentitysvg: {
             type: Object,
             default: null
-        },
-        isRoot: {
-            type: Boolean,
-            default: false
         }
     },
     data() {

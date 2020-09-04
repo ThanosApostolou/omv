@@ -10,8 +10,6 @@ class OwlEntitySVG {
     children;
     /** @type {String} */
     entityType;
-    /** @type {Boolean} */
-    reverse;
     /** @type {String} */
     color;
 
@@ -55,12 +53,11 @@ class OwlEntitySVG {
     /** @param {Object} owlentity
      *  @returns {OwlEntitySVG}
      */
-    static fromOwlEntity(owlentity, entityType, reverse, parent) {
+    static fromOwlEntity(owlentity, entityType, parent) {
         let owlentitysvg = new OwlEntitySVG();
         owlentitysvg.owlentity = owlentity;
         owlentitysvg.parent = parent;
         owlentitysvg.entityType = entityType;
-        owlentitysvg.reverse = reverse;
         owlentitysvg.textLength = owlentitysvg.fontSize/1.9 * owlentitysvg.owlentity.label.length;
         if (entityType === "class") {
             owlentitysvg.color = "yellow";
@@ -71,7 +68,7 @@ class OwlEntitySVG {
         }
         owlentitysvg.children = [];
         for (let child of owlentity.children) {
-            owlentitysvg.children.push(OwlEntitySVG.fromOwlEntity(child, entityType, reverse, owlentitysvg));
+            owlentitysvg.children.push(OwlEntitySVG.fromOwlEntity(child, entityType, owlentitysvg));
         }
         return owlentitysvg;
     }

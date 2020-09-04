@@ -1,9 +1,11 @@
 <template>
     <div>
         <svg :x="0" :y="0" :height="this.height" :width="this.width">
-            <OwlEntityTreeSVG v-if="owl1classes.ready" v-bind="owl1classes" key="1" @show-entity="showEntity" ref="owl1classesref" />
-            <OwlEntityTreeSVG v-if="owl1objprops.ready" v-bind="owl1objprops" key="2" @show-entity="showEntity" ref="owl1objpropsref" />
-            <OwlEntityTreeSVG v-if="owl1dataprops.ready" v-bind="owl1dataprops" key="3" @show-entity="showEntity" ref="owl1datapropsref" />
+            <OwlEntityNodeSVG v-bind="owl1classes" key="1" @show-entity="showEntity" />
+            <OwlEntityNodeSVG v-bind="owl1objprops" key="2" @show-entity="showEntity" />
+            <OwlEntityNodeSVG v-bind="owl1dataprops" key="3" @show-entity="showEntity" />
+            <!--<OwlEntityNodeSVG v-if="owl1objprops.ready" v-bind="owl1objprops" key="2" @show-entity="showEntity" />
+            <OwlEntityNodeSVG v-if="owl1dataprops.ready" v-bind="owl1dataprops" key="3" @show-entity="showEntity" />-->
         </svg>
         <v-dialog v-if="show" v-model="show">
             <v-card>
@@ -14,12 +16,13 @@
 </template>
 
 <script>
-import OwlEntityTreeSVG from "./OwlEntityTreeSVG.vue";
+import OwlEntitySVG from "./OwlEntitySVG.js";
+import OwlEntityNodeSVG from "./OwlEntityNodeSVG.vue";
 
 export default {
     name: "OwlMappingComp",
     components: {
-        OwlEntityTreeSVG
+        OwlEntityNodeSVG
     },
     props: {
         owl1: {
@@ -30,18 +33,14 @@ export default {
             type: Object,
             default: null
         },
-        type: {
-            type: String,
-            default: "class"
+        mapping: {
+            type: Object,
+            default: null
         },
         visibilityType: {
             type: String,
             default: "AllRules"
-        },
-        reverse: {
-            type: Boolean,
-            default: false
-        },
+        }
     },
     data() {
         return {
@@ -50,28 +49,13 @@ export default {
             width: 0,
             height: 0,
             owl1classes: {
-                ready: true,
-                owlentity: this.owl1.owlclasses,
-                type: "class",
-                visibilityType: this.visibilityType,
-                startx: 0,
-                starty: 0
+                owlentitysvg: null
             },
             owl1objprops: {
-                ready: true,
-                owlentity: this.owl1.owlobjprops,
-                type: "objprop",
-                visibilityType: this.visibilityType,
-                startx: 0,
-                starty: 0
+                owlentitysvg: null
             },
             owl1dataprops: {
-                ready: true,
-                owlentity: this.owl1.owldataprops,
-                type: "dataprop",
-                visibilityType: this.visibilityType,
-                startx: 0,
-                starty: 0
+                owlentitysvg: null
             }
         };
     },
@@ -81,21 +65,21 @@ export default {
             this.show = true;
         }
     },
-    mounted() {
-        console.log("width ", this.$refs.owl1classesref.owlentitysvg.width);
-        this.width = this.$refs.owl1classesref.owlentitysvg.width;
-        this.height = this.$refs.owl1classesref.owlentitysvg.height;
+    created() {
+        this.owl1classes.owlentitysvg = OwlEntitySVG.fromOwlEntity(this.owl1.owlclasses, "class", null);
+        this.owl1classes.owlentitysvg.init(0, 0, this.visibilityType, false);
+        this.width = this.owl1classes.owlentitysvg.width;
+        this.height = this.owl1classes.owlentitysvg.height;
 
-        this.owl1objprops.starty = this.height;
-        this.owl1objprops.ready = true;
-        this.$forceUpdate();
-        this.width += this.$refs.owl1objpropsref.owlentitysvg.width;
-        this.height += this.$refs.owl1objpropsref.owlentitysvg.height;
-        console.log("heihgt", this.$refs.owl1objpropsref.owlentitysvg.height);
-        this.owl1dataprops.starty = this.height;
-        this.owl1dataprops.ready = true;
-        this.width += this.$refs.owl1datapropsref.owlentitysvg.width;
-        this.height += this.$refs.owl1datapropsref.owlentitysvg.height;
+        this.owl1objprops.owlentitysvg = OwlEntitySVG.fromOwlEntity(this.owl1.owlobjprops, "objprop", null);
+        this.owl1objprops.owlentitysvg.init(0, this.height, this.visibilityType, false);
+        this.width += this.owl1objprops.owlentitysvg.width;
+        this.height += this.owl1objprops.owlentitysvg.height;
+
+        this.owl1dataprops.owlentitysvg = OwlEntitySVG.fromOwlEntity(this.owl1.owldataprops, "dataprop", null);
+        this.owl1dataprops.owlentitysvg.init(0, this.height, this.visibilityType, false);
+        this.width += this.owl1dataprops.owlentitysvg.width;
+        this.height += this.owl1dataprops.owlentitysvg.height;
     }
 };
 </script>

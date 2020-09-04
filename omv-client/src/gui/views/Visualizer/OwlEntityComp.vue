@@ -1,7 +1,7 @@
 <template>
     <div>
         <svg :x="0" :y="0" :height="this.height" :width="this.width">
-            <OwlEntityTreeSVG :owlentity="owlentity" :type="type" @show-entity="showEntity" visible="All" ref="owlentitysvgref" />
+            <OwlEntityNodeSVG :owlentitysvg="owlentitysvg" />
         </svg>
         <v-dialog v-if="show" v-model="show">
             <v-card>
@@ -12,12 +12,13 @@
 </template>
 
 <script>
-import OwlEntityTreeSVG from "./OwlEntityTreeSVG.vue";
+import OwlEntityNodeSVG from "./OwlEntityNodeSVG.vue";
+import OwlEntitySVG from "./OwlEntitySVG.js";
 
 export default {
     name: "OwlEntityComp",
     components: {
-        OwlEntityTreeSVG
+        OwlEntityNodeSVG
     },
     props: {
         owlentity: {
@@ -37,6 +38,7 @@ export default {
         return {
             show: false,
             selectedOwlEntity: null,
+            owlentitysvg: null,
             width: 0,
             height: 0
         };
@@ -47,10 +49,11 @@ export default {
             this.show = true;
         }
     },
-    mounted() {
-        console.log("width ", this.$refs.owlentitysvgref.owlentitysvg.width);
-        this.width = this.$refs.owlentitysvgref.owlentitysvg.width;
-        this.height = this.$refs.owlentitysvgref.owlentitysvg.height;
+    created() {
+        this.owlentitysvg = OwlEntitySVG.fromOwlEntity(this.owlentity, this.type, null);
+        this.owlentitysvg.init(0, 0, "All", false);
+        this.width = this.owlentitysvg.width;
+        this.height = this.owlentitysvg.height;
     }
 };
 </script>
