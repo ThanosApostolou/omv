@@ -1,22 +1,14 @@
 import { Annotation } from "./Annotation.js";
 
 export class OwlEntity {
-    /** @type {String} */
-    iri;
-    /** @type {String} */
-    name;
-    /** @type {String} */
-    label;
-    /** @type {Annotation[]} */
-    annotations;
-    /** @type {OwlEntity[]} */
-    children;
-    /** @type {Boolean} */
-    hasEquivalentRule;
-    /** @type {Boolean} */
-    hasLinkedWithRule;
-    /** @type {Boolean} */
-    hasOtherRule;
+    /** @type {String} */ iri;
+    /** @type {String} */ name;
+    /** @type {String} */ label;
+    /** @type {Annotation[]} */ annotations;
+    /** @type {OwlEntity[]} */ children;
+    /** @type {Boolean} */ hasEquivalentRule;
+    /** @type {Boolean} */ hasLinkedWithRule;
+    /** @type {Boolean} */ hasOtherRule;
 
     /** @param {object} owlentityobject
      *  @returns {OwlEntity}

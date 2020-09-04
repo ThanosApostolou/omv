@@ -1,54 +1,31 @@
 // eslint-disable-next-line no-unused-vars
-import OwlEntity from "../../../entities/OwlEntity.js";
+import { OwlEntity } from "../../../entities/OwlEntity.js";
 
 class OwlEntitySVG {
-    /** @type {OwlEntity} */
-    owlentity;
-    /** @type {OwlEntitySVG} */
-    parent;
-    /** @type {Object[]} */
-    children;
-    /** @type {String} */
-    entityType;
-    /** @type {String} */
-    color;
+    /** @type {OwlEntity} */ owlentity;
+    /** @type {OwlEntitySVG} */ parent;
+    /** @type {Object[]} */ children;
+    /** @type {String} */ entityType;
+    /** @type {String} */ color;
 
-    /** @type {Boolean} */
-    visible = false;
-    /** @type {Number} */
-    height;
-    /** @type {Number} */
-    width;
-    /** @type {Number} */
-    r = 10;
-    /** @type {Number} */
-    stroke = 1;
-    /** @type {Number} */
-    fontSize = 18;
-    /** @type {Number} */
-    startx;
-    /** @type {Number} */
-    starty;
-    /** @type {Number} */
-    cx;
-    /** @type {Number} */
-    cy;
-    /** @type {Number} */
-    textx;
-    /** @type {Number} */
-    texty;
-    /** @type {Number} */
-    textLength;
-    /** @type {Number} */
-    line1_x2;
-    /** @type {Number} */
-    linex1;
-    /** @type {Number} */
-    liney1;
-    /** @type {Number} */
-    linex2;
-    /** @type {Number} */
-    liney2;
+    /** @type {Boolean} */ visible = false;
+    /** @type {Number} */ height;
+    /** @type {Number} */ width;
+    /** @type {Number} */ r = 10;
+    /** @type {Number} */ stroke = 1;
+    /** @type {Number} */ fontSize = 18;
+    /** @type {Number} */ startx;
+    /** @type {Number} */ starty;
+    /** @type {Number} */ cx;
+    /** @type {Number} */ cy;
+    /** @type {Number} */ textx;
+    /** @type {Number} */ texty;
+    /** @type {Number} */ textLength;
+    /** @type {Number} */ line1_x2;
+    /** @type {Number} */ linex1;
+    /** @type {Number} */ liney1;
+    /** @type {Number} */ linex2;
+    /** @type {Number} */ liney2;
 
     /** @param {Object} owlentity
      *  @returns {OwlEntitySVG}

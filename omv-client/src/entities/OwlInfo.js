@@ -2,20 +2,13 @@ import { Annotation } from "./Annotation.js";
 import { OwlEntity } from "./OwlEntity.js";
 
 export class OwlInfo {
-    /** @type {String} */
-    iri;
-    /** @type {String} */
-    versionIri;
-    /** @type {String} */
-    label;
-    /** @type {Annotation[]} */
-    annotations;
-    /** @type {OwlEntity} */
-    owlclasses;
-    /** @type {OwlEntity} */
-    owlobjprops;
-    /** @type {OwlEntity} */
-    owldataprops;
+    /** @type {String} */ iri;
+    /** @type {String} */ versionIri;
+    /** @type {String} */ label;
+    /** @type {Annotation[]} */ annotations;
+    /** @type {OwlEntity} */ owlclasses;
+    /** @type {OwlEntity} */ owlobjprops;
+    /** @type {OwlEntity} */ owldataprops;
 
     /** @param {object} owlinfoobject
      *  @returns {OwlInfo}

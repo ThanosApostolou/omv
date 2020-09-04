@@ -1,13 +1,9 @@
 /** @class Annotation */
 export class Annotation {
-    /** @type {String} */
-    property = null;
-    /** @type {String} */
-    value = null;
-    /** @type {String} */
-    type = null;
-    /** @type {String} */
-    lang = null;
+    /** @type {String} */ property = null;
+    /** @type {String} */ value = null;
+    /** @type {String} */ type = null;
+    /** @type {String} */ lang = null;
 
     /** @param {object} annotationobject
      *  @returns {Annotation}

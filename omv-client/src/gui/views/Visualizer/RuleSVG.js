@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import Rule from "../../../entities/Rule.js";
+import { Rule } from "../../../entities/Rule.js";
 
 class RuleSVG {
     /** @type {Rule} */ rule;
@@ -7,10 +7,6 @@ class RuleSVG {
     /** @type {Number} */ stroke = 1;
     /** @type {Number} */ startx;
     /** @type {Number} */ starty;
-
-    rect = {
-        test: "d"
-    }
 
     /** @param {Rule} rule
      * @returns {RuleSVG}

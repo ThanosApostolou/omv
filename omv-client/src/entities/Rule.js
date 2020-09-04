@@ -1,22 +1,13 @@
 export class Rule {
-    /** @type {String} */
-    relation = "";
-    /** @type {String} */
-    direction = "";
-    /** @type {String} */
-    comments = "";
-    /** @type {String} */
-    similarity = "";
-    /** @type {String} */
-    simcomments = "";
-    /** @type {Object} */
-    directTransformation = null;
-    /** @type {Object} */
-    inverseTransformation = null;
-    /** @type {Object} */
-    entity1 = null;
-    /** @type {Object} */
-    entity2 = null;
+    /** @type {String} */ relation = "";
+    /** @type {String} */ direction = "";
+    /** @type {String} */ comments = "";
+    /** @type {String} */ similarity = "";
+    /** @type {String} */ simcomments = "";
+    /** @type {Object} */ directTransformation = null;
+    /** @type {Object} */ inverseTransformation = null;
+    /** @type {Object} */ entity1 = null;
+    /** @type {Object} */ entity2 = null;
 
     /** @param {Object} ruleobject
      * @returns {Rule}
