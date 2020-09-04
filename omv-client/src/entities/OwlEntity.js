@@ -11,6 +11,12 @@ class OwlEntity {
     annotations;
     /** @type {OwlEntity[]} */
     children;
+    /** @type {Boolean} */
+    hasEquivalentRule;
+    /** @type {Boolean} */
+    hasLinkedWithRule;
+    /** @type {Boolean} */
+    hasOtherRule;
 
     /** @param {object} owlentityobject
      *  @returns {OwlEntity}
@@ -20,6 +26,9 @@ class OwlEntity {
         owlentity.iri = owlentityobject.iri;
         owlentity.name = owlentityobject.name;
         owlentity.label = owlentityobject.label;
+        owlentity.hasEquivalentRule = owlentityobject.hasEquivalentRule;
+        owlentity.hasLinkedWithRule = owlentityobject.hasLinkedWithRule;
+        owlentity.hasOtherRule = owlentityobject.hasOtherRule;
         owlentity.annotations = Annotation.listFromObject(owlentityobject.annotations);
         owlentity.children = [];
         for (let child of owlentityobject.children) {

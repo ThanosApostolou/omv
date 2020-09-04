@@ -6,10 +6,13 @@
 
 <script>
 import OwlEntityNodeSVG from "./OwlEntityNodeSVG.vue";
+import OwlEntity from "../../../entities/OwlEntity.js";
 
 export class OwlEntitySVG {
-    /** @type {Object} */
+    /** @type {OwlEntity} */
     owlentity;
+    /** @type {OwlEntitySVG} */
+    parent;
     /** @type {Object[]} */
     children;
     /** @type {String} */
@@ -20,7 +23,7 @@ export class OwlEntitySVG {
     color;
 
     /** @type {Boolean} */
-    visible;
+    visible = false;
     /** @type {Number} */
     height;
     /** @type {Number} */
@@ -59,9 +62,10 @@ export class OwlEntitySVG {
     /** @param {Object} owlentity
      *  @returns {OwlEntitySVG}
      */
-    static fromOwlEntity(owlentity, type, reverse) {
+    static fromOwlEntity(owlentity, type, reverse, parent) {
         let owlentitysvg = new OwlEntitySVG();
         owlentitysvg.owlentity = owlentity;
+        owlentitysvg.parent = parent;
         owlentitysvg.type = type;
         owlentitysvg.reverse = reverse;
         owlentitysvg.textLength = owlentitysvg.fontSize/1.9 * owlentitysvg.owlentity.label.length;
@@ -74,9 +78,36 @@ export class OwlEntitySVG {
         }
         owlentitysvg.children = [];
         for (let child of owlentity.children) {
-            owlentitysvg.children.push(OwlEntitySVG.fromOwlEntity(child, type));
+            owlentitysvg.children.push(OwlEntitySVG.fromOwlEntity(child, type, reverse, owlentitysvg));
         }
         return owlentitysvg;
+    }
+
+    setVisible() {
+        this.visible = true;
+        if (this.parent != null) {
+            this.parent.setVisible();
+        }
+    }
+    calcVisibility(visibilityType) {
+        let shallSetVisible = false;
+        if (visibilityType == "All") {
+            shallSetVisible = true;
+        } else if (visibilityType == "AllRules") {
+            shallSetVisible = this.owlentity.hasEquivalentRule || this.owlentity.hasLinkedWithRule || this.owlentity.hasOtherRule;
+        } else if (visibilityType == "EquivalentRules") {
+            shallSetVisible = this.owlentity.hasEquivalentRule;
+        } else if (visibilityType == "LinkedWithRules") {
+            shallSetVisible = this.owlentity.hasLinkedWithRule;
+        } else if (visibilityType == "OtherRules") {
+            shallSetVisible = this.owlentity.hasOtherRule;
+        }
+        if (shallSetVisible) {
+            this.setVisible();
+        }
+        for (let child of this.children) {
+            child.calcVisibility(visibilityType);
+        }
     }
 
     calcWidth(depth) {
@@ -194,6 +225,10 @@ export default {
             type: String,
             default: "class"
         },
+        visibilityType: {
+            type: String,
+            default: "All"
+        },
         reverse: {
             type: Boolean,
             default: false
@@ -212,7 +247,8 @@ export default {
         },
     },
     created() {
-        this.owlentitysvg = OwlEntitySVG.fromOwlEntity(this.owlentity, this.type, this.reverse);
+        this.owlentitysvg = OwlEntitySVG.fromOwlEntity(this.owlentity, this.type, this.reverse, null);
+        this.owlentitysvg.calcVisibility(this.visibilityType);
         this.owlentitysvg.calcWidth(1);
         if (!this.reverse) {
             this.owlentitysvg.calcPositions(0, 0);

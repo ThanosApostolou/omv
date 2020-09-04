@@ -1,7 +1,7 @@
 <template>
     <div>
         <svg :x="0" :y="0" :height="this.height" :width="this.width">
-            <OwlEntityTreeSVG :owlentity="owlentity" :type="type" @show-entity="showEntity" visible="All" ref="owlentitysvgref" />
+            <OwlEntityTreeSVG :owlentity="owlentity" :type="type" :visibilityType="visibilityType" @show-entity="showEntity" ref="owlentitysvgref" />
         </svg>
         <v-dialog v-if="show" v-model="show">
             <v-card>
@@ -15,7 +15,7 @@
 import OwlEntityTreeSVG from "./OwlEntityTreeSVG.vue";
 
 export default {
-    name: "OwlEntityComp",
+    name: "OwlMappingComp",
     components: {
         OwlEntityTreeSVG
     },
@@ -27,6 +27,10 @@ export default {
         type: {
             type: String,
             default: "class"
+        },
+        visibilityType: {
+            type: String,
+            default: "AllRules"
         },
         reverse: {
             type: Boolean,

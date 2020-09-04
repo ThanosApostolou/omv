@@ -10,7 +10,7 @@
                 </p>
             </v-col>
             <v-col cols="2" class="col2">
-                <v-select v-bind="mappingsSelect">
+                <v-select v-bind="mappingSelect" v-model="selectModel" @input="selectChanged">
                     asd
                 </v-select>
             </v-col>
@@ -36,19 +36,19 @@
         </v-dialog>
         <v-divider />
         <v-row>
-            <OwlEntityComp :owlentity="visualization.owl1.owlclasses" type="class" :reverse="false" />
+            <OwlMappingComp v-if="showMapping" :owlentity="visualization.owl1.owlclasses" type="class" :reverse="false" :visibilityType="selectModel" />
         </v-row>
     </div>
 </template>
 
 <script>
 import OwlInfoComp from "./OwlInfoComp.vue";
-import OwlEntityComp from "./OwlEntityComp.vue";
+import OwlMappingComp from "./OwlMappingComp.vue";
 export default {
     name: "VisualizationComp",
     components: {
         OwlInfoComp,
-        OwlEntityComp
+        OwlMappingComp
     },
     props: {
         receivedvisualization: {
@@ -60,12 +60,16 @@ export default {
         return {
             visualization: this.receivedvisualization,
             showdialog: false,
+            showMapping: true,
             current_owl: {},
-            mappingsSelect: {
+            selectModel: "LinkedWithRules",
+            mappingSelect: {
                 label: "Mapping Rules:",
                 items: [
-                    "all",
-                    "simple"
+                    "AllRules",
+                    "EquivalentRules",
+                    "LinkedWithRules",
+                    "OtherRules"
                 ]
             }
         };
@@ -78,6 +82,14 @@ export default {
         owl2info() {
             this.current_owl = this.visualization.owl2;
             this.showdialog = true;
+        },
+        selectChanged() {
+            console.log(this.selectModel);
+
+            this.showMapping = false;
+            this.$nextTick(() => {
+                this.showMapping = true;
+            });
         }
     }
 };
