@@ -11,11 +11,12 @@ class OwlEntitySVG {
     /** @type {Boolean} */ visible = false;
     /** @type {Number} */ height;
     /** @type {Number} */ width;
-    /** @type {Number} */ r = 10;
+    /** @type {Number} */ r = 8;
     /** @type {Number} */ stroke = 1;
-    /** @type {Number} */ fontSize = 18;
+    /** @type {Number} */ fontSize = 12;
     /** @type {Number} */ startx;
     /** @type {Number} */ starty;
+    /** @type {Number} */ endx;
     /** @type {Number} */ cx;
     /** @type {Number} */ cy;
     /** @type {Number} */ textx;
@@ -90,7 +91,7 @@ class OwlEntitySVG {
     calcWidth(depth) {
         this.width = 0;
         if (this.visible) {
-            this.width = depth*3*this.r + this.textLength;
+            this.width = depth*3*this.r - 2*this.r + this.textLength;
             for (let child of this.children) {
                 let newwidth=0;
                 newwidth = child.calcWidth(depth+1);
@@ -109,6 +110,7 @@ class OwlEntitySVG {
         this.textAnchor = "start";
         this.startx = x;
         this.starty = y;
+        this.endx = this.width;
         if (this.entityType === "class") {
             this.cx = this.startx + 2*this.r;
         } else {
@@ -191,6 +193,23 @@ class OwlEntitySVG {
         }
         this.height = nexty - this.starty;
         return [nexty, this.cy];
+    }
+
+    /** @param {String}
+     * @returns {OwlEntitySVG}
+    */
+    findByIri(iri) {
+        if (this.owlentity.iri == iri) {
+            return this;
+        } else {
+            for (let child of this.children) {
+                let foundentitysvg = child.findByIri(iri);
+                if (foundentitysvg != null) {
+                    return foundentitysvg;
+                }
+            }
+        }
+        return null;
     }
 
 }

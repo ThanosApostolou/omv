@@ -3,29 +3,29 @@ import { Rule } from "../../../entities/Rule.js";
 
 export class RuleSVG {
     /** @type {Rule} */ rule;
-    /** @type {Number} */ r = 10;
+
+    /** @type {Object} */ entity1 = {
+        classessvg: [],
+        objpropssvg: [],
+        datapropssvg: []
+    };
+    /** @type {Object} */ entity2 = {
+        classessvg: [],
+        objpropssvg: [],
+        datapropssvg: []
+    };
+
+    /** @type {Number} */ r = 8;
+    /** @type {Number} */ width = 40;
     /** @type {Number} */ stroke = 1;
     /** @type {Number} */ fill = "red";
     /** @type {Number} */ startx;
     /** @type {Number} */ starty;
-    /** @type {Number} */ endcx;
-    /** @type {Number} */ endcy;
+    /** @type {Number} */ cy;
+    /** @type {Number} */ endx;
 
-    /** @param {RuleSVG[]} rulessvg
-     * @param {Number} x
-     * @param {Number} y
-     */
-    static listInit(rulessvg, x, y) {
-        let nexty = y;
-        for (let rulesvg of rulessvg) {
-            rulesvg.startx = x;
-            rulesvg.starty = nexty;
-            rulesvg.endcx = x+2*rulesvg.r;
-            rulesvg.endcy = y+rulesvg.r;
-            nexty += 3*rulesvg.r;
-        }
-        return nexty;
-    }
+    /** @type {Object[]} */ lines = [];
+
 
     /** @param {Rule} rule
      * @returns {RuleSVG}
@@ -45,6 +45,67 @@ export class RuleSVG {
             rulessvg.push(RuleSVG.fromRule(rule));
         }
         return rulessvg;
+    }
+
+    /** @param {RuleSVG[]} rulessvg
+     * @param {Number} x
+     * @param {Number} y
+     */
+    static listInit(rulessvg, x, y) {
+        let nexty = y;
+        for (let rulesvg of rulessvg) {
+            rulesvg.startx = x;
+            rulesvg.starty = nexty;
+            rulesvg.cy = nexty+rulesvg.r;
+            rulesvg.emdx = x+rulesvg.width;
+            nexty += 3*rulesvg.r;
+        }
+        return nexty;
+    }
+
+
+    findEntities(owl1classessvg, owl1objpropssvg, owl1datapropssvg) {
+        for (let entityobj of this.rule.entity1.classes) {
+            let foundentity = owl1classessvg.findByIri(entityobj.iri);
+            this.entity1.classessvg.push(foundentity);
+            let line = {
+                x1: this.startx,
+                y1: this.cy,
+                x2: foundentity.endx,
+                y2: foundentity.cy
+            };
+            this.lines.push(line);
+        }
+        for (let entityobj of this.rule.entity1.objectprops) {
+            let foundentity = owl1objpropssvg.findByIri(entityobj.iri);
+            this.entity1.objpropssvg.push(foundentity);
+            let line = {
+                x1: this.startx,
+                y1: this.cy,
+                x2: foundentity.endx,
+                y2: foundentity.cy
+            };
+            this.lines.push(line);
+        }
+        for (let entityobj of this.rule.entity1.dataprops) {
+            let foundentity = owl1datapropssvg.findByIri(entityobj.iri);
+            this.entity1.datapropssvg.push(foundentity);
+            let line = {
+                x1: this.startx,
+                y1: this.cy,
+                x2: foundentity.endx,
+                y2: foundentity.cy
+            };
+            this.lines.push(line);
+        }
+
+    }
+
+    static listFindEntities(rules, owl1classessvg, owl1objpropssvg, owl1datapropssvg) {
+        for (let rule of rules) {
+            rule.findEntities(owl1classessvg, owl1objpropssvg, owl1datapropssvg);
+        }
+
     }
 
 }

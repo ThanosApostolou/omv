@@ -92,6 +92,7 @@ export default {
         }
         this.height += this.owl1dataprops.owlentitysvg.height;
 
+        this.width = 2*this.width;
         let rules = [];
         if (this.visibilityType == "AllRules") {
             rules = this.mapping.equivalent.concat(this.mapping.linkedwith.concat(this.mapping.other));
@@ -104,6 +105,8 @@ export default {
         }
         this.rulessvgcomp.rulessvg = RuleSVG.listFromRules(rules);
         let newheight = RuleSVG.listInit(this.rulessvgcomp.rulessvg, this.width, 0);
+        RuleSVG.listFindEntities(this.rulessvgcomp.rulessvg, this.owl1classes.owlentitysvg, this.owl1objprops.owlentitysvg, this.owl1dataprops.owlentitysvg);
+
         this.width += 60;
         if (newheight > this.height) {
             this.height = newheight;
