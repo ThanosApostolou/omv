@@ -66,13 +66,13 @@
                     </v-row>
                 </v-tab-item>
                 <v-tab-item key="owlclasses">
-                    <OwlEntityComp v-if="owl != null" :owlentity="owl.owlclasses" type="class" />
+                    <OwlEntityComp :owlentity="owl.owlclasses" type="class" />
                 </v-tab-item>
                 <v-tab-item key="owlobjprops">
-                    <OwlEntityComp v-if="owl != null" :owlentity="owl.owlobjprops" type="objprop" />
+                    <OwlEntityComp :owlentity="owl.owlobjprops" type="objprop" />
                 </v-tab-item>
                 <v-tab-item key="owldataprops">
-                    <OwlEntityComp v-if="owl != null" :owlentity="owl.owldataprops" type="dataprop" />
+                    <OwlEntityComp :owlentity="owl.owldataprops" type="dataprop" />
                 </v-tab-item>
             </v-tabs-items>
         </v-card-text>

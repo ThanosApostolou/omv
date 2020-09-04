@@ -23,7 +23,7 @@
                 </p>
             </v-col>
         </v-row>
-        <v-dialog v-if="showdialog" v-model="showdialog">
+        <v-dialog v-model="showdialog">
             <v-card>
                 <v-card-actions>
                     <v-spacer />
@@ -31,12 +31,12 @@
                         <v-icon>close</v-icon>
                     </v-btn>
                 </v-card-actions>
-                <OwlInfoComp :owl="current_owl" />
+                <OwlInfoComp :owl="current_owl" :key="current_owl_key" />
             </v-card>
         </v-dialog>
         <v-divider />
         <v-row>
-            <OwlMappingComp v-if="showMapping" :owlentity="visualization.owl1.owlclasses" type="class" :reverse="false" :visibilityType="selectModel" />
+            <OwlMappingComp :owlentity="visualization.owl1.owlclasses" type="class" :reverse="false" :visibility-type.camel="selectModel" :key="selectModel" />
         </v-row>
     </div>
 </template>
@@ -60,9 +60,9 @@ export default {
         return {
             visualization: this.receivedvisualization,
             showdialog: false,
-            showMapping: true,
             current_owl: {},
-            selectModel: "LinkedWithRules",
+            current_owl_key: null,
+            selectModel: "AllRules",
             mappingSelect: {
                 label: "Mapping Rules:",
                 items: [
@@ -77,19 +77,16 @@ export default {
     methods: {
         owl1info() {
             this.current_owl = this.visualization.owl1;
+            this.current_owl_key = "owl1";
             this.showdialog = true;
         },
         owl2info() {
             this.current_owl = this.visualization.owl2;
+            this.current_owl_key = "owl2";
             this.showdialog = true;
         },
         selectChanged() {
             console.log(this.selectModel);
-
-            this.showMapping = false;
-            this.$nextTick(() => {
-                this.showMapping = true;
-            });
         }
     }
 };
