@@ -81,15 +81,6 @@ export class OwlEntitySVG {
         }
     }
 
-    init(startx, starty, reverse) {
-        this.calcWidth(1);
-        if (!reverse) {
-            this.calcPositions(startx, starty);
-        } else {
-            this.calcPositionsReverse(startx + this.width, starty);
-        }
-    }
-
     setVisible() {
         this.visible = true;
         if (this.parent != null) {
@@ -103,29 +94,7 @@ export class OwlEntitySVG {
         }
     }
 
-    /*
-    calcVisibility(visibilityType) {
-        let shallSetVisible = false;
-        if (visibilityType == "All") {
-            shallSetVisible = true;
-        } else if (visibilityType == "AllRules") {
-            shallSetVisible = this.owlentity.hasEquivalentRule || this.owlentity.hasLinkedWithRule || this.owlentity.hasOtherRule;
-        } else if (visibilityType == "EquivalentRules") {
-            shallSetVisible = this.owlentity.hasEquivalentRule;
-        } else if (visibilityType == "LinkedWithRules") {
-            shallSetVisible = this.owlentity.hasLinkedWithRule;
-        } else if (visibilityType == "OtherRules") {
-            shallSetVisible = this.owlentity.hasOtherRule;
-        }
-        if (shallSetVisible) {
-            this.setVisible();
-        }
-        for (let child of this.children) {
-            child.calcVisibility(visibilityType);
-        }
-    }
-    */
-
+    /** @param {Number} depth */
     calcWidth(depth) {
         this.width = 0;
         if (this.visible) {
@@ -198,7 +167,7 @@ export class OwlEntitySVG {
         if (this.entityType === "class") {
             this.cx = this.startx - 2*this.r;
         } else {
-            this.cx = this.startx - this.r;
+            this.cx = this.startx - 3*this.r;
         }
         this.cy = this.starty + this.r;
         if (this.entityType === "class") {

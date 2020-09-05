@@ -52,7 +52,8 @@ export default {
     created() {
         this.owlentitysvg = OwlEntitySVG.fromOwlEntity(this.owlentity, this.entityType, null);
         this.owlentitysvg.calcVisibility(null, "");
-        this.owlentitysvg.init(0, 0, null, false);
+        this.owlentitysvg.calcWidth(1);
+        this.owlentitysvg.calcPositions(0, 0);
         this.width = this.owlentitysvg.width;
         this.height = this.owlentitysvg.height;
     }

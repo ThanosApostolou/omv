@@ -5,6 +5,9 @@
             <OwlEntityNodeSVG :owlentitysvg="mappingsvg.owl1objpropssvg" key="2" @show-entity="showEntity" />
             <OwlEntityNodeSVG :owlentitysvg="mappingsvg.owl1datapropssvg" key="3" @show-entity="showEntity" />
             <RulesSVGComp :rulessvg="mappingsvg.rulessvg" key="4" />
+            <OwlEntityNodeSVG :owlentitysvg="mappingsvg.owl2classessvg" key="5" @show-entity="showEntity" />
+            <OwlEntityNodeSVG :owlentitysvg="mappingsvg.owl2objpropssvg" key="6" @show-entity="showEntity" />
+            <OwlEntityNodeSVG :owlentitysvg="mappingsvg.owl2datapropssvg" key="7" @show-entity="showEntity" />
         </svg>
         <v-dialog v-if="show" v-model="show">
             <v-card>
@@ -51,18 +54,6 @@ export default {
             selectedOwlEntity: null,
             width: 0,
             height: 0,
-            owl1classes: {
-                owlentitysvg: null
-            },
-            owl1objprops: {
-                owlentitysvg: null
-            },
-            owl1dataprops: {
-                owlentitysvg: null
-            },
-            rulessvgcomp: {
-                rulessvg: null
-            },
             mappingsvg: {}
         };
     },
@@ -74,7 +65,7 @@ export default {
     },
     created() {
         this.mappingsvg = new MappingSVG();
-        this.mappingsvg.init(this.owl1.owlclasses, this.owl1.owlobjprops, this.owl1.owldataprops, null, null, null, this.rules);
+        this.mappingsvg.init(this.owl1.owlclasses, this.owl1.owlobjprops, this.owl1.owldataprops, this.owl2.owlclasses, this.owl2.owlobjprops, this.owl2.owldataprops, this.rules);
     }
 };
 </script>
