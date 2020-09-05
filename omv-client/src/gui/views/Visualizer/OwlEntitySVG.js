@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { OwlEntity } from "../../../entities/OwlEntity.js";
 
-class OwlEntitySVG {
+export class OwlEntitySVG {
     /** @type {OwlEntity} */ owlentity;
     /** @type {OwlEntitySVG} */ parent;
     /** @type {Object[]} */ children;
@@ -213,5 +213,3 @@ class OwlEntitySVG {
     }
 
 }
-
-export default OwlEntitySVG;
