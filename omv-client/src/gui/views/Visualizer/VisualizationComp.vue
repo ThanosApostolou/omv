@@ -36,7 +36,7 @@
         </v-dialog>
         <v-divider />
         <v-row>
-            <OwlMappingComp :owl1="visualization.owl1" :owl2="visualization.owl2" :mapping="visualization.mapping" type="class" :reverse="false" :visibility-type.camel="selectModel" :key="selectModel" />
+            <OwlMappingComp v-if="rules != []" :owl1="visualization.owl1" :owl2="visualization.owl2" :rules="rules" type="class" :reverse="false" :visibility-type.camel="selectModel" :key="selectModel" />
         </v-row>
     </div>
 </template>
@@ -73,7 +73,8 @@ export default {
                     "LinkedWithRules",
                     "OtherRules"
                 ]
-            }
+            },
+            rules: []
         };
     },
     methods: {
@@ -89,7 +90,20 @@ export default {
         },
         selectChanged() {
             console.log(this.selectModel);
+            this.rules = [];
+            if (this.selectModel == "AllRules") {
+                this.rules = this.visualization.mapping.equivalent.concat(this.visualization.mapping.linkedwith.concat(this.visualization.mapping.other));
+            } else if (this.selectModel == "EquivalentRules") {
+                this.rules = this.visualization.mapping.equivalent;
+            } else if (this.selectModel == "LinkedWithRules") {
+                this.rules = this.visualization.mapping.linkedwith;
+            } else {
+                this.rules = this.visualization.mapping.other;
+            }
         }
+    },
+    created() {
+        this.selectChanged();
     }
 };
 </script>

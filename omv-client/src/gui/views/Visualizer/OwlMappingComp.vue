@@ -35,8 +35,8 @@ export default {
             type: Object,
             default: null
         },
-        mapping: {
-            type: Object,
+        rules: {
+            type: Array,
             default: null
         },
         visibilityType: {
@@ -79,31 +79,18 @@ export default {
         this.owl1objprops.owlentitysvg = OwlEntitySVG.fromOwlEntity(this.owl1.owlobjprops, "objprop", null);
         this.owl1objprops.owlentitysvg.init(0, this.height, this.visibilityType, false);
         let newwidth = this.owl1objprops.owlentitysvg.width;
-        if (newwidth > this.width) {
-            this.width = newwidth;
-        }
+        this.width = Math.max(this.width, newwidth);
         this.height += this.owl1objprops.owlentitysvg.height;
 
         this.owl1dataprops.owlentitysvg = OwlEntitySVG.fromOwlEntity(this.owl1.owldataprops, "dataprop", null);
         this.owl1dataprops.owlentitysvg.init(0, this.height, this.visibilityType, false);
         newwidth = this.owl1dataprops.owlentitysvg.width;
-        if (newwidth > this.width) {
-            this.width = newwidth;
-        }
+        this.width = Math.max(this.width, newwidth);
         this.height += this.owl1dataprops.owlentitysvg.height;
 
-        this.width = 2*this.width;
-        let rules = [];
-        if (this.visibilityType == "AllRules") {
-            rules = this.mapping.equivalent.concat(this.mapping.linkedwith.concat(this.mapping.other));
-        } else if (this.visibilityType == "EquivalentRules") {
-            rules = this.mapping.equivalent;
-        } else if (this.visibilityType == "LinkedWithRules") {
-            rules = this.mapping.linkedwith;
-        } else {
-            rules = this.mapping.other;
-        }
-        this.rulessvgcomp.rulessvg = RuleSVG.listFromRules(rules);
+        this.width += 300;
+
+        this.rulessvgcomp.rulessvg = RuleSVG.listFromRules(this.rules);
         let newheight = RuleSVG.listInit(this.rulessvgcomp.rulessvg, this.width, 0);
         RuleSVG.listFindEntities(this.rulessvgcomp.rulessvg, this.owl1classes.owlentitysvg, this.owl1objprops.owlentitysvg, this.owl1dataprops.owlentitysvg);
 
