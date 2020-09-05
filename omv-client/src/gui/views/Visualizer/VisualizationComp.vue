@@ -35,9 +35,9 @@
             </v-card>
         </v-dialog>
         <v-divider />
-        <v-row>
+        <div class="center">
             <OwlMappingComp v-if="rules != []" :owl1="visualization.owl1" :owl2="visualization.owl2" :rules="rules" type="class" :reverse="false" :visibility-type.camel="selectModel" :key="selectModel" />
-        </v-row>
+        </div>
     </div>
 </template>
 
@@ -109,7 +109,7 @@ export default {
 </script>
 
 <style scoped>
-.vcard {
+.center {
     text-align: center;
     align-self: center;
     align-content: center;

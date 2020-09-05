@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { OwlEntity } from "../../../entities/OwlEntity.js";
 import { OwlEntitySVG } from "./OwlEntitySVG.js";
 import { RuleSVG } from "./RuleSVG.js";
@@ -48,9 +49,6 @@ export class MappingSVG {
             this.height = newheight;
         }
 
-        this.width += 100;
-
-
         this.owl2classessvg = OwlEntitySVG.fromOwlEntity(owl2classes, "class", null);
         this.owl2classessvg.calcVisibility(rules, "entity2");
         this.owl2classessvg.calcWidth(1);
@@ -64,7 +62,7 @@ export class MappingSVG {
         this.owl2datapropssvg.calcWidth(1);
 
         newwidth = Math.max(this.owl2classessvg.width, this.owl2objpropssvg.width, this.owl2datapropssvg.width);
-        this.width += Math.max(newwidth, 700);
+        this.width += Math.max(newwidth + 100, 700);
 
         this.owl2classessvg.calcPositionsReverse(this.width, 0);
         newheight = this.owl2classessvg.height;

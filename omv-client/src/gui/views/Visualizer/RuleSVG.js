@@ -18,7 +18,7 @@ export class RuleSVG {
     /** @type {Number} */ r = 8;
     /** @type {Number} */ width = 40;
     /** @type {Number} */ stroke = 1;
-    /** @type {Number} */ fill = "red";
+    /** @type {Number} */ fill = "lightgrey";
     /** @type {Number} */ startx;
     /** @type {Number} */ starty;
     /** @type {Number} */ cy;

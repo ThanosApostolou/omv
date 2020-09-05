@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div :style="{ width: this.width, height: this.height }">
         <svg :x="0" :y="0" :height="this.mappingsvg.height" :width="this.mappingsvg.width">
             <OwlEntityNodeSVG :owlentitysvg="mappingsvg.owl1classessvg" key="1" @show-entity="showEntity" />
             <OwlEntityNodeSVG :owlentitysvg="mappingsvg.owl1objpropssvg" key="2" @show-entity="showEntity" />
@@ -18,11 +18,9 @@
 </template>
 
 <script>
-import { OwlEntitySVG } from "./OwlEntitySVG.js";
 import OwlEntityNodeSVG from "./OwlEntityNodeSVG.vue";
 import RulesSVGComp from "./RulesSVGComp.vue";
 import { MappingSVG } from "./MappingSVG.js";
-import { RuleSVG } from "./RuleSVG.js";
 
 export default {
     name: "OwlMappingComp",
@@ -66,6 +64,8 @@ export default {
     created() {
         this.mappingsvg = new MappingSVG();
         this.mappingsvg.init(this.owl1.owlclasses, this.owl1.owlobjprops, this.owl1.owldataprops, this.owl2.owlclasses, this.owl2.owlobjprops, this.owl2.owldataprops, this.rules);
+        this.width = this.mappingsvg.width;
+        this.height = this.mappingsvg.height;
     }
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container fluid>
         <v-expansion-panels v-bind="expansionPanel">
             <v-expansion-panel>
                 <v-expansion-panel-header>
