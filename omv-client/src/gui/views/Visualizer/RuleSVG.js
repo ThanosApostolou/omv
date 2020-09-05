@@ -57,14 +57,14 @@ export class RuleSVG {
             rulesvg.startx = x;
             rulesvg.starty = nexty;
             rulesvg.cy = nexty+rulesvg.r;
-            rulesvg.emdx = x+rulesvg.width;
+            rulesvg.endx = x+rulesvg.width;
             nexty += 3*rulesvg.r;
         }
         return nexty;
     }
 
 
-    findEntities(owl1classessvg, owl1objpropssvg, owl1datapropssvg) {
+    findEntities(owl1classessvg, owl1objpropssvg, owl1datapropssvg, owl2classessvg, owl2objpropssvg, owl2datapropssvg) {
         for (let entityobj of this.rule.entity1.classes) {
             let foundentity = owl1classessvg.findByIri(entityobj.iri);
             this.entity1.classessvg.push(foundentity);
@@ -98,12 +98,45 @@ export class RuleSVG {
             };
             this.lines.push(line);
         }
+        for (let entityobj of this.rule.entity2.classes) {
+            let foundentity = owl2classessvg.findByIri(entityobj.iri);
+            this.entity2.classessvg.push(foundentity);
+            let line = {
+                x1: this.endx,
+                y1: this.cy,
+                x2: foundentity.endx,
+                y2: foundentity.cy
+            };
+            this.lines.push(line);
+        }
+        for (let entityobj of this.rule.entity2.objectprops) {
+            let foundentity = owl2objpropssvg.findByIri(entityobj.iri);
+            this.entity2.objpropssvg.push(foundentity);
+            let line = {
+                x1: this.endx,
+                y1: this.cy,
+                x2: foundentity.endx,
+                y2: foundentity.cy
+            };
+            this.lines.push(line);
+        }
+        for (let entityobj of this.rule.entity2.dataprops) {
+            let foundentity = owl2datapropssvg.findByIri(entityobj.iri);
+            this.entity2.datapropssvg.push(foundentity);
+            let line = {
+                x1: this.endx,
+                y1: this.cy,
+                x2: foundentity.endx,
+                y2: foundentity.cy
+            };
+            this.lines.push(line);
+        }
 
     }
 
-    static listFindEntities(rules, owl1classessvg, owl1objpropssvg, owl1datapropssvg) {
+    static listFindEntities(rules, owl1classessvg, owl1objpropssvg, owl1datapropssvg, owl2classessvg, owl2objpropssvg, owl2datapropssvg) {
         for (let rule of rules) {
-            rule.findEntities(owl1classessvg, owl1objpropssvg, owl1datapropssvg);
+            rule.findEntities(owl1classessvg, owl1objpropssvg, owl1datapropssvg, owl2classessvg, owl2objpropssvg, owl2datapropssvg);
         }
 
     }

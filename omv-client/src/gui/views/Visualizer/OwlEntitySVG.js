@@ -98,7 +98,7 @@ export class OwlEntitySVG {
     calcWidth(depth) {
         this.width = 0;
         if (this.visible) {
-            this.width = depth*3*this.r - 2*this.r + this.textLength;
+            this.width = 3*this.r + this.textLength;
             for (let child of this.children) {
                 let newwidth=0;
                 newwidth = child.calcWidth(depth+1);
@@ -117,7 +117,7 @@ export class OwlEntitySVG {
         this.textAnchor = "start";
         this.startx = x;
         this.starty = y;
-        this.endx = this.width;
+        this.endx = this.startx + this.width + this.r/2;
         if (this.entityType === "class") {
             this.cx = this.startx + 2*this.r;
         } else {
@@ -164,6 +164,7 @@ export class OwlEntitySVG {
         this.textAnchor = "end";
         this.startx = x;
         this.starty = y;
+        this.endx = this.startx - this.width - this.r/2;
         if (this.entityType === "class") {
             this.cx = this.startx - 2*this.r;
         } else {

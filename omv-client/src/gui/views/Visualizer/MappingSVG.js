@@ -40,14 +40,8 @@ export class MappingSVG {
 
         this.width = Math.max(this.width + 100, 700);
 
-        this.rulessvg = RuleSVG.listFromRules(rules);
-        let newheight = RuleSVG.listInit(this.rulessvg, this.width, 0);
-        RuleSVG.listFindEntities(this.rulessvg, this.owl1classessvg, this.owl1objpropssvg, this.owl1datapropssvg);
-
+        let ruleswidth = this.width;
         this.width += 60;
-        if (newheight > this.height) {
-            this.height = newheight;
-        }
 
         this.owl2classessvg = OwlEntitySVG.fromOwlEntity(owl2classes, "class", null);
         this.owl2classessvg.calcVisibility(rules, "entity2");
@@ -65,13 +59,20 @@ export class MappingSVG {
         this.width += Math.max(newwidth + 100, 700);
 
         this.owl2classessvg.calcPositionsReverse(this.width, 0);
-        newheight = this.owl2classessvg.height;
+        let newheight = this.owl2classessvg.height;
         this.owl2objpropssvg.calcPositionsReverse(this.width, newheight);
         newheight += this.owl2objpropssvg.height;
         this.owl2datapropssvg.calcPositionsReverse(this.width, newheight);
         newheight += this.owl2datapropssvg.height;
 
         this.height = Math.max(this.height, newheight);
+
+        this.rulessvg = RuleSVG.listFromRules(rules);
+        newheight = RuleSVG.listInit(this.rulessvg, ruleswidth, 0);
+        RuleSVG.listFindEntities(this.rulessvg, this.owl1classessvg, this.owl1objpropssvg, this.owl1datapropssvg, this.owl2classessvg, this.owl2objpropssvg, this.owl2datapropssvg);
+        if (newheight > this.height) {
+            this.height = newheight;
+        }
     }
 
 }
