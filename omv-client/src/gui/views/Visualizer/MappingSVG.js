@@ -13,20 +13,23 @@ export class MappingSVG {
     /** @type {OwlEntitySVG} */ owl2datapropssvg;
     /** @type {RuleSVG[]} */ rulessvg = [];
 
-    init(owl1classes, owl1objprops, owl1dataprops, owl2classes, owl2objpropssvg, owl2dataprops, rules, visibilityType) {
+    init(owl1classes, owl1objprops, owl1dataprops, owl2classes, owl2objpropssvg, owl2dataprops, rules) {
         this.owl1classessvg = OwlEntitySVG.fromOwlEntity(owl1classes, "class", null);
-        this.owl1classessvg.init(0, 0, visibilityType, false);
+        this.owl1classessvg.calcVisibility(rules, "entity1");
+        this.owl1classessvg.init(0, 0, false);
         this.width = this.owl1classessvg.width;
         this.height = this.owl1classessvg.height;
 
         this.owl1objpropssvg = OwlEntitySVG.fromOwlEntity(owl1objprops, "objprop", null);
-        this.owl1objpropssvg.init(0, this.height, visibilityType, false);
+        this.owl1objpropssvg.calcVisibility(rules, "entity1");
+        this.owl1objpropssvg.init(0, this.height, false);
         let newwidth = this.owl1objpropssvg.width;
         this.width = Math.max(this.width, newwidth);
         this.height += this.owl1objpropssvg.height;
 
         this.owl1datapropssvg = OwlEntitySVG.fromOwlEntity(owl1dataprops, "dataprop", null);
-        this.owl1datapropssvg.init(0, this.height, visibilityType, false);
+        this.owl1datapropssvg.calcVisibility(rules, "entity1");
+        this.owl1datapropssvg.init(0, this.height, false);
         newwidth = this.owl1datapropssvg.width;
         this.width = Math.max(this.width, newwidth);
         this.height += this.owl1datapropssvg.height;

@@ -51,8 +51,37 @@ export class OwlEntitySVG {
         return owlentitysvg;
     }
 
-    init(startx, starty, visibilityType, reverse) {
-        this.calcVisibility(visibilityType);
+    /** @param {Rule[]} rules
+     * @param {String} ruleEntityType
+     */
+    calcVisibility(rules, ruleEntityType) {
+        if (rules == null) {
+            this.setAllVisible();
+        } else {
+            let entity = null;
+            for (let rule of rules) {
+                let ruleentities = [];
+                if (ruleEntityType == "entity1") {
+                    entity = rule.entity1;
+                } else if (ruleEntityType == "entity2") {
+                    entity = rule.entity2;
+                }
+                if (this.entityType == "class") {
+                    ruleentities = entity.classes;
+                } else if (this.entityType == "objprop") {
+                    ruleentities = entity.objectprops;
+                } else if (this.entityType == "dataprop") {
+                    ruleentities = entity.dataprops;
+                }
+                for (let ruleentity of ruleentities) {
+                    let foundentity = this.findByIri(ruleentity.iri);
+                    foundentity.setVisible();
+                }
+            }
+        }
+    }
+
+    init(startx, starty, reverse) {
         this.calcWidth(1);
         if (!reverse) {
             this.calcPositions(startx, starty);
@@ -67,6 +96,14 @@ export class OwlEntitySVG {
             this.parent.setVisible();
         }
     }
+    setAllVisible() {
+        this.visible = true;
+        for (let child of this.children) {
+            child.setAllVisible();
+        }
+    }
+
+    /*
     calcVisibility(visibilityType) {
         let shallSetVisible = false;
         if (visibilityType == "All") {
@@ -87,6 +124,7 @@ export class OwlEntitySVG {
             child.calcVisibility(visibilityType);
         }
     }
+    */
 
     calcWidth(depth) {
         this.width = 0;
