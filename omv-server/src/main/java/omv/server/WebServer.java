@@ -5,6 +5,7 @@ import java.util.Set;
 
 import io.vertx.core.Promise;
 import io.vertx.core.http.HttpMethod;
+import io.vertx.core.http.HttpServerOptions;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.CorsHandler;
@@ -22,14 +23,15 @@ public class WebServer {
 
         Set<String> allowedHeaders = new HashSet<>();
         allowedHeaders.add("x-requested-with");
+        allowedHeaders.add("Access-Control-Allow-Origin");
         allowedHeaders.add("Access-Control-Request-Method");
         allowedHeaders.add("Access-Control-Allow-Credentials");
-        allowedHeaders.add("Access-Control-Allow-Origin");
         allowedHeaders.add("Access-Control-Allow-Headers");
         allowedHeaders.add("origin");
         allowedHeaders.add("Content-Type");
         allowedHeaders.add("accept");
         allowedHeaders.add("X-PINGARUNER");
+        allowedHeaders.add("Authorization");
 
         Set<HttpMethod> allowedMethods = new HashSet<>();
         allowedMethods.add(HttpMethod.GET);
@@ -39,7 +41,7 @@ public class WebServer {
         allowedMethods.add(HttpMethod.PATCH);
         allowedMethods.add(HttpMethod.PUT);
 
-        this.router.route().handler(CorsHandler.create(".*.").allowedHeaders(allowedHeaders).allowedMethods(allowedMethods));
+        this.router.route().handler(CorsHandler.create("*").allowedHeaders(allowedHeaders).allowedMethods(allowedMethods));
 
         this.router.route().handler(BodyHandler.create()
                                                .setMergeFormAttributes(true)
@@ -87,7 +89,9 @@ public class WebServer {
             port = Integer.parseInt(portstring);
         }
         // Create the HTTP server and pass the "accept" method to the request handler.
-        App.app.getVertx().createHttpServer()
+        HttpServerOptions options = new HttpServerOptions();
+        options.setMaxHeaderSize(1024 * 16);
+        App.app.getVertx().createHttpServer(options)
             .requestHandler(this.router)
             .listen(port, (result) -> {
                 if (result.succeeded()) {
