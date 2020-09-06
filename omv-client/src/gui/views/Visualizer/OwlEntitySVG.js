@@ -9,6 +9,7 @@ export class OwlEntitySVG {
     /** @type {String} */ color;
 
     /** @type {Boolean} */ visible = false;
+    /** @type {Boolean} */ hasRule = false;
     /** @type {Number} */ height;
     /** @type {Number} */ width;
     /** @type {Number} */ r = 8;
@@ -36,7 +37,7 @@ export class OwlEntitySVG {
         owlentitysvg.owlentity = owlentity;
         owlentitysvg.parent = parent;
         owlentitysvg.entityType = entityType;
-        owlentitysvg.textLength = owlentitysvg.fontSize/1.9 * owlentitysvg.owlentity.label.length;
+        owlentitysvg.textLength = owlentitysvg.fontSize/1.7 * owlentitysvg.owlentity.label.length;
         if (entityType === "class") {
             owlentitysvg.color = "yellow";
         } else if (entityType === "objprop") {
@@ -75,6 +76,7 @@ export class OwlEntitySVG {
                 }
                 for (let ruleentity of ruleentities) {
                     let foundentity = this.findByIri(ruleentity.iri);
+                    foundentity.hasRule = true;
                     foundentity.setVisible();
                 }
             }
@@ -98,7 +100,7 @@ export class OwlEntitySVG {
     calcWidth(depth) {
         this.width = 0;
         if (this.visible) {
-            this.width = 3*this.r + this.textLength;
+            this.width = depth*3*this.r + this.textLength;
             for (let child of this.children) {
                 let newwidth=0;
                 newwidth = child.calcWidth(depth+1);
@@ -117,7 +119,7 @@ export class OwlEntitySVG {
         this.textAnchor = "start";
         this.startx = x;
         this.starty = y;
-        this.endx = this.startx + this.width + this.r/2;
+        this.endx = this.startx + 3*this.r + this.textLength + this.r/2;
         if (this.entityType === "class") {
             this.cx = this.startx + 2*this.r;
         } else {
@@ -164,7 +166,7 @@ export class OwlEntitySVG {
         this.textAnchor = "end";
         this.startx = x;
         this.starty = y;
-        this.endx = this.startx - this.width - this.r/2;
+        this.endx = this.startx - 3*this.r - this.textLength - this.r/2;
         if (this.entityType === "class") {
             this.cx = this.startx - 2*this.r;
         } else {
@@ -174,7 +176,7 @@ export class OwlEntitySVG {
         if (this.entityType === "class") {
             this.textx = this.cx - this.r - 2;
         } else {
-            this.textx = this.cx - 2*this.r - 2;
+            this.textx = this.cx - 2;
         }
         this.texty = this.cy + this.r/2;
         this.line1_x2 = this.startx - this.r ;
