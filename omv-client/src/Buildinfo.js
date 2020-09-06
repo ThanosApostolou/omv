@@ -1,9 +1,9 @@
 export class Buildinfo {
-    appNodeName;
-    appVersion;
-    appName;
-    buildPlatform;
-    buildMode;
+    /** @type {String} */ appNodeName;
+    /** @type {String} */ appVersion;
+    /** @type {String} */ appName;
+    /** @type {String} */ buildPlatform;
+    /** @type {String} */ buildMode;
 
     constructor() {
         let buildPlatform="";
