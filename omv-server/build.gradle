@@ -5,18 +5,19 @@ plugins {
 }
 
 group = "com.github.ThanosApostolou.omv"
-version = "0.0.1-SNAPSHOT"
+version = "0.2.0"
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
-def mainVerticle = 'omv.server.MainVerticle'
+def mainVerticle = 'omv.server.App'
 def watchForChange = 'src/**/*'
 def doOnChange = './gradlew classes'
 ext {
-    guavaVersion = '28.2'
-    vertxVersion = '3.8.5'
-    junitJupiterVersion = '5.6.1'
-    gsonVersion = '2.8.6'
+    guavaVersion = '29.0'
+    vertxVersion = '3.9.2'
+    junitJupiterVersion = '5.6.2'
+    owlapiVersion = "5.1.14"
+    slf4jVersion = "1.7.30"
 }
 
 repositories {
@@ -26,7 +27,10 @@ dependencies {
     implementation "com.google.guava:guava:$guavaVersion-jre"
     implementation "io.vertx:vertx-core:$vertxVersion"
     implementation "io.vertx:vertx-web:$vertxVersion"
-    implementation "com.google.code.gson:gson:$gsonVersion"
+    implementation "io.vertx:vertx-pg-client:$vertxVersion"
+    implementation "io.vertx:vertx-auth-jwt:$vertxVersion"
+    implementation "net.sourceforge.owlapi:owlapi-distribution:$owlapiVersion"
+    implementation "org.slf4j:slf4j-simple:$slf4jVersion"
 
 	testImplementation "io.vertx:vertx-junit5:$vertxVersion"
     testImplementation "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
@@ -35,7 +39,7 @@ dependencies {
 
 wrapper {
     distributionType = Wrapper.DistributionType.BIN
-    gradleVersion = "6.2.2"
+    gradleVersion = "6.5.1"
 }
 
 application {
@@ -43,23 +47,28 @@ application {
 }
 
 shadowJar {
-  classifier = 'fat'
-  manifest {
-      attributes 'Main-Verticle': "$mainVerticle"
-  }
-  mergeServiceFiles {
-      include 'META-INF/services/io.vertx.core.spi.VerticleFactory'
-  }
+    classifier = 'fat'
+    manifest {
+        attributes 'Main-Verticle': "$mainVerticle"
+    }
+    mergeServiceFiles {
+        include 'META-INF/services/io.vertx.core.spi.VerticleFactory'
+    }
 }
 
 test {
+    environment "VERTXWEB_ENVIRONMENT", "dev"
+    environment "DATABASE_URL", "postgres://omv:omv@localhost:5432/omvdb"
+    environment "PUBLIC_KEY", "password"
     useJUnitPlatform()
     testLogging {
-      events 'PASSED', 'FAILED', 'SKIPPED'
+         events 'PASSED', 'FAILED', 'SKIPPED'
     }
 }
 
 run {
     environment "VERTXWEB_ENVIRONMENT", "dev"
+    environment "DATABASE_URL", "postgres://omv:omv@localhost:5432/omvdb"
+    environment "PUBLIC_KEY", "password"
     args = ["run", "$mainVerticle", "--launcher-class=$mainClassName", "--redeploy=$watchForChange", "--on-redeploy=$doOnChange"]
 }

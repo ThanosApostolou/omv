@@ -28,3 +28,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### DBeaver
+/sql/omvdb/.dbeaver
+/file-uploads/
