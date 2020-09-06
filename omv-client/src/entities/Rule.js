@@ -1,4 +1,5 @@
 export class Rule {
+    /** @type {String} */ label = "";
     /** @type {String} */ relation = "";
     /** @type {String} */ direction = "";
     /** @type {String} */ comments = "";
@@ -14,6 +15,7 @@ export class Rule {
      */
     static fromObject(ruleobject) {
         let rule = new Rule();
+        rule.label = ruleobject.label;
         rule.relation = ruleobject.relation;
         rule.direction = ruleobject.direction;
         rule.comments = ruleobject.comments;

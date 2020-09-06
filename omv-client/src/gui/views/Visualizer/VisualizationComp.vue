@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-row>
-            <v-col cols="5">
+            <v-col cols="4">
                 <p>
                     {{ visualization.owl1.label }}
                     <v-btn icon color="primary" @click="owl1info()">
@@ -10,11 +10,16 @@
                 </p>
             </v-col>
             <v-col cols="2" class="col2">
-                <v-select v-bind="mappingSelect" v-model="selectModel" @change="selectChanged">
+                <v-select v-bind="relationSelect" v-model="relationSelectModel" @change="selectChanged">
                     asd
                 </v-select>
             </v-col>
-            <v-col cols="5" class="col3">
+            <v-col cols="2" class="col2">
+                <v-select v-bind="displaySelect" v-model="displaySelectModel">
+                    asd
+                </v-select>
+            </v-col>
+            <v-col cols="4" class="col3">
                 <p>
                     {{ visualization.owl2.label }}
                     <v-btn icon color="primary" @click="owl2info()">
@@ -35,8 +40,11 @@
             </v-card>
         </v-dialog>
         <v-divider />
-        <div class="center">
-            <OwlMappingComp v-if="rules != []" :owl1="visualization.owl1" :owl2="visualization.owl2" :rules="rules" type="class" :reverse="false" :visibility-type.camel="selectModel" :key="selectModel" />
+        <div v-if="displaySelectModel == 'Whole'" class="center">
+            <OwlMappingComp v-if="rules != []" :owl1="visualization.owl1" :owl2="visualization.owl2" :rules="rules" :reverse="false" :visibility-type.camel="relationSelectModel" :key="relationSelectModel" />
+        </div>
+        <div v-if="displaySelectModel == 'ByRule'" class="center">
+            <OwlMappingComp v-for="(rule, index) in rules" :key="index" :owl1="visualization.owl1" :owl2="visualization.owl2" :rules="[rule]" :reverse="false" :visibility-type.camel="relationSelectModel" />
         </div>
     </div>
 </template>
@@ -64,14 +72,22 @@ export default {
             showdialog: false,
             current_owl: {},
             current_owl_key: null,
-            selectModel: "AllRules",
-            mappingSelect: {
-                label: "Mapping Rules:",
+            relationSelectModel: "AllRules",
+            relationSelect: {
+                label: "Rules' Relation:",
                 items: [
                     "AllRules",
                     "EquivalentRules",
                     "LinkedWithRules",
                     "OtherRules"
+                ]
+            },
+            displaySelectModel: "Whole",
+            displaySelect: {
+                label: "Display rules",
+                items: [
+                    "Whole",
+                    "ByRule"
                 ]
             },
             rules: []
@@ -89,13 +105,13 @@ export default {
             this.showdialog = true;
         },
         selectChanged() {
-            console.log(this.selectModel);
+            console.log(this.relationSelectModel);
             this.rules = [];
-            if (this.selectModel == "AllRules") {
+            if (this.relationSelectModel == "AllRules") {
                 this.rules = this.visualization.mapping.equivalent.concat(this.visualization.mapping.linkedwith.concat(this.visualization.mapping.other));
-            } else if (this.selectModel == "EquivalentRules") {
+            } else if (this.relationSelectModel == "EquivalentRules") {
                 this.rules = this.visualization.mapping.equivalent;
-            } else if (this.selectModel == "LinkedWithRules") {
+            } else if (this.relationSelectModel == "LinkedWithRules") {
                 this.rules = this.visualization.mapping.linkedwith;
             } else {
                 this.rules = this.visualization.mapping.other;

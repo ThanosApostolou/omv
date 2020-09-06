@@ -27,10 +27,16 @@ public class Mapping {
             Rule rule = new Rule();
             rule.init(ruleobject);
             if (rule.relation.equals("Equivalent")) {
+                int index = this.equivalent.size();
+                rule.label = "Eq " + index ;
                 this.equivalent.add(rule);
             } else if (rule.relation.equals("Linked With")) {
+                int index = this.linkedwith.size();
+                rule.label = "LW " + index ;
                 this.linkedwith.add(rule);
             } else {
+                int index = this.other.size();
+                rule.label = "Oth " + index ;
                 this.other.add(rule);
             }
         });

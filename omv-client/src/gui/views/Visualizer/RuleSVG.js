@@ -19,10 +19,13 @@ export class RuleSVG {
     /** @type {Number} */ width = 40;
     /** @type {Number} */ stroke = 1;
     /** @type {Number} */ fill = "lightgrey";
+    /** @type {Number} */ fontSize = 10;
     /** @type {Number} */ startx;
     /** @type {Number} */ starty;
+    /** @type {Number} */ cx;
     /** @type {Number} */ cy;
     /** @type {Number} */ endx;
+    /** @type {Number} */ endy;
 
     /** @type {Object[]} */ lines = [];
 
@@ -56,8 +59,10 @@ export class RuleSVG {
         for (let rulesvg of rulessvg) {
             rulesvg.startx = x;
             rulesvg.starty = nexty;
+            rulesvg.cx = rulesvg.startx + rulesvg.width/2;
             rulesvg.cy = nexty+rulesvg.r;
             rulesvg.endx = x+rulesvg.width;
+            rulesvg.endy = rulesvg.starty + 2*rulesvg.r;
             nexty += 3*rulesvg.r;
         }
         return nexty;
