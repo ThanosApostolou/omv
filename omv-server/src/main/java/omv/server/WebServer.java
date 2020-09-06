@@ -22,7 +22,10 @@ public class WebServer {
 
         Set<String> allowedHeaders = new HashSet<>();
         allowedHeaders.add("x-requested-with");
+        allowedHeaders.add("Access-Control-Request-Method");
+        allowedHeaders.add("Access-Control-Allow-Credentials");
         allowedHeaders.add("Access-Control-Allow-Origin");
+        allowedHeaders.add("Access-Control-Allow-Headers");
         allowedHeaders.add("origin");
         allowedHeaders.add("Content-Type");
         allowedHeaders.add("accept");
@@ -36,7 +39,7 @@ public class WebServer {
         allowedMethods.add(HttpMethod.PATCH);
         allowedMethods.add(HttpMethod.PUT);
 
-        this.router.route().handler(CorsHandler.create("*").allowedHeaders(allowedHeaders).allowedMethods(allowedMethods));
+        this.router.route().handler(CorsHandler.create(".*.").allowedHeaders(allowedHeaders).allowedMethods(allowedMethods));
 
         this.router.route().handler(BodyHandler.create()
                                                .setMergeFormAttributes(true)
