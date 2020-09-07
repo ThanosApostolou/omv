@@ -1,3 +1,5 @@
+import { OwlEntity } from "./OwlEntity.js";
+
 export class Rule {
     /** @type {String} */ label = "";
     /** @type {String} */ relation = "";
@@ -28,7 +30,7 @@ export class Rule {
         return rule;
     }
 
-    /** @param {Object[]}
+    /** @param {Object[]} rulesobject
      * @return {Rule[]}
     */
     static listFromObject(rulesobject) {
@@ -37,5 +39,57 @@ export class Rule {
             rules.push(Rule.fromObject(ruleobject));
         }
         return rules;
+    }
+
+    /** @param {Rule[]} rules
+     * @param {Rule} rule
+     * @return {Boolean}
+    */
+    static listExistsRule(rules, rule) {
+        for (let rl of rules) {
+            if (rl.label == rule.label) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /** @param {Rule[]} rules
+     * @param {OwlEntity} owlclasses
+     * @return {Rule[]}
+    */
+    static findRule(rules, owlNumber, entityType, owlentity, orderedRules) {
+        for (let rule of rules) {
+            let ruleowl = (owlNumber == 1) ? rule.entity1 : rule.entity2;
+            let ruleentities = [];
+            if (entityType == "class") {
+                ruleentities = ruleowl.classes;
+            } else if (entityType == "objprop") {
+                ruleentities = ruleowl.objectprops;
+            } else {
+                ruleentities = ruleowl.dataprops;
+            }
+            for (let ruleentity of ruleentities) {
+                if (owlentity.iri == ruleentity.iri) {
+                    if (!Rule.listExistsRule(orderedRules, rule)) {
+                        orderedRules.push(rule);
+                    }
+                }
+            }
+        }
+        for (let child of owlentity.children) {
+            Rule.findRule(rules, owlNumber, entityType, child, orderedRules);
+        }
+    }
+
+    /** @param {Rule[]} rules
+     * @param {OwlEntity} owlclasses
+     * @return {Rule[]}
+    */
+    static listOrdered(rules, owlNumber, owlclasses, objprops, dataprops) {
+        let rulesclone = Object.assign({}, rules);
+        let orderedRules = [];
+        Rule.findRule(rules, owlNumber, "class", owlclasses, orderedRules);
+        return orderedRules;
     }
 }

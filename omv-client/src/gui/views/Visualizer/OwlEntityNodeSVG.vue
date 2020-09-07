@@ -7,7 +7,9 @@
             <line :x1="owlentitysvg.startx" :y1="owlentitysvg.cy" :x2="owlentitysvg.line1_x2" :y2="owlentitysvg.cy" stroke="black" :stroke-width="owlentitysvg.stroke" />
             <line :x1="owlentitysvg.linex1" :y1="owlentitysvg.liney1" :x2="owlentitysvg.linex2" :y2="owlentitysvg.liney2" stroke="black" :stroke-width="owlentitysvg.stroke" />
         </svg>
-        <OwlEntityNodeSVG v-for="child in owlentitysvg.children" :key="child.owlentity.iri" :owlentitysvg="child" @show-entity="showEntity" />
+        <template v-for="child in owlentitysvg.children">
+            <OwlEntityNodeSVG :key="child.owlentity.iri" v-if="child.visible" :owlentitysvg="child" @show-entity="showEntity" />
+        </template>
     </svg>
 </template>
 

@@ -9,15 +9,18 @@
                     </v-btn>
                 </p>
             </v-col>
-            <v-col cols="2" class="col2">
-                <v-select v-bind="relationSelect" v-model="relationSelectModel" @change="selectChanged">
-                    asd
-                </v-select>
-            </v-col>
-            <v-col cols="2" class="col2">
-                <v-select v-bind="displaySelect" v-model="displaySelectModel">
-                    asd
-                </v-select>
+            <v-col cols="4" class="col2">
+                <v-row class="col2">
+                    <v-col class="col2">
+                        <v-select v-bind="relationSelect" v-model="relationSelectModel" @change="selectChanged" />
+                    </v-col>
+                    <v-col class="col2">
+                        <v-select v-bind="displaySelect" v-model="displaySelectModel" @change="selectChanged" />
+                    </v-col>
+                    <v-col class="col2">
+                        <v-select v-bind="orderSelect" v-model="orderSelectModel" @change="selectChanged" />
+                    </v-col>
+                </v-row>
             </v-col>
             <v-col cols="4" class="col3">
                 <p>
@@ -40,8 +43,9 @@
             </v-card>
         </v-dialog>
         <v-divider />
+        <br>
         <div v-if="displaySelectModel == 'Whole'" class="center">
-            <OwlMappingComp v-if="rules != []" :owl1="visualization.owl1" :owl2="visualization.owl2" :rules="rules" :reverse="false" :visibility-type.camel="relationSelectModel" :key="relationSelectModel" />
+            <OwlMappingComp v-if="rules != []" :owl1="visualization.owl1" :owl2="visualization.owl2" :rules="rules" :reverse="false" :visibility-type.camel="relationSelectModel" :key="relationSelectModel+displaySelectModel+orderSelectModel" />
         </div>
         <div v-if="displaySelectModel == 'ByRule'" class="center">
             <OwlMappingComp v-for="(rule, index) in rules" :key="index" :owl1="visualization.owl1" :owl2="visualization.owl2" :rules="[rule]" :reverse="false" :visibility-type.camel="relationSelectModel" />
@@ -90,6 +94,14 @@ export default {
                     "ByRule"
                 ]
             },
+            orderSelectModel: "left",
+            orderSelect: {
+                label: "Order by Ontology:",
+                items: [
+                    "left",
+                    "right"
+                ]
+            },
             rules: []
         };
     },
@@ -106,15 +118,22 @@ export default {
         },
         selectChanged() {
             console.log(this.relationSelectModel);
+            let classRules = [];
+            let propRules = [];
+            if (this.orderSelectModel == "left") {
+                classRules = this.visualization.mapping.classRulesLeft;
+                propRules = this.visualization.mapping.propRulesLeft;
+            } else {
+                classRules = this.visualization.mapping.classRulesRight;
+                propRules = this.visualization.mapping.propRulesRight;
+            }
             this.rules = [];
             if (this.relationSelectModel == "AllRules") {
-                this.rules = this.visualization.mapping.equivalent.concat(this.visualization.mapping.linkedwith.concat(this.visualization.mapping.other));
+                this.rules = classRules.concat(propRules);
             } else if (this.relationSelectModel == "EquivalentRules") {
-                this.rules = this.visualization.mapping.equivalent;
+                this.rules = classRules;
             } else if (this.relationSelectModel == "LinkedWithRules") {
-                this.rules = this.visualization.mapping.linkedwith;
-            } else {
-                this.rules = this.visualization.mapping.other;
+                this.rules = propRules;
             }
         }
     },
