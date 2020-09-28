@@ -8,7 +8,7 @@
             <line :x1="owlentitysvg.linex1" :y1="owlentitysvg.liney1" :x2="owlentitysvg.linex2" :y2="owlentitysvg.liney2" stroke="black" :stroke-width="owlentitysvg.stroke" />
         </svg>
         <template v-for="child in owlentitysvg.children">
-            <OwlEntityNodeSVG :key="child.owlentity.iri" v-if="child.visible" :owlentitysvg="child" @show-entity="showEntity" />
+            <OwlEntityNodeSVG :key="child.owlentity.iri" :owlentitysvg="child" @show-entity="showEntity" />
         </template>
     </svg>
 </template>

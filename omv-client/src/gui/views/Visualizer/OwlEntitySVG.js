@@ -81,6 +81,7 @@ export class OwlEntitySVG {
                 }
             }
         }
+        this.removeNonVisible();
     }
 
     setVisible() {
@@ -93,6 +94,21 @@ export class OwlEntitySVG {
         this.visible = true;
         for (let child of this.children) {
             child.setAllVisible();
+        }
+    }
+    removeNonVisible() {
+        if (this.visible) {
+            for (let i=this.children.length-1; i>=0; i--) {
+                this.children[i] = this.children[i].removeNonVisible();
+            }
+            for (let i=this.children.length-1; i>=0; i--) {
+                if (this.children[i] == null) {
+                    this.children.splice(i, 1);
+                }
+            }
+            return this;
+        } else {
+            return null;
         }
     }
 
