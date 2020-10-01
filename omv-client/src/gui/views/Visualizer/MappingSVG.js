@@ -75,4 +75,24 @@ export class MappingSVG {
         }
     }
 
+    static async listFromRules(owl1classes, owl1objprops, owl1dataprops, owl2classes, owl2objprops, owl2dataprops, rules) {
+        let mappingsvgs = new Array(rules.length);
+        let promises = [];
+        let i=0;
+        for (let rule of rules) {
+            promises.push(new Promise((resolve) => {
+                let index = i;
+                setTimeout(() => {
+                    let newmappingsvg = new MappingSVG();
+                    newmappingsvg.init(owl1classes, owl1objprops, owl1dataprops, owl2classes, owl2objprops, owl2dataprops, [rule]);
+                    mappingsvgs[index] = newmappingsvg;
+                    console.log("promise " + index + " resolved");
+                    resolve();
+                }, 0);
+            }));
+            i++;
+        }
+        await Promise.all(promises);
+        return mappingsvgs;
+    }
 }

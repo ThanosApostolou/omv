@@ -10,8 +10,11 @@
         </v-row>
         <v-divider />
         <br>
-        <div :key="relationSelectModel+orderSelectModel" class="center">
-            <MappingSvgComp v-for="(newmappingsvg, index) in this.mappingsvg" :key="index" :mappingsvg="newmappingsvg" />
+        <v-row v-if="!ready" align="center" justify="center" class="text-center">
+            <v-progress-circular v-if="!ready" indeterminate rotate />
+        </v-row>
+        <div v-if="ready" :key="relationSelectModel+orderSelectModel" class="center">
+            <MappingSvgComp v-for="(mappingsvg, index) in this.mappingsvgs" :key="index" :mappingsvg="mappingsvg" />
         </div>
     </div>
 </template>
@@ -53,12 +56,14 @@ export default {
                     "right"
                 ]
             },
+            ready: false,
             rules: [],
-            mappingsvg: null
+            mappingsvgs: null
         };
     },
     methods: {
         selectChanged() {
+            this.ready = false;
             console.log(this.relationSelectModel);
             let classRules = [];
             let propRules = [];
@@ -77,12 +82,10 @@ export default {
             } else if (this.relationSelectModel == "LinkedWithRules") {
                 this.rules = propRules;
             }
-            this.mappingsvg = [];
-            for (let rule of this.rules) {
-                let newmappingsvg = new MappingSVG();
-                newmappingsvg.init(this.visualization.owl1.owlclasses, this.visualization.owl1.owlobjprops, this.visualization.owl1.owldataprops, this.visualization.owl2.owlclasses, this.visualization.owl2.owlobjprops, this.visualization.owl2.owldataprops, [rule]);
-                this.mappingsvg.push(newmappingsvg);
-            }
+            MappingSVG.listFromRules(this.visualization.owl1.owlclasses, this.visualization.owl1.owlobjprops, this.visualization.owl1.owldataprops, this.visualization.owl2.owlclasses, this.visualization.owl2.owlobjprops, this.visualization.owl2.owldataprops, this.rules).then((mappingsvgs) => {
+                this.mappingsvgs = mappingsvgs;
+                this.ready = true;
+            });
         }
     },
     created() {

@@ -10,7 +10,10 @@
         </v-row>
         <v-divider />
         <br>
-        <div :key="relationSelectModel+orderSelectModel" class="center">
+        <v-row v-if="!ready" align="center" justify="center" class="text-center">
+            <v-progress-circular indeterminate rotate />
+        </v-row>
+        <div v-if="ready" :key="relationSelectModel+orderSelectModel" class="center">
             <MappingSvgComp v-if="rules != []" :mappingsvg="mappingsvg" />
         </div>
     </div>
@@ -53,12 +56,14 @@ export default {
                     "right"
                 ]
             },
+            ready: false,
             rules: [],
             mappingsvg: null
         };
     },
     methods: {
         selectChanged() {
+            this.ready = false;
             console.log(this.relationSelectModel);
             let classRules = [];
             let propRules = [];
@@ -79,6 +84,7 @@ export default {
             }
             this.mappingsvg = new MappingSVG();
             this.mappingsvg.init(this.visualization.owl1.owlclasses, this.visualization.owl1.owlobjprops, this.visualization.owl1.owldataprops, this.visualization.owl2.owlclasses, this.visualization.owl2.owlobjprops, this.visualization.owl2.owldataprops, this.rules);
+            this.ready = true;
         }
     },
     created() {
