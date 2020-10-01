@@ -16,27 +16,15 @@ import RulesSVGComp from "./RulesSVGComp.vue";
 import { MappingSVG } from "./MappingSVG.js";
 
 export default {
-    name: "OwlMappingComp",
+    name: "MappingSvgComp",
     components: {
         OwlEntityNodeSVG,
         RulesSVGComp
     },
     props: {
-        owl1: {
-            type: Object,
+        mappingsvg: {
+            type: MappingSVG,
             default: null
-        },
-        owl2: {
-            type: Object,
-            default: null
-        },
-        rules: {
-            type: Array,
-            default: null
-        },
-        visibilityType: {
-            type: String,
-            default: "AllRules"
         }
     },
     data() {
@@ -44,8 +32,7 @@ export default {
             show: false,
             selectedOwlEntity: null,
             width: 0,
-            height: 0,
-            mappingsvg: {}
+            height: 0
         };
     },
     methods: {
@@ -53,12 +40,6 @@ export default {
             this.selectedOwlEntity = owlentity;
             this.show = true;
         }
-    },
-    created() {
-        this.mappingsvg = new MappingSVG();
-        this.mappingsvg.init(this.owl1.owlclasses, this.owl1.owlobjprops, this.owl1.owldataprops, this.owl2.owlclasses, this.owl2.owlobjprops, this.owl2.owldataprops, this.rules);
-        this.width = this.mappingsvg.width;
-        this.height = this.mappingsvg.height;
     }
 };
 </script>

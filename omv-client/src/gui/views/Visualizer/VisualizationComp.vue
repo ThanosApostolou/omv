@@ -11,7 +11,12 @@
             </v-col>
             <v-col cols="4" class="col2">
                 <v-row class="col2">
-                    <v-col class="col2">
+                    <v-tabs v-model="displayTab">
+                        <v-tab key="epoptic">Epoptic View</v-tab>
+                        <v-tab key="byrule">View By Rule</v-tab>
+                        <v-tab key="statistics">Statistics</v-tab>
+                    </v-tabs>
+                    <!--<v-col class="col2">
                         <v-select v-bind="relationSelect" v-model="relationSelectModel" @change="selectChanged" />
                     </v-col>
                     <v-col class="col2">
@@ -19,7 +24,7 @@
                     </v-col>
                     <v-col class="col2">
                         <v-select v-bind="orderSelect" v-model="orderSelectModel" @change="selectChanged" />
-                    </v-col>
+                    </v-col>-->
                 </v-row>
             </v-col>
             <v-col cols="4" class="col3">
@@ -42,27 +47,32 @@
                 <OwlInfoComp :owl="current_owl" :key="current_owl_key" />
             </v-card>
         </v-dialog>
-        <v-divider />
-        <br>
-        <div v-if="displaySelectModel == 'Whole'" class="center">
-            <OwlMappingComp v-if="rules != []" :owl1="visualization.owl1" :owl2="visualization.owl2" :rules="rules" :reverse="false" :visibility-type.camel="relationSelectModel" :key="relationSelectModel+displaySelectModel+orderSelectModel" />
-        </div>
-        <div v-if="displaySelectModel == 'ByRule'" class="center">
-            <OwlMappingComp v-for="(rule, index) in rules" :key="index" :owl1="visualization.owl1" :owl2="visualization.owl2" :rules="[rule]" :reverse="false" :visibility-type.camel="relationSelectModel" />
-        </div>
+        <v-tabs-items v-model="displayTab">
+            <v-tab-item key="epoptic">
+                <VisualizationEpopticComp :visualization="visualization" />
+            </v-tab-item>
+            <v-tab-item key="byrule">
+                <VisualizationByruleComp :visualization="visualization" />
+            </v-tab-item>
+            <v-tab-item key="statistics"> asdf</v-tab-item>
+        </v-tabs-items>
     </div>
 </template>
 
 <script>
 import { Visualization } from "../../../entities/Visualization.js";
-
+import { MappingSVG } from "./MappingSVG.js";
 import OwlInfoComp from "./OwlInfoComp.vue";
-import OwlMappingComp from "./OwlMappingComp.vue";
+import MappingSvgComp from "./MappingSvgComp.vue";
+import VisualizationEpopticComp from "./VisualizationEpopticComp.vue";
+import VisualizationByruleComp from "./VisualizationByruleComp.vue";
+
 export default {
     name: "VisualizationComp",
     components: {
         OwlInfoComp,
-        OwlMappingComp
+        VisualizationEpopticComp,
+        VisualizationByruleComp
     },
     props: {
         receivedvisualization: {
@@ -102,7 +112,9 @@ export default {
                     "right"
                 ]
             },
-            rules: []
+            rules: [],
+            displayTab: null,
+            mappingsvg: null
         };
     },
     methods: {
@@ -135,6 +147,19 @@ export default {
             } else if (this.relationSelectModel == "LinkedWithRules") {
                 this.rules = propRules;
             }
+
+            if (this.displaySelectModel == "Whole") {
+                this.mappingsvg = new MappingSVG();
+                this.mappingsvg.init(this.visualization.owl1.owlclasses, this.visualization.owl1.owlobjprops, this.visualization.owl1.owldataprops, this.visualization.owl2.owlclasses, this.visualization.owl2.owlobjprops, this.visualization.owl2.owldataprops, this.rules);
+            } else if (this.displaySelectModel == "ByRule") {
+                this.mappingsvg = [];
+                for (let rule of this.rules) {
+                    let newmappingsvg = new MappingSVG();
+                    newmappingsvg.init(this.visualization.owl1.owlclasses, this.visualization.owl1.owlobjprops, this.visualization.owl1.owldataprops, this.visualization.owl2.owlclasses, this.visualization.owl2.owlobjprops, this.visualization.owl2.owldataprops, [rule]);
+                    this.mappingsvg.push(newmappingsvg);
+                }
+            }
+
         }
     },
     created() {
