@@ -86,7 +86,6 @@ export class MappingSVG {
                     let newmappingsvg = new MappingSVG();
                     newmappingsvg.init(owl1classes, owl1objprops, owl1dataprops, owl2classes, owl2objprops, owl2dataprops, [rule]);
                     mappingsvgs[index] = newmappingsvg;
-                    console.log("promise " + index + " resolved");
                     resolve();
                 }, 0);
             }));

@@ -16,15 +16,6 @@
                         <v-tab key="byrule">View By Rule</v-tab>
                         <v-tab key="statistics">Statistics</v-tab>
                     </v-tabs>
-                    <!--<v-col class="col2">
-                        <v-select v-bind="relationSelect" v-model="relationSelectModel" @change="selectChanged" />
-                    </v-col>
-                    <v-col class="col2">
-                        <v-select v-bind="displaySelect" v-model="displaySelectModel" @change="selectChanged" />
-                    </v-col>
-                    <v-col class="col2">
-                        <v-select v-bind="orderSelect" v-model="orderSelectModel" @change="selectChanged" />
-                    </v-col>-->
                 </v-row>
             </v-col>
             <v-col cols="4" class="col3">
@@ -54,16 +45,14 @@
             <v-tab-item key="byrule">
                 <VisualizationByruleComp :visualization="visualization" />
             </v-tab-item>
-            <v-tab-item key="statistics"> asdf</v-tab-item>
+            <v-tab-item key="statistics">asdf</v-tab-item>
         </v-tabs-items>
     </div>
 </template>
 
 <script>
 import { Visualization } from "../../../entities/Visualization.js";
-import { MappingSVG } from "./MappingSVG.js";
 import OwlInfoComp from "./OwlInfoComp.vue";
-import MappingSvgComp from "./MappingSvgComp.vue";
 import VisualizationEpopticComp from "./VisualizationEpopticComp.vue";
 import VisualizationByruleComp from "./VisualizationByruleComp.vue";
 
@@ -86,35 +75,7 @@ export default {
             showdialog: false,
             current_owl: {},
             current_owl_key: null,
-            relationSelectModel: "AllRules",
-            relationSelect: {
-                label: "Rules' Relation:",
-                items: [
-                    "AllRules",
-                    "EquivalentRules",
-                    "LinkedWithRules",
-                    "OtherRules"
-                ]
-            },
-            displaySelectModel: "Whole",
-            displaySelect: {
-                label: "Display rules",
-                items: [
-                    "Whole",
-                    "ByRule"
-                ]
-            },
-            orderSelectModel: "left",
-            orderSelect: {
-                label: "Order by Ontology:",
-                items: [
-                    "left",
-                    "right"
-                ]
-            },
-            rules: [],
-            displayTab: null,
-            mappingsvg: null
+            displayTab: null
         };
     },
     methods: {
@@ -127,43 +88,7 @@ export default {
             this.current_owl = this.visualization.owl2;
             this.current_owl_key = "owl2";
             this.showdialog = true;
-        },
-        selectChanged() {
-            console.log(this.relationSelectModel);
-            let classRules = [];
-            let propRules = [];
-            if (this.orderSelectModel == "left") {
-                classRules = this.visualization.mapping.classRulesLeft;
-                propRules = this.visualization.mapping.propRulesLeft;
-            } else {
-                classRules = this.visualization.mapping.classRulesRight;
-                propRules = this.visualization.mapping.propRulesRight;
-            }
-            this.rules = [];
-            if (this.relationSelectModel == "AllRules") {
-                this.rules = classRules.concat(propRules);
-            } else if (this.relationSelectModel == "EquivalentRules") {
-                this.rules = classRules;
-            } else if (this.relationSelectModel == "LinkedWithRules") {
-                this.rules = propRules;
-            }
-
-            if (this.displaySelectModel == "Whole") {
-                this.mappingsvg = new MappingSVG();
-                this.mappingsvg.init(this.visualization.owl1.owlclasses, this.visualization.owl1.owlobjprops, this.visualization.owl1.owldataprops, this.visualization.owl2.owlclasses, this.visualization.owl2.owlobjprops, this.visualization.owl2.owldataprops, this.rules);
-            } else if (this.displaySelectModel == "ByRule") {
-                this.mappingsvg = [];
-                for (let rule of this.rules) {
-                    let newmappingsvg = new MappingSVG();
-                    newmappingsvg.init(this.visualization.owl1.owlclasses, this.visualization.owl1.owlobjprops, this.visualization.owl1.owldataprops, this.visualization.owl2.owlclasses, this.visualization.owl2.owlobjprops, this.visualization.owl2.owldataprops, [rule]);
-                    this.mappingsvg.push(newmappingsvg);
-                }
-            }
-
         }
-    },
-    created() {
-        this.selectChanged();
     }
 };
 </script>
