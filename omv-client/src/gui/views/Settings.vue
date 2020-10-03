@@ -11,7 +11,7 @@
                         <v-text-field chips outlined label="Server" value="localhost" />
                     </v-col>
                     <v-col cols="12" xs="12" lg="6">
-                        <v-switch v-model="theme_switch" label="Dark Theme" />
+                        <v-switch v-model="themeSwitch" label="Dark Theme" />
                     </v-col>
                 </v-row>
                 <v-row align="center" justify="center" class="text-center">
@@ -29,13 +29,13 @@ export default {
     name: "Settings",
     data: function () {
         return {
-            theme_switch: true,
+            themeSwitch: true,
             valid: true
         };
     },
     methods: {
         submit() {
-
+            console.log("submited");
         }
     }
 };

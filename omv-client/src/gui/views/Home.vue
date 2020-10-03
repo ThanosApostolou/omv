@@ -36,7 +36,7 @@
 <script>
 export default {
     name: "Home",
-    data: function () {
+    data() {
         return {
             buildinfo: this.$root.app.buildinfo
         };

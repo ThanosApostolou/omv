@@ -46,7 +46,7 @@
 </template>
 
 <script>
-let navitems = [
+const navitems = [
     {
         path: "/home",
         label: "Home",

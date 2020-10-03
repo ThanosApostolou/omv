@@ -14,7 +14,7 @@ export class OwlEntity {
      *  @returns {OwlEntity}
      */
     static fromObject(owlentityobject: any): OwlEntity {
-        let owlentity = new OwlEntity();
+        const owlentity = new OwlEntity();
         owlentity.iri = owlentityobject.iri;
         owlentity.name = owlentityobject.name;
         owlentity.label = owlentityobject.label;
@@ -23,7 +23,7 @@ export class OwlEntity {
         owlentity.hasOtherRule = owlentityobject.hasOtherRule;
         owlentity.annotations = Annotation.listFromObject(owlentityobject.annotations);
         owlentity.children = [];
-        for (let child of owlentityobject.children) {
+        for (const child of owlentityobject.children) {
             owlentity.children.push(OwlEntity.fromObject(child));
         }
         return owlentity;

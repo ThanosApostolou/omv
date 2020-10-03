@@ -14,7 +14,7 @@ export class OwlInfo {
      *  @returns {OwlInfo}
      */
     static fromObject (owlinfoobject: any): OwlInfo {
-        let owlinfo = new OwlInfo();
+        const owlinfo = new OwlInfo();
         owlinfo.label = owlinfoobject.label;
         owlinfo.iri = owlinfoobject.iri;
         owlinfo.versionIri = owlinfoobject.versionIri;

@@ -22,7 +22,7 @@ export default {
     components: {
         MyHeader
     },
-    data: function () {
+    data() {
         return {
             buildinfo: this.$root.app.buildinfo
         };

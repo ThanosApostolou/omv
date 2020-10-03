@@ -40,7 +40,7 @@ export class MappingSVG {
 
         this.width = Math.max(this.width + 100, 700);
 
-        let ruleswidth = this.width;
+        const ruleswidth = this.width;
         this.width += 60;
 
         this.owl2classessvg = OwlEntitySVG.fromOwlEntity(owl2classes, "class", null);
@@ -76,14 +76,14 @@ export class MappingSVG {
     }
 
     static async listFromRules(owl1classes, owl1objprops, owl1dataprops, owl2classes, owl2objprops, owl2dataprops, rules) {
-        let mappingsvgs = new Array(rules.length);
-        let promises = [];
+        const mappingsvgs = new Array(rules.length);
+        const promises = [];
         let i=0;
-        for (let rule of rules) {
+        for (const rule of rules) {
             promises.push(new Promise((resolve) => {
-                let index = i;
+                const index = i;
                 setTimeout(() => {
-                    let newmappingsvg = new MappingSVG();
+                    const newmappingsvg = new MappingSVG();
                     newmappingsvg.init(owl1classes, owl1objprops, owl1dataprops, owl2classes, owl2objprops, owl2dataprops, [rule]);
                     mappingsvgs[index] = newmappingsvg;
                     resolve();

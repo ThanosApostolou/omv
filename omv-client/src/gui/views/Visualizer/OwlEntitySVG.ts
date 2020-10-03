@@ -8,13 +8,13 @@ export class OwlEntitySVG {
     /** @type {String} */ entityType: string;
     /** @type {String} */ color: string;
 
-    /** @type {Boolean} */ visible: boolean = false;
-    /** @type {Boolean} */ hasRule: boolean = false;
+    /** @type {Boolean} */ visible = false;
+    /** @type {Boolean} */ hasRule = false;
     /** @type {Number} */ height: number;
     /** @type {Number} */ width: number;
-    /** @type {Number} */ r: number = 8;
-    /** @type {Number} */ stroke: number = 1;
-    /** @type {Number} */ fontSize: number = 12;
+    /** @type {Number} */ r = 8;
+    /** @type {Number} */ stroke = 1;
+    /** @type {Number} */ fontSize = 12;
     /** @type {Number} */ startx: number;
     /** @type {Number} */ starty: number;
     /** @type {Number} */ endx: number;
@@ -23,7 +23,7 @@ export class OwlEntitySVG {
     /** @type {Number} */ textx: number;
     /** @type {Number} */ texty: number;
     /** @type {Number} */ textLength: number;
-    /** @type {String} */ textAnchor: String = "";
+    /** @type {String} */ textAnchor = "";
     /** @type {Number} */ line1_x2: number;
     /** @type {Number} */ linex1: number;
     /** @type {Number} */ liney1: number;
@@ -33,8 +33,8 @@ export class OwlEntitySVG {
     /** @param {Object} owlentity
      *  @returns {OwlEntitySVG}
      */
-    static fromOwlEntity(owlentity: any, entityType, parent): OwlEntitySVG {
-        let owlentitysvg = new OwlEntitySVG();
+    static fromOwlEntity(owlentity: any, entityType: string, parent: OwlEntitySVG): OwlEntitySVG {
+        const owlentitysvg: OwlEntitySVG = new OwlEntitySVG();
         owlentitysvg.owlentity = owlentity;
         owlentitysvg.parent = parent;
         owlentitysvg.entityType = entityType;
@@ -47,7 +47,7 @@ export class OwlEntitySVG {
             owlentitysvg.color = "lightgreen";
         }
         owlentitysvg.children = [];
-        for (let child of owlentity.children) {
+        for (const child of owlentity.children) {
             owlentitysvg.children.push(OwlEntitySVG.fromOwlEntity(child, entityType, owlentitysvg));
         }
         return owlentitysvg;
@@ -61,7 +61,7 @@ export class OwlEntitySVG {
             this.setAllVisible();
         } else {
             let entity = null;
-            for (let rule of rules) {
+            for (const rule of rules) {
                 let ruleentities = [];
                 if (ruleEntityType == "entity1") {
                     entity = rule.entity1;
@@ -75,8 +75,8 @@ export class OwlEntitySVG {
                 } else if (this.entityType == "dataprop") {
                     ruleentities = entity.dataprops;
                 }
-                for (let ruleentity of ruleentities) {
-                    let foundentity = this.findByIri(ruleentity.iri);
+                for (const ruleentity of ruleentities) {
+                    const foundentity = this.findByIri(ruleentity.iri);
                     foundentity.hasRule = true;
                     foundentity.setVisible();
                 }
@@ -93,7 +93,7 @@ export class OwlEntitySVG {
     }
     setAllVisible() {
         this.visible = true;
-        for (let child of this.children) {
+        for (const child of this.children) {
             child.setAllVisible();
         }
     }
@@ -118,7 +118,7 @@ export class OwlEntitySVG {
         this.width = 0;
         if (this.visible) {
             this.width = depth*3*this.r + this.textLength;
-            for (let child of this.children) {
+            for (const child of this.children) {
                 let newwidth=0;
                 newwidth = child.calcWidth(depth+1);
                 if (newwidth > this.width) {
@@ -130,9 +130,10 @@ export class OwlEntitySVG {
     }
 
     /** @param {Number} x
+     *  @param {Number} y
      *  @returns {Number}
      */
-    calcPositions(x: number, y): [number, number] {
+    calcPositions(x: number, y: number): [number, number] {
         this.textAnchor = "start";
         this.startx = x;
         this.starty = y;
@@ -162,9 +163,9 @@ export class OwlEntitySVG {
             this.linex2 = this.cx + this.r;
         }
         this.liney2 = this.liney1;
-        let nextx = this.startx + 2*this.r;
+        const nextx = this.startx + 2*this.r;
         let nexty = this.starty + 2*this.r;
-        for (let child of this.children) {
+        for (const child of this.children) {
             if (child.visible) {
                 let childcy=0;
                 [nexty, childcy] = child.calcPositions(nextx, nexty);
@@ -209,9 +210,9 @@ export class OwlEntitySVG {
             this.linex2 = this.cx - this.r;
         }
         this.liney2 = this.liney1;
-        let nextx = this.startx - 2*this.r;
+        const nextx = this.startx - 2*this.r;
         let nexty = this.starty + 2*this.r;
-        for (let child of this.children) {
+        for (const child of this.children) {
             if (child.visible) {
                 let childcy=0;
                 [nexty, childcy] = child.calcPositionsReverse(nextx, nexty);
@@ -225,12 +226,12 @@ export class OwlEntitySVG {
     /** @param {String}
      * @returns {OwlEntitySVG}
     */
-    findByIri(iri): OwlEntitySVG {
+    findByIri(iri: string): OwlEntitySVG {
         if (this.owlentity.iri == iri) {
             return this;
         } else {
-            for (let child of this.children) {
-                let foundentitysvg = child.findByIri(iri);
+            for (const child of this.children) {
+                const foundentitysvg = child.findByIri(iri);
                 if (foundentitysvg != null) {
                     return foundentitysvg;
                 }

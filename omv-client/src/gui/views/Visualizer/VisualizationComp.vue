@@ -41,7 +41,7 @@
                         <v-icon>close</v-icon>
                     </v-btn>
                 </v-card-actions>
-                <OwlInfoComp :owl="current_owl" :key="current_owl_key" />
+                <OwlInfoComp :owl="currentOwl" :key="currentOwlkey" />
             </v-card>
         </v-dialog>
         <v-tabs-items v-model="displayTab">
@@ -81,20 +81,20 @@ export default {
         return {
             visualization: this.receivedvisualization,
             showdialog: false,
-            current_owl: {},
-            current_owl_key: null,
+            currentOwl: {},
+            currentOwlkey: null,
             displayTab: null
         };
     },
     methods: {
         owl1info() {
-            this.current_owl = this.visualization.owl1;
-            this.current_owl_key = "owl1";
+            this.currentOwl = this.visualization.owl1;
+            this.currentOwlkey = "owl1";
             this.showdialog = true;
         },
         owl2info() {
-            this.current_owl = this.visualization.owl2;
-            this.current_owl_key = "owl2";
+            this.currentOwl = this.visualization.owl2;
+            this.currentOwlkey = "owl2";
             this.showdialog = true;
         }
     }

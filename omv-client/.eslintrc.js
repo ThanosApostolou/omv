@@ -16,7 +16,13 @@ module.exports = {
 
     ignorePatterns: [ "node_modules/", "dist/", "dist_electron/", "build_cordova/" ],
     plugins: [ "vue" ],
-
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:vue/strongly-recommended",
+        "@vue/typescript"
+    ],
     rules: {
         "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
         "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
@@ -39,12 +45,10 @@ module.exports = {
         "vue/html-indent":          [1, 4],
         "vue/script-indent":        [1, 4],
         "vue/html-quotes":          [1, "double"],
-        "vue/max-attributes-per-line": 0
-    },
-
-    "extends": [
-        "plugin:vue/strongly-recommended",
-        "eslint:recommended",
-        "@vue/typescript"
-    ]
+        "vue/max-attributes-per-line": 0,
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-inferrable-types": "off",
+        "@typescript-eslint/camelcase": "off",
+        "@typescript-eslint/explicit-function-return-type": "off"
+    }
 };

@@ -1,9 +1,9 @@
 import { App } from "./App";
 
 export class SettingsManager {
-    /** @type {String} */ defaultServer;
+    /** @type {String} */ defaultServer: string = "";
 
-    init() {
+    init(): void {
         if (App.app.buildinfo.buildMode == "development") {
             this.defaultServer = "http://127.0.0.1:8080/";
         } else {

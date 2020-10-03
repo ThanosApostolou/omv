@@ -11,7 +11,7 @@ export class ApiConsumer {
         this.axios.defaults.baseURL = this.baseurl;
     }
 
-    postVisualization(data) {
+    postVisualization(data: any): any {
         return this.axios({
             method: "post",
             url: "visualization",

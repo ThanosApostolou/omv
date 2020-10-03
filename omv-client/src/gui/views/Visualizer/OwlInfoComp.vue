@@ -97,8 +97,6 @@ export default {
         return {
             tab: null
         };
-    },
-    mounted() {
     }
 };
 </script>

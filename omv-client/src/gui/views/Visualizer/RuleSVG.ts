@@ -34,7 +34,7 @@ export class RuleSVG {
      * @returns {RuleSVG}
      */
     static fromRule(rule) {
-        let rulesvg = new RuleSVG();
+        const rulesvg = new RuleSVG();
         rulesvg.rule = rule;
         return rulesvg;
     }
@@ -43,8 +43,8 @@ export class RuleSVG {
      * @returns {RuleSVG[]}
      */
     static listFromRules(rules) {
-        let rulessvg = [];
-        for (let rule of rules) {
+        const rulessvg = [];
+        for (const rule of rules) {
             rulessvg.push(RuleSVG.fromRule(rule));
         }
         return rulessvg;
@@ -56,7 +56,7 @@ export class RuleSVG {
      */
     static listInit(rulessvg, x, y) {
         let nexty = y;
-        for (let rulesvg of rulessvg) {
+        for (const rulesvg of rulessvg) {
             rulesvg.startx = x;
             rulesvg.starty = nexty;
             rulesvg.cx = rulesvg.startx + rulesvg.width/2;
@@ -70,10 +70,10 @@ export class RuleSVG {
 
 
     findEntities(owl1classessvg, owl1objpropssvg, owl1datapropssvg, owl2classessvg, owl2objpropssvg, owl2datapropssvg) {
-        for (let entityobj of this.rule.entity1.classes) {
-            let foundentity = owl1classessvg.findByIri(entityobj.iri);
+        for (const entityobj of this.rule.entity1.classes) {
+            const foundentity = owl1classessvg.findByIri(entityobj.iri);
             this.entity1.classessvg.push(foundentity);
-            let line = {
+            const line = {
                 x1: this.startx,
                 y1: this.cy,
                 x2: foundentity.endx,
@@ -81,10 +81,10 @@ export class RuleSVG {
             };
             this.lines.push(line);
         }
-        for (let entityobj of this.rule.entity1.objectprops) {
-            let foundentity = owl1objpropssvg.findByIri(entityobj.iri);
+        for (const entityobj of this.rule.entity1.objectprops) {
+            const foundentity = owl1objpropssvg.findByIri(entityobj.iri);
             this.entity1.objpropssvg.push(foundentity);
-            let line = {
+            const line = {
                 x1: this.startx,
                 y1: this.cy,
                 x2: foundentity.endx,
@@ -92,10 +92,10 @@ export class RuleSVG {
             };
             this.lines.push(line);
         }
-        for (let entityobj of this.rule.entity1.dataprops) {
-            let foundentity = owl1datapropssvg.findByIri(entityobj.iri);
+        for (const entityobj of this.rule.entity1.dataprops) {
+            const foundentity = owl1datapropssvg.findByIri(entityobj.iri);
             this.entity1.datapropssvg.push(foundentity);
-            let line = {
+            const line = {
                 x1: this.startx,
                 y1: this.cy,
                 x2: foundentity.endx,
@@ -103,10 +103,10 @@ export class RuleSVG {
             };
             this.lines.push(line);
         }
-        for (let entityobj of this.rule.entity2.classes) {
-            let foundentity = owl2classessvg.findByIri(entityobj.iri);
+        for (const entityobj of this.rule.entity2.classes) {
+            const foundentity = owl2classessvg.findByIri(entityobj.iri);
             this.entity2.classessvg.push(foundentity);
-            let line = {
+            const line = {
                 x1: this.endx,
                 y1: this.cy,
                 x2: foundentity.endx,
@@ -114,10 +114,10 @@ export class RuleSVG {
             };
             this.lines.push(line);
         }
-        for (let entityobj of this.rule.entity2.objectprops) {
-            let foundentity = owl2objpropssvg.findByIri(entityobj.iri);
+        for (const entityobj of this.rule.entity2.objectprops) {
+            const foundentity = owl2objpropssvg.findByIri(entityobj.iri);
             this.entity2.objpropssvg.push(foundentity);
-            let line = {
+            const line = {
                 x1: this.endx,
                 y1: this.cy,
                 x2: foundentity.endx,
@@ -125,10 +125,10 @@ export class RuleSVG {
             };
             this.lines.push(line);
         }
-        for (let entityobj of this.rule.entity2.dataprops) {
-            let foundentity = owl2datapropssvg.findByIri(entityobj.iri);
+        for (const entityobj of this.rule.entity2.dataprops) {
+            const foundentity = owl2datapropssvg.findByIri(entityobj.iri);
             this.entity2.datapropssvg.push(foundentity);
-            let line = {
+            const line = {
                 x1: this.endx,
                 y1: this.cy,
                 x2: foundentity.endx,
@@ -140,7 +140,7 @@ export class RuleSVG {
     }
 
     static listFindEntities(rules, owl1classessvg, owl1objpropssvg, owl1datapropssvg, owl2classessvg, owl2objpropssvg, owl2datapropssvg) {
-        for (let rule of rules) {
+        for (const rule of rules) {
             rule.findEntities(owl1classessvg, owl1objpropssvg, owl1datapropssvg, owl2classessvg, owl2objpropssvg, owl2datapropssvg);
         }
 

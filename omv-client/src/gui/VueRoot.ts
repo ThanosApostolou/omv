@@ -6,6 +6,7 @@ import vuetify from "./plugins/vuetify";
 import { App } from "../App";
 
 import "./assets/css/style.css";
+import { VNode } from "vue/types/umd";
 
 export class VueRoot {
     vue;
@@ -18,10 +19,10 @@ export class VueRoot {
             data: {
                 app: App.app
             },
-            render: (h) => {
+            render: (h): VNode => {
                 return h(VueApp);
             },
-            mounted() {
+            mounted(): void {
                 if (process.env.IS_ELECTRON || process.env.VUE_APP_IS_CORDOVA) {
                     this.$router.push("/");
                 }
