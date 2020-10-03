@@ -1,20 +1,20 @@
-// eslint-disable-next-line no-unused-vars
+import { Rule } from "@/entities/Rule";
 import { OwlEntity } from "../../../entities/OwlEntity";
 import { OwlEntitySVG } from "./OwlEntitySVG";
 import { RuleSVG } from "./RuleSVG";
 
 export class MappingSVG {
-    /** @type {Number} */ width;
-    /** @type {Number} */ height;
-    /** @type {OwlEntitySVG} */ owl1classessvg;
-    /** @type {OwlEntitySVG} */ owl1objpropssvg;
-    /** @type {OwlEntitySVG} */ owl1datapropssvg;
-    /** @type {OwlEntitySVG} */ owl2classessvg;
-    /** @type {OwlEntitySVG} */ owl2objpropssvg;
-    /** @type {OwlEntitySVG} */ owl2datapropssvg;
-    /** @type {RuleSVG[]} */ rulessvg = [];
+    /** @type {Number} */ width: number;
+    /** @type {Number} */ height: number;
+    /** @type {OwlEntitySVG} */ owl1classessvg: OwlEntitySVG;
+    /** @type {OwlEntitySVG} */ owl1objpropssvg: OwlEntitySVG;
+    /** @type {OwlEntitySVG} */ owl1datapropssvg: OwlEntitySVG;
+    /** @type {OwlEntitySVG} */ owl2classessvg: OwlEntitySVG;
+    /** @type {OwlEntitySVG} */ owl2objpropssvg: OwlEntitySVG;
+    /** @type {OwlEntitySVG} */ owl2datapropssvg: OwlEntitySVG;
+    /** @type {RuleSVG[]} */ rulessvg: RuleSVG[] = [];
 
-    init(owl1classes, owl1objprops, owl1dataprops, owl2classes, owl2objprops, owl2dataprops, rules) {
+    init(owl1classes: OwlEntity, owl1objprops: OwlEntity, owl1dataprops: OwlEntity, owl2classes: OwlEntity, owl2objprops: OwlEntity, owl2dataprops: OwlEntity, rules: Rule[]) {
         this.owl1classessvg = OwlEntitySVG.fromOwlEntity(owl1classes, "class", null);
         this.owl1classessvg.calcVisibility(rules, "entity1");
         this.owl1classessvg.calcWidth(1);
@@ -75,7 +75,7 @@ export class MappingSVG {
         }
     }
 
-    static async listFromRules(owl1classes, owl1objprops, owl1dataprops, owl2classes, owl2objprops, owl2dataprops, rules) {
+    static async listFromRules(owl1classes: OwlEntity, owl1objprops: OwlEntity, owl1dataprops: OwlEntity, owl2classes: OwlEntity, owl2objprops: OwlEntity, owl2dataprops: OwlEntity, rules: Rule[]) {
         const mappingsvgs = new Array(rules.length);
         const promises = [];
         let i=0;

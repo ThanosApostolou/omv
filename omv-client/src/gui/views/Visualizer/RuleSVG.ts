@@ -1,39 +1,39 @@
-// eslint-disable-next-line no-unused-vars
 import { Rule } from "../../../entities/Rule";
+import { OwlEntitySVG } from "./OwlEntitySVG";
 
 export class RuleSVG {
-    /** @type {Rule} */ rule;
+    /** @type {Rule} */ rule: Rule;
 
-    /** @type {Object} */ entity1 = {
+    /** @type {any} */ entity1: any = {
         classessvg: [],
         objpropssvg: [],
         datapropssvg: []
     };
-    /** @type {Object} */ entity2 = {
+    /** @type {any} */ entity2: any = {
         classessvg: [],
         objpropssvg: [],
         datapropssvg: []
     };
 
-    /** @type {Number} */ r = 8;
-    /** @type {Number} */ width = 40;
-    /** @type {Number} */ stroke = 1;
-    /** @type {Number} */ fill = "lightgrey";
-    /** @type {Number} */ fontSize = 10;
-    /** @type {Number} */ startx;
-    /** @type {Number} */ starty;
-    /** @type {Number} */ cx;
-    /** @type {Number} */ cy;
-    /** @type {Number} */ endx;
-    /** @type {Number} */ endy;
+    /** @type {Number} */ r: number = 8;
+    /** @type {Number} */ width: number = 40;
+    /** @type {Number} */ stroke: number = 1;
+    /** @type {string} */ fill: string = "lightgrey";
+    /** @type {Number} */ fontSize: number = 10;
+    /** @type {Number} */ startx: number;
+    /** @type {Number} */ starty: number;
+    /** @type {Number} */ cx: number;
+    /** @type {Number} */ cy: number;
+    /** @type {Number} */ endx: number;
+    /** @type {Number} */ endy: number;
 
-    /** @type {Object[]} */ lines = [];
+    /** @type {Object[]} */ lines: object[] = [];
 
 
     /** @param {Rule} rule
      * @returns {RuleSVG}
      */
-    static fromRule(rule) {
+    static fromRule(rule: Rule): RuleSVG {
         const rulesvg = new RuleSVG();
         rulesvg.rule = rule;
         return rulesvg;
@@ -42,7 +42,7 @@ export class RuleSVG {
     /** @param {Rule[]} rule
      * @returns {RuleSVG[]}
      */
-    static listFromRules(rules) {
+    static listFromRules(rules: Rule[]): RuleSVG[] {
         const rulessvg = [];
         for (const rule of rules) {
             rulessvg.push(RuleSVG.fromRule(rule));
@@ -54,7 +54,7 @@ export class RuleSVG {
      * @param {Number} x
      * @param {Number} y
      */
-    static listInit(rulessvg, x, y) {
+    static listInit(rulessvg: RuleSVG[], x: number, y: number) {
         let nexty = y;
         for (const rulesvg of rulessvg) {
             rulesvg.startx = x;
@@ -69,7 +69,7 @@ export class RuleSVG {
     }
 
 
-    findEntities(owl1classessvg, owl1objpropssvg, owl1datapropssvg, owl2classessvg, owl2objpropssvg, owl2datapropssvg) {
+    findEntities(owl1classessvg: OwlEntitySVG, owl1objpropssvg: OwlEntitySVG, owl1datapropssvg: OwlEntitySVG, owl2classessvg: OwlEntitySVG, owl2objpropssvg: OwlEntitySVG, owl2datapropssvg: OwlEntitySVG) {
         for (const entityobj of this.rule.entity1.classes) {
             const foundentity = owl1classessvg.findByIri(entityobj.iri);
             this.entity1.classessvg.push(foundentity);
@@ -139,9 +139,9 @@ export class RuleSVG {
 
     }
 
-    static listFindEntities(rules, owl1classessvg, owl1objpropssvg, owl1datapropssvg, owl2classessvg, owl2objpropssvg, owl2datapropssvg) {
-        for (const rule of rules) {
-            rule.findEntities(owl1classessvg, owl1objpropssvg, owl1datapropssvg, owl2classessvg, owl2objpropssvg, owl2datapropssvg);
+    static listFindEntities(rulesvgs: RuleSVG[], owl1classessvg: OwlEntitySVG, owl1objpropssvg: OwlEntitySVG, owl1datapropssvg: OwlEntitySVG, owl2classessvg: OwlEntitySVG, owl2objpropssvg: OwlEntitySVG, owl2datapropssvg: OwlEntitySVG) {
+        for (const rulesvg of rulesvgs) {
+            rulesvg.findEntities(owl1classessvg, owl1objpropssvg, owl1datapropssvg, owl2classessvg, owl2objpropssvg, owl2datapropssvg);
         }
 
     }
