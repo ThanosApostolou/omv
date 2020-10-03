@@ -9,7 +9,7 @@ import "./assets/css/style.css";
 import { VNode } from "vue/types/umd";
 
 export class VueRoot {
-    vue;
+    vue: Vue;
 
     constructor() {
         Vue.config.productionTip = false;

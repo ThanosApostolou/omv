@@ -1,9 +1,9 @@
-import axios from "axios";
+import axios, { AxiosStatic, AxiosPromise } from "axios";
 import { App } from "./App";
 
 export class ApiConsumer {
-    baseurl;
-    axios;
+    baseurl: string;
+    axios: AxiosStatic;
 
     constructor() {
         this.baseurl = App.app.settingsmanager.defaultServer + "/api/";
@@ -11,7 +11,7 @@ export class ApiConsumer {
         this.axios.defaults.baseURL = this.baseurl;
     }
 
-    postVisualization(data: any): any {
+    postVisualization(data: any): AxiosPromise {
         return this.axios({
             method: "post",
             url: "visualization",
