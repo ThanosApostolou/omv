@@ -82,7 +82,7 @@ export default {
             } else if (this.relationSelectModel == "LinkedWithRules") {
                 this.rules = propRules;
             }
-            MappingSVG.listFromRules(this.visualization.owl1.owlclasses, this.visualization.owl1.owlobjprops, this.visualization.owl1.owldataprops, this.visualization.owl2.owlclasses, this.visualization.owl2.owlobjprops, this.visualization.owl2.owldataprops, this.rules).then((mappingsvgs) => {
+            MappingSVG.listFromRules(this.visualization.owl1.owlclasses, this.visualization.owl1.owlobjprops, this.visualization.owl1.owldataprops, this.visualization.owl2.owlclasses, this.visualization.owl2.owlobjprops, this.visualization.owl2.owldataprops, this.rules, true).then((mappingsvgs) => {
                 this.mappingsvgs = mappingsvgs;
                 this.ready = true;
             });

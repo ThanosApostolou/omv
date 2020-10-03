@@ -14,7 +14,7 @@ export class MappingSVG {
     /** @type {OwlEntitySVG} */ owl2datapropssvg: OwlEntitySVG;
     /** @type {RuleSVG[]} */ rulessvg: RuleSVG[] = [];
 
-    init(owl1classes: OwlEntity, owl1objprops: OwlEntity, owl1dataprops: OwlEntity, owl2classes: OwlEntity, owl2objprops: OwlEntity, owl2dataprops: OwlEntity, rules: Rule[]) {
+    init(owl1classes: OwlEntity, owl1objprops: OwlEntity, owl1dataprops: OwlEntity, owl2classes: OwlEntity, owl2objprops: OwlEntity, owl2dataprops: OwlEntity, rules: Rule[], showbox: boolean) {
         this.owl1classessvg = OwlEntitySVG.fromOwlEntity(owl1classes, "class", null);
         this.owl1classessvg.calcVisibility(rules, "entity1");
         this.owl1classessvg.calcWidth(1);
@@ -68,14 +68,14 @@ export class MappingSVG {
         this.height = Math.max(this.height, newheight);
 
         this.rulessvg = RuleSVG.listFromRules(rules);
-        newheight = RuleSVG.listInit(this.rulessvg, ruleswidth, 0);
+        newheight = RuleSVG.listInit(this.rulessvg, ruleswidth, 0, showbox);
         RuleSVG.listFindEntities(this.rulessvg, this.owl1classessvg, this.owl1objpropssvg, this.owl1datapropssvg, this.owl2classessvg, this.owl2objpropssvg, this.owl2datapropssvg);
         if (newheight > this.height) {
             this.height = newheight;
         }
     }
 
-    static async listFromRules(owl1classes: OwlEntity, owl1objprops: OwlEntity, owl1dataprops: OwlEntity, owl2classes: OwlEntity, owl2objprops: OwlEntity, owl2dataprops: OwlEntity, rules: Rule[]) {
+    static async listFromRules(owl1classes: OwlEntity, owl1objprops: OwlEntity, owl1dataprops: OwlEntity, owl2classes: OwlEntity, owl2objprops: OwlEntity, owl2dataprops: OwlEntity, rules: Rule[], showbox: boolean) {
         const mappingsvgs = new Array(rules.length);
         const promises = [];
         let i=0;
@@ -84,7 +84,7 @@ export class MappingSVG {
                 const index = i;
                 setTimeout(() => {
                     const newmappingsvg = new MappingSVG();
-                    newmappingsvg.init(owl1classes, owl1objprops, owl1dataprops, owl2classes, owl2objprops, owl2dataprops, [rule]);
+                    newmappingsvg.init(owl1classes, owl1objprops, owl1dataprops, owl2classes, owl2objprops, owl2dataprops, [rule], showbox);
                     mappingsvgs[index] = newmappingsvg;
                     resolve();
                 }, 0);
