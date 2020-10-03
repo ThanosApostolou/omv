@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
-import { OwlEntity } from "../../../entities/OwlEntity.js";
-import { OwlEntitySVG } from "./OwlEntitySVG.js";
-import { RuleSVG } from "./RuleSVG.js";
+import { OwlEntity } from "../../../entities/OwlEntity";
+import { OwlEntitySVG } from "./OwlEntitySVG";
+import { RuleSVG } from "./RuleSVG";
 
 export class MappingSVG {
     /** @type {Number} */ width;

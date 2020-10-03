@@ -13,7 +13,7 @@
 
 <script>
 import OwlEntityNodeSVG from "./OwlEntityNodeSVG.vue";
-import { OwlEntitySVG } from "./OwlEntitySVG.js";
+import { OwlEntitySVG } from "./OwlEntitySVG";
 
 export default {
     name: "OwlEntityComp",

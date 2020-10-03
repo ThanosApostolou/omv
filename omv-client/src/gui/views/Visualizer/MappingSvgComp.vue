@@ -13,7 +13,7 @@
 <script>
 import OwlEntityNodeSVG from "./OwlEntityNodeSVG.vue";
 import RulesSVGComp from "./RulesSVGComp.vue";
-import { MappingSVG } from "./MappingSVG.js";
+import { MappingSVG } from "./MappingSVG";
 
 export default {
     name: "MappingSvgComp",

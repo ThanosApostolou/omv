@@ -1,19 +1,19 @@
-import { Annotation } from "./Annotation.js";
+import { Annotation } from "./Annotation";
 
 export class OwlEntity {
-    /** @type {String} */ iri;
-    /** @type {String} */ name;
-    /** @type {String} */ label;
-    /** @type {Annotation[]} */ annotations;
-    /** @type {OwlEntity[]} */ children;
-    /** @type {Boolean} */ hasEquivalentRule;
-    /** @type {Boolean} */ hasLinkedWithRule;
-    /** @type {Boolean} */ hasOtherRule;
+    /** @type {String} */ iri: string = "";
+    /** @type {String} */ name: string = "";
+    /** @type {String} */ label: string = "";
+    /** @type {Annotation[]} */ annotations: Annotation[] = [];
+    /** @type {OwlEntity[]} */ children: OwlEntity[] = [];
+    /** @type {Boolean} */ hasEquivalentRule: boolean = false;
+    /** @type {Boolean} */ hasLinkedWithRule: boolean = false;
+    /** @type {Boolean} */ hasOtherRule: boolean = false;
 
     /** @param {object} owlentityobject
      *  @returns {OwlEntity}
      */
-    static fromObject(owlentityobject) {
+    static fromObject(owlentityobject: any): OwlEntity {
         let owlentity = new OwlEntity();
         owlentity.iri = owlentityobject.iri;
         owlentity.name = owlentityobject.name;

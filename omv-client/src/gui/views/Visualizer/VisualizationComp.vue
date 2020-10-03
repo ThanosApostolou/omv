@@ -51,13 +51,15 @@
             <v-tab-item key="byrule">
                 <VisualizationByruleComp :visualization="visualization" />
             </v-tab-item>
-            <v-tab-item key="statistics">asdf</v-tab-item>
+            <v-tab-item key="statistics">
+                asdf
+            </v-tab-item>
         </v-tabs-items>
     </div>
 </template>
 
 <script>
-import { Visualization } from "../../../entities/Visualization.js";
+import { Visualization } from "../../../entities/Visualization.ts";
 import OwlInfoComp from "./OwlInfoComp.vue";
 import VisualizationEpopticComp from "./VisualizationEpopticComp.vue";
 import VisualizationByruleComp from "./VisualizationByruleComp.vue";

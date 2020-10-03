@@ -1,5 +1,5 @@
 import axios from "axios";
-import { App } from "./App.js";
+import { App } from "./App";
 
 export class ApiConsumer {
     baseurl;

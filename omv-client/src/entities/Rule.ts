@@ -1,21 +1,21 @@
-import { OwlEntity } from "./OwlEntity.js";
+import { OwlEntity } from "./OwlEntity";
 
 export class Rule {
-    /** @type {String} */ label = "";
-    /** @type {String} */ relation = "";
-    /** @type {String} */ direction = "";
-    /** @type {String} */ comments = "";
-    /** @type {String} */ similarity = "";
-    /** @type {String} */ simcomments = "";
-    /** @type {Object} */ directTransformation = null;
-    /** @type {Object} */ inverseTransformation = null;
-    /** @type {Object} */ entity1 = null;
-    /** @type {Object} */ entity2 = null;
+    /** @type {String} */ label: string = "";
+    /** @type {String} */ relation: string = "";
+    /** @type {String} */ direction: string = "";
+    /** @type {String} */ comments: string = "";
+    /** @type {String} */ similarity: string = "";
+    /** @type {String} */ simcomments: string = "";
+    /** @type {any} */ directTransformation: any = null;
+    /** @type {any} */ inverseTransformation: any = null;
+    /** @type {any} */ entity1: any = null;
+    /** @type {any} */ entity2: any = null;
 
-    /** @param {Object} ruleobject
+    /** @param {any} ruleobject
      * @returns {Rule}
      */
-    static fromObject(ruleobject) {
+    static fromObject(ruleobject: any): Rule {
         let rule = new Rule();
         rule.label = ruleobject.label;
         rule.relation = ruleobject.relation;
@@ -30,10 +30,10 @@ export class Rule {
         return rule;
     }
 
-    /** @param {Object[]} rulesobject
+    /** @param {any[]} rulesobject
      * @return {Rule[]}
     */
-    static listFromObject(rulesobject) {
+    static listFromObject(rulesobject: any[]): Rule[] {
         let rules = [];
         for (let ruleobject of rulesobject) {
             rules.push(Rule.fromObject(ruleobject));
@@ -45,7 +45,7 @@ export class Rule {
      * @param {Rule} rule
      * @return {Boolean}
     */
-    static listExistsRule(rules, rule) {
+    static listExistsRule(rules: Rule[], rule: Rule): boolean {
         for (let rl of rules) {
             if (rl.label == rule.label) {
                 return true;
@@ -58,7 +58,7 @@ export class Rule {
      * @param {OwlEntity} owlclasses
      * @return {Rule[]}
     */
-    static findRule(rules, owlNumber, entityType, owlentity, orderedRules) {
+    static findRule(rules: Rule[], owlNumber, entityType, owlentity, orderedRules) {
         for (let rule of rules) {
             let ruleowl = (owlNumber == 1) ? rule.entity1 : rule.entity2;
             let ruleentities = [];
@@ -86,7 +86,7 @@ export class Rule {
      * @param {OwlEntity} owlclasses
      * @return {Rule[]}
     */
-    static listOrdered(rules, owlNumber, owlclasses, objprops, dataprops) {
+    static listOrdered(rules: Rule[], owlNumber, owlclasses: OwlEntity, objprops, dataprops): Rule[] {
         let rulesclone = Object.assign({}, rules);
         let orderedRules = [];
         Rule.findRule(rules, owlNumber, "class", owlclasses, orderedRules);

@@ -1,23 +1,22 @@
 module.exports = {
     root: true,
+
     env: {
         es6: true,
         node: true
     },
-    extends: [
-        "plugin:vue/strongly-recommended",
-        "eslint:recommended",
-        "plugin:import/errors",
-        "plugin:import/warnings"
-    ],
+
     parser: "vue-eslint-parser",
+
     parserOptions: {
-        parser: "babel-eslint",
+        parser: "@typescript-eslint/parser",
         ecmaVersion: 2020,
         sourceType: "module"
     },
+
     ignorePatterns: [ "node_modules/", "dist/", "dist_electron/", "build_cordova/" ],
-    plugins: [ "vue", "import" ],
+    plugins: [ "vue" ],
+
     rules: {
         "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
         "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
@@ -41,5 +40,11 @@ module.exports = {
         "vue/script-indent":        [1, 4],
         "vue/html-quotes":          [1, "double"],
         "vue/max-attributes-per-line": 0
-    }
+    },
+
+    "extends": [
+        "plugin:vue/strongly-recommended",
+        "eslint:recommended",
+        "@vue/typescript"
+    ]
 };

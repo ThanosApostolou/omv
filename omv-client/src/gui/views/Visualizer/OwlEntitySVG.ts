@@ -1,38 +1,39 @@
-// eslint-disable-next-line no-unused-vars
-import { OwlEntity } from "../../../entities/OwlEntity.js";
+import { OwlEntity } from "../../../entities/OwlEntity";
+import { Rule } from "../../../entities/Rule";
 
 export class OwlEntitySVG {
-    /** @type {OwlEntity} */ owlentity;
-    /** @type {OwlEntitySVG} */ parent;
-    /** @type {Object[]} */ children;
-    /** @type {String} */ entityType;
-    /** @type {String} */ color;
+    /** @type {OwlEntity} */ owlentity: OwlEntity;
+    /** @type {OwlEntitySVG} */ parent: OwlEntitySVG;
+    /** @type {OwlEntitySVG[]} */ children: OwlEntitySVG[];
+    /** @type {String} */ entityType: string;
+    /** @type {String} */ color: string;
 
-    /** @type {Boolean} */ visible = false;
-    /** @type {Boolean} */ hasRule = false;
-    /** @type {Number} */ height;
-    /** @type {Number} */ width;
-    /** @type {Number} */ r = 8;
-    /** @type {Number} */ stroke = 1;
-    /** @type {Number} */ fontSize = 12;
-    /** @type {Number} */ startx;
-    /** @type {Number} */ starty;
-    /** @type {Number} */ endx;
-    /** @type {Number} */ cx;
-    /** @type {Number} */ cy;
-    /** @type {Number} */ textx;
-    /** @type {Number} */ texty;
-    /** @type {Number} */ textLength;
-    /** @type {Number} */ line1_x2;
-    /** @type {Number} */ linex1;
-    /** @type {Number} */ liney1;
-    /** @type {Number} */ linex2;
-    /** @type {Number} */ liney2;
+    /** @type {Boolean} */ visible: boolean = false;
+    /** @type {Boolean} */ hasRule: boolean = false;
+    /** @type {Number} */ height: number;
+    /** @type {Number} */ width: number;
+    /** @type {Number} */ r: number = 8;
+    /** @type {Number} */ stroke: number = 1;
+    /** @type {Number} */ fontSize: number = 12;
+    /** @type {Number} */ startx: number;
+    /** @type {Number} */ starty: number;
+    /** @type {Number} */ endx: number;
+    /** @type {Number} */ cx: number;
+    /** @type {Number} */ cy: number;
+    /** @type {Number} */ textx: number;
+    /** @type {Number} */ texty: number;
+    /** @type {Number} */ textLength: number;
+    /** @type {String} */ textAnchor: String = "";
+    /** @type {Number} */ line1_x2: number;
+    /** @type {Number} */ linex1: number;
+    /** @type {Number} */ liney1: number;
+    /** @type {Number} */ linex2: number;
+    /** @type {Number} */ liney2: number;
 
     /** @param {Object} owlentity
      *  @returns {OwlEntitySVG}
      */
-    static fromOwlEntity(owlentity, entityType, parent) {
+    static fromOwlEntity(owlentity: any, entityType, parent): OwlEntitySVG {
         let owlentitysvg = new OwlEntitySVG();
         owlentitysvg.owlentity = owlentity;
         owlentitysvg.parent = parent;
@@ -55,7 +56,7 @@ export class OwlEntitySVG {
     /** @param {Rule[]} rules
      * @param {String} ruleEntityType
      */
-    calcVisibility(rules, ruleEntityType) {
+    calcVisibility(rules: Rule[], ruleEntityType: string) {
         if (rules == null) {
             this.setAllVisible();
         } else {
@@ -113,7 +114,7 @@ export class OwlEntitySVG {
     }
 
     /** @param {Number} depth */
-    calcWidth(depth) {
+    calcWidth(depth: number) {
         this.width = 0;
         if (this.visible) {
             this.width = depth*3*this.r + this.textLength;
@@ -131,7 +132,7 @@ export class OwlEntitySVG {
     /** @param {Number} x
      *  @returns {Number}
      */
-    calcPositions(x, y) {
+    calcPositions(x: number, y): [number, number] {
         this.textAnchor = "start";
         this.startx = x;
         this.starty = y;
@@ -178,7 +179,7 @@ export class OwlEntitySVG {
      *  @param {Number} y
      *  @returns {Number}
      */
-    calcPositionsReverse(x, y) {
+    calcPositionsReverse(x: number, y: number): [number, number] {
         this.textAnchor = "end";
         this.startx = x;
         this.starty = y;
@@ -224,7 +225,7 @@ export class OwlEntitySVG {
     /** @param {String}
      * @returns {OwlEntitySVG}
     */
-    findByIri(iri) {
+    findByIri(iri): OwlEntitySVG {
         if (this.owlentity.iri == iri) {
             return this;
         } else {

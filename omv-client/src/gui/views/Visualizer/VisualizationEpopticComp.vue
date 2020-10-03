@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import { Visualization } from "../../../entities/Visualization.js";
-import { MappingSVG } from "./MappingSVG.js";
+import { Visualization } from "../../../entities/Visualization";
+import { MappingSVG } from "./MappingSVG";
 
 import MappingSvgComp from "./MappingSvgComp.vue";
 

@@ -1,14 +1,14 @@
 /** @class Annotation */
 export class Annotation {
-    /** @type {String} */ property = null;
-    /** @type {String} */ value = null;
-    /** @type {String} */ type = null;
-    /** @type {String} */ lang = null;
+    /** @type {String} */ property: string = "";
+    /** @type {String} */ value: string = "";
+    /** @type {String} */ type: string = "";
+    /** @type {String} */ lang: string = "";
 
-    /** @param {object} annotationobject
+    /** @param {any} annotationobject
      *  @returns {Annotation}
      */
-    static fromObject(annotationobject) {
+    static fromObject(annotationobject: any) {
         let annotation = new Annotation();
         annotation.property = annotationobject.property;
         annotation.value = annotationobject.value;
@@ -20,8 +20,8 @@ export class Annotation {
     /** @param {object[]} annotationsobject
      *  @returns {Annotation[]}
     */
-    static listFromObject(annotationsobject) {
-        let annotations = [];
+    static listFromObject(annotationsobject: any) {
+        let annotations: Annotation[] = [];
         for (let annotationobject of annotationsobject) {
             let annotation = Annotation.fromObject(annotationobject);
             annotations.push(annotation);

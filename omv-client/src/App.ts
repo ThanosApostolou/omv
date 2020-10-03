@@ -1,7 +1,7 @@
-import { Buildinfo } from "./Buildinfo.js";
-import { VueRoot } from "./gui/VueRoot.js";
-import { ApiConsumer } from "./ApiConsumer.js";
-import { SettingsManager } from "./SettingsManager.js";
+import { Buildinfo } from "./Buildinfo";
+import { VueRoot } from "./gui/VueRoot";
+import { ApiConsumer } from "./ApiConsumer";
+import { SettingsManager } from "./SettingsManager";
 
 export class App {
     /** @type {App} */  static app;

@@ -45,8 +45,8 @@
 
 <script>
 import VisualizationComp from "./VisualizationComp.vue";
-import { App } from "../../../App.js";
-import { Visualization } from "../../../entities/Visualization.js";
+import { App } from "../../../App";
+import { Visualization } from "../../../entities/Visualization";
 
 
 export default {

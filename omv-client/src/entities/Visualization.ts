@@ -1,5 +1,5 @@
-import { Mapping } from "./Mapping.js";
-import { OwlInfo } from "./OwlInfo.js";
+import { Mapping } from "./Mapping";
+import { OwlInfo } from "./OwlInfo";
 
 export class Visualization {
     /** @type {OwlInfo} */ owl1;

@@ -1,17 +1,19 @@
-import { Rule } from "./Rule.js";
+import { Rule } from "./Rule";
 
 export class Mapping {
-    /** @type {String} */ owl1iri;
-    /** @type {String} */ owl2iri;
-    /** @type {Rule[]} */ classrules;
-    /** @type {Rule[]} */ proprules;
-    /** @type {Rule[]} */ classRulesLeft;
-    /** @type {Rule[]} */ propRulesLeft;
+    /** @type {String} */ owl1iri: string = "";
+    /** @type {String} */ owl2iri: string = "";
+    /** @type {Rule[]} */ classrules: Rule[] = [];
+    /** @type {Rule[]} */ proprules: Rule[] = [];
+    /** @type {Rule[]} */ classRulesLeft: Rule[] = [];
+    /** @type {Rule[]} */ propRulesLeft: Rule[] = [];
+    /** @type {Rule[]} */ classRulesRight: Rule[] = [];
+    /** @type {Rule[]} */ propRulesRight: Rule[] = [];
 
-    /** @param {Object} mappingobject
+    /** @param {any} mappingobject
      * @returns {Mapping}
     */
-    static fromObject (mappingobject) {
+    static fromObject (mappingobject: any): Mapping {
         let mapping = new Mapping();
         mapping.owl1iri = mappingobject.owl1iri;
         mapping.owl2iri = mappingobject.owl2iri;
