@@ -12,9 +12,15 @@
             <v-col cols="4" class="col2">
                 <v-row class="col2">
                     <v-tabs v-model="displayTab">
-                        <v-tab key="epoptic">Epoptic View</v-tab>
-                        <v-tab key="byrule">View By Rule</v-tab>
-                        <v-tab key="statistics">Statistics</v-tab>
+                        <v-tab key="epoptic">
+                            Epoptic View
+                        </v-tab>
+                        <v-tab key="byrule">
+                            View By Rule
+                        </v-tab>
+                        <v-tab key="statistics">
+                            Statistics
+                        </v-tab>
                     </v-tabs>
                 </v-row>
             </v-col>
