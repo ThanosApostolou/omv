@@ -103,7 +103,6 @@ export default {
     methods: {
         selectChanged() {
             this.ready = false;
-            console.log(this.relationSelectModel);
             let classRules = [];
             let propRules = [];
             if (this.orderSelectModel == "left") {

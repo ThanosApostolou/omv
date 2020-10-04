@@ -1,12 +1,12 @@
 import { OwlEntity } from "./OwlEntity";
 
 export class Rule {
-    /** @type {String} */ label = "";
-    /** @type {String} */ relation = "";
-    /** @type {String} */ direction = "";
-    /** @type {String} */ comments = "";
-    /** @type {String} */ similarity = "";
-    /** @type {String} */ simcomments = "";
+    /** @type {String} */ label: string = "";
+    /** @type {String} */ relation: string = "";
+    /** @type {String} */ direction: string = "";
+    /** @type {String} */ comments: string = "";
+    /** @type {String} */ similarity: string = "";
+    /** @type {String} */ simcomments: string = "";
     /** @type {any} */ directTransformation: any = null;
     /** @type {any} */ inverseTransformation: any = null;
     /** @type {any} */ entity1: any = null;

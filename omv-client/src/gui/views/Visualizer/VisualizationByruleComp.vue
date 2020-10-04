@@ -14,8 +14,19 @@
             <v-progress-circular v-if="!ready" indeterminate rotate />
         </v-row>
         <div v-if="ready" :key="relationSelectModel+orderSelectModel" class="center">
-            <MappingSvgComp v-for="(mappingsvg, index) in this.mappingsvgs" :key="index" :mappingsvg="mappingsvg" />
+            <MappingSingleComp v-for="(mappingsvg, index) in this.mappingsvgs" :key="index" :mappingsvg="mappingsvg" @show-entity="showEntity" />
         </div>
+        <v-dialog v-if="showdialog" v-model="showdialog">
+            <v-card>
+                <v-card-actions>
+                    <v-spacer />
+                    <v-btn icon @click="showdialog = false">
+                        <v-icon>close</v-icon>
+                    </v-btn>
+                </v-card-actions>
+                <OwlEntityInfoComp :owlentity="selectedOwlentitysvg.owlentity" />
+            </v-card>
+        </v-dialog>
     </div>
 </template>
 
@@ -23,12 +34,14 @@
 import { Visualization } from "../../../entities/Visualization";
 import { MappingSVG } from "./MappingSVG";
 
-import MappingSvgComp from "./MappingSvgComp.vue";
+import MappingSingleComp from "./MappingSingleComp.vue";
+import OwlEntityInfoComp from "./OwlEntityInfoComp";
 
 export default {
     name: "VisualizationByruleComp",
     components: {
-        MappingSvgComp
+        MappingSingleComp,
+        OwlEntityInfoComp
     },
     props: {
         visualization: {
@@ -72,7 +85,9 @@ export default {
             },
             ready: false,
             rules: [],
-            mappingsvgs: null
+            mappingsvgs: null,
+            selectedOwlentitysvg: null,
+            showdialog: false
         };
     },
     methods: {
@@ -99,6 +114,10 @@ export default {
                 this.mappingsvgs = mappingsvgs;
                 this.ready = true;
             });
+        },
+        showEntity(owlentitysvg) {
+            this.selectedOwlentitysvg = owlentitysvg;
+            this.showdialog = true;
         }
     },
     created() {
