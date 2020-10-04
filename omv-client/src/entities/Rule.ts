@@ -17,16 +17,16 @@ export class Rule {
      */
     static fromObject(ruleobject: any): Rule {
         const rule = new Rule();
-        rule.label = ruleobject.label;
-        rule.relation = ruleobject.relation;
-        rule.direction = ruleobject.direction;
-        rule.comments = ruleobject.comments;
-        rule.similarity = ruleobject.similarity;
-        rule.simcomments = ruleobject.simcomments;
-        rule.directTransformation = ruleobject.directTransformation;
-        rule.inverseTransformation = ruleobject.inverseTransformation;
-        rule.entity1 = ruleobject.entity1;
-        rule.entity2 = ruleobject.entity2;
+        rule.label = ruleobject.label === "" ? null : ruleobject.label;
+        rule.relation = ruleobject.relation === "" ? null : ruleobject.relation;
+        rule.direction = ruleobject.direction === "" ? null : ruleobject.direction;
+        rule.comments = ruleobject.comments === "" ? null : ruleobject.comments;
+        rule.similarity = ruleobject.similarity === "" ? null : ruleobject.similarity;
+        rule.simcomments = ruleobject.simcomments === "" ? null : ruleobject.simcomments;
+        rule.directTransformation = ruleobject.directTransformation === "" ? null : ruleobject.directTransformation;
+        rule.inverseTransformation = ruleobject.inverseTransformation === "" ? null : ruleobject.inverseTransformation;
+        rule.entity1 = ruleobject.entity1 === "" ? null : ruleobject.entity1;
+        rule.entity2 = ruleobject.entity2 === "" ? null : ruleobject.entity2;
         return rule;
     }
 
