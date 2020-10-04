@@ -3,9 +3,15 @@
         <svg :x="0" :y="0" :height="this.height" :width="this.width">
             <OwlEntityNodeSVG :owlentitysvg="owlentitysvg" @show-entity="showEntity" />
         </svg>
-        <v-dialog v-if="show" v-model="show">
+        <v-dialog v-if="showdialog" v-model="showdialog">
             <v-card>
-                <span> {{ selectedOwlEntity.label }}</span>
+                <v-card-actions>
+                    <v-spacer />
+                    <v-btn icon @click="showdialog = false">
+                        <v-icon>close</v-icon>
+                    </v-btn>
+                </v-card-actions>
+                <OwlEntityInfoComp :owlentity="selectedOwlEntity" />
             </v-card>
         </v-dialog>
     </div>
@@ -14,11 +20,13 @@
 <script>
 import OwlEntityNodeSVG from "./OwlEntityNodeSVG.vue";
 import { OwlEntitySVG } from "./OwlEntitySVG";
+import OwlEntityInfoComp from "./OwlEntityInfoComp.vue";
 
 export default {
     name: "OwlEntityComp",
     components: {
-        OwlEntityNodeSVG
+        OwlEntityNodeSVG,
+        OwlEntityInfoComp
     },
     props: {
         owlentity: {
@@ -36,7 +44,7 @@ export default {
     },
     data() {
         return {
-            show: false,
+            showdialog: false,
             selectedOwlEntity: null,
             owlentitysvg: null,
             width: 0,
@@ -44,9 +52,9 @@ export default {
         };
     },
     methods: {
-        showEntity(owlentity) {
-            this.selectedOwlEntity = owlentity;
-            this.show = true;
+        showEntity(owlentitysvg) {
+            this.selectedOwlEntity = owlentitysvg.owlentity;
+            this.showdialog = true;
         }
     },
     created() {

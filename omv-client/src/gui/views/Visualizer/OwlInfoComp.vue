@@ -37,33 +37,7 @@
                             {{ owl.versionIri }}
                         </v-col>
                     </v-row>
-                    <v-row justify="center" class="text-center">
-                        <v-col>
-                            Annotations:
-                        </v-col>
-                        <v-col>
-                            <v-row justify="center" class="text-center">
-                                <v-col>
-                                    PROPERTY
-                                </v-col>
-                                <v-col>
-                                    VALUE
-                                </v-col>
-                            </v-row>
-                            <v-row v-for="annotation in owl.annotations" :key="annotation.property" justify="center" class="text-center">
-                                <v-col>
-                                    {{ annotation.property }}
-                                </v-col>
-                                <v-col>
-                                    {{ annotation.value }}
-                                    <small>
-                                        {{ annotation.type != '' ? '[Type: ' + annotation.type + ']' : '' }}
-                                        {{ annotation.lang != '' ? '[Lang: ' + annotation.lang + ']' : '' }}
-                                    </small>
-                                </v-col>
-                            </v-row>
-                        </v-col>
-                    </v-row>
+                    <AnnotationsComp :annotations="owl.annotations" />
                 </v-tab-item>
                 <v-tab-item key="owlclasses">
                     <OwlEntityComp :owlentity="owl.owlclasses" entity-type="class" />
@@ -81,11 +55,13 @@
 
 <script>
 import OwlEntityComp from "./OwlEntityComp.vue";
+import AnnotationsComp from "./AnnotationsComp.vue";
 
 export default {
     name: "OwlInfoComp",
     components: {
-        OwlEntityComp
+        OwlEntityComp,
+        AnnotationsComp
     },
     props: {
         owl: {

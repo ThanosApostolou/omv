@@ -19,6 +19,17 @@
         <div v-if="ready" :key="relationSelectModel+showboxSwitch+orderSelectModel" class="center">
             <MappingSvgComp v-if="rules != []" :mappingsvg="mappingsvg" @show-entity="showEntity" />
         </div>
+        <v-dialog v-if="showdialog" v-model="showdialog">
+            <v-card>
+                <v-card-actions>
+                    <v-spacer />
+                    <v-btn icon @click="showdialog = false">
+                        <v-icon>close</v-icon>
+                    </v-btn>
+                </v-card-actions>
+                <OwlEntityInfoComp :owlentity="selectedOwlentitysvg.owlentity" />
+            </v-card>
+        </v-dialog>
     </div>
 </template>
 
@@ -28,11 +39,13 @@ import { MappingSVG } from "./MappingSVG";
 import { RuleSVG } from "./RuleSVG";
 
 import MappingSvgComp from "./MappingSvgComp.vue";
+import OwlEntityInfoComp from "./OwlEntityInfoComp";
 
 export default {
     name: "VisualizationEpopticComp",
     components: {
-        MappingSvgComp
+        MappingSvgComp,
+        OwlEntityInfoComp
     },
     props: {
         visualization: {
@@ -78,7 +91,8 @@ export default {
             ready: false,
             rules: [],
             mappingsvg: null,
-            selectedOwlentitysvg: null
+            selectedOwlentitysvg: null,
+            showdialog: false
         };
     },
     methods: {
@@ -111,6 +125,7 @@ export default {
                 RuleSVG.listUnsetVisible(this.mappingsvg.rulessvg);
                 this.selectedOwlentitysvg = owlentity;
                 this.selectedOwlentitysvg.setSelected();
+                this.showdialog = true;
             } else if (owlentity == this.selectedOwlentitysvg) {
                 this.selectedOwlentitysvg.unsetSelected();
                 this.selectedOwlentitysvg = null;
@@ -120,6 +135,7 @@ export default {
                 this.selectedOwlentitysvg.unsetSelected();
                 this.selectedOwlentitysvg = owlentity;
                 this.selectedOwlentitysvg.setSelected();
+                this.showdialog = true;
             }
         }
     },
