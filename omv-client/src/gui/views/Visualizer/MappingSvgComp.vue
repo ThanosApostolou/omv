@@ -37,8 +37,7 @@ export default {
     },
     methods: {
         showEntity(owlentity) {
-            this.selectedOwlEntity = owlentity;
-            this.show = true;
+            this.$emit("show-entity", owlentity);
         }
     }
 };

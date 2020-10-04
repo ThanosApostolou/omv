@@ -1,34 +1,39 @@
 import { OwlEntity } from "../../../entities/OwlEntity";
 import { Rule } from "../../../entities/Rule";
+import { RuleSVG } from "./RuleSVG";
 
 export class OwlEntitySVG {
-    /** @type {OwlEntity} */ owlentity: OwlEntity;
-    /** @type {OwlEntitySVG} */ parent: OwlEntitySVG;
-    /** @type {OwlEntitySVG[]} */ children: OwlEntitySVG[];
-    /** @type {String} */ entityType: string;
-    /** @type {String} */ color: string;
+    owlentity: OwlEntity;
+    parent: OwlEntitySVG;
+    children: OwlEntitySVG[];
+    entityType: string;
+    color: string;
 
-    /** @type {Boolean} */ visible = false;
-    /** @type {Boolean} */ hasRule = false;
-    /** @type {Number} */ height: number;
-    /** @type {Number} */ width: number;
-    /** @type {Number} */ r = 8;
-    /** @type {Number} */ stroke = 1;
-    /** @type {Number} */ fontSize = 12;
-    /** @type {Number} */ startx: number;
-    /** @type {Number} */ starty: number;
-    /** @type {Number} */ endx: number;
-    /** @type {Number} */ cx: number;
-    /** @type {Number} */ cy: number;
-    /** @type {Number} */ textx: number;
-    /** @type {Number} */ texty: number;
-    /** @type {Number} */ textLength: number;
-    /** @type {String} */ textAnchor = "";
-    /** @type {Number} */ line1_x2: number;
-    /** @type {Number} */ linex1: number;
-    /** @type {Number} */ liney1: number;
-    /** @type {Number} */ linex2: number;
-    /** @type {Number} */ liney2: number;
+    visible: boolean = false;
+    hasRule: boolean = false;
+    rulesvgs: RuleSVG[] = [];
+    isSelected: boolean = false;
+    isActive: boolean = false;
+
+    height: number;
+    width: number;
+    r: number = 8;
+    stroke: number = 1;
+    fontSize: number = 12;
+    startx: number;
+    starty: number;
+    endx: number;
+    cx: number;
+    cy: number;
+    textx: number;
+    texty: number;
+    textLength: number;
+    textAnchor: string = "";
+    line1_x2: number;
+    linex1: number;
+    liney1: number;
+    linex2: number;
+    liney2: number;
 
     /** @param {Object} owlentity
      *  @returns {OwlEntitySVG}
@@ -238,6 +243,33 @@ export class OwlEntitySVG {
             }
         }
         return null;
+    }
+
+    setSelected() {
+        this.isSelected = true;
+        this.setActive();
+    }
+    setActive() {
+        this.isActive = true;
+        for (const rulesvg of this.rulesvgs) {
+            rulesvg.isVisible = true;
+        }
+        for (const child of this.children) {
+            child.setActive();
+        }
+    }
+    unsetSelected() {
+        this.isSelected = false;
+        this.unsetActive();
+    }
+    unsetActive() {
+        this.isActive = false;
+        for (const rulesvg of this.rulesvgs) {
+            rulesvg.isVisible = false;
+        }
+        for (const child of this.children) {
+            child.unsetActive();
+        }
     }
 
 }

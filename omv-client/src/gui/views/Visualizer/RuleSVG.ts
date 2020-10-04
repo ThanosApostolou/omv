@@ -39,6 +39,7 @@ export class RuleSVG {
     endy: number;
     lines: Line[] = [];
     showBox: boolean = true;
+    isVisible: boolean = true;
 
 
     /** create a RuleSVG instance from a Rule instance
@@ -84,26 +85,32 @@ export class RuleSVG {
     findEntities(owl1classessvg: OwlEntitySVG, owl1objpropssvg: OwlEntitySVG, owl1datapropssvg: OwlEntitySVG, owl2classessvg: OwlEntitySVG, owl2objpropssvg: OwlEntitySVG, owl2datapropssvg: OwlEntitySVG) {
         for (const entityobj of this.rule.entity1.classes) {
             const foundentity = owl1classessvg.findByIri(entityobj.iri);
+            foundentity.rulesvgs.push(this);
             this.entity1.classessvg.push(foundentity);
         }
         for (const entityobj of this.rule.entity1.objectprops) {
             const foundentity = owl1objpropssvg.findByIri(entityobj.iri);
+            foundentity.rulesvgs.push(this);
             this.entity1.objpropssvg.push(foundentity);
         }
         for (const entityobj of this.rule.entity1.dataprops) {
             const foundentity = owl1datapropssvg.findByIri(entityobj.iri);
+            foundentity.rulesvgs.push(this);
             this.entity1.datapropssvg.push(foundentity);
         }
         for (const entityobj of this.rule.entity2.classes) {
             const foundentity = owl2classessvg.findByIri(entityobj.iri);
+            foundentity.rulesvgs.push(this);
             this.entity2.classessvg.push(foundentity);
         }
         for (const entityobj of this.rule.entity2.objectprops) {
             const foundentity = owl2objpropssvg.findByIri(entityobj.iri);
+            foundentity.rulesvgs.push(this);
             this.entity2.objpropssvg.push(foundentity);
         }
         for (const entityobj of this.rule.entity2.dataprops) {
             const foundentity = owl2datapropssvg.findByIri(entityobj.iri);
+            foundentity.rulesvgs.push(this);
             this.entity2.datapropssvg.push(foundentity);
         }
         this.findLines();
@@ -198,7 +205,17 @@ export class RuleSVG {
         for (const rulesvg of rulesvgs) {
             rulesvg.findEntities(owl1classessvg, owl1objpropssvg, owl1datapropssvg, owl2classessvg, owl2objpropssvg, owl2datapropssvg);
         }
+    }
 
+    static listSetVisible(rulesvgs: RuleSVG[]) {
+        for (const rulesvg of rulesvgs){
+            rulesvg.isVisible = true;
+        }
+    }
+    static listUnsetVisible(rulesvgs: RuleSVG[]) {
+        for (const rulesvg of rulesvgs){
+            rulesvg.isVisible = false;
+        }
     }
 
 }

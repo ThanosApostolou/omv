@@ -17,7 +17,7 @@
             <v-progress-circular indeterminate rotate />
         </v-row>
         <div v-if="ready" :key="relationSelectModel+showboxSwitch+orderSelectModel" class="center">
-            <MappingSvgComp v-if="rules != []" :mappingsvg="mappingsvg" />
+            <MappingSvgComp v-if="rules != []" :mappingsvg="mappingsvg" @show-entity="showEntity" />
         </div>
     </div>
 </template>
@@ -25,6 +25,7 @@
 <script>
 import { Visualization } from "../../../entities/Visualization";
 import { MappingSVG } from "./MappingSVG";
+import { RuleSVG } from "./RuleSVG";
 
 import MappingSvgComp from "./MappingSvgComp.vue";
 
@@ -76,7 +77,8 @@ export default {
             showboxSwitch: true,
             ready: false,
             rules: [],
-            mappingsvg: null
+            mappingsvg: null,
+            selectedOwlentitysvg: null
         };
     },
     methods: {
@@ -103,6 +105,22 @@ export default {
             this.mappingsvg = new MappingSVG();
             this.mappingsvg.init(this.visualization.owl1.owlclasses, this.visualization.owl1.owlobjprops, this.visualization.owl1.owldataprops, this.visualization.owl2.owlclasses, this.visualization.owl2.owlobjprops, this.visualization.owl2.owldataprops, this.rules, this.showboxSwitch);
             this.ready = true;
+        },
+        showEntity(owlentity) {
+            if (this.selectedOwlentitysvg == null) {
+                RuleSVG.listUnsetVisible(this.mappingsvg.rulessvg);
+                this.selectedOwlentitysvg = owlentity;
+                this.selectedOwlentitysvg.setSelected();
+            } else if (owlentity == this.selectedOwlentitysvg) {
+                this.selectedOwlentitysvg.unsetSelected();
+                this.selectedOwlentitysvg = null;
+                RuleSVG.listSetVisible(this.mappingsvg.rulessvg);
+            } else {
+                RuleSVG.listUnsetVisible(this.mappingsvg.rulessvg);
+                this.selectedOwlentitysvg.unsetSelected();
+                this.selectedOwlentitysvg = owlentity;
+                this.selectedOwlentitysvg.setSelected();
+            }
         }
     },
     created() {
