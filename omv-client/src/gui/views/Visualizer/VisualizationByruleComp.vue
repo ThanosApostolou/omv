@@ -38,22 +38,36 @@ export default {
     },
     data() {
         return {
-            relationSelectModel: "AllRules",
+            relationSelectModel: "allrules",
             relationSelect: {
-                label: "Rules' Relation:",
+                label: "Rules Type:",
                 items: [
-                    "AllRules",
-                    "EquivalentRules",
-                    "LinkedWithRules",
-                    "OtherRules"
+                    {
+                        text: "All Rules " + "("+(this.visualization.mapping.classrules.length+this.visualization.mapping.proprules.length)+")",
+                        value: "allrules"
+                    },
+                    {
+                        text: "Class Rules " + "("+this.visualization.mapping.classrules.length+")",
+                        value: "classrules"
+                    },
+                    {
+                        text: "Properties Rules " + "("+this.visualization.mapping.proprules.length+")",
+                        value: "proprules"
+                    }
                 ]
             },
             orderSelectModel: "left",
             orderSelect: {
                 label: "Order by Ontology:",
                 items: [
-                    "left",
-                    "right"
+                    {
+                        text: "Left",
+                        value: "left"
+                    },
+                    {
+                        text: "Right",
+                        value: "right"
+                    }
                 ]
             },
             ready: false,
@@ -64,7 +78,6 @@ export default {
     methods: {
         selectChanged() {
             this.ready = false;
-            console.log(this.relationSelectModel);
             let classRules = [];
             let propRules = [];
             if (this.orderSelectModel == "left") {
@@ -75,11 +88,11 @@ export default {
                 propRules = this.visualization.mapping.propRulesRight;
             }
             this.rules = [];
-            if (this.relationSelectModel == "AllRules") {
+            if (this.relationSelectModel == "allrules") {
                 this.rules = classRules.concat(propRules);
-            } else if (this.relationSelectModel == "EquivalentRules") {
+            } else if (this.relationSelectModel == "classrules") {
                 this.rules = classRules;
-            } else if (this.relationSelectModel == "LinkedWithRules") {
+            } else if (this.relationSelectModel == "proprules") {
                 this.rules = propRules;
             }
             MappingSVG.listFromRules(this.visualization.owl1.owlclasses, this.visualization.owl1.owlobjprops, this.visualization.owl1.owldataprops, this.visualization.owl2.owlclasses, this.visualization.owl2.owlobjprops, this.visualization.owl2.owldataprops, this.rules, true).then((mappingsvgs) => {

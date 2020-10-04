@@ -57,18 +57,18 @@ export default {
         return {
             relationSelectModel: "allrules",
             relationSelect: {
-                label: "Rules' Relation:",
+                label: "Rules Type:",
                 items: [
                     {
-                        text: "All Rules",
+                        text: "All Rules " + "("+(this.visualization.mapping.classrules.length+this.visualization.mapping.proprules.length)+")",
                         value: "allrules"
                     },
                     {
-                        text: "Class Rules",
+                        text: "Class Rules " + "("+this.visualization.mapping.classrules.length+")",
                         value: "classrules"
                     },
                     {
-                        text: "Properties Rules",
+                        text: "Properties Rules " + "("+this.visualization.mapping.proprules.length+")",
                         value: "proprules"
                     }
                 ]
@@ -94,6 +94,11 @@ export default {
             selectedOwlentitysvg: null,
             showdialog: false
         };
+    },
+    computed: {
+        allrulesLength() {
+            return this.visualization.mapping.classrules.length+this.visualization.mapping.proprules.length;
+        }
     },
     methods: {
         selectChanged() {
