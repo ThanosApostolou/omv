@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-card elevation="5" outlined>
+        <v-card :min-width="this.mappingsvg.width" elevation="5" outlined>
             <v-card-text>
                 <MappingSvgComp :mappingsvg="mappingsvg" @show-entity="showEntity" />
                 <v-row v-if="rule.label != null">

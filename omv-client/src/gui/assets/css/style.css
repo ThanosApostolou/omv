@@ -1,6 +1,7 @@
 html, body {
     height: 100%;
     overflow-y: visible;
+    overflow-x: visible;
 }
 
 .fade-enter-active, .fade-leave-active {

@@ -17,7 +17,9 @@
             <v-progress-circular indeterminate rotate />
         </v-row>
         <div v-if="ready" :key="relationSelectModel+showboxSwitch+orderSelectModel" class="center">
-            <MappingSvgComp v-if="rules != []" :mappingsvg="mappingsvg" @show-entity="showEntity" />
+            <v-card :min-width="mappingsvg.width" elevation="5">
+                <MappingSvgComp v-if="rules != []" :mappingsvg="mappingsvg" @show-entity="showEntity" />
+            </v-card>
         </div>
         <v-dialog v-if="showdialog" v-model="showdialog">
             <v-card>
