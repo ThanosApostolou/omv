@@ -1,51 +1,54 @@
 <template>
-    <v-card elevation="10">
-        <v-card-text>
-            <MappingSvgComp :mappingsvg="mappingsvg" @show-entity="showEntity" />
-            <v-row v-if="rule.label != null">
-                <v-col>
-                    label:
-                </v-col>
-                <v-col>
-                    {{ rule.label }}
-                </v-col>
-            </v-row>
-            <v-row v-if="rule.relation != null">
-                <v-col>
-                    relation:
-                </v-col>
-                <v-col>
-                    {{ rule.relation }}
-                </v-col>
-            </v-row>
-            <v-row v-if="rule.comments != null">
-                <v-col>
-                    comments:
-                </v-col>
-                <v-col>
-                    {{ rule.comments }}
-                </v-col>
-            </v-row>
-            <v-row v-if="rule.simcomments != null">
-                <v-col>
-                    simcomments:
-                </v-col>
-                <v-col>
-                    {{ rule.simcomments }}
-                </v-col>
-            </v-row>
-            <v-row v-if="rule.direction != null">
-                <v-col>
-                    direction:
-                </v-col>
-                <v-col>
-                    {{ rule.direction }}
-                </v-col>
-            </v-row>
-            <TransformationComp v-if="rule.directTransformation != null" :transformation="rule.directTransformation" />
-            <TransformationComp v-if="rule.inverseTransformation != null" :transformation="rule.inverseTransformation" />
-        </v-card-text>
-    </v-card>
+    <div>
+        <v-card elevation="5" outlined="true">
+            <v-card-text>
+                <MappingSvgComp :mappingsvg="mappingsvg" @show-entity="showEntity" />
+                <v-row v-if="rule.label != null">
+                    <v-col>
+                        label:
+                    </v-col>
+                    <v-col>
+                        {{ rule.label }}
+                    </v-col>
+                </v-row>
+                <v-row v-if="rule.relation != null">
+                    <v-col>
+                        relation:
+                    </v-col>
+                    <v-col>
+                        {{ rule.relation }}
+                    </v-col>
+                </v-row>
+                <v-row v-if="rule.comments != null">
+                    <v-col>
+                        comments:
+                    </v-col>
+                    <v-col>
+                        {{ rule.comments }}
+                    </v-col>
+                </v-row>
+                <v-row v-if="rule.simcomments != null">
+                    <v-col>
+                        simcomments:
+                    </v-col>
+                    <v-col>
+                        {{ rule.simcomments }}
+                    </v-col>
+                </v-row>
+                <v-row v-if="rule.direction != null">
+                    <v-col>
+                        direction:
+                    </v-col>
+                    <v-col>
+                        {{ rule.direction }}
+                    </v-col>
+                </v-row>
+                <TransformationComp v-if="rule.directTransformation != null" :transformation="rule.directTransformation" />
+                <TransformationComp v-if="rule.inverseTransformation != null" :transformation="rule.inverseTransformation" />
+            </v-card-text>
+        </v-card>
+        <br>
+    </div>
 </template>
 
 <script>
