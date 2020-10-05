@@ -1,5 +1,5 @@
 <template>
-    <v-card elevation="4">
+    <v-card elevation="10">
         <v-card-text>
             <MappingSvgComp :mappingsvg="mappingsvg" @show-entity="showEntity" />
             <v-row v-if="rule.label != null">
@@ -42,22 +42,8 @@
                     {{ rule.direction }}
                 </v-col>
             </v-row>
-            <v-row v-if="rule.directTransformation != null">
-                <v-col>
-                    Direct Transformation:
-                </v-col>
-                <v-col>
-                    {{ JSON.stringify(rule.directTransformation) }}
-                </v-col>
-            </v-row>
-            <v-row v-if="rule.inverseTransformation != null">
-                <v-col>
-                    Inverse Transformation:
-                </v-col>
-                <v-col>
-                    {{ JSON.stringify(rule.inverseTransformation) }}
-                </v-col>
-            </v-row>
+            <TransformationComp v-if="rule.directTransformation != null" :transformation="rule.directTransformation" />
+            <TransformationComp v-if="rule.inverseTransformation != null" :transformation="rule.inverseTransformation" />
         </v-card-text>
     </v-card>
 </template>
@@ -66,11 +52,13 @@
 import { MappingSVG } from "./MappingSVG";
 
 import MappingSvgComp from "./MappingSvgComp.vue";
+import TransformationComp from "./TransformationComp.vue";
 
 export default {
     name: "MappingSingleComp",
     components: {
-        MappingSvgComp
+        MappingSvgComp,
+        TransformationComp
     },
     props: {
         mappingsvg: {
