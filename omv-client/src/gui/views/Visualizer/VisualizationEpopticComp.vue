@@ -1,13 +1,13 @@
 <template>
     <div>
         <v-row class="center">
-            <v-col cols="3" class="center">
+            <v-col xs="5" md="4" lg="3" xl="2" class="center">
                 <v-select v-bind="relationSelect" v-model="relationSelectModel" @change="selectChanged" />
             </v-col>
-            <v-col cols="3" class="center">
+            <v-col xs="5" md="4" lg="3" xl="2" class="center">
                 <v-switch class="center" v-model="showboxSwitch" label="Show Rule Box" @change="selectChanged" />
             </v-col>
-            <v-col v-if="showboxSwitch" cols="3" class="center">
+            <v-col v-if="showboxSwitch" xs="5" md="4" lg="3" xl="2" class="center">
                 <v-select v-bind="orderSelect" v-model="orderSelectModel" @change="selectChanged" />
             </v-col>
         </v-row>

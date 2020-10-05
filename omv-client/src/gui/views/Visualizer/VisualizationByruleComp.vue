@@ -1,10 +1,10 @@
 <template>
     <div>
         <v-row class="center">
-            <v-col cols="2" class="center">
+            <v-col xs="6" sm="5" md="4" lg="3" xl="2" class="center">
                 <v-select v-bind="relationSelect" v-model="relationSelectModel" @change="selectChanged" />
             </v-col>
-            <v-col cols="2" class="center">
+            <v-col xs="6" sm="5" md="4" lg="3" xl="2" class="center">
                 <v-select v-bind="orderSelect" v-model="orderSelectModel" @change="selectChanged" />
             </v-col>
         </v-row>

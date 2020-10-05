@@ -36,7 +36,7 @@
             </v-row>
             <v-row v-if="rule.direction != null">
                 <v-col>
-                    Direction:
+                    direction:
                 </v-col>
                 <v-col>
                     {{ rule.direction }}

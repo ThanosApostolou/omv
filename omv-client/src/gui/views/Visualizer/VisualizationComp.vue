@@ -1,38 +1,73 @@
 <template>
     <div>
-        <v-row>
-            <v-col cols="4">
-                <p>
-                    {{ visualization.owl1.label }}
-                    <v-btn icon color="primary" @click="owl1info()">
-                        <v-icon>info</v-icon>
-                    </v-btn>
-                </p>
-            </v-col>
-            <v-col cols="4" class="col2">
-                <v-row class="col2">
-                    <v-tabs v-model="displayTab">
-                        <v-tab key="epoptic">
-                            Epoptic View
-                        </v-tab>
-                        <v-tab key="byrule">
-                            View By Rule
-                        </v-tab>
-                        <v-tab key="statistics">
-                            Statistics
-                        </v-tab>
-                    </v-tabs>
-                </v-row>
-            </v-col>
-            <v-col cols="4" class="col3">
-                <p>
-                    {{ visualization.owl2.label }}
-                    <v-btn icon color="primary" @click="owl2info()">
-                        <v-icon>info</v-icon>
-                    </v-btn>
-                </p>
-            </v-col>
-        </v-row>
+        <div class="d-none d-lg-flex">
+            <v-row>
+                <v-col cols="4">
+                    <p>
+                        {{ visualization.owl1.label }}
+                        <v-btn icon color="primary" @click="owl1info()">
+                            <v-icon>info</v-icon>
+                        </v-btn>
+                    </p>
+                </v-col>
+                <v-col cols="4" class="col2">
+                    <v-row class="col2">
+                        <v-tabs centered="true" v-model="displayTab">
+                            <v-tab key="epoptic">
+                                Epoptic View
+                            </v-tab>
+                            <v-tab key="byrule">
+                                View By Rule
+                            </v-tab>
+                            <v-tab key="statistics">
+                                Statistics
+                            </v-tab>
+                        </v-tabs>
+                    </v-row>
+                </v-col>
+                <v-col cols="4" class="col3">
+                    <p>
+                        {{ visualization.owl2.label }}
+                        <v-btn icon color="primary" @click="owl2info()">
+                            <v-icon>info</v-icon>
+                        </v-btn>
+                    </p>
+                </v-col>
+            </v-row>
+        </div>
+        <div class="d-sm d-lg-none">
+            <v-row>
+                <v-col cols="6" class="col1">
+                    <p>
+                        {{ visualization.owl1.label }}
+                        <v-btn icon color="primary" @click="owl1info()">
+                            <v-icon>info</v-icon>
+                        </v-btn>
+                    </p>
+                </v-col>
+                <v-col cols="6" class="col3">
+                    <p>
+                        {{ visualization.owl2.label }}
+                        <v-btn icon color="primary" @click="owl2info()">
+                            <v-icon>info</v-icon>
+                        </v-btn>
+                    </p>
+                </v-col>
+            </v-row>
+            <v-row>
+                <v-tabs centered="true" v-model="displayTab">
+                    <v-tab key="epoptic">
+                        Epoptic View
+                    </v-tab>
+                    <v-tab key="byrule">
+                        View By Rule
+                    </v-tab>
+                    <v-tab key="statistics">
+                        Statistics
+                    </v-tab>
+                </v-tabs>
+            </v-row>
+        </div>
         <v-dialog v-model="showdialog">
             <v-card>
                 <v-card-actions>
