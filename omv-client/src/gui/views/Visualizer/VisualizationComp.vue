@@ -12,7 +12,7 @@
                 </v-col>
                 <v-col cols="4" class="col2">
                     <v-row class="col2">
-                        <v-tabs centered="true" v-model="displayTab">
+                        <v-tabs centered v-model="displayTab">
                             <v-tab key="epoptic">
                                 Epoptic View
                             </v-tab>
@@ -55,7 +55,7 @@
                 </v-col>
             </v-row>
             <v-row>
-                <v-tabs centered="true" v-model="displayTab">
+                <v-tabs centered v-model="displayTab">
                     <v-tab key="epoptic">
                         Epoptic View
                     </v-tab>

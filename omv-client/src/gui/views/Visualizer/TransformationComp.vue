@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-card outlined="true">
+        <v-card outlined>
             <v-card-title>
                 <v-row>
                     <v-col>
@@ -26,13 +26,7 @@
                         {{ transformation.description }}
                     </v-col>
                 </v-row>
-                <v-row v-if="transformation.arguments != []">
-                    <v-col>
-                        <b>ARGUMENTS:</b>
-                    </v-col>
-                    <v-col />
-                </v-row>
-                <v-card outlined="true">
+                <v-card outlined>
                     <v-card-title>
                         <v-row>
                             <v-col>
@@ -50,12 +44,16 @@
                                 <b>ARGUMENT VALUE</b>
                             </v-col>
                         </v-row>
-                        <v-row v-for="argument in transformation.arguments" :key="argument">
+                        <v-row v-for="(argument, index) in transformation.arguments" :key="index">
                             <v-col>
                                 {{ argument.argname }}
                             </v-col>
                             <v-col>
-                                {{ argument.argvalue }}
+                                <v-row v-for="(argvalue, index2) in argument.argvalues" :key="index2">
+                                    <v-col>
+                                        {{ argvalue }}
+                                    </v-col>
+                                </v-row>
                             </v-col>
                         </v-row>
                     </v-card-text>

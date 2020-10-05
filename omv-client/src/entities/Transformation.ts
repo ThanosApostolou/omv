@@ -2,13 +2,17 @@ import { OwlEntity } from "./OwlEntity";
 
 export class Argument {
     argname: string = "";
-    argvalue: string = "";
+    argvalues: string[] = [];
     argentity: OwlEntity = null;
 
     static fromObject (argumentobject: any): Argument {
         const argument = new Argument();
         argument.argname = argumentobject.argname;
-        argument.argvalue = argumentobject.argvalue;
+        if (typeof argumentobject.argvalue == "string") {
+            argument.argvalues.push(argumentobject.argvalue);
+        } else {
+            argument.argvalues = argumentobject.argvalue;
+        }
         return argument;
     }
 
