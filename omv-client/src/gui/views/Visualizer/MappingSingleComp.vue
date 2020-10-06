@@ -51,8 +51,8 @@
                         {{ rule.direction }}
                     </v-col>
                 </v-row>
-                <TransformationComp v-if="rule.directTransformation != null" :transformation="rule.directTransformation" />
-                <TransformationComp v-if="rule.inverseTransformation != null" :transformation="rule.inverseTransformation" />
+                <TransformationComp v-if="rule.directTransformation != null" :transformation="rule.directTransformation" @show-entity="showEntity" />
+                <TransformationComp v-if="rule.inverseTransformation != null" :transformation="rule.inverseTransformation" @show-entity="showEntity" />
             </v-card-text>
         </v-card>
         <br>

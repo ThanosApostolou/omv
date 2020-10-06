@@ -14,18 +14,15 @@
 </template>
 
 <script>
+import { OwlEntitySVG } from "./OwlEntitySVG";
 
 export default {
     name: "OwlEntityNodeSVG",
     props: {
         owlentitysvg: {
-            type: Object,
+            type: OwlEntitySVG,
             default: null
         }
-    },
-    data() {
-        return {
-        };
     },
     computed: {
         textColor() {

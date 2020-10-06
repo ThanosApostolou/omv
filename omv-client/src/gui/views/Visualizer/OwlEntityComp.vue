@@ -1,6 +1,6 @@
 <template>
     <div>
-        <svg :x="0" :y="0" :height="this.height" :width="this.width">
+        <svg :x="0" :y="0" :height="owlentitysvg.height" :width="owlentitysvg.width">
             <OwlEntityNodeSVG :owlentitysvg="owlentitysvg" @show-entity="showEntity" />
         </svg>
         <v-dialog v-if="showdialog" v-model="showdialog">
@@ -46,9 +46,7 @@ export default {
         return {
             showdialog: false,
             selectedOwlEntity: null,
-            owlentitysvg: null,
-            width: 0,
-            height: 0
+            owlentitysvg: null
         };
     },
     methods: {
@@ -62,8 +60,6 @@ export default {
         this.owlentitysvg.calcVisibility(null, "");
         this.owlentitysvg.calcWidth(1);
         this.owlentitysvg.calcPositions(0, 0);
-        this.width = this.owlentitysvg.width;
-        this.height = this.owlentitysvg.height;
     }
 };
 </script>

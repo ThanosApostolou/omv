@@ -54,7 +54,7 @@
                                         {{ argvalue.stringvalue }}
                                     </v-col>
                                     <v-col v-if="argvalue.owlentity != null">
-                                        {{ argvalue.owlentity.iri }}
+                                        <OwlEntitySingleSvg :owlentity="argvalue.owlentity" :entity-type.camel="argvalue.type" :position="argvalue.position" @show-entity="showEntity" />
                                     </v-col>
                                 </v-row>
                             </v-col>
@@ -68,13 +68,24 @@
 
 <script>
 import { Transformation } from "@/entities/Transformation";
+
+import OwlEntitySingleSvg from "./OwlEntitySingleSvg";
+
 export default {
     name: "TransformationComp",
+    components: {
+        OwlEntitySingleSvg
+    },
     props: {
         transformation: {
             type: Transformation,
             default: null
         }
-    }
+    },
+    methods: {
+        showEntity(owlentity) {
+            this.$emit("show-entity", owlentity);
+        }
+    },
 };
 </script>

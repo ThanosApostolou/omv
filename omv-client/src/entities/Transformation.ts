@@ -5,16 +5,18 @@ export class Argvalue {
     stringvalue: string = null;
     owlentity: OwlEntity = null;
     owlposition: string = null;
+    type: string = null;
 
     constructor(stringvalue: string) {
         this.stringvalue = stringvalue;
     }
 
-    addEntity(owlentityroot: OwlEntity, position: string): boolean {
+    addEntity(owlentityroot: OwlEntity, position: string, type: string): boolean {
         const foundentity = owlentityroot.findByIri(this.stringvalue);
         if (foundentity != null) {
             this.owlentity = foundentity;
             this.owlposition = position;
+            this.type = type;
             return true;
         }
         return false;
@@ -81,12 +83,12 @@ export class Transformation {
         const owl2dataprops  = this.rule.mapping.visualization.owl2.owldataprops;
         for (const argument of this.arguments) {
             for (const argvalue of argument.argvalues) {
-                if (!argvalue.addEntity(owl1classes, "left")) {
-                    if (!argvalue.addEntity(owl1objprops, "left")) {
-                        if (!argvalue.addEntity(owl1dataprops, "left")) {
-                            if (!argvalue.addEntity(owl2classes, "right")) {
-                                if (!argvalue.addEntity(owl2objprops, "right")) {
-                                    argvalue.addEntity(owl2dataprops, "right");
+                if (!argvalue.addEntity(owl1classes, "left", "class")) {
+                    if (!argvalue.addEntity(owl1objprops, "left", "objprop")) {
+                        if (!argvalue.addEntity(owl1dataprops, "left", "dataprop")) {
+                            if (!argvalue.addEntity(owl2classes, "right", "class")) {
+                                if (!argvalue.addEntity(owl2objprops, "right", "objprop")) {
+                                    argvalue.addEntity(owl2dataprops, "right", "dataprop");
                                 }
                             }
                         }
