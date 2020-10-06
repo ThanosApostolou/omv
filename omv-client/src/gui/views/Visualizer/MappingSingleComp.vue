@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-card :min-width="this.mappingsvg.width" elevation="5" outlined>
+        <v-card :min-width="this.mappingsvg.width+30" elevation="5" outlined>
             <v-card-text>
                 <MappingSvgComp :mappingsvg="mappingsvg" @show-entity="showEntity" />
                 <v-row v-if="rule.label != null">
@@ -33,6 +33,14 @@
                     </v-col>
                     <v-col>
                         {{ rule.simcomments }}
+                    </v-col>
+                </v-row>
+                <v-row v-if="rule.similarity != null">
+                    <v-col>
+                        similarity:
+                    </v-col>
+                    <v-col>
+                        {{ rule.similarity }}
                     </v-col>
                 </v-row>
                 <v-row v-if="rule.direction != null">

@@ -28,4 +28,18 @@ export class OwlEntity {
         }
         return owlentity;
     }
+
+    findByIri(iri: string): OwlEntity {
+        if (this.iri == iri) {
+            return this;
+        } else {
+            for (const child of this.children) {
+                const foundentity = child.findByIri(iri);
+                if (foundentity != null) {
+                    return foundentity;
+                }
+            }
+        }
+        return null;
+    }
 }

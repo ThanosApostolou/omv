@@ -50,8 +50,11 @@
                             </v-col>
                             <v-col>
                                 <v-row v-for="(argvalue, index2) in argument.argvalues" :key="index2">
-                                    <v-col>
-                                        {{ argvalue }}
+                                    <v-col v-if="argvalue.owlentity == null">
+                                        {{ argvalue.stringvalue }}
+                                    </v-col>
+                                    <v-col v-if="argvalue.owlentity != null">
+                                        {{ argvalue.owlentity.iri }}
                                     </v-col>
                                 </v-row>
                             </v-col>

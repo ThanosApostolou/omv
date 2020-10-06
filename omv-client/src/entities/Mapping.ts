@@ -1,25 +1,28 @@
 import { OwlInfo } from "./OwlInfo";
 import { Rule } from "./Rule";
+import { Visualization } from "./Visualization";
 
 export class Mapping {
-    /** @type {String} */ owl1iri: string = "";
-    /** @type {String} */ owl2iri: string = "";
-    /** @type {Rule[]} */ classrules: Rule[] = [];
-    /** @type {Rule[]} */ proprules: Rule[] = [];
-    /** @type {Rule[]} */ classRulesLeft: Rule[] = [];
-    /** @type {Rule[]} */ propRulesLeft: Rule[] = [];
-    /** @type {Rule[]} */ classRulesRight: Rule[] = [];
-    /** @type {Rule[]} */ propRulesRight: Rule[] = [];
+    visualization: Visualization = null;
+    owl1iri: string = "";
+    owl2iri: string = "";
+    classrules: Rule[] = [];
+    proprules: Rule[] = [];
+    classRulesLeft: Rule[] = [];
+    propRulesLeft: Rule[] = [];
+    classRulesRight: Rule[] = [];
+    propRulesRight: Rule[] = [];
 
     /** @param {any} mappingobject
      * @returns {Mapping}
     */
-    static fromObject (mappingobject: any): Mapping {
+    static fromObject (mappingobject: any, visualization: Visualization): Mapping {
         const mapping = new Mapping();
+        mapping.visualization = visualization;
         mapping.owl1iri = mappingobject.owl1iri;
         mapping.owl2iri = mappingobject.owl2iri;
-        mapping.classrules = Rule.listFromObject(mappingobject.classrules);
-        mapping.proprules = Rule.listFromObject(mappingobject.proprules);
+        mapping.classrules = Rule.listFromObject(mappingobject.classrules, mapping);
+        mapping.proprules = Rule.listFromObject(mappingobject.proprules, mapping);
         return mapping;
     }
 
