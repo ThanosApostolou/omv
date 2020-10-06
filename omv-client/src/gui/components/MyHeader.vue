@@ -18,9 +18,9 @@
         </div>
         <v-spacer />
 
-        <v-btn to="/account" text class="d-none d-md-flex">
-            <v-icon>account_circle</v-icon>
-            <span class="ml-2">account</span>
+        <v-btn to="/settings" text class="d-none d-md-flex">
+            <v-icon>settings</v-icon>
+            <span class="ml-2">settings</span>
         </v-btn>
         <div class="d-flex d-md-none">
             <v-menu offset-y>
@@ -35,9 +35,9 @@
                         <span class="ml-2">{{ navitem.label }}</span>
                     </v-list-item>
                     <v-divider />
-                    <v-list-item to="/account" text>
-                        <v-icon>account_circle</v-icon>
-                        <span class="ml-2">Account</span>
+                    <v-list-item to="/settings" text>
+                        <v-icon>settings</v-icon>
+                        <span class="ml-2">settings</span>
                     </v-list-item>
                 </v-list>
             </v-menu>
@@ -61,11 +61,6 @@ const navitems = [
         path: "/about",
         label: "About",
         icon: "info"
-    },
-    {
-        path: "/settings",
-        label: "Settings",
-        icon: "settings"
     }
 ];
 

@@ -29,11 +29,6 @@ const routes = [
         component: () => import(/* webpackChunkName: "Settings" */ "../views/Settings.vue")
     },
     {
-        path: "/account",
-        name: "Account",
-        component: () => import(/* webpackChunkName: "Account" */ "../views/Account.vue")
-    },
-    {
         path: "/",
         redirect: "/home"
     },
