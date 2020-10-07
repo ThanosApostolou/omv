@@ -2,7 +2,7 @@
     <div>
         <v-card-title>
             <v-row class="text-start">
-                <v-col cols="1" />
+                <v-col cols="4" md="3" lg="2" />
                 <v-col>
                     <h5>Name:</h5>
                 </v-col>
@@ -13,7 +13,7 @@
         </v-card-title>
         <v-card-text>
             <v-row class="text-start">
-                <v-col cols="1" />
+                <v-col cols="4" md="3" lg="2" />
                 <v-col>
                     IRI:
                 </v-col>

@@ -16,7 +16,7 @@
         <div v-if="ready" :key="relationSelectModel+orderSelectModel" class="center">
             <MappingSingleComp v-for="(mappingsvg, index) in this.mappingsvgs" :key="index" :mappingsvg="mappingsvg" @show-entity="showEntity" />
         </div>
-        <v-dialog v-if="showdialog" v-model="showdialog">
+        <v-dialog v-if="showdialog" v-model="showdialog" max-width="1400">
             <v-card>
                 <v-card-actions>
                     <v-spacer />

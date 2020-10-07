@@ -21,7 +21,7 @@
                 <MappingSvgComp v-if="rules != []" :mappingsvg="mappingsvg" @show-entity="showEntity" />
             </v-card>
         </div>
-        <v-dialog v-if="showdialog" v-model="showdialog">
+        <v-dialog v-if="showdialog" v-model="showdialog" max-width="1400">
             <v-card>
                 <v-card-actions>
                     <v-spacer />
@@ -89,7 +89,7 @@ export default {
                     }
                 ]
             },
-            showboxSwitch: true,
+            showboxSwitch: false,
             ready: false,
             rules: [],
             mappingsvg: null,

@@ -2,24 +2,24 @@
     <v-card outlined>
         <v-card-title>
             <v-row class="text-start">
-                <v-col cols="1">
+                <v-col cols="4" md="3" lg="2">
                     <h4>Annotations:</h4>
                 </v-col>
-                <v-col cols="5.5">
+                <v-col>
                     <h5>Property</h5>
                 </v-col>
-                <v-col cols="5.5">
+                <v-col>
                     <h5>Value</h5>
                 </v-col>
             </v-row>
         </v-card-title>
         <v-card-text>
             <v-row v-for="annotation in annotations" :key="annotation.property" class="text-start">
-                <v-col cols="1" />
-                <v-col cols="5.5">
+                <v-col cols="4" md="3" lg="2" />
+                <v-col>
                     {{ annotation.property }}
                 </v-col>
-                <v-col cols="5.5">
+                <v-col>
                     {{ annotation.value }}
                     <small>
                         {{ annotation.type != '' ? '[Type: ' + annotation.type + ']' : '' }}

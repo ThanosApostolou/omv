@@ -35,7 +35,7 @@
                 </v-col>
             </v-row>
         </div>
-        <v-dialog v-model="showdialog">
+        <v-dialog v-model="showdialog" max-width="1400">
             <v-card>
                 <v-card-actions>
                     <v-spacer />

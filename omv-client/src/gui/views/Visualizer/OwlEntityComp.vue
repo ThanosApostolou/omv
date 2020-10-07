@@ -3,7 +3,7 @@
         <svg :x="0" :y="0" :height="owlentitysvg.height" :width="owlentitysvg.width">
             <OwlEntityNodeSVG :owlentitysvg="owlentitysvg" @show-entity="showEntity" />
         </svg>
-        <v-dialog v-if="showdialog" v-model="showdialog">
+        <v-dialog v-if="showdialog" v-model="showdialog" max-width="1400">
             <v-card>
                 <v-card-actions>
                     <v-spacer />
