@@ -10,7 +10,7 @@
                         </v-btn>
                     </p>
                 </v-col>
-                <v-col cols="4" class="col2">
+                <v-col v-if="receivedvisualization.mapping.error == null" cols="4" class="col2">
                     <v-row class="col2">
                         <v-tabs centered v-model="displayTab">
                             <v-tab key="epoptic">
@@ -54,7 +54,7 @@
                     </p>
                 </v-col>
             </v-row>
-            <v-row>
+            <v-row v-if="receivedvisualization.mapping.error == null">
                 <v-tabs centered v-model="displayTab">
                     <v-tab key="epoptic">
                         Epoptic View
@@ -79,7 +79,7 @@
                 <OwlInfoComp :owl="currentOwl" :key="currentOwlkey" />
             </v-card>
         </v-dialog>
-        <v-tabs-items v-model="displayTab">
+        <v-tabs-items v-if="receivedvisualization.mapping.error == null"  v-model="displayTab">
             <v-tab-item key="epoptic">
                 <VisualizationEpopticComp :visualization="visualization" />
             </v-tab-item>
@@ -87,24 +87,29 @@
                 <VisualizationByruleComp :visualization="visualization" />
             </v-tab-item>
             <v-tab-item key="statistics">
-                asdf
+                <VisualizationStatisticsComp />
             </v-tab-item>
         </v-tabs-items>
+        <v-row v-if="receivedvisualization.mapping.error != null" class="justify-center text-center">
+            <p>{{ receivedvisualization.mapping.error }}</p>
+        </v-row>
     </div>
 </template>
 
 <script>
 import { Visualization } from "../../../entities/Visualization.ts";
 import OwlInfoComp from "./OwlInfoComp.vue";
-import VisualizationEpopticComp from "./VisualizationEpopticComp.vue";
-import VisualizationByruleComp from "./VisualizationByruleComp.vue";
+import VisualizationEpopticComp from "./VisualizationEpopticComp";
+import VisualizationByruleComp from "./VisualizationByruleComp";
+import VisualizationStatisticsComp from "./VisualizationStatisticsComp";
 
 export default {
     name: "VisualizationComp",
     components: {
         OwlInfoComp,
         VisualizationEpopticComp,
-        VisualizationByruleComp
+        VisualizationByruleComp,
+        VisualizationStatisticsComp
     },
     props: {
         receivedvisualization: {

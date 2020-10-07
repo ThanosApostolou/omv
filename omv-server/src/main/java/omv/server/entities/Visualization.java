@@ -17,7 +17,7 @@ public class Visualization {
             this.owl1 = new OwlInfo(owl1Object);
             this.owl2 = new OwlInfo(owl2Object);
             this.mapping = new Mapping();
-            this.mapping.init(mappingobject);
+            this.mapping.init(mappingobject, this);
             //this.markEntitiesByRule(1);
             //this.markEntitiesByRule(2);
         } catch (Exception e) {

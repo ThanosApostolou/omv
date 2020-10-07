@@ -8,6 +8,7 @@ export class Mapping {
     owl2iri: string = "";
     classrules: Rule[] = [];
     proprules: Rule[] = [];
+    error: string = null;
     classRulesLeft: Rule[] = [];
     propRulesLeft: Rule[] = [];
     classRulesRight: Rule[] = [];
@@ -23,6 +24,7 @@ export class Mapping {
         mapping.owl2iri = mappingobject.owl2iri;
         mapping.classrules = Rule.listFromObject(mappingobject.classrules, mapping);
         mapping.proprules = Rule.listFromObject(mappingobject.proprules, mapping);
+        mapping.error = mappingobject.error;
         return mapping;
     }
 
