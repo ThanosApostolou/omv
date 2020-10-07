@@ -3,31 +3,70 @@
         <v-expansion-panels v-bind="expansionPanel">
             <v-expansion-panel>
                 <v-expansion-panel-header>
-                    <div align="center" justify="center" class="text-center">
-                        <p>Visualizer: Select 2 owl files and their json mapping.</p>
+                    <div class="text-center">
+                        <p>Run a new visualization:</p>
                     </div>
                 </v-expansion-panel-header>
                 <v-expansion-panel-content>
-                    <v-form v-model="valid" outlined>
-                        <v-container>
-                            <v-row>
-                                <v-col>
-                                    <v-file-input id="owl1" v-model="owl1" chips counter show-size outlined dense label="OWL File 1" />
-                                </v-col>
-                                <v-col>
-                                    <v-file-input v-model="owl2" chips counter show-size outlined dense label="OWL File 2" />
-                                </v-col>
-                                <v-col>
-                                    <v-file-input v-model="mapping" chips counter show-size outlined dense label="JSON Mapping" />
-                                </v-col>
-                                <v-col align="center" justify="center" class="text-center">
-                                    <v-btn v-bind="submitBtn" color="primary" @click="submit">
-                                        Visualize
-                                    </v-btn>
-                                </v-col>
+                    <v-row class="col2">
+                        <v-tabs centered v-model="displayTab">
+                            <v-tab key="single">
+                                1 OWL + 1 Mapping
+                            </v-tab>
+                            <v-tab key="double">
+                                2 OWL + 1 Mapping
+                            </v-tab>
+                        </v-tabs>
+                    </v-row>
+                    <v-tabs-items v-model="displayTab">
+                        <v-tab-item key="single">
+                            <v-row class="justify-center text-center">
+                                <p>Select an OWL file to visualize against the standard reference model <b>"HarmonicSS-Reference-Model+Vocabularies-v.0.9.3.owl"</b> with their json mapping</p>
                             </v-row>
-                        </v-container>
-                    </v-form>
+                            <v-form v-model="valid" outlined>
+                                <v-container>
+                                    <v-row>
+                                        <v-col>
+                                            <v-file-input id="owl1" v-model="owl1" chips counter show-size outlined dense label="OWL File 1" />
+                                        </v-col>
+                                        <v-col>
+                                            <v-file-input v-model="mapping" chips counter show-size outlined dense label="JSON Mapping" />
+                                        </v-col>
+                                        <v-col align="center" justify="center" class="text-center">
+                                            <v-btn v-bind="submitBtn" color="primary" @click="submit('single')">
+                                                Visualize
+                                            </v-btn>
+                                        </v-col>
+                                    </v-row>
+                                </v-container>
+                            </v-form>
+                        </v-tab-item>
+                        <v-tab-item key="double">
+                            <v-row class="justify-center text-center">
+                                <p>Select 2 OWL files to visualize with their json mapping</p>
+                            </v-row>
+                            <v-form v-model="valid" outlined>
+                                <v-container>
+                                    <v-row>
+                                        <v-col>
+                                            <v-file-input id="owl1" v-model="owl1" chips counter show-size outlined dense label="OWL File 1" />
+                                        </v-col>
+                                        <v-col>
+                                            <v-file-input v-model="owl2" chips counter show-size outlined dense label="OWL File 2" />
+                                        </v-col>
+                                        <v-col>
+                                            <v-file-input v-model="mapping" chips counter show-size outlined dense label="JSON Mapping" />
+                                        </v-col>
+                                        <v-col align="center" justify="center" class="text-center">
+                                            <v-btn v-bind="submitBtn" color="primary" @click="submit('double')">
+                                                Visualize
+                                            </v-btn>
+                                        </v-col>
+                                    </v-row>
+                                </v-container>
+                            </v-form>
+                        </v-tab-item>
+                    </v-tabs-items>
                 </v-expansion-panel-content>
             </v-expansion-panel>
         </v-expansion-panels>
@@ -73,11 +112,12 @@ export default {
                 flat: false,
                 multiple: true,
                 value: [0]
-            }
+            },
+            displayTab: "single"
         };
     },
     methods: {
-        submit() {
+        submit(type) {
             this.submitBtn.disabled = true;
             this.submited = true;
             this.successful = false;
@@ -85,7 +125,9 @@ export default {
             this.result = {};
             const formData = new FormData();
             formData.append("owl1", this.owl1);
-            formData.append("owl2", this.owl2);
+            if (type == "double") {
+                formData.append("owl2", this.owl2);
+            }
             formData.append("mapping", this.mapping);
             App.app.apiconsumer.postVisualization(formData).then((response) => {
                 this.result = Visualization.fromObject(response.data.visualization);
