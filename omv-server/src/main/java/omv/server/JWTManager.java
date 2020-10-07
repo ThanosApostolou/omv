@@ -10,7 +10,6 @@ public class JWTManager {
     JWTManager() {
         String publickey = System.getenv("PUBLIC_KEY");
         if (publickey == null) {
-            System.out.println("PUBLIC_KEY is not set. Exiting...");
             publickey = "password";
         }
         PubSecKeyOptions pubseckeyoptions = new PubSecKeyOptions().setAlgorithm("HS256")
