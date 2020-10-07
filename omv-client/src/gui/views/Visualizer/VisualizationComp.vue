@@ -1,8 +1,8 @@
 <template>
     <div>
-        <div class="d-none d-lg-flex">
+        <div class="">
             <v-row>
-                <v-col cols="4">
+                <v-col cols="6" lg="4" order="1">
                     <p>
                         {{ visualization.owl1.label }}
                         <v-btn icon color="primary" @click="owl1info()">
@@ -10,22 +10,22 @@
                         </v-btn>
                     </p>
                 </v-col>
-                <v-col v-if="receivedvisualization.mapping.error == null" cols="4" class="col2">
+                <v-col v-if="receivedvisualization.mapping.error == null" class="col2" cols="12" sm="12" lg="4" order="3" order-lg="2">
                     <v-row class="col2">
                         <v-tabs centered v-model="displayTab">
+                            <v-tab key="statistics">
+                                Statistics
+                            </v-tab>
                             <v-tab key="epoptic">
                                 Epoptic View
                             </v-tab>
                             <v-tab key="byrule">
                                 View By Rule
                             </v-tab>
-                            <v-tab key="statistics">
-                                Statistics
-                            </v-tab>
                         </v-tabs>
                     </v-row>
                 </v-col>
-                <v-col cols="4" class="col3">
+                <v-col cols="6" lg="4" class="col3" order="2" order-lg="3">
                     <p>
                         {{ visualization.owl2.label }}
                         <v-btn icon color="primary" @click="owl2info()">
@@ -33,39 +33,6 @@
                         </v-btn>
                     </p>
                 </v-col>
-            </v-row>
-        </div>
-        <div class="d-sm d-lg-none">
-            <v-row>
-                <v-col cols="6" class="col1">
-                    <p>
-                        {{ visualization.owl1.label }}
-                        <v-btn icon color="primary" @click="owl1info()">
-                            <v-icon>info</v-icon>
-                        </v-btn>
-                    </p>
-                </v-col>
-                <v-col cols="6" class="col3">
-                    <p>
-                        {{ visualization.owl2.label }}
-                        <v-btn icon color="primary" @click="owl2info()">
-                            <v-icon>info</v-icon>
-                        </v-btn>
-                    </p>
-                </v-col>
-            </v-row>
-            <v-row v-if="receivedvisualization.mapping.error == null">
-                <v-tabs centered v-model="displayTab">
-                    <v-tab key="epoptic">
-                        Epoptic View
-                    </v-tab>
-                    <v-tab key="byrule">
-                        View By Rule
-                    </v-tab>
-                    <v-tab key="statistics">
-                        Statistics
-                    </v-tab>
-                </v-tabs>
             </v-row>
         </div>
         <v-dialog v-model="showdialog">
@@ -80,14 +47,14 @@
             </v-card>
         </v-dialog>
         <v-tabs-items v-if="receivedvisualization.mapping.error == null" v-model="displayTab">
+            <v-tab-item key="statistics">
+                <VisualizationStatisticsComp :statistics="visualization.statistics" />
+            </v-tab-item>
             <v-tab-item key="epoptic">
                 <VisualizationEpopticComp :visualization="visualization" />
             </v-tab-item>
             <v-tab-item key="byrule">
                 <VisualizationByruleComp :visualization="visualization" />
-            </v-tab-item>
-            <v-tab-item key="statistics">
-                <VisualizationStatisticsComp :statistics="visualization.statistics" />
             </v-tab-item>
         </v-tabs-items>
         <v-row v-if="receivedvisualization.mapping.error != null" class="justify-center text-center">
