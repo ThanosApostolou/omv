@@ -42,4 +42,15 @@ export class OwlEntity {
         }
         return null;
     }
+
+    findSize(count: number): number {
+        let newcount: number = count + 1;
+        for (const child of this.children) {
+            newcount = child.findSize(newcount);
+        }
+        return newcount;
+    }
+    size(): number {
+        return this.findSize(0);
+    }
 }

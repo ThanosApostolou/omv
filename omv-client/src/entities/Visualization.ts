@@ -1,10 +1,12 @@
 import { Mapping } from "./Mapping";
 import { OwlInfo } from "./OwlInfo";
+import { Statistics } from "./Statistics";
 
 export class Visualization {
-    /** @type {OwlInfo} */ owl1: OwlInfo;
-    /** @type {OwlInfo} */ owl2: OwlInfo;
-    /** @type {Mapping} */ mapping: Mapping;
+    owl1: OwlInfo;
+    owl2: OwlInfo;
+    mapping: Mapping;
+    statistics: Statistics;
 
     /** @param {any} Visualizationobject
      * @return {Visualization}
@@ -15,6 +17,8 @@ export class Visualization {
         visualization.owl2 = OwlInfo.fromObject(Visualizationobject.owl2);
         visualization.mapping = Mapping.fromObject(Visualizationobject.mapping, visualization);
         visualization.mapping.findOrderedRules(visualization.owl1, visualization.owl2);
+        visualization.statistics = new Statistics();
+        visualization.statistics.init(visualization);
         return visualization;
     }
 }

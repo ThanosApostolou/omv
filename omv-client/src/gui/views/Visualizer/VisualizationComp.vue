@@ -87,7 +87,7 @@
                 <VisualizationByruleComp :visualization="visualization" />
             </v-tab-item>
             <v-tab-item key="statistics">
-                <VisualizationStatisticsComp />
+                <VisualizationStatisticsComp :statistics="visualization.statistics" />
             </v-tab-item>
         </v-tabs-items>
         <v-row v-if="receivedvisualization.mapping.error != null" class="justify-center text-center">
