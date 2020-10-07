@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <v-row align="align">
+        <v-row>
             <v-col class="justify-center text-center" cols="12" lg="6" xs="12">
                 <v-card height="100%">
                     <v-card-title>

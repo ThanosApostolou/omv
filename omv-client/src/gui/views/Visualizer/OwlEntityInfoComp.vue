@@ -1,23 +1,29 @@
 <template>
-    <v-card-text>
-        <v-row align="center" justify="center" class="text-center">
-            <v-col>
-                IRI:
-            </v-col>
-            <v-col>
-                {{ owlentity.iri }}
-            </v-col>
-        </v-row>
-        <v-row align="center" justify="center" class="text-center">
-            <v-col>
-                Name:
-            </v-col>
-            <v-col>
-                {{ owlentity.label }}
-            </v-col>
-        </v-row>
+    <div>
+        <v-card-title>
+            <v-row class="text-start">
+                <v-col cols="1" />
+                <v-col>
+                    <h5>Name:</h5>
+                </v-col>
+                <v-col>
+                    <h5>{{ owlentity.label }}</h5>
+                </v-col>
+            </v-row>
+        </v-card-title>
+        <v-card-text>
+            <v-row class="text-start">
+                <v-col cols="1" />
+                <v-col>
+                    IRI:
+                </v-col>
+                <v-col>
+                    {{ owlentity.iri }}
+                </v-col>
+            </v-row>
+        </v-card-text>
         <AnnotationsComp :annotations="owlentity.annotations" />
-    </v-card-text>
+    </div>
 </template>
 
 <script>

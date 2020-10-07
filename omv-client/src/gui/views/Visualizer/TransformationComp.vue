@@ -3,10 +3,7 @@
         <v-card outlined>
             <v-card-title>
                 <v-row>
-                    <v-col>
-                        {{ transformation.type }}:
-                    </v-col>
-                    <v-col />
+                    {{ transformation.type }}:
                 </v-row>
             </v-card-title>
             <v-card-text>
@@ -29,10 +26,7 @@
                 <v-card outlined>
                     <v-card-title>
                         <v-row>
-                            <v-col>
-                                <b>ARGUMENTS:</b>
-                            </v-col>
-                            <v-col />
+                            <b>ARGUMENTS:</b>
                         </v-row>
                     </v-card-title>
                     <v-card-text>

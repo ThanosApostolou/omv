@@ -1,36 +1,30 @@
 <template>
     <v-card outlined>
         <v-card-title>
-            <v-row justify="center" class="text-center">
-                <v-col>
-                    <b>Annotations:</b>
+            <v-row class="text-start">
+                <v-col cols="1">
+                    <h4>Annotations:</h4>
                 </v-col>
-                <v-col />
+                <v-col cols="5.5">
+                    <h5>Property</h5>
+                </v-col>
+                <v-col cols="5.5">
+                    <h5>Value</h5>
+                </v-col>
             </v-row>
         </v-card-title>
         <v-card-text>
-            <v-row justify="center" class="text-center">
-                <v-col>
-                    <v-row justify="center" class="text-center">
-                        <v-col>
-                            PROPERTY
-                        </v-col>
-                        <v-col>
-                            VALUE
-                        </v-col>
-                    </v-row>
-                    <v-row v-for="annotation in annotations" :key="annotation.property" justify="center" class="text-center">
-                        <v-col>
-                            {{ annotation.property }}
-                        </v-col>
-                        <v-col>
-                            {{ annotation.value }}
-                            <small>
-                                {{ annotation.type != '' ? '[Type: ' + annotation.type + ']' : '' }}
-                                {{ annotation.lang != '' ? '[Lang: ' + annotation.lang + ']' : '' }}
-                            </small>
-                        </v-col>
-                    </v-row>
+            <v-row v-for="annotation in annotations" :key="annotation.property" class="text-start">
+                <v-col cols="1" />
+                <v-col cols="5.5">
+                    {{ annotation.property }}
+                </v-col>
+                <v-col cols="5.5">
+                    {{ annotation.value }}
+                    <small>
+                        {{ annotation.type != '' ? '[Type: ' + annotation.type + ']' : '' }}
+                        {{ annotation.lang != '' ? '[Lang: ' + annotation.lang + ']' : '' }}
+                    </small>
                 </v-col>
             </v-row>
         </v-card-text>

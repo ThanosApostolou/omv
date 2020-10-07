@@ -79,7 +79,7 @@
                 <OwlInfoComp :owl="currentOwl" :key="currentOwlkey" />
             </v-card>
         </v-dialog>
-        <v-tabs-items v-if="receivedvisualization.mapping.error == null"  v-model="displayTab">
+        <v-tabs-items v-if="receivedvisualization.mapping.error == null" v-model="displayTab">
             <v-tab-item key="epoptic">
                 <VisualizationEpopticComp :visualization="visualization" />
             </v-tab-item>
