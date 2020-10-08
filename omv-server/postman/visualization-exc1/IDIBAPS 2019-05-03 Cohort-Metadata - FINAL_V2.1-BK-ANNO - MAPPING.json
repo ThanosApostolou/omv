@@ -1,0 +1,1521 @@
+{
+     "ontologies":      {
+          "ontA":           {
+               "uid": "2019072212351080103835e6858075f18e6756a1897e1edc7",
+               "path": "C:\\Users\\A177889\\OneDrive - Atos\\HarmonicSS\\datasets\\Step 4 OAT\\New 5\\Apache-Tomcat-with-OAT\\.\\ONTO\\20190722123502005-IDIBAPS 2019-05-03 Cohort-Metadata - FINAL_V2.1-BK.xlsx.owl",
+               "label": "Cohort (Metadata)",
+               "uri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort",
+               "comment": "An ontological representation of the Cohort parameters. \n\nThe ontology has been automatically generated based on the uploaded Excel Document with Cohort Metadata (extracted on Date: <b>2018-09-26<\/b>). \n\nThis document has been also automatically generated based on the data recorded about <b>300 patients<\/b>. \n\nFor each patient, there are <b>34 Fields<\/b> (Parameters aka Properties), the value of which often come from one out of <b>32<\/b> different controlled <b>Set of Terms<\/b>. \n\nMetadata extracted have been revised by technical experts (in close collaboration with clinical experts). ",
+               "date": "Generated Date:22/07/2019",
+               "creator": "Institute of Communications and Computer Systems of National Technical University of Athens - ICCS/NTUA",
+               "imports": []
+          },
+          "ontB":           {
+               "uid": "2019072212330216612a1160128a0d71309cbb6b0850cbc59",
+               "path": "./ONTO/HarmonicSS-Reference-Model+Vocabularies-v.0.9.3.owl",
+               "label": "HarmonicSS - Reference Model and Vocabularies",
+               "uri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology",
+               "comment": "This ontology specifies the parameters of particular interest for the diagnosis, control and/or treatment of patients associated with the primary Sjogren Syndrome (pSS). \n\nThe design of the ontology was driven by the documents with the minimum and maximum pSS parameters (D.4.1 revised) prepared by the Clinical Partners participating in the HarmonicSS project. ",
+               "imports": []
+          }
+     },
+     "origin": "USER",
+     "comments": "",
+     "correspondences": {"jsonarray":      [
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-002-Term-001",
+                    "classname": "F"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#SEX-02",
+                    "classname": "Female"
+               },
+               "relation": "Equivalent",
+               "similarity": "1",
+               "simcomments": "The concept has the same acronym."
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-002-Term-002",
+                    "classname": "M"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#SEX-01",
+                    "classname": "Male"
+               },
+               "relation": "Equivalent",
+               "similarity": "1",
+               "simcomments": "The concept has the same acronym."
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-001-Term-001",
+                    "classname": "A"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ETHN-03",
+                    "classname": "Asian"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-001-Term-002",
+                    "classname": "H"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ETHN-01",
+                    "classname": "Latin"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-001-Term-003",
+                    "classname": "W"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ETHN-06",
+                    "classname": "Caucasian"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-003-Term-002",
+                    "classname": "Yes"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#CONFIRM-01",
+                    "classname": "True / Yes"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-003-Term-001",
+                    "classname": "No"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#CONFIRM-02",
+                    "classname": "False / No"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-005-Term-001",
+                    "classname": "low"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ASSESS-21",
+                    "classname": "Below Down Normal Limit (DNL)"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-005-Term-002",
+                    "classname": "normal"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ASSESS-10",
+                    "classname": "Normal "
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-006-Term-001",
+                    "classname": "0"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-00",
+                    "classname": "NO"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-006-Term-002",
+                    "classname": "3"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-01",
+                    "classname": "LOW"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-006-Term-003",
+                    "classname": "6"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-02",
+                    "classname": "MODERATE"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-006-Term-004",
+                    "classname": "9"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-03",
+                    "classname": "HIGH"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007-Term-001",
+                    "classname": "0"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-00",
+                    "classname": "NO"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007-Term-002",
+                    "classname": "12"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-03",
+                    "classname": "HIGH"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007-Term-003",
+                    "classname": "4"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-01",
+                    "classname": "LOW"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008-Term-001",
+                    "classname": "0"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-00",
+                    "classname": "NO"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008-Term-002",
+                    "classname": "2"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-01",
+                    "classname": "LOW"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008-Term-003",
+                    "classname": "4"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-02",
+                    "classname": "MODERATE"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008-Term-004",
+                    "classname": "6"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-03",
+                    "classname": "HIGH"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009-Term-001",
+                    "classname": "0"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-00",
+                    "classname": "NO"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009-Term-004",
+                    "classname": "5"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-01",
+                    "classname": "LOW"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009-Term-002",
+                    "classname": "10"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-02",
+                    "classname": "MODERATE"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009-Term-003",
+                    "classname": "15"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-03",
+                    "classname": "HIGH"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-010-Term-001",
+                    "classname": "0"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-00",
+                    "classname": "NO"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-010-Term-004",
+                    "classname": "6"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-01",
+                    "classname": "LOW"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-010-Term-002",
+                    "classname": "12"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-02",
+                    "classname": "MODERATE"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-010-Term-003",
+                    "classname": "18"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-03",
+                    "classname": "HIGH"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-011-Term-001",
+                    "classname": "0"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-00",
+                    "classname": "NO"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-011-Term-002",
+                    "classname": "1"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-01",
+                    "classname": "LOW"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-011-Term-003",
+                    "classname": "2"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ACTLVL-02",
+                    "classname": "MODERATE"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-019",
+                         "propertyname": "C3",
+                         "index": 0,
+                         "valuerange": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-005"
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#Laboratory-Test",
+                         "classname": "Laboratory Examination / Test"
+                    },
+                    "proparray":                     [
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#test-CV",
+                              "relationname": "Test Coded Value",
+                              "index": 0
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#test-Outcome-Assessment-Code",
+                              "relationname": "Test Outcome Assessment Code",
+                              "index": 1
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#test-Normal-Range",
+                              "relationname": "Test Nomral Range of Values",
+                              "index": 2
+                         }
+                    ]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.test.LabTestOutcomeAssessment",
+                    "arguments":                     [
+                                                  {
+                              "argname": "Reference Model Lab Test",
+                              "argvalue": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#BLOOD-610"
+                         },
+                                                  {
+                              "argname": "Down Normal Limit (DNL)",
+                              "argvalue": ""
+                         },
+                                                  {
+                              "argname": "Upper Normal Limit (UNL)",
+                              "argvalue": ""
+                         },
+                                                  {
+                              "argname": "UNL and DNL Unit of Measurement",
+                              "argvalue": ""
+                         }
+                    ],
+                    "description": "Provides the appropriate Term for the specific Lab Test and the Outcome Assessment based on the Value of the given Field, the parameters provided (i.e., corresponding Reference Model) and Mapping Rules specified. Also, provided that the UNL and DNL specified (including Unit of Measurement), the Normal Range of Values will be also recorded."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-020",
+                         "propertyname": "C4",
+                         "index": 0,
+                         "valuerange": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-005"
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#Laboratory-Test",
+                         "classname": "Laboratory Examination / Test"
+                    },
+                    "proparray":                     [
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#test-CV",
+                              "relationname": "Test Coded Value",
+                              "index": 0
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#test-Outcome-Assessment-Code",
+                              "relationname": "Test Outcome Assessment Code",
+                              "index": 1
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#test-Normal-Range",
+                              "relationname": "Test Nomral Range of Values",
+                              "index": 2
+                         }
+                    ]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.test.LabTestOutcomeAssessment",
+                    "arguments":                     [
+                                                  {
+                              "argname": "Reference Model Lab Test",
+                              "argvalue": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#BLOOD-620"
+                         },
+                                                  {
+                              "argname": "Down Normal Limit (DNL)",
+                              "argvalue": ""
+                         },
+                                                  {
+                              "argname": "Upper Normal Limit (UNL)",
+                              "argvalue": ""
+                         },
+                                                  {
+                              "argname": "UNL and DNL Unit of Measurement",
+                              "argvalue": ""
+                         }
+                    ],
+                    "description": "Provides the appropriate Term for the specific Lab Test and the Outcome Assessment based on the Value of the given Field, the parameters provided (i.e., corresponding Reference Model) and Mapping Rules specified. Also, provided that the UNL and DNL specified (including Unit of Measurement), the Normal Range of Values will be also recorded."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-001",
+                         "propertyname": "Ethnicity",
+                         "index": 0,
+                         "valuerange": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-001"
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#Ethnicity",
+                         "classname": "Ethnicity"
+                    },
+                    "proparray": [                    {
+                         "pid": "SimpleRelationPattern",
+                         "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#ethnicity-CV",
+                         "relationname": "Ethnicity Coded Value",
+                         "index": 0
+                    }]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.demo.DemoFieldValueReplacement",
+                    "arguments": [],
+                    "description": "Provides the appropriate Term (i.e., Ethnicity) based on Value of the given Field and the Mapping Rules already specified."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-002",
+                         "propertyname": "Gender",
+                         "index": 0,
+                         "valuerange": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-002"
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#Gender",
+                         "classname": "Gender"
+                    },
+                    "proparray": [                    {
+                         "pid": "SimpleRelationPattern",
+                         "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#gender-CV",
+                         "relationname": "Gender Coded Value",
+                         "index": 0
+                    }]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.demo.DemoFieldValueReplacement",
+                    "arguments": [],
+                    "description": "Provides the appropriate Term (i.e., Sex) based on Value of the given Field and the Mapping Rules already specified."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-000",
+                         "propertyname": "Patient code",
+                         "index": 0
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#Person",
+                         "classname": "Person"
+                    },
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#person-Unique-ID",
+                         "propertyname": "Person Unique ID",
+                         "index": 0
+                    }]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.person.PersonUID",
+                    "arguments": [],
+                    "description": "Provides the UID (i.e., the one existing in the given Field)."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-017",
+                         "propertyname": "ANA > Positive/4Negative",
+                         "index": 0,
+                         "valuerange": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-004"
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#Laboratory-Test",
+                         "classname": "Laboratory Examination / Test"
+                    },
+                    "proparray":                     [
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#test-CV",
+                              "relationname": "Test Coded Value",
+                              "index": 0
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#test-Outcome",
+                              "relationname": "Test Outcome",
+                              "index": 1
+                         }
+                    ]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.test.LabTestOutcomeBoolean",
+                    "arguments": [                    {
+                         "argname": "Reference Model Lab Test",
+                         "argvalue": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#BLOOD-521"
+                    }],
+                    "description": "Provides the appropriate Terms for the specific Lab Test along with its Outcome, based on the Value of the given Field, the parameters provided (i.e., corresponding Reference Model term) and the Mapping Rules already specified."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-015",
+                         "propertyname": "Item VI-2",
+                         "index": 0,
+                         "valuerange": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-004"
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#Laboratory-Test",
+                         "classname": "Laboratory Examination / Test"
+                    },
+                    "proparray":                     [
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#test-CV",
+                              "relationname": "Test Coded Value",
+                              "index": 0
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#test-Outcome",
+                              "relationname": "Test Outcome",
+                              "index": 1
+                         }
+                    ]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.test.LabTestOutcomeBoolean",
+                    "arguments": [                    {
+                         "argname": "Reference Model Lab Test",
+                         "argvalue": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#BLOOD-540"
+                    }],
+                    "description": "Provides the appropriate Terms for the specific Lab Test along with its Outcome, based on the Value of the given Field, the parameters provided (i.e., corresponding Reference Model term) and the Mapping Rules already specified."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-014",
+                         "propertyname": "Item VI-1",
+                         "index": 0,
+                         "valuerange": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-004"
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#Laboratory-Test",
+                         "classname": "Laboratory Examination / Test"
+                    },
+                    "proparray":                     [
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#test-CV",
+                              "relationname": "Test Coded Value",
+                              "index": 0
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#test-Outcome",
+                              "relationname": "Test Outcome",
+                              "index": 1
+                         }
+                    ]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.test.LabTestOutcomeBoolean",
+                    "arguments": [                    {
+                         "argname": "Reference Model Lab Test",
+                         "argvalue": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#BLOOD-530"
+                    }],
+                    "description": "Provides the appropriate Terms for the specific Lab Test along with its Outcome, based on the Value of the given Field, the parameters provided (i.e., corresponding Reference Model term) and the Mapping Rules already specified."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-021",
+                         "propertyname": "Cryos",
+                         "index": 0,
+                         "valuerange": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-004"
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#Laboratory-Test",
+                         "classname": "Laboratory Examination / Test"
+                    },
+                    "proparray":                     [
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#test-CV",
+                              "relationname": "Test Coded Value",
+                              "index": 0
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#test-Outcome",
+                              "relationname": "Test Outcome",
+                              "index": 1
+                         }
+                    ]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.test.LabTestOutcomeBoolean",
+                    "arguments": [                    {
+                         "argname": "Reference Model Lab Test",
+                         "argvalue": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#BLOOD-311"
+                    }],
+                    "description": "Provides the appropriate Terms for the specific Lab Test along with its Outcome, based on the Value of the given Field, the parameters provided (i.e., corresponding Reference Model term) and the Mapping Rules already specified."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-022",
+                         "propertyname": "Constitutional",
+                         "index": 0,
+                         "valuerange": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-006"
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#ESSDAI-Domain-AL",
+                         "classname": "ESSDAI Domain Activity Level"
+                    },
+                    "proparray":                     [
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#quest-ESSDAI-Domain-CV",
+                              "relationname": "ESSDAI Domain Coded Value",
+                              "index": 0
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#activity-Level-CV",
+                              "relationname": "Activity Level Coded Value",
+                              "index": 1
+                         }
+                    ]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.quest.ESSDAIDomainActivityLevel",
+                    "arguments": [                    {
+                         "argname": "ESSDAI Domain",
+                         "argvalue": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ESSDAI-01"
+                    }],
+                    "description": "Provides the values of the parameters specified in the right side taking into account the patient data in the given fields as well as additional parameters provided."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-023",
+                         "propertyname": "Lymphadenopathy",
+                         "index": 0,
+                         "valuerange": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007"
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#ESSDAI-Domain-AL",
+                         "classname": "ESSDAI Domain Activity Level"
+                    },
+                    "proparray":                     [
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#quest-ESSDAI-Domain-CV",
+                              "relationname": "ESSDAI Domain Coded Value",
+                              "index": 0
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#activity-Level-CV",
+                              "relationname": "Activity Level Coded Value",
+                              "index": 1
+                         }
+                    ]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.quest.ESSDAIDomainActivityLevel",
+                    "arguments": [                    {
+                         "argname": "ESSDAI Domain",
+                         "argvalue": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ESSDAI-02"
+                    }],
+                    "description": "Provides the values of the parameters specified in the right side taking into account the patient data in the given fields as well as additional parameters provided."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-024",
+                         "propertyname": "Glandular",
+                         "index": 0,
+                         "valuerange": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008"
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#ESSDAI-Domain-AL",
+                         "classname": "ESSDAI Domain Activity Level"
+                    },
+                    "proparray":                     [
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#quest-ESSDAI-Domain-CV",
+                              "relationname": "ESSDAI Domain Coded Value",
+                              "index": 0
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#activity-Level-CV",
+                              "relationname": "Activity Level Coded Value",
+                              "index": 1
+                         }
+                    ]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.quest.ESSDAIDomainActivityLevel",
+                    "arguments": [                    {
+                         "argname": "ESSDAI Domain",
+                         "argvalue": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ESSDAI-03"
+                    }],
+                    "description": "Provides the values of the parameters specified in the right side taking into account the patient data in the given fields as well as additional parameters provided."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-025",
+                         "propertyname": "Articular",
+                         "index": 0,
+                         "valuerange": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008"
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#ESSDAI-Domain-AL",
+                         "classname": "ESSDAI Domain Activity Level"
+                    },
+                    "proparray":                     [
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#quest-ESSDAI-Domain-CV",
+                              "relationname": "ESSDAI Domain Coded Value",
+                              "index": 0
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#activity-Level-CV",
+                              "relationname": "Activity Level Coded Value",
+                              "index": 1
+                         }
+                    ]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.quest.ESSDAIDomainActivityLevel",
+                    "arguments": [                    {
+                         "argname": "ESSDAI Domain",
+                         "argvalue": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ESSDAI-04"
+                    }],
+                    "description": "Provides the values of the parameters specified in the right side taking into account the patient data in the given fields as well as additional parameters provided."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-026",
+                         "propertyname": "Cutaneous",
+                         "index": 0,
+                         "valuerange": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-006"
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#ESSDAI-Domain-AL",
+                         "classname": "ESSDAI Domain Activity Level"
+                    },
+                    "proparray":                     [
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#quest-ESSDAI-Domain-CV",
+                              "relationname": "ESSDAI Domain Coded Value",
+                              "index": 0
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#activity-Level-CV",
+                              "relationname": "Activity Level Coded Value",
+                              "index": 1
+                         }
+                    ]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.quest.ESSDAIDomainActivityLevel",
+                    "arguments": [                    {
+                         "argname": "ESSDAI Domain",
+                         "argvalue": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ESSDAI-05"
+                    }],
+                    "description": "Provides the values of the parameters specified in the right side taking into account the patient data in the given fields as well as additional parameters provided."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-027",
+                         "propertyname": "Pulmonary",
+                         "index": 0,
+                         "valuerange": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009"
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#ESSDAI-Domain-AL",
+                         "classname": "ESSDAI Domain Activity Level"
+                    },
+                    "proparray":                     [
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#quest-ESSDAI-Domain-CV",
+                              "relationname": "ESSDAI Domain Coded Value",
+                              "index": 0
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#activity-Level-CV",
+                              "relationname": "Activity Level Coded Value",
+                              "index": 1
+                         }
+                    ]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.quest.ESSDAIDomainActivityLevel",
+                    "arguments": [                    {
+                         "argname": "ESSDAI Domain",
+                         "argvalue": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ESSDAI-06"
+                    }],
+                    "description": "Provides the values of the parameters specified in the right side taking into account the patient data in the given fields as well as additional parameters provided."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-028",
+                         "propertyname": "Renal",
+                         "index": 0,
+                         "valuerange": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009"
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#ESSDAI-Domain-AL",
+                         "classname": "ESSDAI Domain Activity Level"
+                    },
+                    "proparray":                     [
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#quest-ESSDAI-Domain-CV",
+                              "relationname": "ESSDAI Domain Coded Value",
+                              "index": 0
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#activity-Level-CV",
+                              "relationname": "Activity Level Coded Value",
+                              "index": 1
+                         }
+                    ]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.quest.ESSDAIDomainActivityLevel",
+                    "arguments": [                    {
+                         "argname": "ESSDAI Domain",
+                         "argvalue": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ESSDAI-07"
+                    }],
+                    "description": "Provides the values of the parameters specified in the right side taking into account the patient data in the given fields as well as additional parameters provided."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-029",
+                         "propertyname": "Muscular",
+                         "index": 0,
+                         "valuerange": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-010"
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#ESSDAI-Domain-AL",
+                         "classname": "ESSDAI Domain Activity Level"
+                    },
+                    "proparray":                     [
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#quest-ESSDAI-Domain-CV",
+                              "relationname": "ESSDAI Domain Coded Value",
+                              "index": 0
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#activity-Level-CV",
+                              "relationname": "Activity Level Coded Value",
+                              "index": 1
+                         }
+                    ]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.quest.ESSDAIDomainActivityLevel",
+                    "arguments": [                    {
+                         "argname": "ESSDAI Domain",
+                         "argvalue": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ESSDAI-08"
+                    }],
+                    "description": "Provides the values of the parameters specified in the right side taking into account the patient data in the given fields as well as additional parameters provided."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-030",
+                         "propertyname": "PNS",
+                         "index": 0,
+                         "valuerange": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009"
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#ESSDAI-Domain-AL",
+                         "classname": "ESSDAI Domain Activity Level"
+                    },
+                    "proparray":                     [
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#quest-ESSDAI-Domain-CV",
+                              "relationname": "ESSDAI Domain Coded Value",
+                              "index": 0
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#activity-Level-CV",
+                              "relationname": "Activity Level Coded Value",
+                              "index": 1
+                         }
+                    ]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.quest.ESSDAIDomainActivityLevel",
+                    "arguments": [                    {
+                         "argname": "ESSDAI Domain",
+                         "argvalue": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ESSDAI-09"
+                    }],
+                    "description": "Provides the values of the parameters specified in the right side taking into account the patient data in the given fields as well as additional parameters provided."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-031",
+                         "propertyname": "CNS",
+                         "index": 0,
+                         "valuerange": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009"
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#ESSDAI-Domain-AL",
+                         "classname": "ESSDAI Domain Activity Level"
+                    },
+                    "proparray":                     [
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#quest-ESSDAI-Domain-CV",
+                              "relationname": "ESSDAI Domain Coded Value",
+                              "index": 0
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#activity-Level-CV",
+                              "relationname": "Activity Level Coded Value",
+                              "index": 1
+                         }
+                    ]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.quest.ESSDAIDomainActivityLevel",
+                    "arguments": [                    {
+                         "argname": "ESSDAI Domain",
+                         "argvalue": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ESSDAI-10"
+                    }],
+                    "description": "Provides the values of the parameters specified in the right side taking into account the patient data in the given fields as well as additional parameters provided."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-032",
+                         "propertyname": "Haematological",
+                         "index": 0,
+                         "valuerange": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008"
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#ESSDAI-Domain-AL",
+                         "classname": "ESSDAI Domain Activity Level"
+                    },
+                    "proparray":                     [
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#quest-ESSDAI-Domain-CV",
+                              "relationname": "ESSDAI Domain Coded Value",
+                              "index": 0
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#activity-Level-CV",
+                              "relationname": "Activity Level Coded Value",
+                              "index": 1
+                         }
+                    ]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.quest.ESSDAIDomainActivityLevel",
+                    "arguments": [                    {
+                         "argname": "ESSDAI Domain",
+                         "argvalue": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ESSDAI-11"
+                    }],
+                    "description": "Provides the values of the parameters specified in the right side taking into account the patient data in the given fields as well as additional parameters provided."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertiesCollectionPattern",
+                    "proparray": [                    {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-033",
+                         "propertyname": "Biological",
+                         "index": 0,
+                         "valuerange": "http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-011"
+                    }]
+               },
+               "entity2":                {
+                    "pid": "ClassWithPropertiesRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#ESSDAI-Domain-AL",
+                         "classname": "ESSDAI Domain Activity Level"
+                    },
+                    "proparray":                     [
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#quest-ESSDAI-Domain-CV",
+                              "relationname": "ESSDAI Domain Coded Value",
+                              "index": 0
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/reference-model#activity-Level-CV",
+                              "relationname": "Activity Level Coded Value",
+                              "index": 1
+                         }
+                    ]
+               },
+               "directTransformation":                {
+                    "uri": "CLASS: ntua.iccs.harmonicss.cohort.trans.quest.ESSDAIDomainActivityLevel",
+                    "arguments": [                    {
+                         "argname": "ESSDAI Domain",
+                         "argvalue": "http://www.semanticweb.org/ntua/iccs/harmonicss/terminology/vocabulary#ESSDAI-12"
+                    }],
+                    "description": "Provides the values of the parameters specified in the right side taking into account the patient data in the given fields as well as additional parameters provided."
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          }
+     ]}
+}
