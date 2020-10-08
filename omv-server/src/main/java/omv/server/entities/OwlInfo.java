@@ -29,7 +29,7 @@ public class OwlInfo {
         this.annotations = new ArrayList<Annotation>();
         Stream<OWLAnnotation> found_annotations = this.ontology.annotations();
         for (OWLAnnotation found_annotation : found_annotations.toArray(OWLAnnotation[]::new)) {
-            Annotation myannotation = Annotation.fromStrings(found_annotation.getProperty().toString(), found_annotation.getValue().toString());
+            Annotation myannotation = Annotation.fromOwlAnnotation(found_annotation);
             this.annotations.add(myannotation);
         }
 
@@ -40,7 +40,6 @@ public class OwlInfo {
 
         this.annotationproperties = AnnotationProperty.listFromOwl(this.ontology);
         AnnotationProperty.listAddAnnotations(annotationproperties);
-        //AnnotationProperty.printList(annotationproperties);
         this.owlclasses = new OwlClassNode();
         this.owlclasses.createRoot(this.ontology);
         this.owlobjprops = new OwlObjectPropertyNode();

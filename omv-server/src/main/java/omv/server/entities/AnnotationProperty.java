@@ -47,11 +47,13 @@ public class AnnotationProperty {
             Annotation myannotation = Annotation.fromOwlAnnotation(found_owlannotation);
             this.annotations.add(myannotation);
         }
+        this.label = Annotation.getLabel(this.annotations);
+        if (this.label.isEmpty()) {
+            this.label = this.name;
+        }
     }
-
     public static void listAddAnnotations(ArrayList<AnnotationProperty> annotationproperties) {
         for (AnnotationProperty annotationproperty : annotationproperties) {
-            System.out.println(annotationproperty.iri);
             annotationproperty.addAnnotations();
         }
     }
@@ -61,6 +63,8 @@ public class AnnotationProperty {
         JsonObject annotationpropertyjsonobject = new JsonObject();
         annotationpropertyjsonobject.put("iri", this.iri);
         annotationpropertyjsonobject.put("name", this.name);
+        annotationpropertyjsonobject.put("label", this.label);
+        annotationpropertyjsonobject.put("annotations", Annotation.listToJsonArray(annotations));
         return annotationpropertyjsonobject;
     }
     public static JsonArray listToJsonArray(ArrayList<AnnotationProperty> annotationproperties) {

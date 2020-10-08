@@ -54,6 +54,9 @@ public class Annotation {
         annotation.property = owlannotation.getProperty().getIRI().getIRIString();
         if (owlannotation.getValue().asIRI().isPresent() && !owlannotation.getValue().asIRI().isEmpty()) {
             annotation.value = owlannotation.getValue().asIRI().get().getIRIString();
+            //System.out.println(annotation.property);
+            //System.out.println(owlannotation.getValue().asIRI().toString());
+            //System.out.println();
         } else {
             String s = owlannotation.getValue().toString();
             String[] sarray = s.split("\"");
@@ -69,9 +72,6 @@ public class Annotation {
                 annotation.lang = sarray[1];
             }
         }
-        System.out.println(annotation.property);
-        System.out.println(owlannotation.getValue().asIRI().toString());
-        System.out.println();
         return annotation;
     }
 
@@ -79,7 +79,7 @@ public class Annotation {
 
     public static String getLabel(ArrayList<Annotation> annotations) {
         for (Annotation annotation : annotations) {
-            if (annotation.property.equals("rdfs:label")) {
+            if (annotation.owlannotation.getProperty().isLabel()) {
                 return annotation.value;
             }
         }
