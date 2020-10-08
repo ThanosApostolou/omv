@@ -3,8 +3,6 @@ package omv.server;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.semanticweb.owlapi.apibinding.OWLManager;
-import org.semanticweb.owlapi.model.OWLOntologyManager;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
 import io.vertx.core.Vertx;
@@ -17,7 +15,6 @@ public class App extends AbstractVerticle {
     public WebServer webserver = null;
     public FileSystem fs = null;
     public Runtime runtime = null;
-    public OWLOntologyManager owlmanager = null;
     public JWTManager jwtmanager = null;
 
     @Override
@@ -28,7 +25,6 @@ public class App extends AbstractVerticle {
         this.webserver = new WebServer();
         this.fs = vertx.fileSystem();
         this.runtime = new Runtime();
-        this.owlmanager = OWLManager.createOWLOntologyManager();
         this.jwtmanager = new JWTManager();
 
         Promise<Void> databasePromise = Promise.promise();
