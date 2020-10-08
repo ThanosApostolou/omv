@@ -17,6 +17,9 @@
                 <v-tab key="owldataprops">
                     Data Properties
                 </v-tab>
+                <v-tab key="annotationproperties">
+                    Annotation Properties
+                </v-tab>
             </v-tabs>
 
             <v-tabs-items v-model="tab">
@@ -48,6 +51,9 @@
                 <v-tab-item key="owldataprops">
                     <OwlEntityComp :owlentity="owl.owldataprops" entity-type="dataprop" />
                 </v-tab-item>
+                <v-tab-item key="annotationproperties">
+                    <AnnotationPropertiesComp :annotationproperties="owl.annotationproperties" />
+                </v-tab-item>
             </v-tabs-items>
         </v-card-text>
     </div>
@@ -56,11 +62,13 @@
 <script>
 import OwlEntityComp from "./OwlEntityComp.vue";
 import AnnotationsComp from "./AnnotationsComp.vue";
+import AnnotationPropertiesComp from "./AnnotationPropertiesComp";
 
 export default {
     name: "OwlInfoComp",
     components: {
         OwlEntityComp,
+        AnnotationPropertiesComp,
         AnnotationsComp
     },
     props: {
