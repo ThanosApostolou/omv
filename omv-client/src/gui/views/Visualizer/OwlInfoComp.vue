@@ -44,18 +44,20 @@
                 </v-card-text>
                 <AnnotationsComp :annotations="owl.annotations" />
             </v-tab-item>
-            <v-tab-item key="owlclasses">
-                <OwlEntityComp :owlentity="owl.owlclasses" entity-type="class" />
-            </v-tab-item>
-            <v-tab-item key="owlobjprops">
-                <OwlEntityComp :owlentity="owl.owlobjprops" entity-type="objprop" />
-            </v-tab-item>
-            <v-tab-item key="owldataprops">
-                <OwlEntityComp :owlentity="owl.owldataprops" entity-type="dataprop" />
-            </v-tab-item>
-            <v-tab-item key="annotationproperties">
-                <AnnotationPropertiesComp :annotationproperties="owl.annotationproperties" />
-            </v-tab-item>
+            <v-card-text class="text-center justify-center">
+                <v-tab-item key="owlclasses">
+                    <OwlEntityComp :owlentity="owl.owlclasses" entity-type="class" />
+                </v-tab-item>
+                <v-tab-item key="owlobjprops">
+                    <OwlEntityComp :owlentity="owl.owlobjprops" entity-type="objprop" />
+                </v-tab-item>
+                <v-tab-item key="owldataprops">
+                    <OwlEntityComp :owlentity="owl.owldataprops" entity-type="dataprop" />
+                </v-tab-item>
+                <v-tab-item key="annotationproperties">
+                    <AnnotationPropertiesComp :annotationproperties="owl.annotationproperties" />
+                </v-tab-item>
+            </v-card-text>
         </v-tabs-items>
     </div>
 </template>
