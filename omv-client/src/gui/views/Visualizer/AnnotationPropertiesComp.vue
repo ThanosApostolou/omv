@@ -1,7 +1,7 @@
 
 <template>
     <svg :x="0" :y="0" :height="this.annotationpropertiessvg.totalheight" :width="this.annotationpropertiessvg.totalwidth">
-        <svg v-for="(annotationpropertysvg, index) in annotationpropertiessvg.list" :key="index">
+        <svg v-for="(annotationpropertysvg, index) in annotationpropertiessvg.list" :key="index" class="svg">
             <line v-for="(line, index2) in annotationpropertysvg.lines" :key="index2" :x1="line.x1" :y1="line.y1" :x2="line.x2" :y2="line.y2" stroke="black" stroke-width="1" />
             <rect :x="annotationpropertysvg.rect.x" :y="annotationpropertysvg.rect.y" :width="2*annotationpropertiessvg.r" :height="2*annotationpropertiessvg.r" stroke="black" stroke-width="1" fill="brown" />
             <text :x="annotationpropertysvg.text.x" :y="annotationpropertysvg.text.y" :font-size="annotationpropertiessvg.fontSize" :textLength="annotationpropertysvg.text.textLength"> {{ annotationpropertysvg.annotationproperty.label }}</text>
@@ -33,3 +33,9 @@ export default {
     }
 };
 </script>
+
+<style>
+.svg {
+    cursor: pointer;
+}
+</style>

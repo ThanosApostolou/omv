@@ -19,7 +19,7 @@ export class OwlInfo {
         const owlinfo = new OwlInfo();
         owlinfo.label = owlinfoobject.label;
         owlinfo.iri = owlinfoobject.iri;
-        owlinfo.versionIri = owlinfoobject.versionIri;
+        owlinfo.versionIri = owlinfoobject.versionIri == "" ? null : owlinfoobject.versionIri;
         owlinfo.label = owlinfoobject.label;
         owlinfo.annotations = Annotation.listFromObject(owlinfoobject.annotations);
         owlinfo.annotationproperties = AnnotationProperty.listFromObject(owlinfoobject.annotationproperties);

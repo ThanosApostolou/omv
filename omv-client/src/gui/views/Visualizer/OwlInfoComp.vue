@@ -3,28 +3,28 @@
         <v-card-title class="text-center justify-center">
             {{ owl.label }}
         </v-card-title>
-        <v-card-text class="text-center justify-center">
-            <v-tabs v-model="tab" centered>
-                <v-tab key="owlinfo">
-                    INFO
-                </v-tab>
-                <v-tab key="owlclasses">
-                    Classes
-                </v-tab>
-                <v-tab key="owlobjprops">
-                    Object Properties
-                </v-tab>
-                <v-tab key="owldataprops">
-                    Data Properties
-                </v-tab>
-                <v-tab key="annotationproperties">
-                    Annotation Properties
-                </v-tab>
-            </v-tabs>
-
-            <v-tabs-items v-model="tab">
-                <v-tab-item key="owlinfo">
-                    <v-row align="center" justify="center" class="text-center">
+        <v-tabs v-model="tab" centered>
+            <v-tab key="owlinfo">
+                INFO
+            </v-tab>
+            <v-tab key="owlclasses">
+                Classes
+            </v-tab>
+            <v-tab key="owlobjprops">
+                Object Properties
+            </v-tab>
+            <v-tab key="owldataprops">
+                Data Properties
+            </v-tab>
+            <v-tab key="annotationproperties">
+                Annotation Properties
+            </v-tab>
+        </v-tabs>
+        <v-tabs-items v-model="tab">
+            <v-tab-item key="owlinfo">
+                <v-card-text class="text-center justify-center">
+                    <v-row class="text-start">
+                        <v-col cols="4" md="3" lg="2" />
                         <v-col>
                             IRI:
                         </v-col>
@@ -32,7 +32,8 @@
                             {{ owl.iri }}
                         </v-col>
                     </v-row>
-                    <v-row align="center" justify="center" class="text-center">
+                    <v-row v-if="owl.versionIri != null" class="text-start">
+                        <v-col cols="4" md="3" lg="2" />
                         <v-col>
                             VersionIRI:
                         </v-col>
@@ -40,22 +41,22 @@
                             {{ owl.versionIri }}
                         </v-col>
                     </v-row>
-                    <AnnotationsComp :annotations="owl.annotations" />
-                </v-tab-item>
-                <v-tab-item key="owlclasses">
-                    <OwlEntityComp :owlentity="owl.owlclasses" entity-type="class" />
-                </v-tab-item>
-                <v-tab-item key="owlobjprops">
-                    <OwlEntityComp :owlentity="owl.owlobjprops" entity-type="objprop" />
-                </v-tab-item>
-                <v-tab-item key="owldataprops">
-                    <OwlEntityComp :owlentity="owl.owldataprops" entity-type="dataprop" />
-                </v-tab-item>
-                <v-tab-item key="annotationproperties">
-                    <AnnotationPropertiesComp :annotationproperties="owl.annotationproperties" />
-                </v-tab-item>
-            </v-tabs-items>
-        </v-card-text>
+                </v-card-text>
+                <AnnotationsComp :annotations="owl.annotations" />
+            </v-tab-item>
+            <v-tab-item key="owlclasses">
+                <OwlEntityComp :owlentity="owl.owlclasses" entity-type="class" />
+            </v-tab-item>
+            <v-tab-item key="owlobjprops">
+                <OwlEntityComp :owlentity="owl.owlobjprops" entity-type="objprop" />
+            </v-tab-item>
+            <v-tab-item key="owldataprops">
+                <OwlEntityComp :owlentity="owl.owldataprops" entity-type="dataprop" />
+            </v-tab-item>
+            <v-tab-item key="annotationproperties">
+                <AnnotationPropertiesComp :annotationproperties="owl.annotationproperties" />
+            </v-tab-item>
+        </v-tabs-items>
     </div>
 </template>
 
