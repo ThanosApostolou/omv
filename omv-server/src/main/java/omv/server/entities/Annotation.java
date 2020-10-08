@@ -2,10 +2,13 @@ package omv.server.entities;
 
 import java.util.ArrayList;
 
+import org.semanticweb.owlapi.model.OWLAnnotation;
+
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 
 public class Annotation {
+    OWLAnnotation owlannotation;
     public String property;
     public String value;
     public String type;
@@ -43,6 +46,32 @@ public class Annotation {
         if (sarray.length > 1) {
             annotation.lang = sarray[1];
         }
+        return annotation;
+    }
+    public static Annotation fromOwlAnnotation(OWLAnnotation owlannotation) {
+        Annotation annotation = new Annotation();
+        annotation.owlannotation = owlannotation;
+        annotation.property = owlannotation.getProperty().getIRI().getIRIString();
+        if (owlannotation.getValue().asIRI().isPresent() && !owlannotation.getValue().asIRI().isEmpty()) {
+            annotation.value = owlannotation.getValue().asIRI().get().getIRIString();
+        } else {
+            String s = owlannotation.getValue().toString();
+            String[] sarray = s.split("\"");
+            if (sarray.length > 1) {
+                annotation.value = sarray[1];
+            }
+            sarray = s.split("\\^\\^");
+            if (sarray.length > 1) {
+                annotation.type = sarray[1].split("\\@")[0];
+            }
+            sarray = s.split("\\@");
+            if (sarray.length > 1) {
+                annotation.lang = sarray[1];
+            }
+        }
+        System.out.println(annotation.property);
+        System.out.println(owlannotation.getValue().asIRI().toString());
+        System.out.println();
         return annotation;
     }
 

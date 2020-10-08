@@ -1,7 +1,10 @@
 package omv.server.entities;
 
 import java.util.ArrayList;
+import java.util.stream.Stream;
 
+import org.semanticweb.owlapi.model.OWLAnnotation;
+import org.semanticweb.owlapi.model.OWLAnnotationAssertionAxiom;
 import org.semanticweb.owlapi.model.OWLAnnotationProperty;
 import org.semanticweb.owlapi.model.OWLOntology;
 
@@ -9,14 +12,15 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 
 public class AnnotationProperty {
-    public OWLOntology ontology;
+    public OWLOntology owlontology;
     public OWLAnnotationProperty owlannotationproperty;
     public String iri = "";
     public String name = "";
     public String label = "";
+    ArrayList<Annotation> annotations = new ArrayList<Annotation>();
 
     public AnnotationProperty(OWLOntology owlontology, OWLAnnotationProperty owlannotationproperty) {
-        this.ontology = owlontology;
+        this.owlontology = owlontology;
         this.owlannotationproperty = owlannotationproperty;
         this.iri = this.owlannotationproperty.getIRI().getIRIString();
         this.name = this.owlannotationproperty.getIRI().getShortForm();
@@ -35,6 +39,23 @@ public class AnnotationProperty {
         }
         return annotationproperties;
     }
+
+    public void addAnnotations() {
+        Stream<OWLAnnotationAssertionAxiom> found_annotations = this.owlontology.annotationAssertionAxioms(this.owlannotationproperty.getIRI());
+        for (OWLAnnotationAssertionAxiom found_annotation_axiom : found_annotations.toArray(OWLAnnotationAssertionAxiom[]::new)) {
+            OWLAnnotation found_owlannotation = found_annotation_axiom.getAnnotation();
+            Annotation myannotation = Annotation.fromOwlAnnotation(found_owlannotation);
+            this.annotations.add(myannotation);
+        }
+    }
+
+    public static void listAddAnnotations(ArrayList<AnnotationProperty> annotationproperties) {
+        for (AnnotationProperty annotationproperty : annotationproperties) {
+            System.out.println(annotationproperty.iri);
+            annotationproperty.addAnnotations();
+        }
+    }
+
 
     public JsonObject toJsonObject() {
         JsonObject annotationpropertyjsonobject = new JsonObject();

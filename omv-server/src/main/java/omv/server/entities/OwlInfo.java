@@ -39,7 +39,8 @@ public class OwlInfo {
         }
 
         this.annotationproperties = AnnotationProperty.listFromOwl(this.ontology);
-        AnnotationProperty.printList(annotationproperties);
+        AnnotationProperty.listAddAnnotations(annotationproperties);
+        //AnnotationProperty.printList(annotationproperties);
         this.owlclasses = new OwlClassNode();
         this.owlclasses.createRoot(this.ontology);
         this.owlobjprops = new OwlObjectPropertyNode();
