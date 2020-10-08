@@ -1,19 +1,24 @@
+import { AnnotationProperty } from "./AnnotationProperty";
+
 /** @class Annotation */
 export class Annotation {
-    /** @type {String} */ property: string = "";
-    /** @type {String} */ value: string = "";
-    /** @type {String} */ type: string = "";
-    /** @type {String} */ lang: string = "";
+    property: AnnotationProperty = null;
+    propertyiri: string = "";
+    value: string = "";
+    type: string = "";
+    lang: string = "";
+    isValueIri: boolean = false;
 
     /** @param {any} annotationobject
      *  @returns {Annotation}
      */
     static fromObject(annotationobject: any): Annotation {
         const annotation: Annotation = new Annotation();
-        annotation.property = annotationobject.property;
+        annotation.propertyiri = annotationobject.property;
         annotation.value = annotationobject.value;
         annotation.type = annotationobject.type;
         annotation.lang = annotationobject.lang;
+        annotation.isValueIri = annotationobject.isValueIri;
         return annotation;
     }
 

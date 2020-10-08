@@ -13,12 +13,14 @@ public class Annotation {
     public String value;
     public String type;
     public String lang;
+    public Boolean isValueIri;
 
     public Annotation() {
         this.property = "";
         this.value = "";
         this.type = "";
         this.lang = "";
+        this.isValueIri = false;
     }
 
     public JsonObject toJsonObject() {
@@ -27,6 +29,7 @@ public class Annotation {
         jsonobject.put("value", this.value);
         jsonobject.put("type", this.type);
         jsonobject.put("lang", this.lang);
+        jsonobject.put("isValueIri", this.isValueIri);
         return jsonobject;
     }
 
@@ -54,6 +57,7 @@ public class Annotation {
         annotation.property = owlannotation.getProperty().getIRI().getIRIString();
         if (owlannotation.getValue().asIRI().isPresent() && !owlannotation.getValue().asIRI().isEmpty()) {
             annotation.value = owlannotation.getValue().asIRI().get().getIRIString();
+            annotation.isValueIri = true;
             //System.out.println(annotation.property);
             //System.out.println(owlannotation.getValue().asIRI().toString());
             //System.out.println();

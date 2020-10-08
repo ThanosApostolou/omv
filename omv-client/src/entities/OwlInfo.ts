@@ -1,4 +1,5 @@
 import { Annotation } from "./Annotation";
+import { AnnotationProperty } from "./AnnotationProperty";
 import { OwlEntity } from "./OwlEntity";
 
 export class OwlInfo {
@@ -6,9 +7,10 @@ export class OwlInfo {
     /** @type {String} */ versionIri: string = "";
     /** @type {String} */ label: string = "";
     /** @type {Annotation[]} */ annotations: Annotation[] = [];
-    /** @type {OwlEntity} */ owlclasses: OwlEntity = null;
-    /** @type {OwlEntity} */ owlobjprops: OwlEntity = null;
-    /** @type {OwlEntity} */ owldataprops: OwlEntity = null;
+    annotationproperties: AnnotationProperty[] = [];
+    owlclasses: OwlEntity = null;
+    owlobjprops: OwlEntity = null;
+    owldataprops: OwlEntity = null;
 
     /** @param {object} owlinfoobject
      *  @returns {OwlInfo}
@@ -20,6 +22,7 @@ export class OwlInfo {
         owlinfo.versionIri = owlinfoobject.versionIri;
         owlinfo.label = owlinfoobject.label;
         owlinfo.annotations = Annotation.listFromObject(owlinfoobject.annotations);
+        owlinfo.annotationproperties = AnnotationProperty.listFromObject(owlinfoobject.annotationproperties);
         owlinfo.owlclasses = OwlEntity.fromObject(owlinfoobject.owlclasses);
         owlinfo.owlobjprops = OwlEntity.fromObject(owlinfoobject.owlobjprops);
         owlinfo.owldataprops = OwlEntity.fromObject(owlinfoobject.owldataprops);

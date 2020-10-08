@@ -17,7 +17,7 @@
             <v-row v-for="annotation in annotations" :key="annotation.property" class="text-start">
                 <v-col cols="4" md="3" lg="2" />
                 <v-col>
-                    {{ annotation.property }}
+                    {{ annotation.propertyiri }}
                 </v-col>
                 <v-col>
                     {{ annotation.value }}
