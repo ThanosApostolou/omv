@@ -22,12 +22,15 @@
                 <v-col v-if="annotation.property != null">
                     <AnnotationPropertiesSvgComp key="fromannotation" :annotationproperties="[annotation.property]" />
                 </v-col>
-                <v-col>
+                <v-col v-if="annotation.valueentity == null">
                     {{ annotation.value }}
                     <small>
                         {{ annotation.type != '' ? '[Type: ' + annotation.type + ']' : '' }}
                         {{ annotation.lang != '' ? '[Lang: ' + annotation.lang + ']' : '' }}
                     </small>
+                </v-col>
+                <v-col v-if="annotation.valueentity != null">
+                    {{ annotation.valueentity.iri }}
                 </v-col>
             </v-row>
         </v-card-text>

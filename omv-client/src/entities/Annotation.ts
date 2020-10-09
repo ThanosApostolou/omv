@@ -1,4 +1,5 @@
 import { AnnotationProperty } from "./AnnotationProperty";
+import { OwlEntity } from "./OwlEntity";
 import { OwlInfo } from "./OwlInfo";
 
 /** @class Annotation */
@@ -6,6 +7,7 @@ export class Annotation {
     property: AnnotationProperty = null;
     propertyiri: string = "";
     value: string = "";
+    valueentity: OwlEntity = null;
     type: string = "";
     lang: string = "";
     isValueIri: boolean = false;
@@ -36,10 +38,29 @@ export class Annotation {
     }
 
     findEntities(owlinfo: OwlInfo) {
+        // find annotation property if exists
         for (const annotationproperty of owlinfo.annotationproperties) {
             if (annotationproperty.iri == this.propertyiri) {
                 this.property = annotationproperty;
                 break;
+            }
+        }
+        // find value entity if exists
+        if (this.isValueIri) {
+            let foundentity: OwlEntity = null;
+            foundentity = owlinfo.owlclasses.findByIri(this.value);
+            if (foundentity != null) {
+                this.valueentity = foundentity;
+            } else {
+                foundentity = owlinfo.owlobjprops.findByIri(this.value);
+                if (foundentity != null) {
+                    this.valueentity = foundentity;
+                } else {
+                    foundentity = owlinfo.owldataprops.findByIri(this.value);
+                    if (foundentity != null) {
+                        this.valueentity = foundentity;
+                    }
+                }
             }
         }
     }

@@ -19,12 +19,17 @@ export class OwlEntity {
         owlentity.name = owlentityobject.name;
         owlentity.label = owlentityobject.label;
         owlentity.annotations = Annotation.listFromObject(owlentityobject.annotations);
-        Annotation.listFindEntities(owlentity.annotations, owlentity.owlinfo);
         owlentity.children = [];
         for (const child of owlentityobject.children) {
             owlentity.children.push(OwlEntity.fromObject(child, owlinfo));
         }
         return owlentity;
+    }
+    static findAnnotationEntities(rootentity: OwlEntity) {
+        Annotation.listFindEntities(rootentity.annotations, rootentity.owlinfo);
+        for (const child of rootentity.children) {
+            OwlEntity.findAnnotationEntities(child);
+        }
     }
 
     findByIri(iri: string): OwlEntity {
