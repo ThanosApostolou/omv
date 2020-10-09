@@ -11,9 +11,10 @@
 </template>
 
 <script>
+import { MappingSVG } from "./MappingSVG";
+
 import OwlEntityNodeSVG from "./OwlEntityNodeSVG.vue";
 import RulesSVGComp from "./RulesSVGComp.vue";
-import { MappingSVG } from "./MappingSVG";
 
 export default {
     name: "MappingSvgComp",

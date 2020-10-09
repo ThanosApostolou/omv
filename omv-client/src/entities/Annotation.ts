@@ -1,4 +1,5 @@
 import { AnnotationProperty } from "./AnnotationProperty";
+import { OwlInfo } from "./OwlInfo";
 
 /** @class Annotation */
 export class Annotation {
@@ -32,5 +33,19 @@ export class Annotation {
             annotations.push(annotation);
         }
         return annotations;
+    }
+
+    findEntities(owlinfo: OwlInfo) {
+        for (const annotationproperty of owlinfo.annotationproperties) {
+            if (annotationproperty.iri == this.propertyiri) {
+                this.property = annotationproperty;
+                break;
+            }
+        }
+    }
+    static listFindEntities(annotations: Annotation[], owlinfo: OwlInfo) {
+        for (const annotation of annotations) {
+            annotation.findEntities(owlinfo);
+        }
     }
 }

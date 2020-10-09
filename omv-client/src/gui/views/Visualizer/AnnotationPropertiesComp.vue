@@ -1,21 +1,31 @@
 
 <template>
-    <svg :x="0" :y="0" :height="this.annotationpropertiessvg.totalheight" :width="this.annotationpropertiessvg.totalwidth">
-        <svg v-for="(annotationpropertysvg, index) in annotationpropertiessvg.list" :key="index" class="svg">
-            <line v-for="(line, index2) in annotationpropertysvg.lines" :key="index2" :x1="line.x1" :y1="line.y1" :x2="line.x2" :y2="line.y2" stroke="black" stroke-width="1" />
-            <rect :x="annotationpropertysvg.rect.x" :y="annotationpropertysvg.rect.y" :width="2*annotationpropertiessvg.r" :height="2*annotationpropertiessvg.r" stroke="black" stroke-width="1" fill="brown" />
-            <text :x="annotationpropertysvg.text.x" :y="annotationpropertysvg.text.y" :font-size="annotationpropertiessvg.fontSize" :textLength="annotationpropertysvg.text.textLength"> {{ annotationpropertysvg.annotationproperty.label }}</text>
-
-        </svg>
-    </svg>
+    <div>
+        <AnnotationPropertiesSvgComp :annotationproperties="annotationproperties" @clicked-annotationproperty="clickedAnnotationProperty" />
+        <v-dialog v-if="showdialog" v-model="showdialog" max-width="1400">
+            <v-card>
+                <v-card-actions>
+                    <v-spacer />
+                    <v-btn icon @click="showdialog = false">
+                        <v-icon>close</v-icon>
+                    </v-btn>
+                </v-card-actions>
+                <AnnotationPropertyInfoComp :owlentity="selectedEntity" />
+            </v-card>
+        </v-dialog>
+    </div>
 </template>
 
 <script>
-import { AnnotationProperty } from "@/entities/AnnotationProperty";
-import { AnnotationPropertiesSvg } from "./AnnotationPropertiesSvg";
+import AnnotationPropertyInfoComp from "./AnnotationPropertyInfoComp.vue";
+import AnnotationPropertiesSvgComp from "./AnnotationPropertiesSvgComp.vue";
 
 export default {
     name: "AnnotationPropertiesComp",
+    components: {
+        AnnotationPropertyInfoComp,
+        AnnotationPropertiesSvgComp
+    },
     props: {
         annotationproperties: {
             type: Array,
@@ -24,12 +34,15 @@ export default {
     },
     data() {
         return {
-            annotationpropertiessvg: null
+            selectedEntity: null,
+            showdialog: false
         };
     },
-    created() {
-        this.annotationpropertiessvg = new AnnotationPropertiesSvg();
-        this.annotationpropertiessvg.create(this.annotationproperties);
+    methods: {
+        clickedAnnotationProperty(annotationpropertysvg) {
+            this.selectedEntity = annotationpropertysvg.annotationproperty;
+            this.showdialog = true;
+        }
     }
 };
 </script>

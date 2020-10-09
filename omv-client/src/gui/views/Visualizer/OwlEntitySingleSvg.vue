@@ -8,7 +8,7 @@
 import { OwlEntity } from "@/entities/OwlEntity";
 import { OwlEntitySVG } from "./OwlEntitySVG";
 
-import OwlEntityNodeSVG from "./OwlEntityNodeSVG";
+import OwlEntityNodeSVG from "./OwlEntityNodeSVG.vue";
 
 export default {
     name: "OwlEntitySingleSvg",

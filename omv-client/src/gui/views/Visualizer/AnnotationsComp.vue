@@ -14,10 +14,13 @@
             </v-row>
         </v-card-title>
         <v-card-text>
-            <v-row v-for="annotation in annotations" :key="annotation.property" class="text-start">
+            <v-row v-for="(annotation, index) in annotations" :key="index" class="text-start">
                 <v-col cols="4" md="3" lg="2" />
-                <v-col>
+                <v-col v-if="annotation.property == null">
                     {{ annotation.propertyiri }}
+                </v-col>
+                <v-col v-if="annotation.property != null">
+                    <AnnotationPropertiesSvgComp key="fromannotation" :annotationproperties="[annotation.property]" />
                 </v-col>
                 <v-col>
                     {{ annotation.value }}
@@ -31,8 +34,13 @@
     </v-card>
 </template>
 <script>
+import AnnotationPropertiesSvgComp from "./AnnotationPropertiesSvgComp.vue";
+
 export default {
     name: "AnnotationsComp",
+    components: {
+        AnnotationPropertiesSvgComp
+    },
     props: {
         annotations: {
             type: Array,

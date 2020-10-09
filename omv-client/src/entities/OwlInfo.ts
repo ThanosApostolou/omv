@@ -3,10 +3,10 @@ import { AnnotationProperty } from "./AnnotationProperty";
 import { OwlEntity } from "./OwlEntity";
 
 export class OwlInfo {
-    /** @type {String} */ iri: string = "";
-    /** @type {String} */ versionIri: string = "";
-    /** @type {String} */ label: string = "";
-    /** @type {Annotation[]} */ annotations: Annotation[] = [];
+    iri: string = "";
+    versionIri: string = "";
+    label: string = "";
+    annotations: Annotation[] = [];
     annotationproperties: AnnotationProperty[] = [];
     owlclasses: OwlEntity = null;
     owlobjprops: OwlEntity = null;
@@ -21,11 +21,15 @@ export class OwlInfo {
         owlinfo.iri = owlinfoobject.iri;
         owlinfo.versionIri = owlinfoobject.versionIri == "" ? null : owlinfoobject.versionIri;
         owlinfo.label = owlinfoobject.label;
+        owlinfo.annotationproperties = AnnotationProperty.listFromObject(owlinfoobject.annotationproperties, owlinfo);
+        for (const annotationproperty of owlinfo.annotationproperties) {
+            Annotation.listFindEntities(annotationproperty.annotations, annotationproperty.owlinfo);
+        }
+        owlinfo.owlclasses = OwlEntity.fromObject(owlinfoobject.owlclasses, owlinfo);
+        owlinfo.owlobjprops = OwlEntity.fromObject(owlinfoobject.owlobjprops, owlinfo);
+        owlinfo.owldataprops = OwlEntity.fromObject(owlinfoobject.owldataprops, owlinfo);
         owlinfo.annotations = Annotation.listFromObject(owlinfoobject.annotations);
-        owlinfo.annotationproperties = AnnotationProperty.listFromObject(owlinfoobject.annotationproperties);
-        owlinfo.owlclasses = OwlEntity.fromObject(owlinfoobject.owlclasses);
-        owlinfo.owlobjprops = OwlEntity.fromObject(owlinfoobject.owlobjprops);
-        owlinfo.owldataprops = OwlEntity.fromObject(owlinfoobject.owldataprops);
+        Annotation.listFindEntities(owlinfo.annotations, owlinfo);
         return owlinfo;
     }
 }

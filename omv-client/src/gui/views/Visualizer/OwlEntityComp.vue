@@ -18,8 +18,9 @@
 </template>
 
 <script>
-import OwlEntityNodeSVG from "./OwlEntityNodeSVG.vue";
 import { OwlEntitySVG } from "./OwlEntitySVG";
+
+import OwlEntityNodeSVG from "./OwlEntityNodeSVG.vue";
 import OwlEntityInfoComp from "./OwlEntityInfoComp.vue";
 
 export default {

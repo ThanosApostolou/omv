@@ -1,30 +1,28 @@
 import { Annotation } from "./Annotation";
+import { OwlInfo } from "./OwlInfo";
 
 export class OwlEntity {
-    /** @type {String} */ iri: string = "";
-    /** @type {String} */ name: string = "";
-    /** @type {String} */ label: string = "";
-    /** @type {Annotation[]} */ annotations: Annotation[] = [];
-    /** @type {OwlEntity[]} */ children: OwlEntity[] = [];
-    /** @type {Boolean} */ hasEquivalentRule: boolean = false;
-    /** @type {Boolean} */ hasLinkedWithRule: boolean = false;
-    /** @type {Boolean} */ hasOtherRule: boolean = false;
+    owlinfo: OwlInfo = null;
+    iri: string = "";
+    name: string = "";
+    label: string = "";
+    annotations: Annotation[] = [];
+    children: OwlEntity[] = [];
 
     /** @param {object} owlentityobject
      *  @returns {OwlEntity}
      */
-    static fromObject(owlentityobject: any): OwlEntity {
+    static fromObject(owlentityobject: any, owlinfo: OwlInfo): OwlEntity {
         const owlentity = new OwlEntity();
+        owlentity.owlinfo = owlinfo;
         owlentity.iri = owlentityobject.iri;
         owlentity.name = owlentityobject.name;
         owlentity.label = owlentityobject.label;
-        owlentity.hasEquivalentRule = owlentityobject.hasEquivalentRule;
-        owlentity.hasLinkedWithRule = owlentityobject.hasLinkedWithRule;
-        owlentity.hasOtherRule = owlentityobject.hasOtherRule;
         owlentity.annotations = Annotation.listFromObject(owlentityobject.annotations);
+        Annotation.listFindEntities(owlentity.annotations, owlentity.owlinfo);
         owlentity.children = [];
         for (const child of owlentityobject.children) {
-            owlentity.children.push(OwlEntity.fromObject(child));
+            owlentity.children.push(OwlEntity.fromObject(child, owlinfo));
         }
         return owlentity;
     }

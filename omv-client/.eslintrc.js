@@ -28,7 +28,6 @@ module.exports = {
         "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
         "strict":                   "error",
         "semi":                     "error",
-        "no-unused-vars":           "warn",
         "no-template-curly-in-string":"error",
         "block-scoped-var":         "error",
         "class-methods-use-this":   "error",
@@ -40,6 +39,7 @@ module.exports = {
         "no-undef-init":            "error",
         "no-undefined":             "error",
         "no-use-before-define":     "error",
+        "class-methods-use-this":   "warn",
         "indent":                   [1, 4],
         "quotes":                   [1, "double"],
         "vue/html-indent":          [1, 4],
@@ -49,6 +49,7 @@ module.exports = {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-inferrable-types": "off",
         "@typescript-eslint/camelcase": "off",
-        "@typescript-eslint/explicit-function-return-type": "off"
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-unused-vars": "warn"
     }
 };

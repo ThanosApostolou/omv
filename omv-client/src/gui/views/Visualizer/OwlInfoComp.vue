@@ -65,7 +65,7 @@
 <script>
 import OwlEntityComp from "./OwlEntityComp.vue";
 import AnnotationsComp from "./AnnotationsComp.vue";
-import AnnotationPropertiesComp from "./AnnotationPropertiesComp";
+import AnnotationPropertiesComp from "./AnnotationPropertiesComp.vue";
 
 export default {
     name: "OwlInfoComp",

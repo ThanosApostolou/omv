@@ -33,7 +33,7 @@ import { AnnotationProperty } from "@/entities/AnnotationProperty";
 import AnnotationsComp from "./AnnotationsComp.vue";
 
 export default {
-    name: "OwlEntityInfoComp",
+    name: "AnnotationPropertyInfoComp",
     components: {
         AnnotationsComp
     },
