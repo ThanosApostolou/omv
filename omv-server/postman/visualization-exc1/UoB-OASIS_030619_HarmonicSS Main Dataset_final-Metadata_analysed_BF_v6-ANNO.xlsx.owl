@@ -1,0 +1,3537 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:j.0="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort">
+    <dc:creator>Institute of Communications and Computer Systems of National Technical University of Athens - ICCS/NTUA</dc:creator>
+    <dc:date>Generated Date:07/10/2020</dc:date>
+    <rdfs:comment xml:lang="en">An ontological representation of the Cohort parameters. 
+
+The ontology has been automatically generated based on the uploaded Excel Document with Cohort Metadata (extracted on Date: &lt;b&gt;2019-06-03&lt;/b&gt;).
+
+This document has been also automatically generated based on the data recorded about &lt;b&gt;159 patients&lt;/b&gt;.
+
+For each patient, there are &lt;b&gt;73 Fields&lt;/b&gt; (Parameters aka Properties), the value of which often come from one out of &lt;b&gt;52&lt;/b&gt; different controlled &lt;b&gt;Set of Terms&lt;/b&gt;.
+
+Metadata extracted have been revised by technical experts (in close collaboration with clinical experts).</rdfs:comment>
+    <rdfs:label xml:lang="en">Cohort (Metadata)</rdfs:label>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-043-Term-004">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-043"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1:100</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-033-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-033"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-016">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">7</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-004">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">2.6667</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">10</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-028">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">85</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-034-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-034"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-018">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">7</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-017-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-017"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-004">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">27</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-003">
+    <j.0:values-of-Parameter>D : Type of Cancer</j.0:values-of-Parameter>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">Type of Cancer</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-015">
+    <j.0:values-of-Parameter>AQ : glandular</j.0:values-of-Parameter>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">glandular</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-016">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">60</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027">
+    <j.0:values-of-Parameter>BD : P ESSPRI</j.0:values-of-Parameter>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">P ESSPRI</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-039">
+    <j.0:values-of-Parameter>BR : B4=HDQ</j.0:values-of-Parameter>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">B4=HDQ</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-018-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-018"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-006">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">13</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-001-Term-007">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-001"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Other</rdfs:comment>
+    <rdfs:label xml:lang="en">7</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">10</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025-Term-012">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">ND</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-043-Term-005">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-043"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1:160</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-033-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-033"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-005">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">3</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-017">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">7.3333</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-034-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-034"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027-Term-002">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027"/>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-007">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">14</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-019">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">8</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-004">
+    <j.0:values-of-Parameter>F : Type of Lymphoma</j.0:values-of-Parameter>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">Type of Lymphoma</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-040-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-040"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-027">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">80</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-016">
+    <j.0:values-of-Parameter>AR : articular</j.0:values-of-Parameter>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">articular</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">25</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-015">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">59</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028">
+    <j.0:values-of-Parameter>BE : ESSPRI</j.0:values-of-Parameter>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">ESSPRI</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-001-Term-006">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-001"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">White Caucasian</rdfs:comment>
+    <rdfs:label xml:lang="en">6</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-018-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-018"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-017-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-017"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-024-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-024"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026-Term-012">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">ND</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Anticentromere</rdfs:comment>
+    <rdfs:label xml:lang="en">Centromere</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-043-Term-006">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-043"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1:1600</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025-Term-011">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">9</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027-Term-005">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027"/>
+    <rdfs:label xml:lang="en">3</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-019-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-019"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-018">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">7.6667</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-018">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">65</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-006">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">3.3333</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-006">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">35</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-008">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">15</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-005">
+    <j.0:values-of-Parameter>G : Lymphoma Location (Organ)</j.0:values-of-Parameter>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">Lymphoma Location (Organ)</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-017">
+    <j.0:values-of-Parameter>AS : cutaneous</j.0:values-of-Parameter>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">cutaneous</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-023-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-023"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029">
+    <j.0:values-of-Parameter>BF : HADS A</j.0:values-of-Parameter>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">HADS A</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-016-Term-002">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-016"/>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-001-Term-005">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-001"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Native Hawaiian or Pacific Islander</rdfs:comment>
+    <rdfs:label xml:lang="en">5</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-024-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-024"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-017-Term-003">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-017"/>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-031-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-031"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-031-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-031"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-043-Term-007">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-043"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1:40</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Nuclear Homogeneous</rdfs:comment>
+    <rdfs:label xml:lang="en">homogeneous</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025-Term-010">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">8</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-019-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-019"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-001-Term-004">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-001"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Latino or Hispanic</rdfs:comment>
+    <rdfs:label xml:lang="en">4</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-034-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-034"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">3</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-007">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">3.6667</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-029">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">90</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027-Term-004">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027"/>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-002"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-032"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-028"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-059"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-021"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-064"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-044"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-038"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-027"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-051"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-072"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-001"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-071"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-010"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-004"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-045"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-023"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-040"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-019"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-054"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-011"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-034"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-009"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-029"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-046"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-067"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-020"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-058"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-069"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-048"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-031"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-043"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Data recorded about each patient.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-042"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-065"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-000"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-050"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-013"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-025"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-055"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-005"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-060"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-039"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Data</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-015"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-053"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-056"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-014"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-024"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-068"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-037"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-008"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-052"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-035"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-061"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-003"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-017"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-018"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-033"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-006"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-026"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-057"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-016"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-030"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-047"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-063"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-036"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-022"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-012"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-041"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-070"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-049"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-007"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-062"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:cardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-066"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-017">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">61</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-041-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-041"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-019">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">8</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-005">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">30</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-009">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    <rdfs:label xml:lang="en">16</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-006">
+    <j.0:values-of-Parameter>H : Lymphoma stage</j.0:values-of-Parameter>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">Lymphoma stage</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-016-Term-001">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-016"/>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-018">
+    <j.0:values-of-Parameter>AT : respiratory</j.0:values-of-Parameter>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">respiratory</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-024-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-024"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027-Term-011">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027"/>
+    <rdfs:label xml:lang="en">9</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-031-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-031"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">3</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1 : 400</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-030-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-030"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-012">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">5.6667</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009-Term-004">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Nuclear Homogeneous</rdfs:comment>
+    <rdfs:label xml:lang="en">Homogeneous</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-024">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">9.6667</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-006-Term-001">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-006"/>
+    <rdfs:comment xml:lang="en">Stage I</rdfs:comment>
+    <rdfs:label xml:lang="en">Stage 1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-015-Term-002">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-015"/>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-001-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-001"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Black or African American</rdfs:comment>
+    <rdfs:label xml:lang="en">3</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026-Term-010">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">8</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1998</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-014-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-014"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-024">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">73</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-036-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-036"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-022-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-022"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-014">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    <rdfs:label xml:lang="en">3</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007">
+    <j.0:values-of-Parameter>I : Date of diagnosis</j.0:values-of-Parameter>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">Date of diagnosis</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-019">
+    <j.0:values-of-Parameter>AU : muscular</j.0:values-of-Parameter>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">muscular</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-012">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">50</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-023-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-023"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-016-Term-004">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-016"/>
+    <rdfs:label xml:lang="en">3</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-002">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027-Term-010">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027"/>
+    <rdfs:label xml:lang="en">8</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007-Term-003">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007"/>
+    <rdfs:label xml:lang="en">2000</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1 : 40</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026-Term-011">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">9</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-030-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-030"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-001">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009-Term-005">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Nuclear Homogeneous</rdfs:comment>
+    <rdfs:label xml:lang="en">Homogeneous pattern</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-025">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">NA</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-015-Term-001">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-015"/>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-001-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-001"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Asian</rdfs:comment>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-013">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">6</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-040">
+    <j.0:values-of-Parameter>BS : B5=MMF</j.0:values-of-Parameter>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">B5=MMF</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-021-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-021"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-014-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-014"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-036-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-036"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">10mg</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-022-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-022"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-003">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    <rdfs:label xml:lang="en">10</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-023-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-023"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-015">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    <rdfs:label xml:lang="en">4</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008">
+    <j.0:values-of-Parameter>M : ANA Titre</j.0:values-of-Parameter>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">ANA Titre</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-016-Term-003">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-016"/>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-023">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">71</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-011">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">49</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-043-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-043"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-014">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">6.3333</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009-Term-006">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Which of the Reference Model ANA patterns is this?</rdfs:comment>
+    <rdfs:label xml:lang="en">Multi dot pattern associated with liver disease speckled</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-002">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">10</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-001-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-001"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">American Indian</rdfs:comment>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-041">
+    <j.0:values-of-Parameter>BT : B6=CYCLO</j.0:values-of-Parameter>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">B6=CYCLO</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-026">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">ND</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-002-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-002"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">YES (Is this correct?) yes</rdfs:comment>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008-Term-005">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008"/>
+    <rdfs:label xml:lang="en">1:160</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027-Term-001">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027"/>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-014">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">58</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">20</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-026">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">79</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab">
+    <rdfs:comment xml:lang="en">A value from a predefined set of Terms</rdfs:comment>
+    <rdfs:label xml:lang="en">Term</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-004">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    <rdfs:label xml:lang="en">11</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-036-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-036"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">20mg</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-042-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-042"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-016">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    <rdfs:label xml:lang="en">5</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009">
+    <j.0:values-of-Parameter>N : Pattern</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">Pattern</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-043-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-043"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1 : 40</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-043-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-043"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1 : 400</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-030-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-030"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">3</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-003">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009-Term-007">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009"/>
+    <rdfs:comment xml:lang="en">Which of the Reference Model ANA patterns is this?</rdfs:comment>
+    <rdfs:label xml:lang="en">Nuclear matrix pattern speckled</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-015-Term-003">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-015"/>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-030">
+    <j.0:values-of-Parameter>BH : EQ5D Mobility</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">EQ5D Mobility</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-015">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">6.6667</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-042">
+    <j.0:values-of-Parameter>BU : B7=SSZ</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">B7=SSZ</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008-Term-004">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008"/>
+    <rdfs:label xml:lang="en">1:100</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027-Term-012">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027"/>
+    <rdfs:label xml:lang="en">ND</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007-Term-001">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007"/>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-022-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-022"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-025">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">75</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-013">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">53</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">10</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-005">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    <rdfs:label xml:lang="en">12</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-017">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    <rdfs:label xml:lang="en">6</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-012-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-012"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">previous</rdfs:comment>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007-Term-006">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007"/>
+    <rdfs:label xml:lang="en">2015</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-020">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">8.3333</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009-Term-008">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009"/>
+    <rdfs:comment xml:lang="en">Nucleolar</rdfs:comment>
+    <rdfs:label xml:lang="en">Nucleolar</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-031">
+    <j.0:values-of-Parameter>BI : EQ5D Self Care</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">EQ5D Self Care</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-043">
+    <j.0:values-of-Parameter>M : ANA Titre</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">ANA Titre</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008-Term-007">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008"/>
+    <rdfs:label xml:lang="en">1:40</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-032">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">97</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-020">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">68</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-020-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-020"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-010-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-010"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Female</rdfs:comment>
+    <rdfs:label xml:lang="en">Female</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-003-Term-002">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-003"/>
+    <rdfs:label xml:lang="en">Neuroendocrine tumour</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-010">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    <rdfs:label xml:lang="en">17</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-011-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-011"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Normal weight</rdfs:comment>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025-Term-009">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">7</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-012-Term-004">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-012"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">incorrect value entered - now changed</rdfs:comment>
+    <rdfs:label xml:lang="en">3</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-021">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">8.6667</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007-Term-007">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007"/>
+    <rdfs:comment xml:lang="en">What does this mean? 2015 - this was date of first diagnosis (changed on spreadsheet)</rdfs:comment>
+    <rdfs:label xml:lang="en">2015/2016</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-013-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-013"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-002-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-002"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">NO (Is this correct?) yes</rdfs:comment>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009-Term-009">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009"/>
+    <rdfs:comment xml:lang="en">Which of the Reference Model ANA patterns is this?</rdfs:comment>
+    <rdfs:label xml:lang="en">PCNA pattern speckled</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-020">
+    <j.0:values-of-Parameter>AV : PNS</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">PNS</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-032">
+    <j.0:values-of-Parameter>BJ : EQ5D Usual Activities</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">EQ5D Usual Activities</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008-Term-006">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008"/>
+    <rdfs:label xml:lang="en">1:1600</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-031">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">95</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-020-Term-002">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-020"/>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-010-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-010"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Male</rdfs:comment>
+    <rdfs:label xml:lang="en">Male</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-011">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    <rdfs:label xml:lang="en">18</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-011-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-011"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Underweight</rdfs:comment>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-004-Term-002">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-004"/>
+    <rdfs:label xml:lang="en">MALT</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025-Term-008">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">6</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007-Term-004">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007"/>
+    <rdfs:label xml:lang="en">2004</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-039-Term-002">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-039"/>
+    <rdfs:label xml:lang="en">200mg</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-010">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">5</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-011-Term-004">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-011"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Obese</rdfs:comment>
+    <rdfs:label xml:lang="en">3</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-013-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-013"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-022">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">9</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-020-Term-001">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-020"/>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008-Term-009">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008"/>
+    <rdfs:label xml:lang="en">&gt;1:1600</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-014-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-014"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-021">
+    <j.0:values-of-Parameter>AW : CNS</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">CNS</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-033">
+    <j.0:values-of-Parameter>BK : EQ5D Pain</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">EQ5D Pain</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-010">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">45</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-022">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">70</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-012">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026-Term-008">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">6</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025-Term-007">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">5</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025-Term-006">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">4</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-013-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-013"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007-Term-005">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007"/>
+    <rdfs:label xml:lang="en">2007</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-006-Term-002">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-006"/>
+    <rdfs:comment xml:lang="en">Stage II? Correct - IIB is within II What does IIB mean?</rdfs:comment>
+    <rdfs:label xml:lang="en">Stage IIB</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-023">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">9.3333</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-011">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">5.3333</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008-Term-008">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008"/>
+    <rdfs:label xml:lang="en">1:400</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-014-Term-004">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-014"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">3</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-039-Term-001">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-039"/>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-010">
+    <j.0:values-of-Parameter>AC : Gender</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">Gender</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-022">
+    <j.0:values-of-Parameter>AX : hematological</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">hematological</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-034">
+    <j.0:values-of-Parameter>BL : EQ5D Anxiety</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">EQ5D Anxiety</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-021">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">69</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-003-Term-001">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-003"/>
+    <rdfs:label xml:lang="en">Breast</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-033">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">ND</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-001">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-013">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    <rdfs:label xml:lang="en">20</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026-Term-009">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">7</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-011-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-011"/>
+    </rdfs:subClassOf>
+    <rdfs:comment xml:lang="en">Overweight</rdfs:comment>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-043-Term-008">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-043"/>
+    <rdfs:label xml:lang="en">1:400</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025-Term-005">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">3</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-039-Term-004">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-039"/>
+    <rdfs:label xml:lang="en">400mg</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026-Term-006">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">4</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-038-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-038"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">12.5mg</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027-Term-007">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027"/>
+    <rdfs:label xml:lang="en">5</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-011">
+    <j.0:values-of-Parameter>AE : BMI (Underweight=0, Normal weight=1, Overweight=2, Obese=3)</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">BMI levels</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-023">
+    <j.0:values-of-Parameter>AY : biological</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">biological</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-008">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">38</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-008">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">4.3333</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035">
+    <j.0:values-of-Parameter>BN : VAS Global (Patient)</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">VAS Global (Patient)</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-039-Term-003">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-039"/>
+    <rdfs:label xml:lang="en">300mg</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025-Term-004">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-043-Term-009">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-043"/>
+    <rdfs:label xml:lang="en">&gt;1:1600</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-038-Term-004">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-038"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">50mg</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026-Term-007">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">5</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027-Term-006">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027"/>
+    <rdfs:label xml:lang="en">4</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-007">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    <rdfs:label xml:lang="en">37</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028-Term-009">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:label xml:lang="en">4.6667</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-019">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    <rdfs:label xml:lang="en">67</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-012">
+    <j.0:values-of-Parameter>AK : Smoking (1=current, 2=previous, 3=never)</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">Smoking status</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-024">
+    <j.0:values-of-Parameter>AZ : renal</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">renal</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-036">
+    <j.0:values-of-Parameter>BO : B1=MTX</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">B1=MTX</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-005-Term-001">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-005"/>
+    <rdfs:comment xml:lang="en">Salivary gland</rdfs:comment>
+    <rdfs:label xml:lang="en">Salivary gland</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-032-Term-003">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-032"/>
+    <rdfs:label xml:lang="en">3</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-037-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-037"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009-Term-010">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009"/>
+    <rdfs:comment xml:lang="en">Nuclear Speckled</rdfs:comment>
+    <rdfs:label xml:lang="en">Speckled</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-032-Term-002">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-032"/>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025-Term-003">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">10</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-012-Term-001">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-012"/>
+    <rdfs:comment xml:lang="en">What does this mean? never</rdfs:comment>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007-Term-008">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007"/>
+    <rdfs:label xml:lang="en">2016</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026-Term-004">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-038-Term-001">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-038"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-033-Term-003">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-033"/>
+    <rdfs:label xml:lang="en">3</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-001">
+    <j.0:values-of-Parameter>B : Ethnicity</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">Ethnicity</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-013">
+    <j.0:values-of-Parameter>AO : constitutional</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">constitutional</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025">
+    <j.0:values-of-Parameter>BB : D ESSPRI</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">D ESSPRI</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-040-Term-002">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-040"/>
+    <rdfs:label xml:lang="en">3g</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-037">
+    <j.0:values-of-Parameter>BP : B2=LFN</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">B2=LFN</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027-Term-009">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027"/>
+    <rdfs:label xml:lang="en">7</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-018-Term-004">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-018"/>
+    <rdfs:label xml:lang="en">3</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-030">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    <rdfs:label xml:lang="en">92</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-005-Term-002">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-005"/>
+    <rdfs:comment xml:lang="en">Which of the two?</rdfs:comment>
+    <rdfs:label xml:lang="en">Salivary gland/ Lacrimal gland</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-004-Term-001">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-004"/>
+    <rdfs:label xml:lang="en">0</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-020">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    <rdfs:label xml:lang="en">9</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-039-Term-005">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-039"/>
+    <rdfs:label xml:lang="en">Xmg</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-032-Term-001">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-032"/>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-012-Term-002">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-012"/>
+    <rdfs:comment xml:lang="en">current</rdfs:comment>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025-Term-002">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025"/>
+    <rdfs:label xml:lang="en">1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-038-Term-002">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-038"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">100mg</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026-Term-005">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">3</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027-Term-008">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027"/>
+    <rdfs:label xml:lang="en">6</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035-Term-009">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    <rdfs:label xml:lang="en">40</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-002">
+    <j.0:values-of-Parameter>C : Cancer (No Lymphoma)</j.0:values-of-Parameter>
+    <j.0:values-of-Parameter>O : Ro/SSA</j.0:values-of-Parameter>
+    <j.0:values-of-Parameter>AI : Oral sympt (AECG) (yes/no)</j.0:values-of-Parameter>
+    <j.0:values-of-Parameter>AJ : Ocular symp (AECG) (yes/no)</j.0:values-of-Parameter>
+    <j.0:values-of-Parameter>L : ANA</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <j.0:values-of-Parameter>E : Lymphoma</j.0:values-of-Parameter>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 7 parameter(s).</rdfs:comment>
+    <j.0:values-of-Parameter>P : La/SSB</j.0:values-of-Parameter>
+    <rdfs:label xml:lang="en">YES/NO value</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-014">
+    <j.0:values-of-Parameter>AP : lymphadenopathy</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">lymphadenopathy</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026">
+    <j.0:values-of-Parameter>BC : F ESSPRI</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">F ESSPRI</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-038">
+    <j.0:values-of-Parameter>BQ : B3=AZA</j.0:values-of-Parameter>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Vocab"/>
+    <rdfs:comment xml:lang="en">Set of terms used in the value of 1 parameter(s).</rdfs:comment>
+    <rdfs:label xml:lang="en">B3=AZA</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-020-Term-004">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-020"/>
+    <rdfs:label xml:lang="en">3</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029-Term-021">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    <rdfs:label xml:lang="en">NA</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-018-Term-003">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-018"/>
+    <rdfs:label xml:lang="en">2</rdfs:label>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-007">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-003"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label xml:lang="en">About .. Lymphoma</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-015">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-009"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label xml:lang="en">About .. Biopsy</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-003">
+    <rdfs:label xml:lang="en">About .. Condition</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-023">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-022"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label xml:lang="en">About .. Drug</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-061">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-032"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-019"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [1,3]: 3 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BJ</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">EQ5D Usual Activities</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-011">
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-003"/>
+    <rdfs:label xml:lang="en">About .. Symptom</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-038">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-014"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: REAL NUMBER
+
+In Range: [ 0.0 , 40.0 ]: 31 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AM</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Schirmer worst eye (mm)</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-006">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-005"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-007"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: STRING
+
+One of: [Salivary gland/ Lacrimal gland, Salivary gland]
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>G</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Lymphoma Location (Organ)</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-018">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-010"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">Leukocytes (X10^9/L), The value is multiplied by 1000 to get cells/mm3
+
+Data Type: REAL NUMBER
+
+In Range: [ 0.0 , 12.1 ]: 59 different terms.
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>S</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">WBC</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-030">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-011"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-002"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [0,3]: 4 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AE</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">BMI (Underweight=0, Normal weight=1, Overweight=2, Obese=3)</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-042">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-015"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-016"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [0,2]: 3 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AQ</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">glandular</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-010">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-010"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">mmol/L
+
+Data Type: REAL NUMBER
+
+In Range: [ 0.4 , 3.8 ]: 29 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>K</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Triglyceride</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-054">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-026"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-017"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: STRING
+
+Examples: [3, 2, 1, 10, 0, 7]
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BC</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">F ESSPRI</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-022">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-010"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">'C reactive protein [Mass/volume]' mg/L
+
+Data Type: STRING
+
+Examples: [35, 13, 26, 14, 11, &lt;3]
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>W</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">CRP</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-066">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-036"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-023"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">Methotrexate
+
+Data Type: STRING
+
+One of: [0, 20mg, 10mg]
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BO</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">B1=MTX</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-034">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-002"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-011"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">Dry Mouth
+
+Data Type: INTEGER
+
+In Range: [0,1]: 2 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AI</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Oral sympt (AECG) (yes/no)</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-002">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-002"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-004"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [0,1]: 2 different terms.
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>C</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Cancer (No Lymphoma)</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-046">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-019"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-016"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [0,2]: 2 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AU</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">muscular</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-014">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-002"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-010"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [0,1]: 2 different terms.
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>O</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Ro/SSA</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-058">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-018"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [0,19]: 18 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BG</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">HADS D</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-026">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-010"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">g/L
+
+Data Type: STRING
+
+Examples: [1.22, 1.21, 1.24, 1.23, 1.61, 1.62]
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AA</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">C3</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-019">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-009"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label xml:lang="en">About .. Questionnaire/EQ-5D-3L</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-016">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-009"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label xml:lang="en">About .. Questionnaire/ESSDAI</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-004">
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-003"/>
+    <rdfs:label xml:lang="en">About .. Cancer</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-060">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-031"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-019"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [1,3]: 3 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BI</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">EQ5D Self Care</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-012">
+    <rdfs:label xml:lang="en">About .. Lifestyle</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-072">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-042"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-023"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">Sulphasalazine
+
+Data Type: INTEGER
+
+Value: 0
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BU</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">B7=SSZ</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-040">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-013"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-016"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [0,2]: 3 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AO</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">constitutional</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-020">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-005"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label xml:lang="en">About .. Questionnaire</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-005">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-004"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-007"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: STRING
+
+One of: [0, MALT]
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>F</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Type of Lymphoma</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-049">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-022"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-016"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [0,2]: 3 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AX</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">hematological</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-017">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-010"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">Hemoglobin [Mass/volume] g/L
+
+Data Type: INTEGER
+
+In Range: [0,161]: 52 different terms.
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>R</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">HB</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-029">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-001"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: DATE
+
+Format: YEAR, In Range: [ 1935 , 2000 ]
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AD</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Year of Birth</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-009">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-010"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">mmol/L
+
+Data Type: REAL NUMBER
+
+In Range: [ 2.3 , 8.5 ]: 40 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>J</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Total Cholesterol</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-041">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-014"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-016"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [0,3]: 4 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AP</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">lymphadenopathy</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-053">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-025"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-017"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: STRING
+
+Examples: [3, 2, 1, 10, 0, 7]
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BB</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">D ESSPRI</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-021">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-010"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">X10^9/L, The value is multiplied by 1000 to get cells/mm3
+
+Data Type: INTEGER
+
+In Range: [0,484]: 109 different terms.
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>V</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Platelets</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-065">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-035"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-021"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: STRING
+
+Examples: [79, 59, 58, 35, 37, 38]
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BN</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">VAS Global (Patient)</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-033">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-008"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: REAL NUMBER
+
+In Range: [ 18.3288 , 83.1068 ]: 158 different terms.
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AH</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Age at inclusion in the present cohort</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-001">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-001"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-002"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [2,7]: 3 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>B</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Ethnicity</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-045">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-018"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-016"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">aka pulmonary
+
+Data Type: INTEGER
+
+In Range: [0,3]: 4 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AT</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">respiratory</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-013">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-009"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-010"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">ANA pattern term
+
+Data Type: STRING
+
+Examples: [Centromere, homogeneous, 0, Speckled, PCNA pattern, Homogeneous]
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>N</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Pattern</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-057">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-029"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-018"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: STRING
+
+Examples: [17, 18, 15, 16, 13, 14]
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BF</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">HADS A</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-025">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-010"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: REAL NUMBER
+
+In Range: [ 0.23 , 9.94 ]: 111 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>Z</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">IgM g/l</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-069">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-039"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-023"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">Hydroxychloroquine
+
+Data Type: STRING
+
+One of: [0, 400mg, 200mg, Xmg, 300mg]
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BR</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">B4=HDQ</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-037">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-013"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: REAL NUMBER
+
+In Range: [ 0.0 , 14.13 ]: 87 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AL</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Unstimulated salivary flow ml/5min (ml) (multiplied by 3)</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-008">
+    <rdfs:label xml:lang="en">About .. Key dates</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-017">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-009"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label xml:lang="en">About .. Questionnaire/ESSPRI</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-005">
+    <rdfs:label xml:lang="en">About .. [IGNORED]</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-013">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-009"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label xml:lang="en">About .. Oral</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-071">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-041"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-023"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">Cyclosporine
+
+Data Type: INTEGER
+
+Value: 0
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BT</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">B6=CYCLO</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-001">
+    <rdfs:label xml:lang="en">About .. Person</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-051">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-024"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-016"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [0,2]: 3 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AZ</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">renal</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-021">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-009"/>
+    </rdfs:subPropertyOf>
+    <rdfs:label xml:lang="en">About .. Questionnaire/VAS</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-016">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-010"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">'Rheumatoid Factor (RF) [Units/volume]' IU/mL
+
+Data Type: REAL NUMBER
+
+In Range: [ 0.0 , 619.0 ]: 68 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>Q</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">RF</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-028">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-010"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-002"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: STRING
+
+One of: [Male, Female]
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AC</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Gender</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-008">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-007"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-008"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: STRING
+
+Examples: [1998, 2007, 0, 2004, 2015, 2015/2016]
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>I</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Date of diagnosis</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-052">
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-016"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [0,22]: 23 different terms.
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BA</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">ESSDAI_calc</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-020">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-010"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">X10^9/L, The value is multiplied by 1000 to get cells/mm3
+
+Data Type: REAL NUMBER
+
+In Range: [ 0.0 , 3.1 ]: 29 different terms.
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>U</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Lymphocytes</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-064">
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-020"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">not harmonicSS term, check ^^
+
+Data Type: REAL NUMBER
+
+In Range: [ -0.594 , 1.0 ]: 22 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BM</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">EQ5D utility value (UK)</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-032">
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-008"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: REAL NUMBER
+
+In Range: [ 7.8712 , 82.5589 ]: 149 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AG</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Age at onset of current symptoms or sign related to pSS</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-000">
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-001"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: STRING
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>A</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Number</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-044">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-017"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-016"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [0,2]: 3 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AS</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">cutaneous</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-012">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-043"/>
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-008"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-010"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: STRING
+
+Examples: [1:400, 1:1600, 0, 1 : 40, 1:160, 1:40]
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>M</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">ANA Titre</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-056">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-028"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-017"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">Average of D ESSPRI, F ESSPRI, P ESSPRI
+
+Data Type: STRING
+
+Examples: [8.3333, 8.6667, 9.6667, 3.3333, 6.3333, 5.6667]
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BE</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">ESSPRI</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-024">
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-010"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: STRING
+
+Examples: [2.98, 2.97, 4.33, 2.17, 2.94, 2.15]
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>Y</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">IgA g/l</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-068">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-038"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-023"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">Azathiorpine
+
+Data Type: STRING
+
+One of: [0, 100mg, 50mg, 12.5mg]
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BQ</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">B3=AZA</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-036">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-012"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-012"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [0,2]: 3 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AK</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Smoking (1=current, 2=previous, 3=never)</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-009">
+    <rdfs:label xml:lang="en">About .. Examination</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-004">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-002"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-007"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [0,1]: 2 different terms.
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>E</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Lymphoma</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-048">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-021"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-016"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">Central Nervous System
+
+Data Type: INTEGER
+
+Value: 0
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AW</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">CNS</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-018">
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-009"/>
+    <rdfs:label xml:lang="en">About .. Questionnaire/HADS</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-006">
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-005"/>
+    <rdfs:label xml:lang="en">About .. Condition/Cancer</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-014">
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-009"/>
+    <rdfs:label xml:lang="en">About .. Ocular</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-070">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-040"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-023"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">Mycophenolate
+
+Data Type: STRING
+
+One of: [3g, 0]
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BS</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">B5=MMF</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-002">
+    <rdfs:label xml:lang="en">About .. Demographics</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-050">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-023"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-016"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [0,2]: 3 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AY</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">biological</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-022">
+    <rdfs:label xml:lang="en">About .. Intervention</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-062">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-033"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-019"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [1,3]: 3 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BK</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">EQ5D Pain</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-010">
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-009"/>
+    <rdfs:label xml:lang="en">About .. Blood</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-027">
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-010"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">g/L
+
+Data Type: STRING
+
+Examples: [0.41, 0.23, 0.22, 0.21, 0.4, 0.3]
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AB</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">C4</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-039">
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-015"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">“Biopsy focus score (mm2/x)” number of foci per 4 mm2
+
+Data Type: REAL NUMBER
+
+In Range: [ 0.0 , 3.871 ]: 66 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AN</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Bx_focus score (mm2/x)</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-007">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-006"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-007"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: STRING
+
+One of: [Stage 1, Stage IIB]
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>H</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Lymphoma stage</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-019">
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-010"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">X10^9/L, The value is multiplied by 1000 to get cells/mm3
+
+Data Type: REAL NUMBER
+
+In Range: [ 0.0 , 9.4 ]: 55 different terms.
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>T</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Neutrophills</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-063">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-034"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-019"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [1,3]: 3 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BL</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">EQ5D Anxiety</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-031">
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-008"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: REAL NUMBER
+
+In Range: [ 16.6767 , 82.8877 ]: 144 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AF</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Age of diagnosis of pSS</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-043">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-016"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-016"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [0,3]: 4 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AR</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">articular</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-011">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-002"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-010"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [0,1]: 2 different terms.
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>L</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">ANA</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-055">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-027"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-017"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: STRING
+
+Examples: [3, 2, 10, 1, 0, 7]
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BD</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">P ESSPRI</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-023">
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-010"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: REAL NUMBER
+
+In Range: [ 5.23 , 56.36 ]: 156 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>X</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">IgG g/L</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-067">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-037"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-023"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">Leflunomide
+
+Data Type: INTEGER
+
+Value: 0
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BP</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">B2=LFN</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-035">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-002"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-011"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">Dry Eyes
+
+Data Type: INTEGER
+
+In Range: [0,1]: 2 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AJ</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Ocular symp (AECG) (yes/no)</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-003">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-003"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-006"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: STRING
+
+One of: [Neuroendocrine tumour, Breast]
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>D</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">Type of Cancer</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-047">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-020"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-016"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">Peripheral Nervous System
+
+Data Type: INTEGER
+
+In Range: [0,3]: 4 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>AV</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">PNS</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-015">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-002"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-010"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [0,1]: 2 different terms.
+
+Can be Empty: NO , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>P</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">La/SSB</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Parameter-059">
+    <j.0:parameter-Value rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Domain-030"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Category-019"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#Person-Data"/>
+    <rdfs:comment xml:lang="en">
+
+Data Type: INTEGER
+
+In Range: [1,3]: 3 different terms.
+
+Can be Empty: YES , Has Many Terms/Values: NO</rdfs:comment>
+    <j.0:parameter-UID>BH</j.0:parameter-UID>
+    <rdfs:label xml:lang="en">EQ5D Mobility</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#parameter-Value">
+    <rdfs:label xml:lang="en">Parameter Value</rdfs:label>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#values-of-Parameter">
+    <rdfs:comment xml:lang="en">Parameter UID followed by its NAME, separated by semicolon (:)</rdfs:comment>
+    <rdfs:label xml:lang="en">Values of Parameter</rdfs:label>
+  </owl:AnnotationProperty>
+  <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/ntua/iccs/harmonicss/cohort#parameter-UID">
+    <rdfs:comment xml:lang="en">Indicates the position of the parameter/field in the Excell document.</rdfs:comment>
+    <rdfs:label xml:lang="en">Parameter UID</rdfs:label>
+  </owl:AnnotationProperty>
+</rdf:RDF>
