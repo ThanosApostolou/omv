@@ -43,6 +43,20 @@
                     </v-row>
                 </v-card-text>
                 <AnnotationsComp :annotations="owl.annotations" />
+                <v-card-text>
+                    <v-row class="text-start">
+                        <v-col cols="4" md="3" lg="2" />
+                        <v-col>
+                            Includes:
+                        </v-col>
+                        <v-col>
+                            <p>{{ owl.owlclasses.size() }} Classes</p>
+                            <p>{{ owl.owlobjprops.size() }} Object Properties</p>
+                            <p>{{ owl.owldataprops.size() }} Data Properties</p>
+                            <p>{{ owl.annotationproperties.length }} Annotation Properties</p>
+                        </v-col>
+                    </v-row>
+                </v-card-text>
             </v-tab-item>
             <v-card-text class="text-center justify-center">
                 <v-tab-item key="owlclasses">

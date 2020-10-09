@@ -1,5 +1,6 @@
 import { Annotation } from "./Annotation";
 import { OwlInfo } from "./OwlInfo";
+import { Rule } from "./Rule";
 
 export class OwlEntity {
     owlinfo: OwlInfo = null;
@@ -7,6 +8,8 @@ export class OwlEntity {
     name: string = "";
     label: string = "";
     annotations: Annotation[] = [];
+    classrules: Rule[] = [];
+    proprules: Rule[] = [];
     children: OwlEntity[] = [];
 
     /** @param {object} owlentityobject

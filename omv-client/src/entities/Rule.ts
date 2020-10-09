@@ -60,7 +60,7 @@ export class Rule {
 
     /** Find rules
     */
-    static findRule(rules: Rule[], owlNumber: number, entityType: string, owlentity: OwlEntity, orderedRules: Rule[]): void {
+    static findRule(rules: Rule[], owlNumber: number, entityType: string, owlentity: OwlEntity, orderedRules: Rule[], isClassRule: boolean): void {
         for (const rule of rules) {
             const ruleowl = (owlNumber == 1) ? rule.entity1 : rule.entity2;
             let ruleentities = [];
@@ -73,6 +73,11 @@ export class Rule {
             }
             for (const ruleentity of ruleentities) {
                 if (owlentity.iri == ruleentity.iri) {
+                    if (isClassRule) {
+                        owlentity.classrules.push(rule);
+                    } else {
+                        owlentity.proprules.push(rule);
+                    }
                     if (!Rule.listExistsRule(orderedRules, rule)) {
                         orderedRules.push(rule);
                     }
@@ -80,7 +85,7 @@ export class Rule {
             }
         }
         for (const child of owlentity.children) {
-            Rule.findRule(rules, owlNumber, entityType, child, orderedRules);
+            Rule.findRule(rules, owlNumber, entityType, child, orderedRules, isClassRule);
         }
     }
 }
