@@ -10,6 +10,8 @@ export class OwlEntity {
     annotations: Annotation[] = [];
     classrules: Rule[] = [];
     proprules: Rule[] = [];
+    totalclassrules: number = 0;
+    totalproprules: number = 0;
     children: OwlEntity[] = [];
 
     /** @param {object} owlentityobject
@@ -58,5 +60,20 @@ export class OwlEntity {
     }
     size(): number {
         return this.findSize(0);
+    }
+
+    calcTotalRules(): [number, number] {
+        let classrulescount: number = this.classrules.length;
+        let proprulescount: number = this.proprules.length;
+        for (const child of this.children) {
+            let newclassrulescount = 0;
+            let newproprulescount = 0;
+            [newclassrulescount, newproprulescount] = child.calcTotalRules();
+            classrulescount += newclassrulescount;
+            proprulescount += newproprulescount;
+        }
+        this.totalclassrules = classrulescount;
+        this.totalproprules = proprulescount;
+        return [classrulescount, proprulescount];
     }
 }

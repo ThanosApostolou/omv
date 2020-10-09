@@ -19,6 +19,15 @@ export class Visualization {
         visualization.mapping.findOrderedRules(visualization.owl1, visualization.owl2);
         visualization.statistics = new Statistics();
         visualization.statistics.init(visualization);
+
+
+        // calc total rules
+        visualization.owl1.owlclasses.calcTotalRules();
+        visualization.owl1.owlobjprops.calcTotalRules();
+        visualization.owl1.owldataprops.calcTotalRules();
+        visualization.owl2.owlclasses.calcTotalRules();
+        visualization.owl2.owlobjprops.calcTotalRules();
+        visualization.owl2.owldataprops.calcTotalRules();
         return visualization;
     }
 }
