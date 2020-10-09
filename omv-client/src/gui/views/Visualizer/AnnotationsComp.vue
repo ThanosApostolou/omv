@@ -30,7 +30,7 @@
                     </small>
                 </v-col>
                 <v-col v-if="annotation.valueentity != null">
-                    {{ annotation.valueentity.iri }}
+                    <OwlEntitySingleSvg :owlentity="annotation.valueentity" :entity-type.camel="annotation.valueentitytype" position="left" />
                 </v-col>
             </v-row>
         </v-card-text>
@@ -38,11 +38,13 @@
 </template>
 <script>
 import AnnotationPropertiesSvgComp from "./AnnotationPropertiesSvgComp.vue";
+import OwlEntitySingleSvg from "./OwlEntitySingleSvg.vue";
 
 export default {
     name: "AnnotationsComp",
     components: {
-        AnnotationPropertiesSvgComp
+        AnnotationPropertiesSvgComp,
+        OwlEntitySingleSvg
     },
     props: {
         annotations: {

@@ -8,6 +8,7 @@ export class Annotation {
     propertyiri: string = "";
     value: string = "";
     valueentity: OwlEntity = null;
+    valueentitytype: string = "";
     type: string = "";
     lang: string = "";
     isValueIri: boolean = false;
@@ -51,14 +52,17 @@ export class Annotation {
             foundentity = owlinfo.owlclasses.findByIri(this.value);
             if (foundentity != null) {
                 this.valueentity = foundentity;
+                this.valueentitytype = "class";
             } else {
                 foundentity = owlinfo.owlobjprops.findByIri(this.value);
                 if (foundentity != null) {
                     this.valueentity = foundentity;
+                    this.valueentitytype = "objprop";
                 } else {
                     foundentity = owlinfo.owldataprops.findByIri(this.value);
                     if (foundentity != null) {
                         this.valueentity = foundentity;
+                        this.valueentitytype = "dataprop";
                     }
                 }
             }
