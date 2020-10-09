@@ -43,12 +43,12 @@
                                 {{ argument.argname }}
                             </v-col>
                             <v-col>
-                                <v-row v-for="(argvalue, index2) in argument.argvalues" :key="index2">
-                                    <v-col v-if="argvalue.owlentity == null">
-                                        {{ argvalue.stringvalue }}
+                                <v-row>
+                                    <v-col v-if="argument.argvalue.owlentity == null">
+                                        {{ argument.argvalue.stringvalue }}
                                     </v-col>
-                                    <v-col v-if="argvalue.owlentity != null">
-                                        <OwlEntitySingleSvg :owlentity="argvalue.owlentity" :entity-type.camel="argvalue.type" :position="argvalue.position" @show-entity="showEntity" />
+                                    <v-col v-if="argument.argvalue.owlentity != null">
+                                        <OwlEntitySingleSvg :owlentity="argument.argvalue.owlentity" :entity-type.camel="argument.argvalue.type" :position="argument.argvalue.position" @show-entity="showEntity" />
                                     </v-col>
                                 </v-row>
                             </v-col>

@@ -25,12 +25,14 @@ export class Argvalue {
 
 export class Argument {
     argname: string = "";
-    argvalues: Argvalue[] = [];
+    //argvalues: Argvalue[] = [];
+    argvalue: any;
 
     static fromObject (argumentobject: any): Argument {
         const argument = new Argument();
         argument.argname = argumentobject.argname;
-        if (typeof argumentobject.argvalue == "string") {
+        argument.argvalue = new Argvalue(argumentobject.argvalue);
+        /*if (typeof argumentobject.argvalue == "string") {
             const stringvalue: string = argumentobject.argvalue;
             argument.argvalues.push(new Argvalue(stringvalue));
         } else {
@@ -38,7 +40,7 @@ export class Argument {
                 const stringvalue: string = argvaluestring;
                 argument.argvalues.push(new Argvalue(stringvalue));
             }
-        }
+        }*/
         return argument;
     }
 
@@ -82,7 +84,8 @@ export class Transformation {
         const owl2objprops  = this.rule.mapping.visualization.owl2.owlobjprops;
         const owl2dataprops  = this.rule.mapping.visualization.owl2.owldataprops;
         for (const argument of this.arguments) {
-            for (const argvalue of argument.argvalues) {
+            const argvalue = argument.argvalue;
+            //for (const argvalue of argument.argvalues) {
                 if (!argvalue.addEntity(owl1classes, "left", "class")) {
                     if (!argvalue.addEntity(owl1objprops, "left", "objprop")) {
                         if (!argvalue.addEntity(owl1dataprops, "left", "dataprop")) {
@@ -94,7 +97,7 @@ export class Transformation {
                         }
                     }
                 }
-            }
+            //}
         }
     }
 
