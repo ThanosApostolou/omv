@@ -38,7 +38,7 @@ export class MappingSVG {
         this.width = Math.max(this.width, newwidth);
         this.height += this.owl1datapropssvg.height;
 
-        this.width = Math.max(this.width + 100, 700);
+        this.width = Math.max(this.width + 10, 500);
 
         const ruleswidth = this.width;
         this.width += 60;
@@ -56,7 +56,7 @@ export class MappingSVG {
         this.owl2datapropssvg.calcWidth(1);
 
         newwidth = Math.max(this.owl2classessvg.width, this.owl2objpropssvg.width, this.owl2datapropssvg.width);
-        this.width += Math.max(newwidth + 100, 700);
+        this.width += Math.max(newwidth + 10, 500);
 
         this.owl2classessvg.calcPositionsReverse(this.width, 0);
         let newheight = this.owl2classessvg.height;
