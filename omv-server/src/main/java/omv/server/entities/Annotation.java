@@ -55,7 +55,7 @@ public class Annotation {
         Annotation annotation = new Annotation();
         annotation.owlannotation = owlannotation;
         annotation.property = owlannotation.getProperty().getIRI().getIRIString();
-        if (owlannotation.getValue().asIRI().isPresent() && !owlannotation.getValue().asIRI().isEmpty()) {
+        if (owlannotation.getValue().asIRI().isPresent()) {
             annotation.value = owlannotation.getValue().asIRI().get().getIRIString();
             annotation.isValueIri = true;
             //System.out.println(annotation.property);
