@@ -20,7 +20,7 @@
                 </v-card-title>
                 <v-card-text>
                     <p>
-                        Metrics about top level classes of right Ontology, which is usually used as a reference model:
+                        Metrics about top level classes of right Ontology <b>"{{ owl2.label }}"</b>, which is usually used as a reference model:
                     </p>
                     <div v-for="(child1, index1) in owl2.owlclasses.children" :key="index1">
                         <v-row v-if="child1.totalclassrules > 0 || child1.totalproprules > 0">

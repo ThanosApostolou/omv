@@ -1,6 +1,7 @@
 package omv.server.entities;
 
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import io.vertx.core.json.JsonObject;
 
@@ -27,20 +28,24 @@ public class Mapping {
             this.error = "Wrong owl ontologies. Expected: (Left owl: " + this.owl1iri + ", Right owl: " + this.owl2iri +")";
             return;
         }
+        AtomicInteger index = new AtomicInteger();
+        index.set(0);
         mappingobject.getJsonObject("correspondences").getJsonArray("jsonarray").forEach((obj) -> {
             JsonObject ruleobject = (JsonObject) obj;
             Rule rule = new Rule();
             rule.init(ruleobject);
+            rule.label = "MR" + index.get();
             if (rule.entity1.objectprops.isEmpty() && rule.entity1.dataprops.isEmpty() &&
                 rule.entity2.objectprops.isEmpty() && rule.entity2.dataprops.isEmpty()) {
-                int index = this.classrules.size();
-                rule.label = "cr" + index ;
+                //int index = this.classrules.size();
+                //rule.label = "cr" + index ;
                 this.classrules.add(rule);
             } else {
-                int index = this.proprules.size();
-                rule.label = "pr" + index ;
+                //int index = this.proprules.size();
+                //rule.label = "pr" + index ;
                 this.proprules.add(rule);
             }
+            index.set(index.get()+1);
         });
     }
 

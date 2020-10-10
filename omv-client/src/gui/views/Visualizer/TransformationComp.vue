@@ -1,13 +1,12 @@
 <template>
     <div>
-        <v-card outlined>
+        <v-card color="grey lighten-3">
             <v-card-title>
-                <v-row>
-                    {{ transformation.type }}:
-                </v-row>
+                <h3>{{ transformation.type }}:</h3>
             </v-card-title>
             <v-card-text>
-                <v-row v-if="transformation.uri != null">
+                <v-row v-if="transformation.uri != null" class="text-start">
+                    <v-col cols="2" md="3" lg="2" />
                     <v-col>
                         URI:
                     </v-col>
@@ -15,47 +14,49 @@
                         {{ transformation.uri }}
                     </v-col>
                 </v-row>
-                <v-row v-if="transformation.description != null">
+                <v-row v-if="transformation.description != null" class="text-start">
+                    <v-col cols="4" md="3" lg="2" />
                     <v-col>
-                        description:
+                        Description:
                     </v-col>
                     <v-col>
                         {{ transformation.description }}
                     </v-col>
                 </v-row>
-                <v-card outlined>
-                    <v-card-title>
-                        <v-row>
-                            <b>ARGUMENTS:</b>
-                        </v-row>
-                    </v-card-title>
-                    <v-card-text>
-                        <v-row>
-                            <v-col>
-                                <b>ARGUMENT NAME</b>
-                            </v-col>
-                            <v-col>
-                                <b>ARGUMENT VALUE</b>
-                            </v-col>
-                        </v-row>
-                        <v-row v-for="(argument, index) in transformation.arguments" :key="index">
-                            <v-col>
-                                {{ argument.argname }}
-                            </v-col>
-                            <v-col>
-                                <v-row>
-                                    <v-col v-if="argument.argvalue.owlentity == null">
-                                        {{ argument.argvalue.stringvalue }}
-                                    </v-col>
-                                    <v-col v-if="argument.argvalue.owlentity != null">
-                                        <OwlEntitySingleSvg :owlentity="argument.argvalue.owlentity" :entity-type.camel="argument.argvalue.type" :position="argument.argvalue.position" @show-entity="showEntity" />
-                                    </v-col>
-                                </v-row>
-                            </v-col>
-                        </v-row>
-                    </v-card-text>
-                </v-card>
             </v-card-text>
+            <v-card v-if="transformation.arguments.length > 0" outlined color="grey lighten-3">
+                <v-card-title>
+                    <v-row class="text-start">
+                        <v-col cols="4" md="3" lg="2">
+                            <h4>Arguments:</h4>
+                        </v-col>
+                        <v-col>
+                            <h5>ARGUMENT NAME</h5>
+                        </v-col>
+                        <v-col>
+                            <h5>ARGUMENT VALUE</h5>
+                        </v-col>
+                    </v-row>
+                </v-card-title>
+                <v-card-text>
+                    <v-row v-for="(argument, index) in transformation.arguments" :key="index" class="text-start">
+                        <v-col cols="4" md="3" lg="2" />
+                        <v-col>
+                            {{ argument.argname }}
+                        </v-col>
+                        <v-col>
+                            <v-row>
+                                <v-col v-if="argument.argvalue.owlentity == null">
+                                    {{ argument.argvalue.stringvalue }}
+                                </v-col>
+                                <v-col v-if="argument.argvalue.owlentity != null">
+                                    <OwlEntitySingleSvg :owlentity="argument.argvalue.owlentity" :entity-type.camel="argument.argvalue.type" :position="argument.argvalue.position" @show-entity="showEntity" />
+                                </v-col>
+                            </v-row>
+                        </v-col>
+                    </v-row>
+                </v-card-text>
+            </v-card>
         </v-card>
     </div>
 </template>
