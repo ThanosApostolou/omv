@@ -11,6 +11,7 @@ interface Line {
     y1: number;
     x2: number;
     y2: number;
+    title: string;
 }
 
 export class RuleSVG {
@@ -40,6 +41,7 @@ export class RuleSVG {
     lines: Line[] = [];
     showBox: boolean = true;
     isVisible: boolean = true;
+    titles: string[] = [];
 
 
     /** create a RuleSVG instance from a Rule instance
@@ -96,54 +98,91 @@ export class RuleSVG {
             const foundentity = owl1classessvg.findByIri(entityobj.iri);
             foundentity.rulesvgs.push(this);
             this.entity1.classessvg.push(foundentity);
+            if (entityobj.index == null) {
+                this.titles.push("class parameter");
+            } else {
+                this.titles.push("parameter " + entityobj.index);
+            }
         }
         for (const entityobj of this.rule.entity1.objectprops) {
             const foundentity = owl1objpropssvg.findByIri(entityobj.iri);
             foundentity.rulesvgs.push(this);
             this.entity1.objpropssvg.push(foundentity);
+            if (entityobj.index == null) {
+                this.titles.push("class parameter");
+            } else {
+                this.titles.push("parameter " + entityobj.index);
+            }
         }
         for (const entityobj of this.rule.entity1.dataprops) {
             const foundentity = owl1datapropssvg.findByIri(entityobj.iri);
             foundentity.rulesvgs.push(this);
             this.entity1.datapropssvg.push(foundentity);
+            if (entityobj.index == null) {
+                this.titles.push("class parameter");
+            } else {
+                this.titles.push("parameter " + entityobj.index);
+            }
         }
         for (const entityobj of this.rule.entity2.classes) {
             const foundentity = owl2classessvg.findByIri(entityobj.iri);
             foundentity.rulesvgs.push(this);
             this.entity2.classessvg.push(foundentity);
+            if (entityobj.index == null) {
+                this.titles.push("class parameter");
+            } else {
+                this.titles.push("parameter " + entityobj.index);
+            }
         }
         for (const entityobj of this.rule.entity2.objectprops) {
             const foundentity = owl2objpropssvg.findByIri(entityobj.iri);
             foundentity.rulesvgs.push(this);
             this.entity2.objpropssvg.push(foundentity);
+            if (entityobj.index == null) {
+                this.titles.push("class parameter");
+            } else {
+                this.titles.push("parameter " + entityobj.index);
+            }
         }
         for (const entityobj of this.rule.entity2.dataprops) {
             const foundentity = owl2datapropssvg.findByIri(entityobj.iri);
             foundentity.rulesvgs.push(this);
             this.entity2.datapropssvg.push(foundentity);
+            if (entityobj.index == null) {
+                this.titles.push("class parameter");
+            } else {
+                this.titles.push("parameter " + entityobj.index);
+            }
         }
         this.findLines();
     }
 
     findLines(): void {
         if (this.showBox) {
+            let counter=0;
             for (const owlentitysvg of this.entity1.classessvg) {
-                this.addLeftLine(owlentitysvg);
+                this.addLeftLine(owlentitysvg, this.titles[counter]);
+                counter++;
             }
             for (const owlentitysvg of this.entity1.objpropssvg) {
-                this.addLeftLine(owlentitysvg);
+                this.addLeftLine(owlentitysvg, this.titles[counter]);
+                counter++;
             }
             for (const owlentitysvg of this.entity1.datapropssvg) {
-                this.addLeftLine(owlentitysvg);
+                this.addLeftLine(owlentitysvg, this.titles[counter]);
+                counter++;
             }
             for (const owlentitysvg of this.entity2.classessvg) {
-                this.addRightLine(owlentitysvg);
+                this.addRightLine(owlentitysvg, this.titles[counter]);
+                counter++;
             }
             for (const owlentitysvg of this.entity2.objpropssvg) {
-                this.addRightLine(owlentitysvg);
+                this.addRightLine(owlentitysvg, this.titles[counter]);
+                counter++;
             }
             for (const owlentitysvg of this.entity2.datapropssvg) {
-                this.addRightLine(owlentitysvg);
+                this.addRightLine(owlentitysvg, this.titles[counter]);
+                counter++;
             }
         } else {
             for (const owlentitysvg1 of this.entity1.classessvg) {
@@ -182,21 +221,23 @@ export class RuleSVG {
         }
     }
 
-    addLeftLine(owlentitysvg: OwlEntitySVG) {
+    addLeftLine(owlentitysvg: OwlEntitySVG, title: string) {
         const line: Line = {
             x1: this.startx,
             y1: this.cy,
             x2: owlentitysvg.endx,
-            y2: owlentitysvg.cy
+            y2: owlentitysvg.cy,
+            title: title
         };
         this.lines.push(line);
     }
-    addRightLine(owlentitysvg: OwlEntitySVG) {
+    addRightLine(owlentitysvg: OwlEntitySVG, title: string) {
         const line: Line = {
             x1: this.endx,
             y1: this.cy,
             x2: owlentitysvg.endx,
-            y2: owlentitysvg.cy
+            y2: owlentitysvg.cy,
+            title: title
         };
         this.lines.push(line);
     }
@@ -205,7 +246,8 @@ export class RuleSVG {
             x1: owlentitysvg1.endx,
             y1: owlentitysvg1.cy,
             x2: owlentitysvg2.endx,
-            y2: owlentitysvg2.cy
+            y2: owlentitysvg2.cy,
+            title: null
         };
         this.lines.push(line);
     }

@@ -122,7 +122,7 @@ export class OwlEntitySVG {
     calcWidth(depth: number) {
         this.width = 0;
         if (this.visible) {
-            this.width = depth*3*this.r + this.textLength;
+            this.width = depth*3*this.r + this.textLength + 2;
             for (const child of this.children) {
                 let newwidth=0;
                 newwidth = child.calcWidth(depth+1);

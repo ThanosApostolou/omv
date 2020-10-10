@@ -105,6 +105,7 @@ class RuleEntity {
     private void addOwlEntity(JsonObject obj, String type) {
         JsonObject newowlentity = new JsonObject();
         newowlentity.put("pid", obj.getString("pid"));
+        newowlentity.put("index", obj.getInteger("index"));
         if (type.equals("class")) {
             newowlentity.put("iri", obj.getString("classuri"));
             this.classes.add(newowlentity);
