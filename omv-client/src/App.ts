@@ -2,6 +2,7 @@ import { Buildinfo } from "./Buildinfo";
 import { VueRoot } from "./gui/VueRoot";
 import { ApiConsumer } from "./ApiConsumer";
 import { SettingsManager } from "./SettingsManager";
+import { Visualization } from "./entities/Visualization";
 
 export class App {
     /** @type {App} */  static app: App;
@@ -9,6 +10,7 @@ export class App {
     /** @type {SettingsManager} */ settingsmanager: SettingsManager;
     /** @type {ApiConsumer} */ apiconsumer: ApiConsumer;
     /** @type {VueRoot} */ vueroot: VueRoot;
+    visualization: Visualization = null;
 
     constructor() {
         App.app = this;

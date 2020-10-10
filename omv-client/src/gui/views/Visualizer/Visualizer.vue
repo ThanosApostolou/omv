@@ -131,16 +131,32 @@ export default {
             formData.append("mapping", this.mapping);
             App.app.apiconsumer.postVisualization(formData).then((response) => {
                 this.result = Visualization.fromObject(response.data.visualization);
+                App.app.visualization = this.result;
                 this.expansionPanel.value = [];
                 this.successful = true;
             }).catch((error) => {
                 this.result = error;
+                App.app.visualization = null;
                 console.log(error);
                 this.successful = false;
             }).finally(() => {
                 this.ready = true;
                 this.submitBtn.disabled = false;
             });
+        }
+    },
+    created() {
+        if (App.app.visualization == null) {
+            this.ready = false;
+            this.submited = false;
+            this.successful = false;
+            this.result = {};
+        } else {
+            this.result = App.app.visualization;
+            this.submited = true;
+            this.successful = true;
+            this.ready = true;
+            this.expansionPanel.value = [];
         }
     }
 };
