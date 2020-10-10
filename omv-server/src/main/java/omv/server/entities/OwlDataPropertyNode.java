@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Stream;
 
+import org.semanticweb.owlapi.model.OWLAnnotation;
 import org.semanticweb.owlapi.model.OWLAnnotationAssertionAxiom;
 import org.semanticweb.owlapi.model.OWLDataProperty;
 import org.semanticweb.owlapi.model.OWLOntology;
@@ -43,8 +44,9 @@ public class OwlDataPropertyNode {
         this.iri = dataprop.toStringID();
         this.name = this.iri.split("#")[1];
         Stream<OWLAnnotationAssertionAxiom> found_annotations = this.owlontology.annotationAssertionAxioms(this.dataprop.getIRI());
-        for (OWLAnnotationAssertionAxiom found_annotation : found_annotations.toArray(OWLAnnotationAssertionAxiom[]::new)) {
-            Annotation myannotation = Annotation.fromStrings(found_annotation.getProperty().toString(), found_annotation.getValue().toString());
+        for (OWLAnnotationAssertionAxiom found_annotation_axiom : found_annotations.toArray(OWLAnnotationAssertionAxiom[]::new)) {
+            OWLAnnotation found_owlannotation = found_annotation_axiom.getAnnotation();
+            Annotation myannotation = Annotation.fromOwlAnnotation(found_owlannotation);
             this.annotations.add(myannotation);
         }
         this.label = Annotation.getLabel(this.annotations);

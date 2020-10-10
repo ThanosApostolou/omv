@@ -1,24 +1,33 @@
 <template>
     <div>
-        <svg :x="0" :y="0" :height="this.height" :width="this.width">
+        <svg :x="0" :y="0" :height="owlentitysvg.height" :width="owlentitysvg.width">
             <OwlEntityNodeSVG :owlentitysvg="owlentitysvg" @show-entity="showEntity" />
         </svg>
-        <v-dialog v-if="show" v-model="show">
+        <v-dialog v-if="showdialog" v-model="showdialog" max-width="1400">
             <v-card>
-                <span> {{ selectedOwlEntity.label }}</span>
+                <v-card-actions>
+                    <v-spacer />
+                    <v-btn icon @click="showdialog = false">
+                        <v-icon>close</v-icon>
+                    </v-btn>
+                </v-card-actions>
+                <OwlEntityInfoComp :owlentity="selectedOwlEntity" />
             </v-card>
         </v-dialog>
     </div>
 </template>
 
 <script>
+import { OwlEntitySVG } from "./OwlEntitySVG";
+
 import OwlEntityNodeSVG from "./OwlEntityNodeSVG.vue";
-import { OwlEntitySVG } from "./OwlEntitySVG.js";
+import OwlEntityInfoComp from "./OwlEntityInfoComp.vue";
 
 export default {
     name: "OwlEntityComp",
     components: {
-        OwlEntityNodeSVG
+        OwlEntityNodeSVG,
+        OwlEntityInfoComp
     },
     props: {
         owlentity: {
@@ -36,17 +45,15 @@ export default {
     },
     data() {
         return {
-            show: false,
+            showdialog: false,
             selectedOwlEntity: null,
-            owlentitysvg: null,
-            width: 0,
-            height: 0
+            owlentitysvg: null
         };
     },
     methods: {
-        showEntity(owlentity) {
-            this.selectedOwlEntity = owlentity;
-            this.show = true;
+        showEntity(owlentitysvg) {
+            this.selectedOwlEntity = owlentitysvg.owlentity;
+            this.showdialog = true;
         }
     },
     created() {
@@ -54,8 +61,6 @@ export default {
         this.owlentitysvg.calcVisibility(null, "");
         this.owlentitysvg.calcWidth(1);
         this.owlentitysvg.calcPositions(0, 0);
-        this.width = this.owlentitysvg.width;
-        this.height = this.owlentitysvg.height;
     }
 };
 </script>

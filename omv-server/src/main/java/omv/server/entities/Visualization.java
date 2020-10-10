@@ -17,9 +17,9 @@ public class Visualization {
             this.owl1 = new OwlInfo(owl1Object);
             this.owl2 = new OwlInfo(owl2Object);
             this.mapping = new Mapping();
-            this.mapping.init(mappingobject);
-            this.markEntitiesByRule(1);
-            this.markEntitiesByRule(2);
+            this.mapping.init(mappingobject, this);
+            //this.markEntitiesByRule(1);
+            //this.markEntitiesByRule(2);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -30,15 +30,12 @@ public class Visualization {
         ArrayList<String> relations = new ArrayList<String>();
         relations.add("Equivalent");
         relations.add("LinkedWith");
-        relations.add("Other");
         for (String relation : relations) {
             ArrayList<Rule> rules;
             if (relation.equals("Equivalent")) {
-                rules = this.mapping.equivalent;
-            } else if (relation.equals("LinkedWith")) {
-                rules = this.mapping.linkedwith;
+                rules = this.mapping.classrules;
             } else {
-                rules = this.mapping.other;
+                rules = this.mapping.proprules;
             }
             for (Rule rule : rules) {
                 RuleEntity rulentity = (owlnumber == 1) ? rule.entity1 : rule.entity2;

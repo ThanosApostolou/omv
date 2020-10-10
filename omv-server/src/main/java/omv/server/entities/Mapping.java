@@ -1,38 +1,51 @@
 package omv.server.entities;
 
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import io.vertx.core.json.JsonObject;
 
 public class Mapping {
+    public Visualization visualization = null;
     public String owl1iri;
     public String owl2iri;
-    public ArrayList<Rule> equivalent;
-    public ArrayList<Rule> linkedwith;
-    public ArrayList<Rule> other;
+    public ArrayList<Rule> classrules;
+    public ArrayList<Rule> proprules;
+    String error = null;
 
     public Mapping() {
         this.owl1iri = "";
         this.owl2iri = "";
-        this.equivalent = new ArrayList<Rule>();
-        this.linkedwith = new ArrayList<Rule>();
-        this.other = new ArrayList<Rule>();
+        this.classrules = new ArrayList<Rule>();
+        this.proprules = new ArrayList<Rule>();
     }
 
-    public void init(JsonObject mappingobject) {
+    public void init(JsonObject mappingobject, Visualization visualization) {
+        this.visualization = visualization;
         this.owl1iri = mappingobject.getJsonObject("ontologies").getJsonObject("ontA").getString("uri");
         this.owl2iri = mappingobject.getJsonObject("ontologies").getJsonObject("ontB").getString("uri");
+        if (!this.visualization.owl1.iri.equals(this.owl1iri) || !this.visualization.owl2.iri.equals(this.owl2iri)) {
+            this.error = "Wrong owl ontologies. Expected: (Left owl: " + this.owl1iri + ", Right owl: " + this.owl2iri +")";
+            return;
+        }
+        AtomicInteger index = new AtomicInteger();
+        index.set(0);
         mappingobject.getJsonObject("correspondences").getJsonArray("jsonarray").forEach((obj) -> {
             JsonObject ruleobject = (JsonObject) obj;
             Rule rule = new Rule();
             rule.init(ruleobject);
-            if (rule.relation.equals("Equivalent")) {
-                this.equivalent.add(rule);
-            } else if (rule.relation.equals("Linked With")) {
-                this.linkedwith.add(rule);
+            rule.label = "MR" + index.get();
+            if (rule.entity1.objectprops.isEmpty() && rule.entity1.dataprops.isEmpty() &&
+                rule.entity2.objectprops.isEmpty() && rule.entity2.dataprops.isEmpty()) {
+                //int index = this.classrules.size();
+                //rule.label = "cr" + index ;
+                this.classrules.add(rule);
             } else {
-                this.other.add(rule);
+                //int index = this.proprules.size();
+                //rule.label = "pr" + index ;
+                this.proprules.add(rule);
             }
+            index.set(index.get()+1);
         });
     }
 
@@ -40,9 +53,9 @@ public class Mapping {
         JsonObject mappingjsonobject = new JsonObject();
         mappingjsonobject.put("owl1iri", this.owl1iri);
         mappingjsonobject.put("owl2iri", this.owl2iri);
-        mappingjsonobject.put("equivalent", Rule.listToJsonArray(this.equivalent));
-        mappingjsonobject.put("linkedwith", Rule.listToJsonArray(this.linkedwith));
-        mappingjsonobject.put("other", Rule.listToJsonArray(this.other));
+        mappingjsonobject.put("classrules", Rule.listToJsonArray(this.classrules));
+        mappingjsonobject.put("proprules", Rule.listToJsonArray(this.proprules));
+        mappingjsonobject.put("error", this.error);
         return mappingjsonobject;
     }
 

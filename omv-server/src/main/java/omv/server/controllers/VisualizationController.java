@@ -43,6 +43,26 @@ public class VisualizationController {
             } else {
                 this.rtxmanager.fail(new Throwable("400::"));
             }
+        } else if ((uploads != null && uploads.size() == 2)) {
+            for(FileUpload upload : uploads) {
+                owl1 = upload.name().equals("owl1") ? upload : owl1;
+                mapping = upload.name().equals("mapping") ? upload : mapping;
+            };
+            if (owl1 != null && owl1.contentType().equals("application/rdf+xml") &&
+                mapping != null && mapping.contentType().equals("application/json")) {
+                new VisualizationAction().createNoreference(owl1.uploadedFileName(),
+                                                 mapping.uploadedFileName()).onComplete((ar) -> {
+                    if (ar.succeeded()) {
+                        this.rtxmanager.responsebody.put("success", true);
+                        this.rtxmanager.responsebody.put("visualization", ar.result().toJsonObject());
+                        this.rtxmanager.sendResponse();
+                    } else {
+                        this.rtxmanager.fail(ar.cause());
+                    }
+                });
+            } else {
+                this.rtxmanager.fail(new Throwable("400::"));
+            }
         } else {
             this.rtxmanager.fail(new Throwable("400::"));
         }

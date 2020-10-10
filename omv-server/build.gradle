@@ -14,9 +14,9 @@ def watchForChange = 'src/**/*'
 def doOnChange = './gradlew classes'
 ext {
     guavaVersion = '29.0'
-    vertxVersion = '3.9.2'
-    junitJupiterVersion = '5.6.2'
-    owlapiVersion = "5.1.14"
+    vertxVersion = '3.9.3'
+    junitJupiterVersion = '5.7.0'
+    owlapiVersion = "5.1.16"
     slf4jVersion = "1.7.30"
 }
 
@@ -39,7 +39,7 @@ dependencies {
 
 wrapper {
     distributionType = Wrapper.DistributionType.BIN
-    gradleVersion = "6.5.1"
+    gradleVersion = "6.6.1"
 }
 
 application {

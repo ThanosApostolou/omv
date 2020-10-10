@@ -1,29 +1,41 @@
 <template>
     <div>
-        <v-row>
-            <v-col cols="5">
-                <p>
-                    {{ visualization.owl1.label }}
-                    <v-btn icon color="primary" @click="owl1info()">
-                        <v-icon>info</v-icon>
-                    </v-btn>
-                </p>
-            </v-col>
-            <v-col cols="2" class="col2">
-                <v-select v-bind="mappingSelect" v-model="selectModel" @change="selectChanged">
-                    asd
-                </v-select>
-            </v-col>
-            <v-col cols="5" class="col3">
-                <p>
-                    {{ visualization.owl2.label }}
-                    <v-btn icon color="primary" @click="owl2info()">
-                        <v-icon>info</v-icon>
-                    </v-btn>
-                </p>
-            </v-col>
-        </v-row>
-        <v-dialog v-model="showdialog">
+        <div class="">
+            <v-row>
+                <v-col cols="6" lg="4" order="1">
+                    <p>
+                        {{ visualization.owl1.label }}
+                        <v-btn icon color="primary" @click="owl1info()">
+                            <v-icon>info</v-icon>
+                        </v-btn>
+                    </p>
+                </v-col>
+                <v-col v-if="receivedvisualization.mapping.error == null" class="col2" cols="12" sm="12" lg="4" order="3" order-lg="2">
+                    <v-row class="col2">
+                        <v-tabs centered v-model="displayTab">
+                            <v-tab key="statistics">
+                                Statistics
+                            </v-tab>
+                            <v-tab key="epoptic">
+                                Epoptic View
+                            </v-tab>
+                            <v-tab key="byrule">
+                                View By Rule
+                            </v-tab>
+                        </v-tabs>
+                    </v-row>
+                </v-col>
+                <v-col cols="6" lg="4" class="col3" order="2" order-lg="3">
+                    <p>
+                        {{ visualization.owl2.label }}
+                        <v-btn icon color="primary" @click="owl2info()">
+                            <v-icon>info</v-icon>
+                        </v-btn>
+                    </p>
+                </v-col>
+            </v-row>
+        </div>
+        <v-dialog v-model="showdialog" max-width="1400">
             <v-card>
                 <v-card-actions>
                     <v-spacer />
@@ -31,26 +43,40 @@
                         <v-icon>close</v-icon>
                     </v-btn>
                 </v-card-actions>
-                <OwlInfoComp :owl="current_owl" :key="current_owl_key" />
+                <OwlInfoComp :owl="currentOwl" :key="currentOwlkey" />
             </v-card>
         </v-dialog>
-        <v-divider />
-        <div class="center">
-            <OwlMappingComp v-if="rules != []" :owl1="visualization.owl1" :owl2="visualization.owl2" :rules="rules" type="class" :reverse="false" :visibility-type.camel="selectModel" :key="selectModel" />
-        </div>
+        <v-tabs-items v-if="receivedvisualization.mapping.error == null" v-model="displayTab">
+            <v-tab-item key="statistics">
+                <VisualizationStatisticsComp :statistics="visualization.statistics" />
+            </v-tab-item>
+            <v-tab-item key="epoptic">
+                <VisualizationEpopticComp :visualization="visualization" />
+            </v-tab-item>
+            <v-tab-item key="byrule">
+                <VisualizationByruleComp :visualization="visualization" />
+            </v-tab-item>
+        </v-tabs-items>
+        <v-row v-if="receivedvisualization.mapping.error != null" class="justify-center text-center">
+            <p>{{ receivedvisualization.mapping.error }}</p>
+        </v-row>
     </div>
 </template>
 
 <script>
-import { Visualization } from "../../../entities/Visualization.js";
-
+import { Visualization } from "../../../entities/Visualization.ts";
 import OwlInfoComp from "./OwlInfoComp.vue";
-import OwlMappingComp from "./OwlMappingComp.vue";
+import VisualizationEpopticComp from "./VisualizationEpopticComp";
+import VisualizationByruleComp from "./VisualizationByruleComp";
+import VisualizationStatisticsComp from "./VisualizationStatisticsComp";
+
 export default {
     name: "VisualizationComp",
     components: {
         OwlInfoComp,
-        OwlMappingComp
+        VisualizationEpopticComp,
+        VisualizationByruleComp,
+        VisualizationStatisticsComp
     },
     props: {
         receivedvisualization: {
@@ -62,48 +88,22 @@ export default {
         return {
             visualization: this.receivedvisualization,
             showdialog: false,
-            current_owl: {},
-            current_owl_key: null,
-            selectModel: "AllRules",
-            mappingSelect: {
-                label: "Mapping Rules:",
-                items: [
-                    "AllRules",
-                    "EquivalentRules",
-                    "LinkedWithRules",
-                    "OtherRules"
-                ]
-            },
-            rules: []
+            currentOwl: {},
+            currentOwlkey: null,
+            displayTab: null
         };
     },
     methods: {
         owl1info() {
-            this.current_owl = this.visualization.owl1;
-            this.current_owl_key = "owl1";
+            this.currentOwl = this.visualization.owl1;
+            this.currentOwlkey = "owl1";
             this.showdialog = true;
         },
         owl2info() {
-            this.current_owl = this.visualization.owl2;
-            this.current_owl_key = "owl2";
+            this.currentOwl = this.visualization.owl2;
+            this.currentOwlkey = "owl2";
             this.showdialog = true;
-        },
-        selectChanged() {
-            console.log(this.selectModel);
-            this.rules = [];
-            if (this.selectModel == "AllRules") {
-                this.rules = this.visualization.mapping.equivalent.concat(this.visualization.mapping.linkedwith.concat(this.visualization.mapping.other));
-            } else if (this.selectModel == "EquivalentRules") {
-                this.rules = this.visualization.mapping.equivalent;
-            } else if (this.selectModel == "LinkedWithRules") {
-                this.rules = this.visualization.mapping.linkedwith;
-            } else {
-                this.rules = this.visualization.mapping.other;
-            }
         }
-    },
-    created() {
-        this.selectChanged();
     }
 };
 </script>

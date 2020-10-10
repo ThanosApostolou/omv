@@ -1,7 +1,8 @@
 package omv.server;
 
-import org.semanticweb.owlapi.apibinding.OWLManager;
-import org.semanticweb.owlapi.model.OWLOntologyManager;
+import java.io.IOException;
+import java.io.InputStream;
+
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
 import io.vertx.core.Vertx;
@@ -10,22 +11,20 @@ import io.vertx.core.file.FileSystem;
 public class App extends AbstractVerticle {
     public static App app;
     public String VERTXWEB_ENVIRONMENT;
-    public DBManager dbmanager=null;
-    public WebServer webserver=null;
-    public FileSystem fs=null;
-    public Runtime runtime=null;
-    public OWLOntologyManager owlmanager=null;
-    public JWTManager jwtmanager=null;
+    public DBManager dbmanager = null;
+    public WebServer webserver = null;
+    public FileSystem fs = null;
+    public Runtime runtime = null;
+    public JWTManager jwtmanager = null;
 
     @Override
-    public void start(Promise<Void> promise) {
+    public void start(Promise<Void> promise) throws IOException {
         App.app = this;
         this.VERTXWEB_ENVIRONMENT = System.getenv("VERTXWEB_ENVIRONMENT");
         this.dbmanager = new DBManager();
         this.webserver = new WebServer();
         this.fs = vertx.fileSystem();
         this.runtime = new Runtime();
-        this.owlmanager = OWLManager.createOWLOntologyManager();
         this.jwtmanager = new JWTManager();
 
         Promise<Void> databasePromise = Promise.promise();
@@ -55,5 +54,14 @@ public class App extends AbstractVerticle {
                 System.out.println(message);
             }
         }
+    }
+
+    public static InputStream readResourceStream (String source) throws IOException {
+        InputStream stream = App.app.getClass().getClassLoader().getResourceAsStream(source);
+        return stream;
+    }
+    public static String readResourcePath (String source) {
+        String path = App.app.getClass().getClassLoader().getResource(source).getPath();
+        return path;
     }
 }
