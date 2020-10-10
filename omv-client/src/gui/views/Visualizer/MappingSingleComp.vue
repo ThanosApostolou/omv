@@ -57,7 +57,9 @@
                     </v-col>
                 </v-row>
             </v-card-text>
-            <MappingSvgComp :mappingsvg="mappingsvg" @show-entity="showEntity" />
+            <v-card color="grey lighten-3">
+                <MappingSvgComp :mappingsvg="mappingsvg" @show-entity="showEntity" />
+            </v-card>
             <TransformationComp v-if="rule.directTransformation != null" :transformation="rule.directTransformation" @show-entity="showEntity" />
             <TransformationComp v-if="rule.inverseTransformation != null" :transformation="rule.inverseTransformation" @show-entity="showEntity" />
         </v-card>

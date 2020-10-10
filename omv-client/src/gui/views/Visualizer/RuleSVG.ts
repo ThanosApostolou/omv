@@ -60,6 +60,15 @@ export class RuleSVG {
         return rulessvg;
     }
 
+    isOneForOne(): boolean {
+        if (this.entity1.classessvg.length == 1 && this.entity2.classessvg.length == 1 &&
+            this.entity1.objpropssvg.length == 0 && this.entity1.datapropssvg.length == 0 &&
+            this.entity2.objpropssvg.length == 0 && this.entity2.datapropssvg.length == 0) {
+            return true;
+        }
+        return false;
+    }
+
     /** calculate positions for RuleSVG[] list starting from x an y parameters
     */
     static listInit(rulessvg: RuleSVG[], x: number, y: number, showBox: boolean) {
