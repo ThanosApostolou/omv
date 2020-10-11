@@ -9,9 +9,9 @@
                     Mapping Rules
                 </v-card-title>
                 <v-card-text>
-                    <p>There are total {{ statistics.numberofAllRules }} Rules.</p>
-                    <p>There are {{ statistics.numberofClassRules }} ({{ statistics.percentClassRules }}%) Class Rules which connect only classes with each ontology.</p>
-                    <p>There are {{ statistics.numberofPropRules }} ({{ statistics.percentPropRules }}%) Properties Rules which connect classes, object properties and data properties with each ontology.</p>
+                    <p>There are total <b>{{ statistics.numberofAllRules }}</b> Rules.</p>
+                    <p>There are <b>{{ statistics.numberofClassRules }}</b> (<b>{{ statistics.percentClassRules }}%</b>) Class Rules which connect only classes with each ontology.</p>
+                    <p>There are <b>{{ statistics.numberofPropRules }}</b> (<b>{{ statistics.percentPropRules }}%</b>) Properties Rules which connect classes, object properties and data properties with each ontology.</p>
                 </v-card-text>
             </v-card>
             <v-card outlined>
@@ -24,55 +24,61 @@
                     </p>
                     <div v-for="(child1, index1) in owl2.owlclasses.children" :key="index1">
                         <v-row v-if="child1.totalclassrules > 0 || child1.totalproprules > 0">
-                            <v-col cols="3" md="2">
-                                <b>"{{ child1.label }}"</b> has:
+                            <v-col cols="3" lg="2">
+                                <v-container fluid>
+                                    <OwlEntitySingleSvg :owlentity="child1" entity-type="class" position="left" @show-entity="showEntity" /> has:
+                                </v-container>
                             </v-col>
-                            <v-col cols="3" md="2">
+                            <v-col cols="3" lg="2">
                                 <v-row>
-                                    {{ child1.totalclassrules }} Class Rules
+                                    <p><b>{{ child1.totalclassrules }}</b> Class Rules</p>
                                 </v-row>
                                 <v-row>
-                                    {{ child1.totalproprules }} Properties Rules
+                                    <p><b>{{ child1.totalproprules }}</b> Properties Rules</p>
                                 </v-row>
                                 <v-row v-if="child1.children.length > 0">
-                                    of which:
+                                    <p>of which:</p>
                                 </v-row>
                             </v-col>
-                            <v-col cols="3" md="2" />
-                            <v-col cols="3" md="2" />
+                            <v-col cols="3" lg="2" />
+                            <v-col cols="3" lg="2" />
                         </v-row>
                         <div v-for="(child2, index2) in child1.children" :key="index2">
                             <v-row v-if="child2.totalclassrules > 0 || child2.totalproprules > 0">
-                                <v-col cols="3" md="2" />
-                                <v-col cols="3" md="2">
-                                    <b>"{{ child2.label }}"</b> has:
+                                <v-col cols="3" lg="2" />
+                                <v-col cols="3" lg="2">
+                                    <v-container fluid>
+                                        <OwlEntitySingleSvg :owlentity="child2" entity-type="class" position="left" @show-entity="showEntity" /> has:
+                                    </v-container>
                                 </v-col>
-                                <v-col cols="3" md="2">
+                                <v-col cols="3" lg="2">
                                     <v-row>
-                                        {{ child2.totalclassrules }} Class Rules
+                                        <p><b>{{ child2.totalclassrules }}</b> Class Rules</p>
                                     </v-row>
                                     <v-row>
-                                        {{ child2.totalproprules }} Properties Rules
+                                        <p><b>{{ child2.totalproprules }}</b> Properties Rules</p>
                                     </v-row>
                                     <v-row v-if="child2.children.length > 0">
                                         of which:
                                     </v-row>
                                 </v-col>
-                                <v-col cols="3" md="2" />
+                                <v-col cols="3" lg="2" />
                             </v-row>
                             <div v-for="(child3, index3) in child2.children" :key="index3">
                                 <v-row v-if="child3.totalclassrules > 0 || child3.totalproprules > 0">
-                                    <v-col cols="3" md="2" />
-                                    <v-col cols="3" md="2" />
-                                    <v-col cols="3" md="2">
-                                        <b>"{{ child3.label }}"</b> has:
+                                    <v-col cols="3" lg="2" />
+                                    <v-col cols="3" lg="2" />
+                                    <v-col cols="3" lg="2">
+                                        <v-container fluid>
+                                            <OwlEntitySingleSvg :owlentity="child3" entity-type="class" position="left" @show-entity="showEntity" /> has:
+                                        </v-container>
                                     </v-col>
-                                    <v-col cols="3" md="2">
+                                    <v-col cols="3" lg="2">
                                         <v-row>
-                                            {{ child3.totalclassrules }} Class Rules
+                                            <p><b>{{ child3.totalclassrules }}</b> Class Rules</p>
                                         </v-row>
                                         <v-row>
-                                            {{ child3.totalproprules }} Properties Rules
+                                            <p><b>{{ child3.totalproprules }}</b> Properties Rules</p>
                                         </v-row>
                                     </v-col>
                                 </v-row>
@@ -88,36 +94,55 @@
                 <v-card-text>
                     <v-row class="text-start">
                         <v-col>
-                            "<b>{{ owl1.label }}</b>" Ontology Includes:
+                            <p>"<b>{{ owl1.label }}</b>" Ontology Includes:</p>
                         </v-col>
                         <v-col>
-                            <p>{{ owl1.owlclasses.size() }} Classes</p>
-                            <p>{{ owl1.owlobjprops.size() }} Object Properties</p>
-                            <p>{{ owl1.owldataprops.size() }} Data Properties</p>
-                            <p>{{ owl1.annotationproperties.length }} Annotation Properties</p>
+                            <p><b>{{ owl1.owlclasses.size() }}</b> Classes</p>
+                            <p><b>{{ owl1.owlobjprops.size() }}</b> Object Properties</p>
+                            <p><b>{{ owl1.owldataprops.size() }}</b> Data Properties</p>
+                            <p><b>{{ owl1.annotationproperties.length }}</b> Annotation Properties</p>
                         </v-col>
                     </v-row>
                     <v-row class="text-start">
                         <v-col>
-                            "<b>{{ owl2.label }}</b>" Ontology Includes:
+                            <p>"<b>{{ owl2.label }}</b>" Ontology Includes:</p>
                         </v-col>
                         <v-col>
-                            <p>{{ owl2.owlclasses.size() }} Classes</p>
-                            <p>{{ owl2.owlobjprops.size() }} Object Properties</p>
-                            <p>{{ owl2.owldataprops.size() }} Data Properties</p>
-                            <p>{{ owl2.annotationproperties.length }} Annotation Properties</p>
+                            <p><b>{{ owl2.owlclasses.size() }}</b> Classes</p>
+                            <p><b>{{ owl2.owlobjprops.size() }}</b> Object Properties</p>
+                            <p><b>{{ owl2.owldataprops.size() }}</b> Data Properties</p>
+                            <p><b>{{ owl2.annotationproperties.length }}</b> Annotation Properties</p>
                         </v-col>
                     </v-row>
                 </v-card-text>
             </v-card>
         </v-card>
+        <v-dialog v-if="showdialog" v-model="showdialog" max-width="1400">
+            <v-card>
+                <v-card-actions>
+                    <v-spacer />
+                    <v-btn icon @click="showdialog = false">
+                        <v-icon>close</v-icon>
+                    </v-btn>
+                </v-card-actions>
+                <OwlEntityInfoComp :owlentity="selectedOwlEntity" />
+            </v-card>
+        </v-dialog>
     </div>
 </template>
 
 <script>
 import { Statistics } from "@/entities/Statistics";
+
+import OwlEntitySingleSvg from "./OwlEntitySingleSvg.vue";
+import OwlEntityInfoComp from "./OwlEntityInfoComp.vue";
+
 export default {
     name: "VisualizationStatisticsComp",
+    components: {
+        OwlEntitySingleSvg,
+        OwlEntityInfoComp
+    },
     props: {
         statistics: {
             type: Statistics,
@@ -127,9 +152,23 @@ export default {
     data() {
         return {
             owl1: this.statistics.visualization.owl1,
-            owl2: this.statistics.visualization.owl2
+            owl2: this.statistics.visualization.owl2,
+            showdialog: false,
+            selectedOwlEntity: null
         };
-    }
+    },
+    methods: {
+        showEntity(owlentitysvg) {
+            this.selectedOwlEntity = owlentitysvg.owlentity;
+            this.showdialog = true;
+        }
+    },
 
 };
 </script>
+
+<style scoped>
+.p {
+    min-width: 200px;
+}
+</style>

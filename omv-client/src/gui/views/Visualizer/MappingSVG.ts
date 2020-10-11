@@ -59,6 +59,10 @@ export class MappingSVG {
 
         owl1height = Math.max(owl1height, owl2height);
         owl2height = Math.max(owl1height, owl2height);
+        //if (this.rulessvg.length > 1) {
+        owl1height += 16;
+        owl2height += 16;
+        //}
 
         this.owl1objpropssvg.calcPositions(0, owl1height);
         owl1height += this.owl1objpropssvg.height;
