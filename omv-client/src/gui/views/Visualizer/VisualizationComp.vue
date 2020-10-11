@@ -35,7 +35,7 @@
                 </v-col>
             </v-row>
         </div>
-        <v-dialog v-model="showdialog" max-width="1400">
+        <v-dialog v-if="showdialog" v-model="showdialog" max-width="1400">
             <v-card>
                 <v-card-actions>
                     <v-spacer />
@@ -48,13 +48,13 @@
         </v-dialog>
         <v-tabs-items v-if="receivedvisualization.mapping.error == null" v-model="displayTab">
             <v-tab-item key="statistics">
-                <VisualizationStatisticsComp :statistics="visualization.statistics" />
+                <VisualizationStatisticsComp v-if="displayTab == 0" :statistics="visualization.statistics" />
             </v-tab-item>
             <v-tab-item key="epoptic">
-                <VisualizationEpopticComp :visualization="visualization" />
+                <VisualizationEpopticComp v-if="displayTab == 1" :visualization="visualization" />
             </v-tab-item>
             <v-tab-item key="byrule">
-                <VisualizationByruleComp :visualization="visualization" />
+                <VisualizationByruleComp v-if="displayTab == 2" :visualization="visualization" />
             </v-tab-item>
         </v-tabs-items>
         <v-row v-if="receivedvisualization.mapping.error != null" class="justify-center text-center">

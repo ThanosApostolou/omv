@@ -29,6 +29,7 @@ export class SettingsManager {
                 this.server = settingsobject.server;
                 this.isServerDefault = false;
             }
+            App.app.apiconsumer.setServer(this.server);
         } else {
             this.setServer(null);
         }
