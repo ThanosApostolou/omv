@@ -2,13 +2,14 @@ import axios, { AxiosStatic, AxiosPromise } from "axios";
 import { App } from "./App";
 
 export class ApiConsumer {
-    baseurl: string;
     axios: AxiosStatic;
 
     constructor() {
-        this.baseurl = App.app.settingsmanager.defaultServer + "/api/";
         this.axios = axios;
-        this.axios.defaults.baseURL = this.baseurl;
+    }
+
+    setServer(server: string) {
+        this.axios.defaults.baseURL = server + "/api";
     }
 
     postVisualization(data: any): AxiosPromise {
