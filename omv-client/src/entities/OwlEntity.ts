@@ -4,6 +4,7 @@ import { Rule } from "./Rule";
 
 export class OwlEntity {
     owlinfo: OwlInfo = null;
+    type: string = "";
     iri: string = "";
     name: string = "";
     label: string = "";
@@ -12,21 +13,23 @@ export class OwlEntity {
     proprules: Rule[] = [];
     totalclassrules: number = 0;
     totalproprules: number = 0;
+    parametervalues: OwlEntity[] = [];
     children: OwlEntity[] = [];
 
     /** @param {object} owlentityobject
      *  @returns {OwlEntity}
      */
-    static fromObject(owlentityobject: any, owlinfo: OwlInfo): OwlEntity {
+    static fromObject(owlentityobject: any, owlinfo: OwlInfo, type: string): OwlEntity {
         const owlentity = new OwlEntity();
         owlentity.owlinfo = owlinfo;
+        owlentity.type = type;
         owlentity.iri = owlentityobject.iri;
         owlentity.name = owlentityobject.name;
         owlentity.label = owlentityobject.label;
         owlentity.annotations = Annotation.listFromObject(owlentityobject.annotations);
         owlentity.children = [];
         for (const child of owlentityobject.children) {
-            owlentity.children.push(OwlEntity.fromObject(child, owlinfo));
+            owlentity.children.push(OwlEntity.fromObject(child, owlinfo, type));
         }
         return owlentity;
     }
@@ -34,6 +37,19 @@ export class OwlEntity {
         Annotation.listFindEntities(rootentity.annotations, rootentity.owlinfo);
         for (const child of rootentity.children) {
             OwlEntity.findAnnotationEntities(child);
+        }
+    }
+
+    findParameterValues() {
+        for (const annotation of this.annotations) {
+            if (annotation.valueentity != null) {
+                if (annotation.property.label == "Parameter Value") {
+                    this.parametervalues.push(annotation.valueentity);
+                }
+            }
+        }
+        for (const child of this.children) {
+            child.findParameterValues();
         }
     }
 

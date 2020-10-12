@@ -1,3 +1,4 @@
+import { OwlEntity } from "@/entities/OwlEntity";
 import { Rule } from "../../../entities/Rule";
 import { OwlEntitySVG } from "./OwlEntitySVG";
 
@@ -5,6 +6,7 @@ interface OwlInfoEntitySvgs {
     classessvg: OwlEntitySVG[];
     objpropssvg: OwlEntitySVG[];
     datapropssvg: OwlEntitySVG[];
+    parametervalues: OwlEntity[];
 }
 interface Line {
     x1: number;
@@ -19,12 +21,14 @@ export class RuleSVG {
     entity1: OwlInfoEntitySvgs = {
         classessvg: [],
         objpropssvg: [],
-        datapropssvg: []
+        datapropssvg: [],
+        parametervalues: []
     };
     entity2: OwlInfoEntitySvgs = {
         classessvg: [],
         objpropssvg: [],
-        datapropssvg: []
+        datapropssvg: [],
+        parametervalues: []
     };
 
     r: number = 8;
@@ -154,7 +158,41 @@ export class RuleSVG {
                 this.titles.push("parameter " + entityobj.index);
             }
         }
+        this.findParameterValues();
         this.findLines();
+    }
+
+    findParameterValues() {
+        for (const owlentitysvg of this.entity1.classessvg) {
+            for (const parametervalue of owlentitysvg.owlentity.parametervalues) {
+                this.entity1.parametervalues.push(parametervalue);
+            }
+        }
+        for (const owlentitysvg of this.entity1.objpropssvg) {
+            for (const parametervalue of owlentitysvg.owlentity.parametervalues) {
+                this.entity1.parametervalues.push(parametervalue);
+            }
+        }
+        for (const owlentitysvg of this.entity1.datapropssvg) {
+            for (const parametervalue of owlentitysvg.owlentity.parametervalues) {
+                this.entity1.parametervalues.push(parametervalue);
+            }
+        }
+        for (const owlentitysvg of this.entity2.classessvg) {
+            for (const parametervalue of owlentitysvg.owlentity.parametervalues) {
+                this.entity2.parametervalues.push(parametervalue);
+            }
+        }
+        for (const owlentitysvg of this.entity2.objpropssvg) {
+            for (const parametervalue of owlentitysvg.owlentity.parametervalues) {
+                this.entity2.parametervalues.push(parametervalue);
+            }
+        }
+        for (const owlentitysvg of this.entity2.datapropssvg) {
+            for (const parametervalue of owlentitysvg.owlentity.parametervalues) {
+                this.entity2.parametervalues.push(parametervalue);
+            }
+        }
     }
 
     findLines(): void {
