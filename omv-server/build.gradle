@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.github.ThanosApostolou.omv"
-version = "0.2.0"
+version = "1.0.0"
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 

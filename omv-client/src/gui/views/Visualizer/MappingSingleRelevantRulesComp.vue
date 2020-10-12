@@ -7,6 +7,9 @@
             <v-row v-for="(mappingsvg, index) in mappingsvgs" :key="index" class="justify-center text-center">
                 <MappingSvgComp :mappingsvg="mappingsvg" @show-entity="showEntity" />
             </v-row>
+            <v-row v-if="mappingsvgs.length == 0" class="justify-center text-center">
+                <p>There are no relevant rules</p>
+            </v-row>
         </div>
     </div>
 </template>
