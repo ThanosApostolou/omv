@@ -15,9 +15,9 @@ export class App {
     constructor() {
         App.app = this;
         this.buildinfo = new Buildinfo();
+        this.apiconsumer = new ApiConsumer;
         this.settingsmanager = new SettingsManager();
         this.settingsmanager.init();
-        this.apiconsumer = new ApiConsumer;
         this.vueroot = new VueRoot();
     }
 }

@@ -34,6 +34,21 @@
                         Here
                     </router-link>
                 </p>
+                <br>
+                <p>
+                    You can get the source code at
+                    <v-btn href="https://github.com/ThanosApostolou/omv" target="_blank" text link color="primary">
+                        <span>Github</span>
+                        <v-icon>launch</v-icon>
+                    </v-btn>
+                </p>
+                <p v-if="buildinfo.buildPlatform == 'web'">
+                    You can get the Desktop and Mobile application at
+                    <v-btn href="https://github.com/ThanosApostolou/omv/releases" target="_blank" text link color="primary">
+                        <span>Releases</span>
+                        <v-icon>launch</v-icon>
+                    </v-btn>
+                </p>
             </v-col>
         </v-row>
     </v-container>

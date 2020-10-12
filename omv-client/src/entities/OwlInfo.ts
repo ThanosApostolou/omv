@@ -22,15 +22,18 @@ export class OwlInfo {
         owlinfo.versionIri = owlinfoobject.versionIri == "" ? null : owlinfoobject.versionIri;
         owlinfo.label = owlinfoobject.label;
         owlinfo.annotationproperties = AnnotationProperty.listFromObject(owlinfoobject.annotationproperties, owlinfo);
-        owlinfo.owlclasses = OwlEntity.fromObject(owlinfoobject.owlclasses, owlinfo);
-        owlinfo.owlobjprops = OwlEntity.fromObject(owlinfoobject.owlobjprops, owlinfo);
-        owlinfo.owldataprops = OwlEntity.fromObject(owlinfoobject.owldataprops, owlinfo);
+        owlinfo.owlclasses = OwlEntity.fromObject(owlinfoobject.owlclasses, owlinfo, "class");
+        owlinfo.owlobjprops = OwlEntity.fromObject(owlinfoobject.owlobjprops, owlinfo, "objprop");
+        owlinfo.owldataprops = OwlEntity.fromObject(owlinfoobject.owldataprops, owlinfo, "dataprop");
         owlinfo.annotations = Annotation.listFromObject(owlinfoobject.annotations);
         AnnotationProperty.findAnnotationEntities(owlinfo.annotationproperties);
         OwlEntity.findAnnotationEntities(owlinfo.owlclasses);
         OwlEntity.findAnnotationEntities(owlinfo.owlobjprops);
         OwlEntity.findAnnotationEntities(owlinfo.owldataprops);
         Annotation.listFindEntities(owlinfo.annotations, owlinfo);
+        owlinfo.owlclasses.findParameterValues();
+        owlinfo.owlobjprops.findParameterValues();
+        owlinfo.owldataprops.findParameterValues();
         return owlinfo;
     }
 }

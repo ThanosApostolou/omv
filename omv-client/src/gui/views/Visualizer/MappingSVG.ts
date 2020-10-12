@@ -47,7 +47,7 @@ export class MappingSVG {
 
         this.width = 2*Math.max(owl1width, owl2width);
         this.width += 100;
-        const ruleswidth = this.width / 2;
+        const ruleswidth = this.width / 2 - 20;
 
         // calculate positions
         //// for owl1 classes
@@ -59,6 +59,10 @@ export class MappingSVG {
 
         owl1height = Math.max(owl1height, owl2height);
         owl2height = Math.max(owl1height, owl2height);
+        //if (this.rulessvg.length > 1) {
+        owl1height += 16;
+        owl2height += 16;
+        //}
 
         this.owl1objpropssvg.calcPositions(0, owl1height);
         owl1height += this.owl1objpropssvg.height;

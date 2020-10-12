@@ -206,13 +206,13 @@ export class OwlEntitySVG {
         if (this.entityType === "class") {
             this.linex1 = this.cx;
         } else {
-            this.linex1 = this.cx - this.r;
+            this.linex1 = this.cx + this.r;
         }
         this.liney1 = this.starty + 2*this.r;
         if (this.entityType === "class") {
             this.linex2 = this.cx;
         } else {
-            this.linex2 = this.cx - this.r;
+            this.linex2 = this.cx + this.r;
         }
         this.liney2 = this.liney1;
         const nextx = this.startx - 2*this.r;

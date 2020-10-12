@@ -27,10 +27,10 @@
                                 <v-container>
                                     <v-row>
                                         <v-col>
-                                            <v-file-input id="owl1" v-model="owl1" chips counter show-size outlined dense label="OWL File 1" />
+                                            <v-file-input accept=".owl" id="owl1" v-model="owl1" chips counter show-size outlined dense label="OWL File 1" />
                                         </v-col>
                                         <v-col>
-                                            <v-file-input v-model="mapping" chips counter show-size outlined dense label="JSON Mapping" />
+                                            <v-file-input accept=".json" v-model="mapping" chips counter show-size outlined dense label="JSON Mapping" />
                                         </v-col>
                                         <v-col align="center" justify="center" class="text-center">
                                             <v-btn v-bind="submitBtn" color="primary" @click="submit('single')">
@@ -49,13 +49,13 @@
                                 <v-container>
                                     <v-row>
                                         <v-col>
-                                            <v-file-input id="owl1" v-model="owl1" chips counter show-size outlined dense label="OWL File 1" />
+                                            <v-file-input accept=".owl" id="owl1" v-model="owl1" chips counter show-size outlined dense label="OWL File 1" />
                                         </v-col>
                                         <v-col>
-                                            <v-file-input v-model="owl2" chips counter show-size outlined dense label="OWL File 2" />
+                                            <v-file-input accept=".owl" v-model="owl2" chips counter show-size outlined dense label="OWL File 2" />
                                         </v-col>
                                         <v-col>
-                                            <v-file-input v-model="mapping" chips counter show-size outlined dense label="JSON Mapping" />
+                                            <v-file-input accept=".json" v-model="mapping" chips counter show-size outlined dense label="JSON Mapping" />
                                         </v-col>
                                         <v-col align="center" justify="center" class="text-center">
                                             <v-btn v-bind="submitBtn" color="primary" @click="submit('double')">

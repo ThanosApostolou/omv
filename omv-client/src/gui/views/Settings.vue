@@ -7,11 +7,11 @@
         <v-form v-model="valid" outlined>
             <v-container>
                 <v-row align="center" justify="center" class="text-center">
-                    <v-col cols="12" xs="12" lg="6">
-                        <v-text-field chips outlined label="Server" value="localhost" />
+                    <v-col cols="6" md="4">
+                        <v-text-field chips outlined v-model="serverInputModel" v-bind="serverInput" />
                     </v-col>
-                    <v-col cols="12" xs="12" lg="6">
-                        <v-switch v-model="themeSwitch" label="Dark Theme" />
+                    <v-col cols="6" md="4">
+                        <v-switch v-model="serverSwitch" label="default" @change="switchChanged()" />
                     </v-col>
                 </v-row>
                 <v-row align="center" justify="center" class="text-center">
@@ -25,18 +25,46 @@
 </template>
 
 <script>
+import { App } from "@/App";
+
 export default {
     name: "Settings",
     data: function () {
         return {
-            themeSwitch: true,
+            serverInputModel: null,
+            serverSwitch: true,
+            serverInput: {
+                label: "Server",
+                disabled: false
+            },
             valid: true
         };
     },
     methods: {
+        switchChanged() {
+            if (this.serverSwitch) {
+                this.serverInputModel = App.app.settingsmanager.defaultServer;
+            }
+            this.serverInput.disabled = this.serverSwitch;
+        },
         submit() {
-            console.log("submited");
+            if (this.serverSwitch) {
+                App.app.settingsmanager.setServer(null);
+            } else {
+                App.app.settingsmanager.setServer(this.serverInputModel);
+            }
         }
+    },
+    computed: {
+        serverInputDisabled() {
+            return this.serverSwitch;
+        }
+    },
+    created() {
+        this.serverInputModel = App.app.settingsmanager.server;
+        this.serverSwitch = App.app.settingsmanager.isServerDefault;
+        this.switchChanged();
     }
+
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-card color="grey lighten-3">
+        <v-card outlined>
             <v-card-title>
                 <h3>{{ transformation.type }}:</h3>
             </v-card-title>
@@ -24,7 +24,7 @@
                     </v-col>
                 </v-row>
             </v-card-text>
-            <v-card v-if="transformation.arguments.length > 0" outlined color="grey lighten-3">
+            <v-card v-if="transformation.arguments.length > 0" elevation="0">
                 <v-card-title>
                     <v-row class="text-start">
                         <v-col cols="4" md="3" lg="2">
