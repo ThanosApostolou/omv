@@ -57,13 +57,13 @@
                     </v-col>
                 </v-row>
             </v-card-text>
-            <v-card>
+            <v-card outlined>
                 <br>
                 <MappingSvgComp :mappingsvg="mappingsvg" @show-entity="showEntity" />
             </v-card>
             <TransformationComp v-if="rule.directTransformation != null" :transformation="rule.directTransformation" @show-entity="showEntity" />
             <TransformationComp v-if="rule.inverseTransformation != null" :transformation="rule.inverseTransformation" @show-entity="showEntity" />
-            <v-card v-if="rulesvg.entity1.parametervalues.length > 0 || rulesvg.entity2.parametervalues.length > 0">
+            <v-card v-if="rulesvg.entity1.parametervalues.length > 0 || rulesvg.entity2.parametervalues.length > 0" outlined>
                 <v-card-title>
                     <v-row class="text-start">
                         <v-col cols="4" md="3" lg="2">
@@ -74,18 +74,24 @@
                     </v-row>
                 </v-card-title>
                 <v-card-text>
-                    <v-expansion-panels>
+                    <v-expansion-panels v-model="panelModel">
                         <v-expansion-panel v-for="(parametervalue, index) in rulesvg.entity1.parametervalues" :key="index">
                             <v-expansion-panel-header>
                                 <OwlEntitySingleSvg :owlentity="parametervalue" :entity-type.camel="parametervalue.type" position="left" @show-entity="showEntity" />
                                 Show Relevant Rules
                             </v-expansion-panel-header>
+                            <v-expansion-panel-content v-if="panelModel == index">
+                                <MappingSingleRelevantRulesComp :parametervalue="parametervalue" @show-entity="showEntity" />
+                            </v-expansion-panel-content>
                         </v-expansion-panel>
                         <v-expansion-panel v-for="(parametervalue, index) in rulesvg.entity2.parametervalues" :key="index">
                             <v-expansion-panel-header>
                                 <OwlEntitySingleSvg :owlentity="parametervalue" :entity-type.camel="parametervalue.type" position="right" @show-entity="showEntity" />
                                 Show Relevant Rules
                             </v-expansion-panel-header>
+                            <v-expansion-panel-content v-if="panelModel == index">
+                                <MappingSingleRelevantRulesComp :parametervalue="parametervalue" @show-entity="showEntity" />
+                            </v-expansion-panel-content>
                         </v-expansion-panel>
                     </v-expansion-panels>
                 </v-card-text>
@@ -101,13 +107,15 @@ import { MappingSVG } from "./MappingSVG";
 import MappingSvgComp from "./MappingSvgComp.vue";
 import TransformationComp from "./TransformationComp.vue";
 import OwlEntitySingleSvg from "./OwlEntitySingleSvg.vue";
+import MappingSingleRelevantRulesComp from "./MappingSingleRelevantRulesComp.vue";
 
 export default {
     name: "MappingSingleComp",
     components: {
         MappingSvgComp,
         TransformationComp,
-        OwlEntitySingleSvg
+        OwlEntitySingleSvg,
+        MappingSingleRelevantRulesComp
     },
     props: {
         mappingsvg: {
@@ -118,7 +126,8 @@ export default {
     data() {
         return {
             rulesvg: this.mappingsvg.rulessvg[0],
-            rule: this.mappingsvg.rulessvg[0].rule
+            rule: this.mappingsvg.rulessvg[0].rule,
+            panelModel: null
         };
     },
     methods: {
