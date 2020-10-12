@@ -43,7 +43,7 @@
                     </v-btn>
                 </p>
                 <p v-if="buildinfo.buildPlatform == 'web'">
-                    You can get the Desktop and Mobile application at
+                    You can get the Desktop application at
                     <v-btn href="https://github.com/ThanosApostolou/omv/releases" target="_blank" text link color="primary">
                         <span>Releases</span>
                         <v-icon>launch</v-icon>
