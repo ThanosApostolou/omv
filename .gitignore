@@ -1,1 +1,5 @@
 .~lock.*.odt#
+/bwrapinfo.json
+/info
+/pid
+.ref

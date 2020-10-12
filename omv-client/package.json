@@ -1,6 +1,6 @@
 {
   "name": "omv-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -32,7 +32,7 @@
     "@vue/cli-service": "~4.3.0",
     "@vue/eslint-config-typescript": "^5.0.2",
     "babel-eslint": "^10.1.0",
-    "electron": "^10.0.0",
+    "electron": "^9.0.0",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-vue": "^6.2.2",
@@ -40,7 +40,7 @@
     "mutationobserver-shim": "^0.3.7",
     "popper.js": "^1.16.0",
     "portal-vue": "^2.1.6",
-    "sass": "^1.26.12",
+    "sass": "^1.27.0",
     "sass-loader": "^8.0.0",
     "typescript": "~3.9.3",
     "vue-cli-plugin-electron-builder": "~1.4.6",
