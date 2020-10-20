@@ -9,6 +9,7 @@ import io.vertx.core.http.HttpServerOptions;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.CorsHandler;
+import io.vertx.ext.web.handler.StaticHandler;
 import omv.server.controllers.*;
 
 public class WebServer {
@@ -52,7 +53,7 @@ public class WebServer {
               .handler((routingContext) -> {
             new RootController(routingContext).GET();
         });
-
+        /* for future database
         router.get("/api/user")
               .produces("application/json")
               .handler((routingContext) -> {
@@ -73,11 +74,31 @@ public class WebServer {
               .handler((routingContext) -> {
             new LoginController(routingContext).post();
         });
+        */
         router.post("/api/visualization")
               .produces("application/json")
               .handler((routingContext) -> {
             new VisualizationController(routingContext).post();
         });
+
+
+        boolean withclient=false;
+        String withclientstring = System.getProperty("withclient");
+        if (withclientstring != null) {
+            withclient = Boolean.parseBoolean(withclientstring);
+        }
+        if (withclient) {
+            router.route("/api/*")
+                  .handler((routingContext) -> {
+                routingContext.fail(404);
+            });
+            router.route("/*").handler(StaticHandler.create("dist"));
+            router.get()
+                  .handler((routingContext) -> {
+                routingContext.response().sendFile("dist/index.html");
+            });
+        }
+
         int[] errors = {550, 500, 422, 405, 404, 403, 400};
         for (int error : errors) {
             router.errorHandler(error, (routingContext) -> { new ErrorController(routingContext); });
@@ -86,7 +107,12 @@ public class WebServer {
         int port=8080;
         String portstring = System.getProperty("port");
         if (portstring != null) {
-            port = Integer.parseInt(portstring);
+            try {
+                port = Integer.parseInt(portstring);
+            } catch (NumberFormatException e) {
+                System.out.println("given port: " + portstring + " is not valid. Using port 8080");
+                port = 8080;
+            }
         }
         // Create the HTTP server and pass the "accept" method to the request handler.
         HttpServerOptions options = new HttpServerOptions();
