@@ -23,14 +23,14 @@
                             <v-row class="justify-center text-center">
                                 <p>Select an OWL file to visualize against the standard reference model <b>"HarmonicSS-Reference-Model+Vocabularies-v.0.9.3.owl"</b> with their json mapping</p>
                             </v-row>
-                            <v-form v-model="valid" outlined>
+                            <v-form v-model="valid" outlined ref="form1" lazy-validation>
                                 <v-container>
                                     <v-row>
                                         <v-col>
-                                            <v-file-input accept=".owl" id="owl1" v-model="owl1" chips counter show-size outlined dense label="OWL File 1" />
+                                            <v-file-input accept=".owl" id="owl1" v-model="owl1" chips counter show-size outlined dense label="OWL File 1" :rules="[ v => !!v || 'File is required' ]" />
                                         </v-col>
                                         <v-col>
-                                            <v-file-input accept=".json" v-model="mapping" chips counter show-size outlined dense label="JSON Mapping" />
+                                            <v-file-input accept=".json" v-model="mapping" chips counter show-size outlined dense label="JSON Mapping" :rules="[ v => !!v || 'File is required' ]" />
                                         </v-col>
                                         <v-col align="center" justify="center" class="text-center">
                                             <v-btn v-bind="submitBtn" color="primary" @click="submit('single')">
@@ -45,17 +45,17 @@
                             <v-row class="justify-center text-center">
                                 <p>Select 2 OWL files to visualize with their json mapping</p>
                             </v-row>
-                            <v-form v-model="valid" outlined>
+                            <v-form v-model="valid" outlined ref="form2">
                                 <v-container>
                                     <v-row>
                                         <v-col>
-                                            <v-file-input accept=".owl" id="owl1" v-model="owl1" chips counter show-size outlined dense label="OWL File 1" />
+                                            <v-file-input accept=".owl" id="owl1" v-model="owl1" chips counter show-size outlined dense label="OWL File 1" :rules="[ v => !!v || 'File is required' ]" />
                                         </v-col>
                                         <v-col>
-                                            <v-file-input accept=".owl" v-model="owl2" chips counter show-size outlined dense label="OWL File 2" />
+                                            <v-file-input accept=".owl" v-model="owl2" chips counter show-size outlined dense label="OWL File 2" :rules="[ v => !!v || 'File is required' ]" />
                                         </v-col>
                                         <v-col>
-                                            <v-file-input accept=".json" v-model="mapping" chips counter show-size outlined dense label="JSON Mapping" />
+                                            <v-file-input accept=".json" v-model="mapping" chips counter show-size outlined dense label="JSON Mapping" :rules="[ v => !!v || 'File is required' ]" />
                                         </v-col>
                                         <v-col align="center" justify="center" class="text-center">
                                             <v-btn v-bind="submitBtn" color="primary" @click="submit('double')">
@@ -118,6 +118,15 @@ export default {
     },
     methods: {
         submit(type) {
+            if (type == "double") {
+                if (!this.$refs.form2.validate()) {
+                    return;
+                }
+            } else {
+                if (!this.$refs.form1.validate()) {
+                    return;
+                }
+            }
             this.submitBtn.disabled = true;
             this.submited = true;
             this.successful = false;

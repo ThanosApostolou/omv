@@ -46,7 +46,7 @@ public class VisualizationService {
                 }
             });
         } catch (OWLOntologyCreationException e){
-            promise.fail("422::Could not read Ontologies. Maybe they are corrupted or both have the same IRI have the same IRI");
+            promise.fail("422::Could not read Ontologies. Maybe they are corrupted or both have the same IRI");
         } catch (io.vertx.core.json.DecodeException e){
             promise.fail("422::Could not read Mapping Rules. Maybe the JSON file is corrupted");
         } catch (Exception e) {
@@ -78,7 +78,7 @@ public class VisualizationService {
                 }
             });
         } catch (OWLOntologyCreationException e){
-            promise.fail("422::Could not read Ontologies. Maybe they are corrupted or both have the same IRI have the same IRI");
+            promise.fail("422::Could not read Ontologies. Maybe they are corrupted or both have the same IRI");
         } catch (Exception e) {
             promise.fail(e.getCause());
         }
