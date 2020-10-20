@@ -136,6 +136,15 @@ export default {
                 this.successful = true;
             }).catch((error) => {
                 this.result = error;
+                if (error.response) {
+                    this.result = error.response;
+                }
+                if (error.response.data) {
+                    this.result = error.response.data;
+                }
+                if (error.response.data.message) {
+                    this.result = error.response.data.message;
+                }
                 App.app.visualization = null;
                 console.log(error);
                 this.successful = false;

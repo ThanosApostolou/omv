@@ -4,7 +4,9 @@ import java.io.File;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLOntology;
+import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
+import org.semanticweb.owlapi.model.OWLOntologyRenameException;
 
 import io.vertx.core.Future;
 import io.vertx.core.Promise;
@@ -30,15 +32,23 @@ public class VisualizationService {
             OWLOntology owl2 = owlmanager.loadOntologyFromOntologyDocument(owl2File);
             App.app.fs.readFile(mappingPath, (ar) -> {
                 if (ar.succeeded()) {
-                    Buffer mappingBuffer = ar.result();
-                    JsonObject mapping = mappingBuffer.toJsonObject();
-                    Visualization visualization = new Visualization();
-                    visualization.create(owl1, owl2, mapping);
-                    promise.complete(visualization);
+                    try {
+                        Buffer mappingBuffer = ar.result();
+                        JsonObject mapping = mappingBuffer.toJsonObject();
+                        Visualization visualization = new Visualization();
+                        visualization.create(owl1, owl2, mapping);
+                        promise.complete(visualization);
+                    } catch (io.vertx.core.json.DecodeException e){
+                        promise.fail("422::Could not read Mapping Rules. Maybe the JSON file is corrupted");
+                    }
                 } else {
                     promise.fail(ar.cause());
                 }
             });
+        } catch (OWLOntologyCreationException e){
+            promise.fail("422::Could not read Ontologies. Maybe they are corrupted or both have the same IRI have the same IRI");
+        } catch (io.vertx.core.json.DecodeException e){
+            promise.fail("422::Could not read Mapping Rules. Maybe the JSON file is corrupted");
         } catch (Exception e) {
             promise.fail(e.getCause());
         }
@@ -54,15 +64,21 @@ public class VisualizationService {
             OWLOntology owl2 = owlmanager.loadOntologyFromOntologyDocument(App.readResourceStream("HarmonicSS-Reference-Model+Vocabularies-v.0.9.3.owl"));
             App.app.fs.readFile(mappingPath, (ar) -> {
                 if (ar.succeeded()) {
-                    Buffer mappingBuffer = ar.result();
-                    JsonObject mapping = mappingBuffer.toJsonObject();
-                    Visualization visualization = new Visualization();
-                    visualization.create(owl1, owl2, mapping);
-                    promise.complete(visualization);
+                    try {
+                        Buffer mappingBuffer = ar.result();
+                        JsonObject mapping = mappingBuffer.toJsonObject();
+                        Visualization visualization = new Visualization();
+                        visualization.create(owl1, owl2, mapping);
+                        promise.complete(visualization);
+                    } catch (io.vertx.core.json.DecodeException e){
+                        promise.fail("422::Could not read Mapping Rules. Maybe the JSON file is corrupted");
+                    }
                 } else {
                     promise.fail(ar.cause());
                 }
             });
+        } catch (OWLOntologyCreationException e){
+            promise.fail("422::Could not read Ontologies. Maybe they are corrupted or both have the same IRI have the same IRI");
         } catch (Exception e) {
             promise.fail(e.getCause());
         }
