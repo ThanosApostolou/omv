@@ -32,3 +32,6 @@ out/
 ### DBeaver
 /sql/omvdb/.dbeaver
 /file-uploads/
+
+## Client app
+/src/main/resources/dist/

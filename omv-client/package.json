@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "buildvertx": "vue-cli-service build --dest=../omv-server/src/main/resources/dist/",
     "lint": "vue-cli-service lint",
     "android:build": "vue-cli-service build --mode=cordova --dest=build_cordova/www && cd build_cordova && npx cordova build android --release --device",
     "android:run": "cd build_cordova && npx cordova run android",
