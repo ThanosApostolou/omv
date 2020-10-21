@@ -10,11 +10,7 @@ export class SettingsManager {
     isServerDefault: boolean = true;
 
     init(): void {
-        if (App.app.buildinfo.buildMode == "development") {
-            this.defaultServer = "http://127.0.0.1:8080/";
-        } else {
-            this.defaultServer = "https://omv-server.herokuapp.com/";
-        }
+        this.defaultServer = process.env.VUE_APP_DEFAULT_SERVER;
         // read from local storage
         this.readSettings();
     }

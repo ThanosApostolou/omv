@@ -53,11 +53,19 @@ npm run server # will run on 1st port after 8080, so probably 8081
 ```
 
 ## Build and Distribute
-### Separate server and client
+  1. create file `omv-client/.env.production.local` with contents
+```
+VUE_APP_DEFAULT_SERVER="https://SERVER_DOMAIN"
+```
+where SERVER_DOMAIN is your server's IP or Domain name
+
+  2. Choose your deployment.
+  - Separate server and client
 ```
 cd omv-server
 ./gradlew shadowJar
-# distribute "omv-server/build/libs/omv-server-*-fat.jar" and run
+# distribute "omv-server/build/libs/omv-server-*-fat.jar"
+# execute with:
 java -jar omv-server-*-fat.jar -Dport=$PORT #where $PORT is your desired port
 
 cd omv-client
@@ -67,7 +75,7 @@ npm run build
 npm run electron:build # distribute the desktop app in "omv-client/dist_electron"
 ```
 
-### Server with bundled client
+  - Server with bundled client
 ```
 cd omv-client
 npm install
@@ -75,6 +83,7 @@ npm run buildvertx # to build client in server's resources
 
 cd omv-server
 ./gradlew shadowJar
-# distribute "omv-server/build/libs/omv-server-*-fat.jar" and run:
+# distribute "omv-server/build/libs/omv-server-*-fat.jar"
+# execute with:
 java -jar omv-server-*-fat.jar -Dport=$PORT -Dwithclient=true
 ```
