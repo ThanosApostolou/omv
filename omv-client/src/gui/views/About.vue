@@ -65,6 +65,18 @@
                                 {{ buildinfo.buildMode }}
                             </v-col>
                         </v-row>
+                        <v-row>
+                            <v-col>
+                                Source code:
+                            </v-col>
+                            <v-col>
+                                available at:
+                                <v-btn href="https://github.com/ThanosApostolou/omv" target="_blank" text link color="primary">
+                                    <span>Github</span>
+                                    <v-icon>launch</v-icon>
+                                </v-btn>
+                            </v-col>
+                        </v-row>
                     </v-card-text>
                 </v-card>
             </v-col>

@@ -42,10 +42,10 @@
                         <v-icon>launch</v-icon>
                     </v-btn>
                 </p>
-                <p v-if="buildinfo.buildPlatform == 'web'">
-                    You can get the Desktop application at
-                    <v-btn href="https://github.com/ThanosApostolou/omv/releases" target="_blank" text link color="primary">
-                        <span>Releases</span>
+                <p>
+                    Mapping Rules are created with the
+                    <v-btn href="http://ponte.grid.ece.ntua.gr:8080/OntoMapping/" target="_blank" text link color="primary">
+                        <span>Ontologies Alignment Tool</span>
                         <v-icon>launch</v-icon>
                     </v-btn>
                 </p>
