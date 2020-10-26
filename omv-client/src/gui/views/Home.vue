@@ -36,13 +36,6 @@
                 </p>
                 <br>
                 <p>
-                    You can get the source code at
-                    <v-btn href="https://github.com/ThanosApostolou/omv" target="_blank" text link color="primary">
-                        <span>Github</span>
-                        <v-icon>launch</v-icon>
-                    </v-btn>
-                </p>
-                <p>
                     Mapping Rules are created with the
                     <v-btn href="http://ponte.grid.ece.ntua.gr:8080/OntoMapping/" target="_blank" text link color="primary">
                         <span>Ontologies Alignment Tool</span>
