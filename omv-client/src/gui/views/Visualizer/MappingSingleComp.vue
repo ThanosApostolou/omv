@@ -2,7 +2,7 @@
     <div>
         <v-card :min-width="this.mappingsvg.width+30" elevation="5" outlined color="grey lighten-4" class="card">
             <v-card-text>
-                <v-row v-if="rule.label != null" class="text-start">
+                <v-row no-gutters v-if="rule.label != null" class="text-start">
                     <v-col cols="4" md="3" lg="2" />
                     <v-col>
                         Mapping Rule Number:
@@ -11,7 +11,7 @@
                         {{ rule.label }}
                     </v-col>
                 </v-row>
-                <v-row v-if="rule.relation != null" class="text-start">
+                <v-row no-gutters v-if="rule.relation != null" class="text-start">
                     <v-col cols="4" md="3" lg="2" />
                     <v-col>
                         Relation:
@@ -20,7 +20,7 @@
                         {{ rule.relation }}
                     </v-col>
                 </v-row>
-                <v-row v-if="rule.comments != null" class="text-start">
+                <v-row no-gutters v-if="rule.comments != null" class="text-start">
                     <v-col cols="4" md="3" lg="2" />
                     <v-col>
                         Comments:
@@ -29,7 +29,7 @@
                         {{ rule.comments }}
                     </v-col>
                 </v-row>
-                <v-row v-if="rule.simcomments != null" class="text-start">
+                <v-row no-gutters v-if="rule.simcomments != null" class="text-start">
                     <v-col cols="4" md="3" lg="2" />
                     <v-col>
                         Simcomments:
@@ -38,7 +38,7 @@
                         {{ rule.simcomments }}
                     </v-col>
                 </v-row>
-                <v-row v-if="rule.similarity != null" class="text-start">
+                <v-row no-gutters v-if="rule.similarity != null" class="text-start">
                     <v-col cols="4" md="3" lg="2" />
                     <v-col>
                         Similarity:
@@ -47,7 +47,7 @@
                         {{ rule.similarity }}
                     </v-col>
                 </v-row>
-                <v-row v-if="rule.direction != null" class="text-start">
+                <v-row no-gutters v-if="rule.direction != null" class="text-start">
                     <v-col cols="4" md="3" lg="2" />
                     <v-col>
                         Direction:
@@ -65,7 +65,7 @@
             <TransformationComp v-if="rule.inverseTransformation != null" :transformation="rule.inverseTransformation" @show-entity="showEntity" />
             <v-card v-if="rulesvg.entity1.parametervalues.length > 0 || rulesvg.entity2.parametervalues.length > 0" outlined>
                 <v-card-title>
-                    <v-row class="text-start">
+                    <v-row no-gutters class="text-start">
                         <v-col cols="4" md="3" lg="2">
                             <h4>Parameter Values:</h4>
                         </v-col>

@@ -23,20 +23,20 @@
                         Metrics about top level classes of right Ontology <b>"{{ owl2.label }}"</b>, which is usually used as a reference model:
                     </p>
                     <div v-for="(child1, index1) in owl2.owlclasses.children" :key="index1">
-                        <v-row v-if="child1.totalclassrules > 0 || child1.totalproprules > 0">
+                        <v-row v-if="child1.totalclassrules > 0 || child1.totalproprules > 0" no-gutters>
                             <v-col cols="3" lg="2">
                                 <v-container fluid>
                                     <OwlEntitySingleSvg :owlentity="child1" entity-type="class" position="left" @show-entity="showEntity" /> has:
                                 </v-container>
                             </v-col>
                             <v-col cols="3" lg="2">
-                                <v-row>
+                                <v-row no-gutters>
                                     <p><b>{{ child1.totalclassrules }}</b> Class Rules</p>
                                 </v-row>
-                                <v-row>
+                                <v-row no-gutters>
                                     <p><b>{{ child1.totalproprules }}</b> Properties Rules</p>
                                 </v-row>
-                                <v-row v-if="child1.children.length > 0">
+                                <v-row v-if="child1.children.length > 0" no-gutters>
                                     <p>of which:</p>
                                 </v-row>
                             </v-col>
@@ -44,7 +44,7 @@
                             <v-col cols="3" lg="2" />
                         </v-row>
                         <div v-for="(child2, index2) in child1.children" :key="index2">
-                            <v-row v-if="child2.totalclassrules > 0 || child2.totalproprules > 0">
+                            <v-row v-if="child2.totalclassrules > 0 || child2.totalproprules > 0" no-gutters>
                                 <v-col cols="3" lg="2" />
                                 <v-col cols="3" lg="2">
                                     <v-container fluid>
@@ -55,17 +55,17 @@
                                     <v-row>
                                         <p><b>{{ child2.totalclassrules }}</b> Class Rules</p>
                                     </v-row>
-                                    <v-row>
+                                    <v-row no-gutters>
                                         <p><b>{{ child2.totalproprules }}</b> Properties Rules</p>
                                     </v-row>
-                                    <v-row v-if="child2.children.length > 0">
+                                    <v-row no-gutters v-if="child2.children.length > 0">
                                         of which:
                                     </v-row>
                                 </v-col>
                                 <v-col cols="3" lg="2" />
                             </v-row>
                             <div v-for="(child3, index3) in child2.children" :key="index3">
-                                <v-row v-if="child3.totalclassrules > 0 || child3.totalproprules > 0">
+                                <v-row no-gutters v-if="child3.totalclassrules > 0 || child3.totalproprules > 0">
                                     <v-col cols="3" lg="2" />
                                     <v-col cols="3" lg="2" />
                                     <v-col cols="3" lg="2">
@@ -74,10 +74,10 @@
                                         </v-container>
                                     </v-col>
                                     <v-col cols="3" lg="2">
-                                        <v-row>
+                                        <v-row no-gutters>
                                             <p><b>{{ child3.totalclassrules }}</b> Class Rules</p>
                                         </v-row>
-                                        <v-row>
+                                        <v-row no-gutters>
                                             <p><b>{{ child3.totalproprules }}</b> Properties Rules</p>
                                         </v-row>
                                     </v-col>
@@ -92,7 +92,7 @@
                     Ontologies
                 </v-card-title>
                 <v-card-text>
-                    <v-row class="text-start">
+                    <v-row no-gutters class="text-start">
                         <v-col>
                             <p>"<b>{{ owl1.label }}</b>" Ontology Includes:</p>
                         </v-col>
@@ -103,7 +103,7 @@
                             <p><b>{{ owl1.annotationproperties.length }}</b> Annotation Properties</p>
                         </v-col>
                     </v-row>
-                    <v-row class="text-start">
+                    <v-row no-gutters class="text-start">
                         <v-col>
                             <p>"<b>{{ owl2.label }}</b>" Ontology Includes:</p>
                         </v-col>

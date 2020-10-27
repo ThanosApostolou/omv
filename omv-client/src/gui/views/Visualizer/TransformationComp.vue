@@ -5,7 +5,7 @@
                 <h3>{{ transformation.type }}:</h3>
             </v-card-title>
             <v-card-text>
-                <v-row v-if="transformation.uri != null" class="text-start">
+                <v-row no-gutters v-if="transformation.uri != null" class="text-start">
                     <v-col cols="2" md="3" lg="2" />
                     <v-col>
                         URI:
@@ -14,7 +14,7 @@
                         {{ transformation.uri }}
                     </v-col>
                 </v-row>
-                <v-row v-if="transformation.description != null" class="text-start">
+                <v-row no-gutters v-if="transformation.description != null" class="text-start">
                     <v-col cols="4" md="3" lg="2" />
                     <v-col>
                         Description:
@@ -26,7 +26,7 @@
             </v-card-text>
             <v-card v-if="transformation.arguments.length > 0" elevation="0">
                 <v-card-title>
-                    <v-row class="text-start">
+                    <v-row no-gutters class="text-start">
                         <v-col cols="4" md="3" lg="2">
                             <h4>Arguments:</h4>
                         </v-col>
@@ -39,13 +39,13 @@
                     </v-row>
                 </v-card-title>
                 <v-card-text>
-                    <v-row v-for="(argument, index) in transformation.arguments" :key="index" class="text-start">
+                    <v-row no-gutters v-for="(argument, index) in transformation.arguments" :key="index" class="text-start">
                         <v-col cols="4" md="3" lg="2" />
                         <v-col>
                             {{ argument.argname }}
                         </v-col>
                         <v-col>
-                            <v-row>
+                            <v-row no-gutters>
                                 <v-col v-if="argument.argvalue.owlentity == null">
                                     {{ argument.argvalue.stringvalue }}
                                 </v-col>

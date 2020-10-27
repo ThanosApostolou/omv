@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-row class="center">
+        <v-row no-gutters class="center">
             <v-col xs="6" sm="5" md="4" lg="3" xl="2" class="center">
                 <v-select v-bind="relationSelect" v-model="relationSelectModel" @change="selectChanged" />
             </v-col>
@@ -10,7 +10,7 @@
         </v-row>
         <v-divider />
         <br>
-        <v-row v-if="!ready" align="center" justify="center" class="text-center">
+        <v-row no-gutters v-if="!ready" align="center" justify="center" class="text-center">
             <v-progress-circular v-if="!ready" indeterminate rotate />
         </v-row>
         <div v-if="ready" :key="relationSelectModel+orderSelectModel" class="center">

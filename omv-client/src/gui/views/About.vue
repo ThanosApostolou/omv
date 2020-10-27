@@ -71,7 +71,7 @@
                             </v-col>
                             <v-col>
                                 available at:
-                                <v-btn href="https://github.com/ThanosApostolou/omv" target="_blank" text link color="primary">
+                                <v-btn href="https://github.com/ThanosApostolou/omv" target="_blank" text link color="primary" small>
                                     <span>Github</span>
                                     <v-icon>launch</v-icon>
                                 </v-btn>
