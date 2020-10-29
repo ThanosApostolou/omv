@@ -100,6 +100,13 @@ class RuleEntity {
         if (obj.getString("propertyuri") != null) {
             this.addOwlEntity(obj, "dataprop");
         }
+        // detect folded rules
+        if (obj.getJsonObject("property") != null) {
+            this.determineAndAddOwlEntity(obj.getJsonObject("property"));
+        }
+        if (obj.getJsonObject("relation") != null) {
+            this.determineAndAddOwlEntity(obj.getJsonObject("relation"));
+        }
     }
 
     private void addOwlEntity(JsonObject obj, String type) {
