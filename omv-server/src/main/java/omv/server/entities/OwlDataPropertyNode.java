@@ -42,7 +42,7 @@ public class OwlDataPropertyNode {
         this.owlontology = ontology;
         this.dataprop = dataprop;
         this.iri = dataprop.toStringID();
-        this.name = this.iri.split("#")[1];
+        this.name = this.dataprop.getIRI().getShortForm();
         Stream<OWLAnnotationAssertionAxiom> found_annotations = this.owlontology.annotationAssertionAxioms(this.dataprop.getIRI());
         for (OWLAnnotationAssertionAxiom found_annotation_axiom : found_annotations.toArray(OWLAnnotationAssertionAxiom[]::new)) {
             OWLAnnotation found_owlannotation = found_annotation_axiom.getAnnotation();
@@ -51,7 +51,7 @@ public class OwlDataPropertyNode {
         }
         this.label = Annotation.getLabel(this.annotations);
         if (this.label.isEmpty()) {
-            this.label = this.iri;
+            this.label = this.name;
         }
     }
 

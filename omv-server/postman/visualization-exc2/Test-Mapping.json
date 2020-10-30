@@ -1,0 +1,312 @@
+{
+     "ontologies":      {
+          "ontA":           {
+               "uid": "20201029173817716db3a519706aa6c3213947d3c5a8fb35e",
+               "path": "C:\\Server\\Tomcat\\Apache-Tomcat-with-OAT\\.\\ONTO\\20201029173817704-Test-Onto-A.owl",
+               "label": "Test Onto A",
+               "uri": "http://www.semanticweb.org/ontologies/2020/9/testOntoA",
+               "comment": "This is a simple ontology developed for testing purposes. ",
+               "imports": []
+          },
+          "ontB":           {
+               "uid": "2020102917382324309d4563ae981f45b4216eb9f997c6528",
+               "path": "C:\\Server\\Tomcat\\Apache-Tomcat-with-OAT\\.\\ONTO\\20201029173823239-Test-Onto-B.owl",
+               "label": "Test Onto B",
+               "uri": "http://www.semanticweb.org/ontologies/2020/9/testOntoB",
+               "comment": "This is another simple ontology developed for testing purposes. ",
+               "imports": []
+          }
+     },
+     "origin": "USER",
+     "comments": "Mapping with different ontology patterns used.",
+     "correspondences": {"jsonarray":      [
+                    {
+               "entity1":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoA/vocabulary#Class-AA",
+                    "classname": "Class-AA"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-4",
+                    "classname": "Top-Class-4"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "ClassUnionPattern",
+                    "classarray":                     [
+                                                  {
+                              "pid": "SimpleClassPattern",
+                              "classuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoA/vocabulary#Class-AB1",
+                              "classname": "Class-AB1"
+                         },
+                                                  {
+                              "pid": "SimpleClassPattern",
+                              "classuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoA/vocabulary#Class-AB2",
+                              "classname": "Class-AB2"
+                         },
+                                                  {
+                              "pid": "SimpleClassPattern",
+                              "classuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoA/vocabulary#Class-AB3",
+                              "classname": "Class-AB3"
+                         }
+                    ]
+               },
+               "entity2":                {
+                    "pid": "ClassIntersectionPattern",
+                    "classarray":                     [
+                                                  {
+                              "pid": "SimpleClassPattern",
+                              "classuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubClass-1a",
+                              "classname": "SubClass-1a"
+                         },
+                                                  {
+                              "pid": "SimpleClassPattern",
+                              "classuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubClass-1b",
+                              "classname": "SubClass-1b"
+                         }
+                    ]
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Broader Meaning",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleRelationPattern",
+                    "relationuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoA/vocabulary#obj-C",
+                    "relationname": "obj-C"
+               },
+               "entity2":                {
+                    "pid": "SimpleRelationPattern",
+                    "relationuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#objProp2",
+                    "relationname": "objProp2"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimplePropertyPattern",
+                    "propertyuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoA/vocabulary#dt-C",
+                    "propertyname": "dt-C",
+                    "valuerange": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+               },
+               "entity2":                {
+                    "pid": "SimplePropertyPattern",
+                    "propertyuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#dtProp1",
+                    "propertyname": "Datatype Property 1"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Narrower Meaning",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "SimpleInstancePattern",
+                    "instanceuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoA/vocabulary#indiv-Class-AB1",
+                    "instancename": "indiv-Class-AB1"
+               },
+               "entity2":                {
+                    "pid": "SimpleInstancePattern",
+                    "instanceuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#individ-1",
+                    "instancename": "Individual 1"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "RelationDomainRestrictionPattern",
+                    "relation":                     {
+                         "pid": "SimpleRelationPattern",
+                         "relationuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoA/vocabulary#obj-B",
+                         "relationname": "obj-B"
+                    },
+                    "domainclass":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoA/vocabulary#Class-AA",
+                         "classname": "Class-AA"
+                    }
+               },
+               "entity2":                {
+                    "pid": "RelationRangeRestrictionPattern",
+                    "relation":                     {
+                         "pid": "SimpleRelationPattern",
+                         "relationuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#objProp2",
+                         "relationname": "objProp2"
+                    },
+                    "rangeclass":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-4",
+                         "classname": "Top-Class-4"
+                    }
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertyDomainRestrictionPattern",
+                    "property":                     {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoA/vocabulary#dt-A",
+                         "propertyname": "dt-A"
+                    },
+                    "domainclass":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoA/vocabulary#Class-AD",
+                         "classname": "Class-AD"
+                    }
+               },
+               "entity2":                {
+                    "pid": "PropertyRangeRestrictionPattern",
+                    "property":                     {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#dtProp2",
+                         "propertyname": "dtProp2"
+                    },
+                    "rangedatatype": "xsd:string"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Equivalent",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "PropertyValueRestrictionPattern",
+                    "property":                     {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoA/vocabulary#dt-B",
+                         "propertyname": "dt-B"
+                    },
+                    "restrictionuri": "service-check-url",
+                    "restrictiondesc": "examines if the value is the given one",
+                    "restrictionvalue": "VAL"
+               },
+               "entity2":                {
+                    "pid": "RelationPropertyPathPattern",
+                    "relation":                     {
+                         "pid": "SimpleRelationPattern",
+                         "relationuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#topObjProp",
+                         "relationname": "topObjProp"
+                    },
+                    "property":                     {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#dtProp3",
+                         "propertyname": "dtProp3"
+                    }
+               },
+               "directTransformation":                {
+                    "uri": "DataTransformationServiceURI",
+                    "arguments": [                    {
+                         "argname": "Arg1",
+                         "argvalue": "Value1"
+                    }]
+               },
+               "inverseTransformation": null,
+               "relation": "Linked With",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "RelationPathPattern",
+                    "relationarray":                     [
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoA/vocabulary#obj-A",
+                              "relationname": "obj-A"
+                         },
+                                                  {
+                              "pid": "SimpleRelationPattern",
+                              "relationuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoA/vocabulary#obj-AA",
+                              "relationname": "obj-AA"
+                         }
+                    ]
+               },
+               "entity2":                {
+                    "pid": "RelationDomainRangeRestrictionPattern",
+                    "relation":                     {
+                         "pid": "SimpleRelationPattern",
+                         "relationuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#objProp1",
+                         "relationname": "Object Property 1"
+                    },
+                    "domainclass":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubClass-2b",
+                         "classname": "SubClass-2b"
+                    },
+                    "rangeclass":                     {
+                         "pid": "ClassIntersectionPattern",
+                         "classarray":                          [
+                                                            {
+                                   "pid": "SimpleClassPattern",
+                                   "classuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubClass-1a",
+                                   "classname": "SubClass-1a"
+                              },
+                                                            {
+                                   "pid": "SimpleClassPattern",
+                                   "classuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubClass-1b",
+                                   "classname": "SubClass-1b"
+                              }
+                         ]
+                    }
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Partially Overlapping",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          },
+                    {
+               "entity1":                {
+                    "pid": "ClassByAttributeValueRestrictionPattern",
+                    "cls":                     {
+                         "pid": "SimpleClassPattern",
+                         "classuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoA/vocabulary#Class-AC",
+                         "classname": "Class-AC"
+                    },
+                    "property":                     {
+                         "pid": "SimplePropertyPattern",
+                         "propertyuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoA/vocabulary#dt-C",
+                         "propertyname": "dt-C"
+                    },
+                    "restrictionuri": "checkval",
+                    "restrictiondesc": "check",
+                    "restrictionvalue": "expectedval"
+               },
+               "entity2":                {
+                    "pid": "SimpleClassPattern",
+                    "classuri": "http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubClass-2b",
+                    "classname": "SubClass-2b"
+               },
+               "directTransformation": null,
+               "inverseTransformation": null,
+               "relation": "Narrower Meaning",
+               "direction": "From Ontology 1 to Ontology 2",
+               "comments": ""
+          }
+     ]}
+}

@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2020/9/testOntoB#"
+     xml:base="http://www.semanticweb.org/ontologies/2020/9/testOntoB"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB">
+        <rdfs:comment xml:lang="en">This is another simple ontology developed for testing purposes.</rdfs:comment>
+        <rdfs:label xml:lang="en">Test Onto B</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#objProp1 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#objProp1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#topObjProp"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-3"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-4"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Object Property 1</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#objProp2 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#objProp2">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#topObjProp"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-1"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-2"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#topObjProp -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#topObjProp"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#dtProp1 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#dtProp1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#topDtProp"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Datatype Property 1</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#dtProp2 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#dtProp2">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#topDtProp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#dtProp3 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#dtProp3">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#topDtProp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#topDtProp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#topDtProp"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubClass-1a -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubClass-1a">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-1"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubClass-1b"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubClass-1b -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubClass-1b">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-1"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubClass-2a -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubClass-2a">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-2"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubClass-2b"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubClass-2b -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubClass-2b">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-2"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubClass-3a -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubClass-3a">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-3"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubSubClass-2bb -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubSubClass-2bb">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubClass-2b"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubSubClass-3aa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubSubClass-3aa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubClass-3a"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubSubSubClass-3aaa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubSubSubClass-3aaa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubSubClass-3aa"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Class 3aaa</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-1 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-1"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-2"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-3 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-3"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-4 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-4"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Indiv-2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Indiv-2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubSubSubClass-3aaa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#individ-1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#individ-1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#SubSubSubClass-3aaa"/>
+        <rdfs:comment>A simple individual of a class</rdfs:comment>
+        <rdfs:label>Individual 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2020/9/testOntoB/vocabulary#Top-Class-4"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

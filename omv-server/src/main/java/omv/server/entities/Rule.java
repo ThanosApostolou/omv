@@ -72,22 +72,7 @@ class RuleEntity {
     public void init(JsonObject entityobject) {
         this.pid = entityobject.getString("pid");
         this.determineAndAddOwlEntity(entityobject);
-        JsonObject cls = entityobject.getJsonObject("cls");
-        if (cls != null) {
-            this.determineAndAddOwlEntity(cls);
-        }
-        JsonArray classarray = entityobject.getJsonArray("classarray");
-        if (classarray != null) {
-            classarray.forEach((obj) -> {
-                this.determineAndAddOwlEntity((JsonObject) obj);
-            });;
-        }
-        JsonArray proparray = entityobject.getJsonArray("proparray");
-        if (proparray != null) {
-            proparray.forEach((obj) -> {
-                this.determineAndAddOwlEntity((JsonObject) obj);
-            });;
-        }
+
     }
 
     private void determineAndAddOwlEntity(JsonObject obj) {
@@ -106,6 +91,35 @@ class RuleEntity {
         }
         if (obj.getJsonObject("relation") != null) {
             this.determineAndAddOwlEntity(obj.getJsonObject("relation"));
+        }
+        if (obj.getJsonObject("domainclass") != null) {
+            this.determineAndAddOwlEntity(obj.getJsonObject("domainclass"));
+        }
+        if (obj.getJsonObject("rangeclass") != null) {
+            this.determineAndAddOwlEntity(obj.getJsonObject("rangeclass"));
+        }
+        //
+        JsonObject cls = obj.getJsonObject("cls");
+        if (cls != null) {
+            this.determineAndAddOwlEntity(cls);
+        }
+        JsonArray classarray = obj.getJsonArray("classarray");
+        if (classarray != null) {
+            classarray.forEach((obj2) -> {
+                this.determineAndAddOwlEntity((JsonObject) obj2);
+            });;
+        }
+        JsonArray proparray = obj.getJsonArray("proparray");
+        if (proparray != null) {
+            proparray.forEach((obj2) -> {
+                this.determineAndAddOwlEntity((JsonObject) obj2);
+            });;
+        }
+        JsonArray relationarray = obj.getJsonArray("relationarray");
+        if (relationarray != null) {
+            relationarray.forEach((obj2) -> {
+                this.determineAndAddOwlEntity((JsonObject) obj2);
+            });;
         }
     }
 

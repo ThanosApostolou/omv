@@ -42,7 +42,7 @@ public class OwlClassNode {
         this.owlontology = ontology;
         this.owlclass = owlclass;
         this.iri = owlclass.toStringID();
-        this.name = this.iri.split("#")[1];
+        this.name = this.owlclass.getIRI().getShortForm();
         Stream<OWLAnnotationAssertionAxiom> found_annotations = this.owlontology.annotationAssertionAxioms(this.owlclass.getIRI());
         for (OWLAnnotationAssertionAxiom found_annotation_axiom : found_annotations.toArray(OWLAnnotationAssertionAxiom[]::new)) {
             OWLAnnotation found_owlannotation = found_annotation_axiom.getAnnotation();
@@ -51,7 +51,7 @@ public class OwlClassNode {
         }
         this.label = Annotation.getLabel(this.annotations);
         if (this.label.isEmpty()) {
-            this.label = this.iri;
+            this.label = this.name;
         }
     }
 
