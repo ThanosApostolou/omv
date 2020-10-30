@@ -1,7 +1,7 @@
 <template>
     <div>
-        <v-card :min-width="this.mappingsvg.width+30" elevation="5" outlined color="grey lighten-4" class="card">
-            <v-card-text>
+        <v-card :min-width="this.mappingsvg.width+30" elevation="5" outlined color="grey lighten-4" class="card" >
+            <v-card-text class="ma-0 pa-0">
                 <v-row no-gutters v-if="rule.label != null" class="text-start">
                     <v-col cols="4" md="3" lg="2" />
                     <v-col>
@@ -58,7 +58,6 @@
                 </v-row>
             </v-card-text>
             <v-card outlined>
-                <br>
                 <MappingSvgComp :mappingsvg="mappingsvg" @show-entity="showEntity" />
             </v-card>
             <TransformationComp v-if="rule.directTransformation != null" :transformation="rule.directTransformation" @show-entity="showEntity" />

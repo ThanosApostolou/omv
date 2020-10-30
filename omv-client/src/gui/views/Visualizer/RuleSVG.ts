@@ -113,7 +113,7 @@ export class RuleSVG {
             foundentity.rulesvgs.push(this);
             this.entity1.objpropssvg.push(foundentity);
             if (entityobj.index == null) {
-                this.titles.push("class parameter");
+                this.titles.push("property parameter");
             } else {
                 this.titles.push("parameter " + entityobj.index);
             }
@@ -123,7 +123,7 @@ export class RuleSVG {
             foundentity.rulesvgs.push(this);
             this.entity1.datapropssvg.push(foundentity);
             if (entityobj.index == null) {
-                this.titles.push("class parameter");
+                this.titles.push("property parameter");
             } else {
                 this.titles.push("parameter " + entityobj.index);
             }
@@ -143,7 +143,7 @@ export class RuleSVG {
             foundentity.rulesvgs.push(this);
             this.entity2.objpropssvg.push(foundentity);
             if (entityobj.index == null) {
-                this.titles.push("class parameter");
+                this.titles.push("property parameter");
             } else {
                 this.titles.push("parameter " + entityobj.index);
             }
@@ -153,7 +153,7 @@ export class RuleSVG {
             foundentity.rulesvgs.push(this);
             this.entity2.datapropssvg.push(foundentity);
             if (entityobj.index == null) {
-                this.titles.push("class parameter");
+                this.titles.push("property parameter");
             } else {
                 this.titles.push("parameter " + entityobj.index);
             }
