@@ -63,7 +63,7 @@
             <TransformationComp v-if="rule.directTransformation != null" :transformation="rule.directTransformation" @show-entity="showEntity" />
             <TransformationComp v-if="rule.inverseTransformation != null" :transformation="rule.inverseTransformation" @show-entity="showEntity" />
             <v-card v-if="rulesvg.entity1.parametervalues.length > 0 || rulesvg.entity2.parametervalues.length > 0" outlined>
-                <v-card-title>
+                <v-card-title class="ma-0 pa-0">
                     <v-row no-gutters class="text-start">
                         <v-col cols="4" md="3" lg="2">
                             <h4>Parameter Values:</h4>

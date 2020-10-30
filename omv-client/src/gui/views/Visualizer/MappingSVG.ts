@@ -65,29 +65,27 @@ export class MappingSVG {
 
         owl1height = Math.max(owl1height, owl2height);
         owl2height = Math.max(owl1height, owl2height);
-        //if (this.rulessvg.length > 1) {
-        if (this.owl1objpropssvg.visible || this.owl1datapropssvg.visible || this.owl2objpropssvg.visible || this.owl2datapropssvg.visible) {
-            owl1height += 16;
-            owl2height += 16;
-        }
-        //}
 
-        this.owl1objpropssvg.calcPositions(0, owl1height);
         if (this.owl1objpropssvg.visible) {
-            owl1height += this.owl1objpropssvg.height;
+            owl1height += 16;
+            this.owl1objpropssvg.calcPositions(0, owl1height);
+            owl1height +=this.owl1objpropssvg.height;
         }
 
-        this.owl1datapropssvg.calcPositions(0, owl1height);
         if (this.owl1datapropssvg.visible) {
+            owl1height += 16;
+            this.owl1datapropssvg.calcPositions(0, owl1height);
             owl1height += this.owl1datapropssvg.height;
         }
 
-        this.owl2objpropssvg.calcPositionsReverse(this.width, owl2height);
         if (this.owl2objpropssvg.visible) {
+            owl2height += 16;
+            this.owl2objpropssvg.calcPositionsReverse(this.width, owl2height);
             owl2height += this.owl2objpropssvg.height;
         }
-        this.owl2datapropssvg.calcPositionsReverse(this.width, owl2height);
         if (this.owl2datapropssvg.visible) {
+            owl2height += 16;
+            this.owl2datapropssvg.calcPositionsReverse(this.width, owl2height);
             owl2height += this.owl2datapropssvg.height;
         }
 

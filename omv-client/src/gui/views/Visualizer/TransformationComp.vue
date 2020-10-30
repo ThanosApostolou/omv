@@ -1,10 +1,10 @@
 <template>
     <div>
-        <v-card outlined>
-            <v-card-title>
+        <v-card class="ma-0 pa-0" outlined>
+            <v-card-title class="ma-0 pa-0">
                 <h3>{{ transformation.type }}:</h3>
             </v-card-title>
-            <v-card-text>
+            <v-card-text class="ma-0 pa-0">
                 <v-row no-gutters v-if="transformation.uri != null" class="text-start">
                     <v-col cols="2" md="3" lg="2" />
                     <v-col>
@@ -24,8 +24,8 @@
                     </v-col>
                 </v-row>
             </v-card-text>
-            <v-card v-if="transformation.arguments.length > 0" elevation="0">
-                <v-card-title>
+            <v-card class="ma-0 pa-0" v-if="transformation.arguments.length > 0" elevation="0">
+                <v-card-title class="ma-0 pa-0 pt-1">
                     <v-row no-gutters class="text-start">
                         <v-col cols="4" md="3" lg="2">
                             <h4>Arguments:</h4>
@@ -38,7 +38,7 @@
                         </v-col>
                     </v-row>
                 </v-card-title>
-                <v-card-text>
+                <v-card-text class="ma-0 pa-0">
                     <v-row no-gutters v-for="(argument, index) in transformation.arguments" :key="index" class="text-start">
                         <v-col cols="4" md="3" lg="2" />
                         <v-col>
