@@ -34,7 +34,15 @@
                         Here
                     </router-link>
                 </p>
-                <br>
+                <v-row justify="center">
+                <v-responsive max-height="500" max-width="900">
+                    <v-carousel cycle>
+                        <v-carousel-item  src="../assets/Visualizer1.png" />
+                        <v-carousel-item src="../assets/Visualizer2.png" />
+                        <v-carousel-item src="../assets/Visualizer3.png" />
+                    </v-carousel>
+                </v-responsive>
+                </v-row>
                 <p>
                     Mapping Rules are created with the
                     <v-btn href="http://ponte.grid.ece.ntua.gr:8080/OntoMapping/" target="_blank" text link color="primary">
