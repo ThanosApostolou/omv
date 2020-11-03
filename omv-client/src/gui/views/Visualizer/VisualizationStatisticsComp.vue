@@ -52,7 +52,7 @@
                                     </v-container>
                                 </v-col>
                                 <v-col cols="3" lg="2">
-                                    <v-row>
+                                    <v-row no-gutters>
                                         <p><b>{{ child2.totalclassrules }}</b> Class Rules</p>
                                     </v-row>
                                     <v-row no-gutters>

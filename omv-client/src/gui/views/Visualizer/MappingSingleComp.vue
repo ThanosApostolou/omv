@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-card :min-width="this.mappingsvg.width+30" elevation="5" outlined color="grey lighten-4" class="card" >
+        <v-card :min-width="this.mappingsvg.width+30" elevation="5" outlined color="grey lighten-3" class="card" >
             <v-card-text class="ma-0 pa-0">
                 <v-row no-gutters v-if="rule.label != null" class="text-start">
                     <v-col cols="4" md="3" lg="2" />

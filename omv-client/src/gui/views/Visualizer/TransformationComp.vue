@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-card class="ma-0 pa-0" outlined>
-            <v-card-title class="ma-0 pa-0">
+            <v-card-title class="ma-0 pa-0 pl-1">
                 <h3>{{ transformation.type }}:</h3>
             </v-card-title>
             <v-card-text class="ma-0 pa-0">
@@ -27,7 +27,7 @@
             <v-card class="ma-0 pa-0" v-if="transformation.arguments.length > 0" elevation="0">
                 <v-card-title class="ma-0 pa-0 pt-1">
                     <v-row no-gutters class="text-start">
-                        <v-col cols="4" md="3" lg="2">
+                        <v-col cols="4" md="3" lg="2" class="pl-2">
                             <h4>Arguments:</h4>
                         </v-col>
                         <v-col>
