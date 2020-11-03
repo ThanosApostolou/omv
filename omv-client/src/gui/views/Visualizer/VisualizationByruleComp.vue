@@ -14,7 +14,7 @@
             <v-progress-circular v-if="!ready" indeterminate rotate />
         </v-row>
         <div v-if="ready" :key="relationSelectModel+orderSelectModel" class="center">
-            <MappingSingleComp v-for="(mappingsvg, index) in this.mappingsvgs" :key="index" :mappingsvg="mappingsvg" @show-entity="showEntity" />
+            <MappingSingleComp v-for="(mappingsvg, index) in this.mappingsvgs" :key="index" :mappingsvg="mappingsvg" @show-entity="showEntity"  @show-ruleobject="showRuleobject" />
         </div>
         <v-dialog v-if="showdialog" v-model="showdialog" max-width="1400">
             <v-card>
@@ -24,7 +24,12 @@
                         <v-icon>close</v-icon>
                     </v-btn>
                 </v-card-actions>
-                <OwlEntityInfoComp :owlentity="selectedOwlentitysvg.owlentity" />
+                <OwlEntityInfoComp v-if="dialogType == 'entity'" :owlentity="selectedOwlentitysvg.owlentity" />
+
+                    <pre  v-if="dialogType == 'rule'">
+{{ selectedRuleobject }}
+                    </pre>
+
             </v-card>
         </v-dialog>
     </div>
@@ -87,7 +92,9 @@ export default {
             rules: [],
             mappingsvgs: null,
             selectedOwlentitysvg: null,
-            showdialog: false
+            selectedRuleobject: null,
+            showdialog: false,
+            dialogType: ""
         };
     },
     methods: {
@@ -117,6 +124,12 @@ export default {
         },
         showEntity(owlentitysvg) {
             this.selectedOwlentitysvg = owlentitysvg;
+            this.dialogType = "entity";
+            this.showdialog = true;
+        },
+        showRuleobject(ruleobject) {
+            this.selectedRuleobject = ruleobject;
+            this.dialogType = 'rule';
             this.showdialog = true;
         }
     },

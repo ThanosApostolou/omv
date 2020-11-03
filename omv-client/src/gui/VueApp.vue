@@ -8,7 +8,7 @@
         </v-main>
         <v-footer elevation="3" class="primary lighten-2 caption" dark>
             <v-row align="center" justify="center">
-                {{ buildinfo.appName }} - Thanos Apostolou 2020
+                {{ buildinfo.appName }} - HarmonicSS 2020
             </v-row>
         </v-footer>
     </v-app>

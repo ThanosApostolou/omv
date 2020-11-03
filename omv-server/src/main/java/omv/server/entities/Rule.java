@@ -6,6 +6,7 @@ import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 
 public class Rule {
+    public JsonObject ruleobject = new JsonObject();
     public String label = "";
     public String relation = "";
     public String direction = "";
@@ -18,6 +19,7 @@ public class Rule {
     public RuleEntity entity2 = new RuleEntity();
 
     public void init(JsonObject ruleobject) {
+        this.ruleobject = ruleobject;
         this.relation = ruleobject.getString("relation");
         this.direction = ruleobject.getString("direction");
         this.comments = ruleobject.getString("comments");
@@ -33,6 +35,7 @@ public class Rule {
 
     public JsonObject toJsonObject() {
         JsonObject rulejsonobject = new JsonObject();
+        rulejsonobject.put("ruleobject", this.ruleobject);
         rulejsonobject.put("label", this.label);
         rulejsonobject.put("relation", this.relation);
         rulejsonobject.put("direction", this.direction);

@@ -9,6 +9,14 @@
                     </v-col>
                     <v-col>
                         {{ rule.label }}
+                        <v-tooltip top>
+                            <template v-slot:activator="{ on, attrs }">
+                                <v-btn icon color="primary" x-small @click="showRuleobject(rule.ruleobject)" v-bind="attrs" v-on="on">
+                                    <v-icon>subject</v-icon>
+                                </v-btn>
+                            </template>
+                            <span>Show JSON Rule</span>
+                        </v-tooltip>
                     </v-col>
                 </v-row>
                 <v-row no-gutters v-if="rule.relation != null" class="text-start">
@@ -132,6 +140,9 @@ export default {
     methods: {
         showEntity(owlentity) {
             this.$emit("show-entity", owlentity);
+        },
+        showRuleobject(ruleobject) {
+            this.$emit("show-ruleobject", ruleobject);
         }
     }
 };

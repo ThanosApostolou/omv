@@ -6,6 +6,35 @@
             </v-card-title>
             <v-card outlined>
                 <v-card-title>
+                    Ontologies
+                </v-card-title>
+                <v-card-text>
+                    <v-row no-gutters class="text-start">
+                        <v-col>
+                            <p>"<b>{{ owl1.label }}</b>" Ontology Includes:</p>
+                        </v-col>
+                        <v-col>
+                            <p><b>{{ owl1.owlclasses.size() }}</b> Classes</p>
+                            <p><b>{{ owl1.owlobjprops.size() }}</b> Object Properties</p>
+                            <p><b>{{ owl1.owldataprops.size() }}</b> Data Properties</p>
+                            <p><b>{{ owl1.annotationproperties.length }}</b> Annotation Properties</p>
+                        </v-col>
+                    </v-row>
+                    <v-row no-gutters class="text-start">
+                        <v-col>
+                            <p>"<b>{{ owl2.label }}</b>" Ontology Includes:</p>
+                        </v-col>
+                        <v-col>
+                            <p><b>{{ owl2.owlclasses.size() }}</b> Classes</p>
+                            <p><b>{{ owl2.owlobjprops.size() }}</b> Object Properties</p>
+                            <p><b>{{ owl2.owldataprops.size() }}</b> Data Properties</p>
+                            <p><b>{{ owl2.annotationproperties.length }}</b> Annotation Properties</p>
+                        </v-col>
+                    </v-row>
+                </v-card-text>
+            </v-card>
+            <v-card outlined>
+                <v-card-title>
                     Mapping Rules
                 </v-card-title>
                 <v-card-text>
@@ -16,7 +45,7 @@
             </v-card>
             <v-card outlined>
                 <v-card-title>
-                    Reference Model
+                    Target Model
                 </v-card-title>
                 <v-card-text>
                     <p>
@@ -85,35 +114,6 @@
                             </div>
                         </div>
                     </div>
-                </v-card-text>
-            </v-card>
-            <v-card outlined>
-                <v-card-title>
-                    Ontologies
-                </v-card-title>
-                <v-card-text>
-                    <v-row no-gutters class="text-start">
-                        <v-col>
-                            <p>"<b>{{ owl1.label }}</b>" Ontology Includes:</p>
-                        </v-col>
-                        <v-col>
-                            <p><b>{{ owl1.owlclasses.size() }}</b> Classes</p>
-                            <p><b>{{ owl1.owlobjprops.size() }}</b> Object Properties</p>
-                            <p><b>{{ owl1.owldataprops.size() }}</b> Data Properties</p>
-                            <p><b>{{ owl1.annotationproperties.length }}</b> Annotation Properties</p>
-                        </v-col>
-                    </v-row>
-                    <v-row no-gutters class="text-start">
-                        <v-col>
-                            <p>"<b>{{ owl2.label }}</b>" Ontology Includes:</p>
-                        </v-col>
-                        <v-col>
-                            <p><b>{{ owl2.owlclasses.size() }}</b> Classes</p>
-                            <p><b>{{ owl2.owlobjprops.size() }}</b> Object Properties</p>
-                            <p><b>{{ owl2.owldataprops.size() }}</b> Data Properties</p>
-                            <p><b>{{ owl2.annotationproperties.length }}</b> Annotation Properties</p>
-                        </v-col>
-                    </v-row>
                 </v-card-text>
             </v-card>
         </v-card>

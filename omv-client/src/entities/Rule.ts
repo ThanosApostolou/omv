@@ -4,6 +4,7 @@ import { Transformation } from "./Transformation";
 
 export class Rule {
     mapping: Mapping = null;
+    ruleobject: string = "{}";
     label: string = "";
     relation: string = "";
     direction: string = "";
@@ -21,6 +22,7 @@ export class Rule {
     static fromObject(ruleobject: any, mapping: Mapping): Rule {
         const rule = new Rule();
         rule.mapping = mapping;
+        rule.ruleobject = JSON.stringify(ruleobject.ruleobject, null, 4);
         rule.label = ruleobject.label === "" ? null : ruleobject.label;
         rule.relation = ruleobject.relation === "" ? null : ruleobject.relation;
         rule.direction = ruleobject.direction === "" ? null : ruleobject.direction;
