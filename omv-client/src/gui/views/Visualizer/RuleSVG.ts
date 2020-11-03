@@ -107,6 +107,7 @@ export class RuleSVG {
             } else {
                 this.titles.push("parameter " + entityobj.index);
             }
+            this.titles[this.titles.length-1] += "\n" + entityobj.pid;
         }
         for (const entityobj of this.rule.entity1.objectprops) {
             const foundentity = owl1objpropssvg.findByIri(entityobj.iri);
@@ -117,6 +118,7 @@ export class RuleSVG {
             } else {
                 this.titles.push("parameter " + entityobj.index);
             }
+            this.titles[this.titles.length-1] += "\n" + entityobj.pid;
         }
         for (const entityobj of this.rule.entity1.dataprops) {
             const foundentity = owl1datapropssvg.findByIri(entityobj.iri);
@@ -127,6 +129,7 @@ export class RuleSVG {
             } else {
                 this.titles.push("parameter " + entityobj.index);
             }
+            this.titles[this.titles.length-1] += "\n" + entityobj.pid;
         }
         for (const entityobj of this.rule.entity2.classes) {
             const foundentity = owl2classessvg.findByIri(entityobj.iri);
@@ -137,6 +140,7 @@ export class RuleSVG {
             } else {
                 this.titles.push("parameter " + entityobj.index);
             }
+            this.titles[this.titles.length-1] += "\n" + entityobj.pid;
         }
         for (const entityobj of this.rule.entity2.objectprops) {
             const foundentity = owl2objpropssvg.findByIri(entityobj.iri);
@@ -147,6 +151,7 @@ export class RuleSVG {
             } else {
                 this.titles.push("parameter " + entityobj.index);
             }
+            this.titles[this.titles.length-1] += "\n" + entityobj.pid;
         }
         for (const entityobj of this.rule.entity2.dataprops) {
             const foundentity = owl2datapropssvg.findByIri(entityobj.iri);
@@ -157,6 +162,7 @@ export class RuleSVG {
             } else {
                 this.titles.push("parameter " + entityobj.index);
             }
+            this.titles[this.titles.length-1] += "\n" + entityobj.pid;
         }
         this.findParameterValues();
         this.findLines();

@@ -19,7 +19,7 @@ public class Rule {
     public RuleEntity entity2 = new RuleEntity();
 
     public void init(JsonObject ruleobject) {
-        this.ruleobject = ruleobject;
+        this.ruleobject = ruleobject.copy();
         this.relation = ruleobject.getString("relation");
         this.direction = ruleobject.getString("direction");
         this.comments = ruleobject.getString("comments");
@@ -74,11 +74,19 @@ class RuleEntity {
 
     public void init(JsonObject entityobject) {
         this.pid = entityobject.getString("pid");
-        this.determineAndAddOwlEntity(entityobject);
+        this.determineAndAddOwlEntity(entityobject, null);
 
     }
 
-    private void determineAndAddOwlEntity(JsonObject obj) {
+    private void determineAndAddOwlEntity(JsonObject obj, String previouspid) {
+        // create folded pid
+        String currentpid;
+        if (previouspid == null) {
+            currentpid = obj.getString("pid");
+        } else {
+            currentpid = previouspid + " -> " + obj.getString("pid");
+        }
+        obj.put("pid", currentpid);
         if (obj.getString("classuri") != null) {
             this.addOwlEntity(obj, "class");
         }
@@ -90,38 +98,38 @@ class RuleEntity {
         }
         // detect folded rules
         if (obj.getJsonObject("property") != null) {
-            this.determineAndAddOwlEntity(obj.getJsonObject("property"));
+            this.determineAndAddOwlEntity(obj.getJsonObject("property"), currentpid);
         }
         if (obj.getJsonObject("relation") != null) {
-            this.determineAndAddOwlEntity(obj.getJsonObject("relation"));
+            this.determineAndAddOwlEntity(obj.getJsonObject("relation"), currentpid);
         }
         if (obj.getJsonObject("domainclass") != null) {
-            this.determineAndAddOwlEntity(obj.getJsonObject("domainclass"));
+            this.determineAndAddOwlEntity(obj.getJsonObject("domainclass"), currentpid);
         }
         if (obj.getJsonObject("rangeclass") != null) {
-            this.determineAndAddOwlEntity(obj.getJsonObject("rangeclass"));
+            this.determineAndAddOwlEntity(obj.getJsonObject("rangeclass"), currentpid);
         }
         //
         JsonObject cls = obj.getJsonObject("cls");
         if (cls != null) {
-            this.determineAndAddOwlEntity(cls);
+            this.determineAndAddOwlEntity(cls, currentpid);
         }
         JsonArray classarray = obj.getJsonArray("classarray");
         if (classarray != null) {
             classarray.forEach((obj2) -> {
-                this.determineAndAddOwlEntity((JsonObject) obj2);
+                this.determineAndAddOwlEntity((JsonObject) obj2, currentpid);
             });;
         }
         JsonArray proparray = obj.getJsonArray("proparray");
         if (proparray != null) {
             proparray.forEach((obj2) -> {
-                this.determineAndAddOwlEntity((JsonObject) obj2);
+                this.determineAndAddOwlEntity((JsonObject) obj2, currentpid);
             });;
         }
         JsonArray relationarray = obj.getJsonArray("relationarray");
         if (relationarray != null) {
             relationarray.forEach((obj2) -> {
-                this.determineAndAddOwlEntity((JsonObject) obj2);
+                this.determineAndAddOwlEntity((JsonObject) obj2, currentpid);
             });;
         }
     }

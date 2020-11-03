@@ -5,9 +5,14 @@
                 <v-col cols="6" lg="4" order="1">
                     <p>
                         {{ visualization.owl1.label }}
-                        <v-btn icon color="primary" @click="owl1info()">
-                            <v-icon>info</v-icon>
-                        </v-btn>
+                        <v-tooltip bottom>
+                            <template v-slot:activator="{ on, attrs }">
+                                <v-btn icon color="primary" @click="owl1info()" v-bind="attrs" v-on="on">
+                                    <v-icon>info</v-icon>
+                                </v-btn>
+                            </template>
+                            <span>Show OWL Info</span>
+                        </v-tooltip>
                     </p>
                 </v-col>
                 <v-col v-if="receivedvisualization.mapping.error == null" class="col2" cols="12" sm="12" lg="4" order="3" order-lg="2">
@@ -28,9 +33,14 @@
                 <v-col cols="6" lg="4" class="col3" order="2" order-lg="3">
                     <p>
                         {{ visualization.owl2.label }}
-                        <v-btn icon color="primary" @click="owl2info()">
-                            <v-icon>info</v-icon>
-                        </v-btn>
+                        <v-tooltip bottom>
+                            <template v-slot:activator="{ on, attrs }">
+                                <v-btn icon color="primary" @click="owl2info()" v-bind="attrs" v-on="on">
+                                    <v-icon>info</v-icon>
+                                </v-btn>
+                            </template>
+                            <span>Show OWL Info</span>
+                        </v-tooltip>
                     </p>
                 </v-col>
             </v-row>
