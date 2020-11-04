@@ -87,3 +87,7 @@ cd omv-server
 # execute with:
 java -jar omv-server-*-fat.jar -Dport=$PORT -Dwithclient=true
 ```
+
+You can change the default LOG directory with the option `-DLOG_DIR="/some/dir"`.
+
+You can change the logs level with the option `-DLOG_LEVEL="debug"` where the available levels are `trace`, `debug`, `info` (default), `warn`, `error`.
