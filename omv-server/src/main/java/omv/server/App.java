@@ -7,9 +7,12 @@ import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
 import io.vertx.core.Vertx;
 import io.vertx.core.file.FileSystem;
+import io.vertx.core.logging.Logger;
+import io.vertx.core.logging.LoggerFactory;
 
 public class App extends AbstractVerticle {
     public static App app;
+    public Logger logger = null;
     public String VERTXWEB_ENVIRONMENT;
     public DBManager dbmanager = null;
     public WebServer webserver = null;
@@ -20,6 +23,10 @@ public class App extends AbstractVerticle {
     @Override
     public void start(Promise<Void> promise) throws IOException {
         App.app = this;
+        System.setProperty("vertx.logger-delegate-factory-class-name", "io.vertx.core.logging.SLF4JLogDelegateFactory");
+        LoggerFactory.initialise();
+        this.logger = LoggerFactory.getLogger(App.class);
+        this.logger.info("info");
         this.VERTXWEB_ENVIRONMENT = System.getenv("VERTXWEB_ENVIRONMENT");
         this.dbmanager = new DBManager();
         this.webserver = new WebServer();

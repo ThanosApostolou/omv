@@ -18,6 +18,7 @@ ext {
     junitJupiterVersion = '5.7.0'
     owlapiVersion = "5.1.16"
     slf4jVersion = "1.7.30"
+    logbackVersion = "1.2.3"
 }
 
 repositories {
@@ -30,7 +31,8 @@ dependencies {
     implementation "io.vertx:vertx-pg-client:$vertxVersion"
     implementation "io.vertx:vertx-auth-jwt:$vertxVersion"
     implementation "net.sourceforge.owlapi:owlapi-distribution:$owlapiVersion"
-    implementation "org.slf4j:slf4j-simple:$slf4jVersion"
+    implementation "org.slf4j:slf4j-api:$slf4jVersion"
+    implementation "ch.qos.logback:logback-classic:$logbackVersion"
 
 	testImplementation "io.vertx:vertx-junit5:$vertxVersion"
     testImplementation "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
