@@ -5,6 +5,7 @@ import java.util.Set;
 //import io.vertx.core.MultiMap;
 import io.vertx.ext.web.FileUpload;
 import io.vertx.ext.web.RoutingContext;
+import omv.server.App;
 import omv.server.actions.VisualizationAction;
 
 public class VisualizationController {
@@ -35,6 +36,7 @@ public class VisualizationController {
                     if (ar.succeeded()) {
                         this.rtxmanager.responsebody.put("success", true);
                         this.rtxmanager.responsebody.put("visualization", ar.result().toJsonObject());
+                        App.app.logger.info("Succesfull Visualization response");
                         this.rtxmanager.sendResponse();
                     } else {
                         this.rtxmanager.fail(ar.cause());
@@ -55,6 +57,7 @@ public class VisualizationController {
                     if (ar.succeeded()) {
                         this.rtxmanager.responsebody.put("success", true);
                         this.rtxmanager.responsebody.put("visualization", ar.result().toJsonObject());
+                        App.app.logger.info("Succesfull Visualization response");
                         this.rtxmanager.sendResponse();
                     } else {
                         this.rtxmanager.fail(ar.cause());

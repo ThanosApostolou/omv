@@ -88,6 +88,11 @@ cd omv-server
 java -jar omv-server-*-fat.jar -Dport=$PORT -Dwithclient=true
 ```
 
+## Logs
+The default directory for the logs is `logs` directory.
+
 You can change the default LOG directory with the option `-DLOG_DIR="/some/dir"`.
 
 You can change the logs level with the option `-DLOG_LEVEL="debug"` where the available levels are `trace`, `debug`, `info` (default), `warn`, `error`.
+
+You can customize logging by changing the file `omv-server/src/main/resources/logback.xml` before building the app, according to [logback documentation](http://logback.qos.ch/documentation.html).
