@@ -14,7 +14,7 @@
             <v-progress-circular v-if="!ready" indeterminate rotate />
         </v-row>
         <div v-if="ready" :key="relationSelectModel+orderSelectModel" class="center">
-            <MappingSingleComp v-for="(mappingsvg, index) in this.mappingsvgs" :key="index" :mappingsvg="mappingsvg" @show-entity="showEntity"  @show-ruleobject="showRuleobject" />
+            <MappingSingleComp v-for="(mappingsvg, index) in this.mappingsvgs" :key="index" :mappingsvg="mappingsvg" @show-entity="showEntity" @show-ruleobject="showRuleobject" />
         </div>
         <v-dialog v-if="showdialog" v-model="showdialog" max-width="1400">
             <v-card>
@@ -127,7 +127,7 @@ export default {
         },
         showRuleobject(ruleobject) {
             this.selectedRuleobject = ruleobject;
-            this.dialogType = 'rule';
+            this.dialogType = "rule";
             this.showdialog = true;
         }
     },
