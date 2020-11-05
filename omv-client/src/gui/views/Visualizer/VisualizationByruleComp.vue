@@ -25,11 +25,9 @@
                     </v-btn>
                 </v-card-actions>
                 <OwlEntityInfoComp v-if="dialogType == 'entity'" :owlentity="selectedOwlentitysvg.owlentity" />
-
-                    <pre  v-if="dialogType == 'rule'">
+                <pre v-if="dialogType == 'rule'" class="ma-0 pa-0" :style="{'line-height': '110%'}">
 {{ selectedRuleobject }}
-                    </pre>
-
+                </pre>
             </v-card>
         </v-dialog>
     </div>

@@ -11,8 +11,8 @@
                 src="../assets/omv_logo.svg"
                 class="shrink mr-2 my-2"
                 contain
-                height="128"
-                width="128"
+                height="100"
+                width="100"
             />
         </v-row>
         <v-row align="center" justify="center" class="text-center">
@@ -27,22 +27,22 @@
                     <router-link to="/visualizer">
                         Here
                     </router-link>
-                </p>
-                <p>
+                    <br>
                     You can see information about the app
                     <router-link to="/About">
                         Here
                     </router-link>
                 </p>
                 <v-row justify="center">
-                <v-responsive max-height="500" max-width="900">
-                    <v-carousel cycle>
-                        <v-carousel-item  src="../assets/Visualizer1.png" />
-                        <v-carousel-item src="../assets/Visualizer2.png" />
-                        <v-carousel-item src="../assets/Visualizer3.png" />
-                    </v-carousel>
-                </v-responsive>
+                    <v-responsive max-height="480" max-width="850">
+                        <v-carousel height="480" cycle>
+                            <v-carousel-item src="../assets/Visualizer1.png" />
+                            <v-carousel-item src="../assets/Visualizer2.png" />
+                            <v-carousel-item src="../assets/Visualizer3.png" />
+                        </v-carousel>
+                    </v-responsive>
                 </v-row>
+                <br>
                 <p>
                     Mapping Rules are created with the
                     <v-btn href="http://ponte.grid.ece.ntua.gr:8080/OntoMapping/" target="_blank" text link color="primary">
