@@ -1,5 +1,11 @@
 # OMV
-Ontologies' Mappings Visualizer
+### Ontologies' Mappings Visualizer
+
+Web application to visualize the comparison between different ontologies.
+
+### Technologies used:
+  - Backend: Java, Vertx, OWLAPI.
+  - Frontend: HTML, CSS, Javascript, Typescript, VueJS.
 
 # OMV server
 Server is deployed on heroku: https://omv-server.herokuapp.com/
